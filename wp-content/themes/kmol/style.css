@@ -90,6 +90,51 @@ a img {
 	border: 0;
 }
 
+.logo {
+	margin-top: 35px;
+	margin-bottom: 40px;
+}
+
+input::-webkit-input-placeholder {color: white;}
+input:-moz-placeholder {color:white;}
+
+/* ------------- Fonts ------------- */
+
+@font-face {
+				font-family: 'AkzidenzBold';
+				src: url('fonts/akzidenzgrotesklightbold.eot');
+				src: url('fonts/akzidenzgrotesklightbold.eot?#iefix') format('embedded-opentype'),
+						 url('fonts/akzidenzgrotesklightbold.woff') format('woff'),
+						 url('fonts/akzidenzgrotesklightbold.ttf') format('truetype'),
+						 url('fonts/akzidenzgrotesklightbold.svg#akzidenzgrotesklightbold') format('svg');
+				font-weight: normal;
+				font-style: normal;
+		}
+
+
+@font-face {
+				font-family: 'AkzidenzBoldItalic';
+				src: url('fonts/akzidenzgrotesklightbolditalic.eot');
+				src: url('fonts/akzidenzgrotesklightbolditalic.eot?#iefix') format('embedded-opentype'),
+						 url('fonts/akzidenzgrotesklightbolditalic.woff') format('woff'),
+						 url('fonts/akzidenzgrotesklightbolditalic.ttf') format('truetype'),
+						 url('fonts/akzidenzgrotesklightbolditalic.svg#akzidenzgrotesklightbolditalic') format('svg');
+				font-weight: normal;
+				font-style: normal;
+		}
+
+
+	@font-face {
+				font-family: 'Akzidenz';
+				src: url('fonts/akzidenzgroteskroman.eot');
+				src: url('fonts/akzidenzgroteskroman.eot?#iefix') format('embedded-opentype'),
+						 url('fonts/akzidenzgroteskroman.woff') format('woff'),
+						 url('fonts/akzidenzgroteskroman.ttf') format('truetype'),
+						 url('fonts/akzidenzgroteskroman.svg#akzidenzgroteskroman') format('svg');
+				font-weight: normal;
+				font-style: normal;
+		}
+
 
 /* =Global
 ----------------------------------------------- */
@@ -282,9 +327,7 @@ input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly i
 input[type=text],
 input[type=email],
 textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
+	color: #ffffff;
 }
 input[type=text]:focus,
 input[type=email]:focus,
@@ -347,7 +390,7 @@ a:active {
 	clear: both;
 	display: block;
 	float: left;
-	width: 100%;
+	width: auto;
 }
 .main-navigation ul {
 	list-style: none;
@@ -357,6 +400,7 @@ a:active {
 .main-navigation li {
 	float: left;
 	position: relative;
+	margin-left: 17px;
 }
 .main-navigation a {
 	display: block;
@@ -373,6 +417,9 @@ a:active {
 		left: 0;
 	z-index: 99999;
 }
+
+
+
 .main-navigation ul ul ul {
 	left: 100%;
 	top: 0;
@@ -393,6 +440,25 @@ a:active {
 }
 .main-navigation li.current_page_item a,
 .main-navigation li.current-menu-item a {
+}
+
+.main-navigation li a:after {
+	content: '//';
+	margin-left: 17px;
+	opacity: 0.3;
+}
+
+.main-navigation li a{
+	font-family: "Akzidenz";
+	color: #ffffff;
+}
+
+#menu-primary {
+	font-size: 17px;
+	padding: 7px 10px;
+	background-color: #999999;
+	overflow: hidden;
+	width: auto;
 }
 
 /* Small menu */
@@ -443,6 +509,11 @@ a:active {
 
 /* =Media
 ----------------------------------------------- */
+
+.site-header {
+	margin-bottom: 20px;
+	overflow: hidden;
+}
 
 .site-header img,
 .entry-content img,
@@ -545,7 +616,71 @@ object {
 	margin: 0 0 1.5em;
 }
 
+.widget_search {
+	margin-bottom: 0;
+}
+
 /* Search widget */
 #searchsubmit {
-	display: none;
+	background: #a9cf54 url(images/search_icon.png) no-repeat center;
+	-webkit-appearance: none;
+	border:none;
+	border-radius:0;
+	width:39px;
+	height:39px;
+	box-shadow: none;
+	text-indent: 9999px;
+}
+
+#s {
+	background: #e6e6e6;
+	border: none;
+	color: #ffffff;
+	font-size: 17px;
+	font-family: 'Akzidenz';
+	padding: 7px;
+	line-height: 1.5;
+	float:left;
+}
+
+.social {
+	margin-top: 5px;
+}
+
+.socialmedia-buttons a{
+	opacity: 0.4;
+}
+
+/*-------------- Register ----------*/
+
+.register {
+	background: #999999;
+	color: white;
+	width: 102px;
+	height: 45px;
+	vertical-align: -40px;
+	text-align: center;
+	font-family: 'Akzidenz';
+}
+
+.register p{
+	padding-top: 15px;
+}
+
+
+
+/* ------------- Tabs ------------- */
+
+#tabs {
+	border: none;
+}
+
+#tabs ul{
+	border:none;
+	background: none;
+}
+
+#tabs li{
+	background: none;
+	border:none;
 }

@@ -17,4 +17,8 @@
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'kmol' ), 'after' => '</div>' ) ); ?>
 		<?php edit_post_link( __( 'Edit', 'kmol' ), '<span class="edit-link">', '</span>' ); ?>
 	</div><!-- .entry-content -->
+
+
+                
+
 </article><!-- #post-<?php the_ID(); ?> -->
