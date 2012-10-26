@@ -673,6 +673,7 @@ object {
 
 #tabs {
 	border: none;
+	background: transparent;
 }
 
 #tabs ul{
@@ -683,4 +684,17 @@ object {
 #tabs li{
 	background: none;
 	border:none;
+}
+
+#tabs ul li a {
+	border:none;
+}
+
+
+/* ------------- Highlights ----------*/
+
+.background_home {
+	background: #e6e6e6 ;
+	width: 100%;
+	min-height: 380px;
 }

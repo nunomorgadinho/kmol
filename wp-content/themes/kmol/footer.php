@@ -11,7 +11,7 @@
 
 	</div><!-- #main .site-main -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer container_12" role="contentinfo">
 		<div class="site-info">
 			<?php do_action( 'kmol_credits' ); ?>
 			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'kmol' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'kmol' ), 'WordPress' ); ?></a>

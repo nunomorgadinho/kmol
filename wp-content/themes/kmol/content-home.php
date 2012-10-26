@@ -6,8 +6,9 @@
  * @since kmol 1.0
  */
 ?>
-
- <div id="tabs" class="grid_8 highlight alpha">
+<div class="background_home">
+    <div class="container_highlight container_12">
+        <div id="tabs" class="grid_8 highlight alpha">
     <ul>
         <li><a href="#tabs-1">Nunc tincidunt</a></li>
         <li><a href="#tabs-2">Proin dolor</a></li>
@@ -24,18 +25,6 @@
         <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
     </div>
 </div>
-
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-	</header><!-- .entry-header -->
-
-	<div class="entry-content">
-		<?php the_content(); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'kmol' ), 'after' => '</div>' ) ); ?>
-		<?php edit_post_link( __( 'Edit', 'kmol' ), '<span class="edit-link">', '</span>' ); ?>
-	</div><!-- .entry-content -->
-</article><!-- #post-<?php the_ID(); ?> -->
+</div>
 
 

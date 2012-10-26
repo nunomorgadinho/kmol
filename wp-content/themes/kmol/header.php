@@ -48,11 +48,11 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site container_12">
+<div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header container_12" role="banner">
 		<a  class="logo alignleft" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/kmol_logo.png"/></a>
-		<div class="register alignright"><p>Registar-se</p></div>
+		<div class="register alignright"><p><?php _e('Registar-se', 'kmol'); ?></p></div>
 		<div class="social alignright"><?php dynamic_sidebar('Social_Widget'); ?></div>
 		<nav role="navigation" class="site-navigation main-navigation">
 			<h1 class="assistive-text"><?php _e( 'Menu', 'kmol' ); ?></h1>
