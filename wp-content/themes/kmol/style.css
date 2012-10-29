@@ -31,10 +31,9 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
 	border: 0;
-	font-family: inherit;
+	font-family: 'Akzidenz';
 	font-size: 100%;
-	font-style: inherit;
-	font-weight: inherit;
+	font-weight: normal;
 	margin: 0;
 	outline: 0;
 	padding: 0;
@@ -80,7 +79,6 @@ blockquote, q {
 	quotes: "" "";
 }
 a:focus {
-	outline: thin dotted;
 }
 a:hover,
 a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
@@ -97,6 +95,9 @@ a img {
 
 input::-webkit-input-placeholder {color: white;}
 input:-moz-placeholder {color:white;}
+input {
+	outline: 0;
+}
 
 /* ------------- Fonts ------------- */
 
@@ -145,7 +146,7 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-family: sans-serif;
+	font-family: 'Akzidenz';
 	font-size: 16px;
 	font-size: 1.6rem;
 	line-height: 1.5;
@@ -672,22 +673,33 @@ object {
 /* ------------- Tabs ------------- */
 
 #tabs {
-	border: none;
-	background: transparent;
 }
 
 #tabs ul{
-	border:none;
-	background: none;
+	list-style: none;
+	margin-left: 0;
+	margin-top:	8px;
 }
 
-#tabs li{
-	background: none;
-	border:none;
+#tabs ul li{
+	display: inline;
+	margin-right: 30px;
+	padding: 10px;
+}
+
+.ui-state-active {
+	background: #f8f8f8;
+}
+
+.ui-state-hover {
+	background: #efefef;
 }
 
 #tabs ul li a {
-	border:none;
+	font-family: 'Akzidenz';
+	text-decoration: none;
+	padding: 10px;
+	color: #999999;
 }
 
 
@@ -696,5 +708,83 @@ object {
 .background_home {
 	background: #e6e6e6 ;
 	width: 100%;
-	min-height: 380px;
+	height: 380px;
+}
+
+.counters {
+	background: #f8f8f8;
+	height: 320px;
+	margin-top: -7px;
+	margin-left: 30px !important;
+}
+
+.triangle {
+width: 0px;
+height: 0px;
+border-style: solid;
+border-width: 7px 0 0 7px;
+border-color: transparent transparent transparent #b1b4af;
+float: left;
+margin-top: -7px;
+margin-right: -10px;
+}
+
+
+.phrase {
+	font-size: 22px;
+	padding: 20px 15px 0 15px;
+	color: #999999;
+}
+
+.phrase h3 {
+	font-family:'AkzidenzBold';
+	margin-bottom: 0;
+}
+
+.phrase p{
+	font-family: 'Akzidenz';
+	margin-bottom: 0;
+}
+
+#twitter {
+background-image: url(images/twitter_icon.png);
+background-repeat: no-repeat;
+margin-left: -62px;
+margin-top: 28px;
+}
+
+#facebook {
+background-image: url(images/facebook_icon.png);
+background-repeat: no-repeat;
+margin-left: -63px;
+margin-top: 26px;
+}
+
+#rss{
+background-image: url(images/rss_icon.png);
+background-repeat: no-repeat;
+margin-left: -60px;
+margin-top: 25px;
+}
+
+.countersingle {
+width: 50px;
+height: 66px;
+position: absolute;
+color: #6c9ebb;
+-webkit-appearance: none;
+text-indent: 9999px;
+border: none;
+background: transparent;
+
+}
+
+.numbers {
+	margin: 15px 5px 0 15px;
+}
+
+.numbers canvas {
+	width: 80px;
+	height: 80px;
+	margin-right: 10px;
 }
