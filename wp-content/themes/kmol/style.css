@@ -93,8 +93,8 @@ a img {
 	margin-bottom: 40px;
 }
 
-input::-webkit-input-placeholder {color: white;}
-input:-moz-placeholder {color:white;}
+#searchform input::-webkit-input-placeholder {color: white;}
+#searchform input:-moz-placeholder {color:white;}
 input {
 	outline: 0;
 }
@@ -679,6 +679,7 @@ object {
 	list-style: none;
 	margin-left: 0;
 	margin-top:	8px;
+	margin-bottom: 0;
 }
 
 #tabs ul li{
@@ -713,7 +714,7 @@ object {
 
 .counters {
 	background: #f8f8f8;
-	height: 320px;
+	height: auto;
 	margin-top: -7px;
 	margin-left: 30px !important;
 }
@@ -734,6 +735,7 @@ margin-right: -10px;
 	font-size: 22px;
 	padding: 20px 15px 0 15px;
 	color: #999999;
+	line-height: 1.3em;
 }
 
 .phrase h3 {
@@ -780,11 +782,115 @@ background: transparent;
 }
 
 .numbers {
-	margin: 15px 5px 0 15px;
+	padding: 25px 5px 0 15px;
 }
 
 .numbers canvas {
 	width: 80px;
 	height: 80px;
 	margin-right: 10px;
+}
+
+.subscribe_home{
+	height: 39px;
+	width: 90%;
+	padding: 20px 15px;
+	
+}
+
+#subscribe_home_box{
+	border: none;
+	background: #e6e6e6;
+	padding: 10px 8px;
+	width: auto;
+	float: left;
+	min-width: 175px;
+}
+
+#subscribe_home_submit {
+	background: #a9cf54;
+	box-shadow: none;
+	border: none;
+	border-radius: 0;
+	padding: 13px 5px 12px 5px;
+	color: white;
+	font-family: 'AkzidenzBold';
+	text-transform: none;
+	text-shadow: none;
+}
+
+			/* News*/
+
+.principal {
+	color: #1a1a1a;
+	padding: 25px 15px 25px 0;
+	overflow: hidden;
+}
+
+.news_principal {
+	padding-bottom: 15px;
+	height: 210px;
+}
+
+.news_title {
+	font-size: 30px;
+	font-family: 'AkzidenzBold';
+	font-weight: bold;
+	margin-bottom:15px;
+} 
+
+.news_title span{
+	margin-left: 10px;
+}
+
+.news_meta{
+	text-transform: uppercase;
+	font-size: 9px;
+	margin-bottom: 0;
+	letter-spacing: normal;
+	vertical-align:baseline;
+}
+
+.image_principal{
+	clear:both;
+	float: left;
+	padding-right: 20px;
+}
+
+.sublayer {
+	border-top: solid 4px #1a1a1a;
+	padding-top: 10px;
+	margin-left: 0;
+}
+
+.sublayer_title {
+	margin-bottom: 5px;
+	font-family: 'AkzidenzBold';
+	font-size: 16px;
+	line-height: 130%;
+}
+
+.social_timelines {
+	margin-left: 30px !important;
+}
+
+.boxes {
+	margin-top: 20px;
+}
+
+.facebook_home {
+	margin-top: 20px;
+	border-top: solid 1px #e6e6e6;
+	padding-top: 20px;
+}
+
+.marcador {
+	height: 175px;
+	background:  #cccccc;
+	margin-bottom: 20px;
+}
+
+.banner1 {
+	height: 175px;
+	background: #6c9dbb;
 }
