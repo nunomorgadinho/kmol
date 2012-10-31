@@ -102,10 +102,20 @@
         <div class="grid_8 alpha marcadores">
             <div class="grid_8 alpha">
                 <div class="grid_4 alpha marcador">
-                    Hello World!
+                    <h1 class="marcador_title">Entrevistas</h1>
+                    <div class="marcador_short">
+                    <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
+                    <h2 class="marcador_subtitle">Paul Corney</h2>
+                    <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
+                    </div>
                 </div>
                 <div class="grid_4 omega marcador">
-                    Goodbye World!
+                    <h1 class="marcador_title">Casos</h1>
+                    <div class="marcador_short">
+                    <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
+                    <h2 class="marcador_subtitle">Paul Corney</h2>
+                    <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
+                    </div>
                 </div>
             </div>
 
@@ -114,8 +124,17 @@
                     Banner //
                 </div>
                 <div class="grid_4 omega marcador">
-                    What's up?
+                    <h1 class="marcador_title">Livros</h1>
+                    <div class="marcador_short">
+                    <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
+                    <h2 class="marcador_subtitle">Paul Corney</h2>
+                    <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
+                    </div>
                 </div>
+            </div>
+
+            <div class="grid_8 alpha omega banner2">
+                Banner2 //
             </div>
 
 

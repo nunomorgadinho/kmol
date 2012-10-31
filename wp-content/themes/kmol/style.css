@@ -78,6 +78,8 @@ q:before, q:after {
 blockquote, q {
 	quotes: "" "";
 }
+a {text-decoration: none;}
+
 a:focus {
 }
 a:hover,
@@ -154,7 +156,7 @@ textarea {
 
 /* Headings */
 h1,h2,h3,h4,h5,h6 {
-	clear: both;
+	/*clear: both;*/
 }
 hr {
 	background-color: #ccc;
@@ -250,6 +252,13 @@ table {
 th {
 	font-weight: bold;
 }
+
+::selection {
+	background: #e6e6e6; /* Safari */
+	}
+::-moz-selection {
+	background: #E6E6E6; /* Firefox */}
+
 button,
 input,
 select,
@@ -431,7 +440,45 @@ a:active {
 .main-navigation ul ul li {
 }
 .main-navigation li:hover > a {
+	animation:myfirst 1s ;
+/* Firefox: */
+-moz-animation:myfirst 1s ;
+/* Safari and Chrome: */
+-webkit-animation:myfirst 1s ;
+/* Opera: */
+-o-animation:myfirst 1s ;
+	opacity: 0.5;
 }
+
+@keyframes myfirst
+{
+0%   {opacity: 1.0;}
+20% {opacity: 0.5;}
+100% {opacity: 0.5;}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+0%   {opacity: 1.0;}
+20% {opacity: 0.5;}
+100% {opacity: 0.5;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+0%   {opacity: 1.0;}
+20% {opacity: 0.5;}
+100% {opacity: 0.5;}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+0%   {opacity: 1.0;}
+20% {opacity: 0.5;}
+100% {opacity: 0.5;}
+}
+
+
 .main-navigation ul ul :hover > a {
 }
 .main-navigation ul ul a:hover {
@@ -441,6 +488,7 @@ a:active {
 }
 .main-navigation li.current_page_item a,
 .main-navigation li.current-menu-item a {
+	color: #a9cf54;
 }
 
 .main-navigation li a:after {
@@ -456,7 +504,7 @@ a:active {
 
 #menu-primary {
 	font-size: 17px;
-	padding: 7px 10px;
+	padding: 7px 25px 7px 10px;
 	background-color: #999999;
 	overflow: hidden;
 	width: auto;
@@ -614,7 +662,7 @@ object {
 ----------------------------------------------- */
 
 .widget {
-	margin: 0 0 1.5em;
+	margin: 0 0 10px;
 }
 
 .widget_search {
@@ -631,6 +679,16 @@ object {
 	height:39px;
 	box-shadow: none;
 	text-indent: 9999px;
+
+	transition: background 0.2s;
+	-moz-transition: background 0.2s; /* Firefox 4 */
+	-webkit-transition: background 0.2s; /* Safari and Chrome */
+	-o-transition: background 0.2s; /* Opera */
+
+}
+
+#searchsubmit:hover {
+	background: #999 url(images/search_icon.png) no-repeat center;
 }
 
 #s {
@@ -662,11 +720,24 @@ object {
 	vertical-align: -40px;
 	text-align: center;
 	font-family: 'Akzidenz';
+	cursor: pointer;
+
+	transition: padding 0.5s;
+	-moz-transition: padding 0.5s; /* Firefox 4 */
+	-webkit-transition: padding 0.5s; /* Safari and Chrome */
+	-o-transition: padding 0.5s; /* Opera */
+
+}
+
+.register:hover {
+	padding: 15px 0 0 0;
 }
 
 .register p{
 	padding-top: 15px;
 }
+
+
 
 
 
@@ -817,6 +888,16 @@ background: transparent;
 	font-family: 'AkzidenzBold';
 	text-transform: none;
 	text-shadow: none;
+
+	transition: background 0.2s;
+	-moz-transition: background 0.2s; /* Firefox 4 */
+	-webkit-transition: background 0.2s; /* Safari and Chrome */
+	-o-transition: background 0.2s; /* Opera */
+
+}
+
+#subscribe_home_submit:hover {
+	background: #999;
 }
 
 			/* News*/
@@ -884,13 +965,176 @@ background: transparent;
 	padding-top: 20px;
 }
 
+.twitter_timeline {
+	height: 350px;
+}
+
 .marcador {
 	height: 175px;
-	background:  #cccccc;
 	margin-bottom: 20px;
 }
 
 .banner1 {
 	height: 175px;
+	background: #e6e6e6;
+}
+
+/* -------- Marcadores -------- */
+
+.marcador img {
+	float: left;
+	padding-right: 10px;
+}
+
+.marcador_title {
+	font-size: 15px;
+	color: white;
+	text-transform: uppercase;
+	font-family: 'AkzidenzBold';
+	background: #6c9ebb;
+	padding: 4px 15px;
+}
+
+.marcador_title:after {
+	content: '  //';
+}
+
+.marcador_short {
+	height: 124px;
+	padding-top: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-left: 1px solid #e6e6e6;
+	border-right: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.marcador_subtitle {
+	font-family: 'AkzidenzBold';
+}
+
+.marcador_description {
+	line-height: 140%;
+	margin-top: 10px;
+}
+
+.banner2 {
+	background: #e6e6e5;
+	height: 100px;
+}
+
+/* --- Footer ---- */
+
+.site-footer {
+	color: #B3B3B3;
+}
+
+.full_width_footer {
+	padding: 20px 0 5px 0;
+	background: #eeeeee;
+	margin-top: 40px;
+}
+
+.subscribe_footer {
+	height: 18px;
+}
+
+#subscribe_footer_box{
+	border: none;
+	background: #F8F8F8;
+	padding: 2px 4px;
+	width: 110px;
+	float: left;
+	font-size: 14px;
+}
+
+#subscribe_footer_submit {
+	background: #a9cf54;
+	box-shadow: none;
+	border: none;
+	border-radius: 0;
+	padding: 4px 10px 3px 10px;
+	color: white;
+	font-family: 'Akzidenz';
+	text-transform: none;
+	text-shadow: none;
+	vertical-align: top;
+	transition: background 0.2s;
+	-moz-transition: background 0.2s; /* Firefox 4 */
+	-webkit-transition: background 0.2s; /* Safari and Chrome */
+	-o-transition: background 0.2s; /* Opera */
+
+}
+
+#subscribe_footer_submit:hover {
+	background: #999;
+}
+
+.footer_title {
+	font-family: 'AkzidenzBold';
+	color: #b3b3b3;
+	margin-bottom: 15px;
+}
+
+.footer_title:before {
+	content: '// ';
+}
+
+.footer_subtitle a:link{
+	font-family: 'Akzidenz';
+	color: #b3b3b3;
+	line-height: 120%;
+	}
+
+.footer_link a:link, .footer_link a:visited{
+	font-size: 14px;
+	color: white;
+	padding: 2px;
+	width: auto;
+	background: #a9cf55;
+	border-radius: 3px;
+	padding: 1px 5px;
+	transition: background 0.2s;
+	-moz-transition: background 0.2s; /* Firefox 4 */
+	-webkit-transition: background 0.2s; /* Safari and Chrome */
+	-o-transition: background 0.2s; /* Opera */
+
+}
+
+.footer_link a:hover {
 	background: #6c9dbb;
+}
+
+.copyright p{
+	margin-top: 10px;
+	margin-bottom: 0;
+	color: #cccccc;
+	font-size: 14px;
+}
+
+
+/* Default Page */
+
+.default_page {
+	background: #e6e6e6;
+	padding: 25px 35px;
+}
+
+.filter {
+	-webkit-appearance: none;
+	outline: 0;
+	border: none;
+	background-image: url(images/selectors_icon.png);
+	background-repeat: no-repeat;
+	background-color: #f2f2f2;
+	background-position: 92% 50%;
+	padding: 2px 12px 2px 5px;
+}
+
+.general_title {
+
+}
+
+.general_title:after {
+	content: ' //';
 }

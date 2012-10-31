@@ -57,7 +57,7 @@
 		<nav role="navigation" class="site-navigation main-navigation">
 			<h1 class="assistive-text"><?php _e( 'Menu', 'kmol' ); ?></h1>
 
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary') ); ?>
 		</nav><!-- .site-navigation .main-navigation -->
 		<div class="search alignright"><?php dynamic_sidebar('Search'); ?></div>
 	</header><!-- #masthead .site-header -->
