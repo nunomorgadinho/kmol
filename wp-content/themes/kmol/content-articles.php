@@ -81,12 +81,12 @@
 				Tópicos mais usados
 			</div>
 			<div class="sidebar_description">
-				<p>gestão_de_conhecimento</p>
-				<p>ferramentas_sociais</p>
-				<p>tecnologia web2.0</p>
-				<p>cultura_organizacional</p>
-				<p>Brasil caso</p>
-				<p>actores_do_conhecimento</p>
+				<p><a href="/">gestão_de_conhecimento</a></p>
+				<p><a href="/">ferramentas_sociais</a></p>
+				<p><a href="/">tecnologia web2.0</a></p>
+				<p><a href="/">cultura_organizacional</a></p>
+				<p><a href="/">Brasil caso</a></p>
+				<p><a href="/">actores_do_conhecimento</a></p>
 			</div>
 		</div>
 
@@ -95,12 +95,12 @@
 				Últimos comentários
 			</div>
 			<div class="sidebar_description">
-				<p>gestão_de_conhecimento</p>
-				<p>ferramentas_sociais</p>
-				<p>tecnologia web2.0</p>
-				<p>cultura_organizacional</p>
-				<p>Brasil caso</p>
-				<p>actores_do_conhecimento</p>
+				<p><a href="/">gestão_de_conhecimento</a></p>
+				<p><a href="/">ferramentas_sociais</a></p>
+				<p><a href="/">tecnologia web2.0</a></p>
+				<p><a href="/">cultura_organizacional</a></p>
+				<p><a href="/">Brasil caso</a></p>
+				<p><a href="/">actores_do_conhecimento</a></p>
 			</div>
 		</div>
 	</div>
@@ -111,5 +111,37 @@
 		<div class="grid_3 omega banner3">
 			Banner3 //
 		</div>
+
+		<div class="grid_9 alpha omega banner4">
+                Banner4 //
+        </div>
+
+
+        <div class="grid_12 alpha omega marcadores">
+                <div class="grid_4 alpha marcador">
+                    <h1 class="marcador_title">Entrevistas</h1>
+                    <div class="marcador_short">
+                    <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
+                    <h2 class="marcador_subtitle">Paul Corney</h2>
+                    <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
+                    </div>
+                </div>
+                <div class="grid_4 marcador">
+                    <h1 class="marcador_title">Casos</h1>
+                    <div class="marcador_short">
+                    <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
+                    <h2 class="marcador_subtitle">Paul Corney</h2>
+                    <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
+                    </div>
+                </div>
+                <div class="grid_4 marcador omega">
+                    <h1 class="marcador_title">Livros</h1>
+                    <div class="marcador_short">
+                    <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
+                    <h2 class="marcador_subtitle">Paul Corney</h2>
+                    <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
+                    </div>
+                </div>
+        </div>
 
 </div>

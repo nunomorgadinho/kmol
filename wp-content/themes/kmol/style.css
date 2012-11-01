@@ -1214,7 +1214,7 @@ background: transparent;
 	}
 
 .footer_subtitle a:hover {
-	color: black;
+	color: #404040;
 }
 
 .footer_link a:link, .footer_link a:visited{
@@ -1354,9 +1354,108 @@ background: transparent;
 	height: 100px;
 	background: #cccccc;
 	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
 .topics {
 	margin-bottom: 20px;
 	overflow: hidden;
+}
+
+.sidebar_description a:link, .sidebar_description a:visited {
+	color: #404040;
+} 
+
+.sidebar_description a:hover {
+	text-decoration: underline;
+}
+
+.banner4 {
+	height: 100px;
+	background: #cccccc;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.book_big_marcador {
+	background: #f8f8f8;
+	padding: 30px 20px;
+	overflow: hidden;
+}
+
+.book_marcador {
+	margin-top: 15px;
+}
+
+.book_marcador p {
+	font-size: 12px;
+	float: left;
+	background:  #a9cf55;
+	padding: 0 3px;
+	margin-right: 2px;
+	margin-bottom: 5px;
+}
+
+.book_marcador p a:link, .book_marcador p a:visited {
+	color: white;
+}
+
+.book_marcador p a:hover {
+	text-decoration: underline;
+}
+
+
+.book_big_marcador img{
+	float: left;
+	padding: 0 15px 15px 0 ;
+}
+
+.book_description {
+	font-size: 14px;
+}
+
+.comments {
+	font-size: 13px;
+	font-family: 'RobotoBold';
+	color: #999999;
+	margin-top: 15px;
+}
+
+.book_row {
+	margin-top: 20px;
+	overflow: hidden;
+}
+
+.book_small_marcador img{
+	float: left;
+	padding: 0 15px 15px 0 ;
+}
+
+.book_small_marcador {
+	background: #f8f8f8;
+	padding: 20px 20px;
+	overflow:hidden;
+}
+
+.marcador_container {
+	width: 400px;
+	float: left;
+	margin-right: 20px;
+}
+
+.last {
+	margin-right:0;
+}
+
+.book_page {
+	padding: 25px 60px 35px 60px;
+}
+
+.top {
+	margin-top: 20px;
+}
+
+.recommend_title {
+	margin-top: 20px;
+	font-size: 21px;
 }
