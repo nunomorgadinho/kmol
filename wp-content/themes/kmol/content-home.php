@@ -25,7 +25,7 @@
                 <div class="image_principal"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/img_news_principal.png"/></div>
                 <p class="news_excerpt">Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin 
                 mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean 
-                tempor ullamcorper leo. </p>
+                tempor ullamcorper. </p>
             </div>
 
             <div class="grid_8 alpha">

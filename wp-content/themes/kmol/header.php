@@ -51,6 +51,7 @@
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header container_12" role="banner">
+		<div class="grid_12 alpha">
 		<a  class="logo alignleft" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/kmol_logo.png"/></a>
 		<div class="register alignright"><p><?php _e('Registar-se', 'kmol'); ?></p></div>
 		<div class="social alignright"><?php dynamic_sidebar('Social_Widget'); ?></div>
@@ -60,6 +61,7 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'primary') ); ?>
 		</nav><!-- .site-navigation .main-navigation -->
 		<div class="search alignright"><?php dynamic_sidebar('Search'); ?></div>
+	</div>
 	</header><!-- #masthead .site-header -->
 
 	<div id="main" class="site-main">

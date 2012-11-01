@@ -31,7 +31,7 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
 	border: 0;
-	font-family: 'Akzidenz';
+	font-family: 'RobotoLight';
 	font-size: 100%;
 	font-weight: normal;
 	margin: 0;
@@ -95,8 +95,8 @@ a img {
 	margin-bottom: 40px;
 }
 
-#searchform input::-webkit-input-placeholder {color: white;}
-#searchform input:-moz-placeholder {color:white;}
+#searchform input::-webkit-input-placeholder {color: #999;}
+#searchform input:-moz-placeholder {color:#999;}
 input {
 	outline: 0;
 }
@@ -104,39 +104,197 @@ input {
 /* ------------- Fonts ------------- */
 
 @font-face {
-				font-family: 'AkzidenzBold';
-				src: url('fonts/akzidenzgrotesklightbold.eot');
-				src: url('fonts/akzidenzgrotesklightbold.eot?#iefix') format('embedded-opentype'),
-						 url('fonts/akzidenzgrotesklightbold.woff') format('woff'),
-						 url('fonts/akzidenzgrotesklightbold.ttf') format('truetype'),
-						 url('fonts/akzidenzgrotesklightbold.svg#akzidenzgrotesklightbold') format('svg');
-				font-weight: normal;
-				font-style: normal;
-		}
+    font-family: 'RobotoRegular';
+    src: url('fonts/Roboto-Regular-webfont.eot');
+    src: url('fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Roboto-Regular-webfont.woff') format('woff'),
+         url('fonts/Roboto-Regular-webfont.ttf') format('truetype'),
+         url('fonts/Roboto-Regular-webfont.svg#RobotoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
+}
 
 @font-face {
-				font-family: 'AkzidenzBoldItalic';
-				src: url('fonts/akzidenzgrotesklightbolditalic.eot');
-				src: url('fonts/akzidenzgrotesklightbolditalic.eot?#iefix') format('embedded-opentype'),
-						 url('fonts/akzidenzgrotesklightbolditalic.woff') format('woff'),
-						 url('fonts/akzidenzgrotesklightbolditalic.ttf') format('truetype'),
-						 url('fonts/akzidenzgrotesklightbolditalic.svg#akzidenzgrotesklightbolditalic') format('svg');
-				font-weight: normal;
-				font-style: normal;
-		}
+    font-family: 'RobotoItalic';
+    src: url('fonts/Roboto-Italic-webfont.eot');
+    src: url('fonts/Roboto-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Roboto-Italic-webfont.woff') format('woff'),
+         url('fonts/Roboto-Italic-webfont.ttf') format('truetype'),
+         url('fonts/Roboto-Italic-webfont.svg#RobotoItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
+}
 
-	@font-face {
-				font-family: 'Akzidenz';
-				src: url('fonts/akzidenzgroteskroman.eot');
-				src: url('fonts/akzidenzgroteskroman.eot?#iefix') format('embedded-opentype'),
-						 url('fonts/akzidenzgroteskroman.woff') format('woff'),
-						 url('fonts/akzidenzgroteskroman.ttf') format('truetype'),
-						 url('fonts/akzidenzgroteskroman.svg#akzidenzgroteskroman') format('svg');
-				font-weight: normal;
-				font-style: normal;
-		}
+@font-face {
+    font-family: 'RobotoBold';
+    src: url('fonts/Roboto-Bold-webfont.eot');
+    src: url('fonts/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Roboto-Bold-webfont.woff') format('woff'),
+         url('fonts/Roboto-Bold-webfont.ttf') format('truetype'),
+         url('fonts/Roboto-Bold-webfont.svg#RobotoBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'RobotoBoldItalic';
+    src: url('fonts/Roboto-BoldItalic-webfont.eot');
+    src: url('fonts/Roboto-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Roboto-BoldItalic-webfont.woff') format('woff'),
+         url('fonts/Roboto-BoldItalic-webfont.ttf') format('truetype'),
+         url('fonts/Roboto-BoldItalic-webfont.svg#RobotoBoldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'RobotoCondensed';
+    src: url('fonts/Roboto-Condensed-webfont.eot');
+    src: url('fonts/Roboto-Condensed-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Roboto-Condensed-webfont.woff') format('woff'),
+         url('fonts/Roboto-Condensed-webfont.ttf') format('truetype'),
+         url('fonts/Roboto-Condensed-webfont.svg#RobotoCondensed') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'RobotoCondensedItalic';
+    src: url('fonts/Roboto-CondensedItalic-webfont.eot');
+    src: url('fonts/Roboto-CondensedItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Roboto-CondensedItalic-webfont.woff') format('woff'),
+         url('fonts/Roboto-CondensedItalic-webfont.ttf') format('truetype'),
+         url('fonts/Roboto-CondensedItalic-webfont.svg#RobotoCondensedItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'RobotoBoldCondensed';
+    src: url('fonts/Roboto-BoldCondensed-webfont.eot');
+    src: url('fonts/Roboto-BoldCondensed-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Roboto-BoldCondensed-webfont.woff') format('woff'),
+         url('fonts/Roboto-BoldCondensed-webfont.ttf') format('truetype'),
+         url('fonts/Roboto-BoldCondensed-webfont.svg#RobotoBoldCondensed') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'RobotoBoldCondensedItalic';
+    src: url('fonts/Roboto-BoldCondensedItalic-webfont.eot');
+    src: url('fonts/Roboto-BoldCondensedItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Roboto-BoldCondensedItalic-webfont.woff') format('woff'),
+         url('fonts/Roboto-BoldCondensedItalic-webfont.ttf') format('truetype'),
+         url('fonts/Roboto-BoldCondensedItalic-webfont.svg#RobotoBoldCondensedItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'RobotoThin';
+    src: url('fonts/Roboto-Thin-webfont.eot');
+    src: url('fonts/Roboto-Thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Roboto-Thin-webfont.woff') format('woff'),
+         url('fonts/Roboto-Thin-webfont.ttf') format('truetype'),
+         url('fonts/Roboto-Thin-webfont.svg#RobotoThin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'RobotoThinItalic';
+    src: url('fonts/Roboto-ThinItalic-webfont.eot');
+    src: url('fonts/Roboto-ThinItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Roboto-ThinItalic-webfont.woff') format('woff'),
+         url('fonts/Roboto-ThinItalic-webfont.ttf') format('truetype'),
+         url('fonts/Roboto-ThinItalic-webfont.svg#RobotoThinItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'RobotoLight';
+    src: url('fonts/Roboto-Light-webfont.eot');
+    src: url('fonts/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Roboto-Light-webfont.woff') format('woff'),
+         url('fonts/Roboto-Light-webfont.ttf') format('truetype'),
+         url('fonts/Roboto-Light-webfont.svg#RobotoLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'RobotoLightItalic';
+    src: url('fonts/Roboto-LightItalic-webfont.eot');
+    src: url('fonts/Roboto-LightItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Roboto-LightItalic-webfont.woff') format('woff'),
+         url('fonts/Roboto-LightItalic-webfont.ttf') format('truetype'),
+         url('fonts/Roboto-LightItalic-webfont.svg#RobotoLightItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'RobotoMedium';
+    src: url('fonts/Roboto-Medium-webfont.eot');
+    src: url('fonts/Roboto-Medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Roboto-Medium-webfont.woff') format('woff'),
+         url('fonts/Roboto-Medium-webfont.ttf') format('truetype'),
+         url('fonts/Roboto-Medium-webfont.svg#RobotoMedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'RobotoMediumItalic';
+    src: url('fonts/Roboto-MediumItalic-webfont.eot');
+    src: url('fonts/Roboto-MediumItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Roboto-MediumItalic-webfont.woff') format('woff'),
+         url('fonts/Roboto-MediumItalic-webfont.ttf') format('truetype'),
+         url('fonts/Roboto-MediumItalic-webfont.svg#RobotoMediumItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'RobotoBlack';
+    src: url('fonts/Roboto-Black-webfont.eot');
+    src: url('fonts/Roboto-Black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Roboto-Black-webfont.woff') format('woff'),
+         url('fonts/Roboto-Black-webfont.ttf') format('truetype'),
+         url('fonts/Roboto-Black-webfont.svg#RobotoBlack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'RobotoBlackItalic';
+    src: url('fonts/Roboto-BlackItalic-webfont.eot');
+    src: url('fonts/Roboto-BlackItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Roboto-BlackItalic-webfont.woff') format('woff'),
+         url('fonts/Roboto-BlackItalic-webfont.ttf') format('truetype'),
+         url('fonts/Roboto-BlackItalic-webfont.svg#RobotoBlackItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 
 
 /* =Global
@@ -148,7 +306,7 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-family: 'Akzidenz';
+	font-family: 'RobotoLight';
 	font-size: 16px;
 	font-size: 1.6rem;
 	line-height: 1.5;
@@ -439,46 +597,18 @@ a:active {
 }
 .main-navigation ul ul li {
 }
+.main-navigation li a{
+	font-family: 'RobotoLight';
+	color: #ffffff;
+
+	transition: opacity 0.2s;
+	-moz-transition: opacity 0.2s; /* Firefox 4 */
+	-webkit-transition: opacity 0.2s; /* Safari and Chrome */
+	-o-transition: opacity 0.2s; /* Opera */
+}
 .main-navigation li:hover > a {
-	animation:myfirst 1s ;
-/* Firefox: */
--moz-animation:myfirst 1s ;
-/* Safari and Chrome: */
--webkit-animation:myfirst 1s ;
-/* Opera: */
--o-animation:myfirst 1s ;
 	opacity: 0.5;
 }
-
-@keyframes myfirst
-{
-0%   {opacity: 1.0;}
-20% {opacity: 0.5;}
-100% {opacity: 0.5;}
-}
-
-@-moz-keyframes myfirst /* Firefox */
-{
-0%   {opacity: 1.0;}
-20% {opacity: 0.5;}
-100% {opacity: 0.5;}
-}
-
-@-webkit-keyframes myfirst /* Safari and Chrome */
-{
-0%   {opacity: 1.0;}
-20% {opacity: 0.5;}
-100% {opacity: 0.5;}
-}
-
-@-o-keyframes myfirst /* Opera */
-{
-0%   {opacity: 1.0;}
-20% {opacity: 0.5;}
-100% {opacity: 0.5;}
-}
-
-
 .main-navigation ul ul :hover > a {
 }
 .main-navigation ul ul a:hover {
@@ -495,11 +625,6 @@ a:active {
 	content: '//';
 	margin-left: 17px;
 	opacity: 0.3;
-}
-
-.main-navigation li a{
-	font-family: "Akzidenz";
-	color: #ffffff;
 }
 
 #menu-primary {
@@ -688,15 +813,15 @@ object {
 }
 
 #searchsubmit:hover {
-	background: #999 url(images/search_icon.png) no-repeat center;
+	background: #6C9EBB url(images/search_icon.png) no-repeat center;
 }
 
 #s {
 	background: #e6e6e6;
 	border: none;
-	color: #ffffff;
+	color: #999;
 	font-size: 17px;
-	font-family: 'Akzidenz';
+	font-family: 'RobotoLight';
 	padding: 7px;
 	line-height: 1.5;
 	float:left;
@@ -719,7 +844,7 @@ object {
 	height: 45px;
 	vertical-align: -40px;
 	text-align: center;
-	font-family: 'Akzidenz';
+	font-family: 'RobotoLight';
 	cursor: pointer;
 
 	transition: padding 0.5s;
@@ -755,7 +880,7 @@ object {
 
 #tabs ul li{
 	display: inline;
-	margin-right: 30px;
+	margin-right: 10px;
 	padding: 10px;
 }
 
@@ -768,7 +893,7 @@ object {
 }
 
 #tabs ul li a {
-	font-family: 'Akzidenz';
+	font-family: 'RobotoLight';
 	text-decoration: none;
 	padding: 10px;
 	color: #999999;
@@ -787,7 +912,7 @@ object {
 	background: #f8f8f8;
 	height: auto;
 	margin-top: -7px;
-	margin-left: 30px !important;
+	margin-left: 30px;
 }
 
 .triangle {
@@ -810,12 +935,12 @@ margin-right: -10px;
 }
 
 .phrase h3 {
-	font-family:'AkzidenzBold';
+	font-family:'RobotoBold';
 	margin-bottom: 0;
 }
 
 .phrase p{
-	font-family: 'Akzidenz';
+	font-family: 'RobotoLight';
 	margin-bottom: 0;
 }
 
@@ -885,7 +1010,7 @@ background: transparent;
 	border-radius: 0;
 	padding: 13px 5px 12px 5px;
 	color: white;
-	font-family: 'AkzidenzBold';
+	font-family: 'RobotoBold';
 	text-transform: none;
 	text-shadow: none;
 
@@ -915,7 +1040,7 @@ background: transparent;
 
 .news_title {
 	font-size: 30px;
-	font-family: 'AkzidenzBold';
+	font-family: 'RobotoBlack';
 	font-weight: bold;
 	margin-bottom:15px;
 } 
@@ -946,13 +1071,13 @@ background: transparent;
 
 .sublayer_title {
 	margin-bottom: 5px;
-	font-family: 'AkzidenzBold';
+	font-family: 'RobotoBold';
 	font-size: 16px;
 	line-height: 130%;
 }
 
 .social_timelines {
-	margin-left: 30px !important;
+	margin-left: 30px;
 }
 
 .boxes {
@@ -990,7 +1115,7 @@ background: transparent;
 	font-size: 15px;
 	color: white;
 	text-transform: uppercase;
-	font-family: 'AkzidenzBold';
+	font-family: 'RobotoBold';
 	background: #6c9ebb;
 	padding: 4px 15px;
 }
@@ -1010,10 +1135,11 @@ background: transparent;
 }
 
 .marcador_subtitle {
-	font-family: 'AkzidenzBold';
+	font-family: 'RobotoBold';
 }
 
 .marcador_description {
+	font-size: 14px;
 	line-height: 140%;
 	margin-top: 10px;
 }
@@ -1040,6 +1166,7 @@ background: transparent;
 }
 
 #subscribe_footer_box{
+	color: #999;
 	border: none;
 	background: #F8F8F8;
 	padding: 2px 4px;
@@ -1055,7 +1182,7 @@ background: transparent;
 	border-radius: 0;
 	padding: 4px 10px 3px 10px;
 	color: white;
-	font-family: 'Akzidenz';
+	font-family: 'RobotoLight';
 	text-transform: none;
 	text-shadow: none;
 	vertical-align: top;
@@ -1067,11 +1194,11 @@ background: transparent;
 }
 
 #subscribe_footer_submit:hover {
-	background: #999;
+	background:#6C9EBB;
 }
 
 .footer_title {
-	font-family: 'AkzidenzBold';
+	font-family: 'RobotoBold';
 	color: #b3b3b3;
 	margin-bottom: 15px;
 }
@@ -1080,11 +1207,15 @@ background: transparent;
 	content: '// ';
 }
 
-.footer_subtitle a:link{
-	font-family: 'Akzidenz';
+.footer_subtitle a:link, .footer_subtitle a:visited{
+	font-family: 'RobotoLight';
 	color: #b3b3b3;
 	line-height: 120%;
 	}
+
+.footer_subtitle a:hover {
+	color: black;
+}
 
 .footer_link a:link, .footer_link a:visited{
 	font-size: 14px;
@@ -1105,6 +1236,10 @@ background: transparent;
 	background: #6c9dbb;
 }
 
+.footer_contact {
+	cursor: pointer;
+}
+
 .copyright p{
 	margin-top: 10px;
 	margin-bottom: 0;
@@ -1117,7 +1252,8 @@ background: transparent;
 
 .default_page {
 	background: #e6e6e6;
-	padding: 25px 35px;
+	padding: 25px 35px 35px 35px;
+	overflow: hidden;
 }
 
 .filter {
@@ -1127,14 +1263,100 @@ background: transparent;
 	background-image: url(images/selectors_icon.png);
 	background-repeat: no-repeat;
 	background-color: #f2f2f2;
-	background-position: 92% 50%;
+	background-position: 95% 50%;
 	padding: 2px 12px 2px 5px;
+	cursor: pointer;
 }
 
 .general_title {
-
+	font-size: 21px;
+	color: #6c9ebb ;
+	margin-bottom: 30px;
 }
 
 .general_title:after {
 	content: ' //';
+}
+
+.title_single {
+	clear: both;
+	width: 80%;
+	line-height: 135%;
+}
+
+.image_single {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.excerpt_single {
+	padding-top: 20px;
+	margin-bottom: 10px;
+}
+
+.meta_single {
+	float: right;
+}
+
+.readmore_single {
+	font-family: 'RobotoBold';
+	font-size: 11px;
+	text-transform: uppercase;
+}
+.readmore_single:before{
+	content: ' | ';
+}
+
+.sublayer_single {
+	margin: 10px 20px 10px 20px;
+	border-top: 2px solid;
+}
+
+.image_sublayer {
+	padding-right: 15px;
+	float:left;
+}
+
+.more_single {
+	margin-top: 30px;
+	color: white;
+	background: #a9cf55;
+	padding: 2px 8px;
+	font-size: 14px;
+	cursor:pointer;
+
+	transition: background 0.2s;
+	-moz-transition: background 0.2s; /* Firefox 4 */
+	-webkit-transition: background 0.2s; /* Safari and Chrome */
+	-o-transition: background 0.2s; /* Opera */
+}
+
+.more_single:hover {
+	background: #6c9dbb;
+}
+.more_single:after {
+	content:'»';
+	font-size: 20px;
+	font-family: 'RobotoThin';
+}
+
+.sidebar_description {
+	background: #f2f2f2;
+	padding: 20px 20px;
+}
+
+.sidebar_description p {
+	margin-bottom: 3px;
+	font-size: 14px;
+}
+
+.banner3 {
+	height: 100px;
+	background: #cccccc;
+	margin-bottom: 20px;
+}
+
+.topics {
+	margin-bottom: 20px;
+	overflow: hidden;
 }
