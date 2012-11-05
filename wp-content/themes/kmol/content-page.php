@@ -9,13 +9,15 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-	</header><!-- .entry-header -->
+		<h1 class="entry-title news_title title_single alignleft"><?php the_title(); ?></h1>
+		<div class="general_title alignright">Subtítulo</div>
 
+	</header><!-- .entry-header -->
+<span class="clear"></span>
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'kmol' ), 'after' => '</div>' ) ); ?>
-		<?php edit_post_link( __( 'Edit', 'kmol' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php //wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'kmol' ), 'after' => '</div>' ) ); ?>
+		<?php //edit_post_link( __( 'Edit', 'kmol' ), '<span class="edit-link">', '</span>' ); ?>
 	</div><!-- .entry-content -->
 
 

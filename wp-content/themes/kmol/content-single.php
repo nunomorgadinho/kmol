@@ -7,24 +7,14 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
+		<h1 class="entry-title news_title title_single alignleft"><?php the_title(); ?></h1>
+		<div class="general_title alignright">Artigos</div>
 
-		<div class="entry-meta">
-			<?php kmol_posted_on(); ?>
-		</div><!-- .entry-meta -->
-	</header><!-- .entry-header -->
+		<div class="entry-meta news_meta">
+			<?php kmol_posted_on(); ?></div><!-- .entry-meta -->
+			<span class="clear"></span>
 
-	<div class="entry-content">
-		<?php the_content(); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'kmol' ), 'after' => '</div>' ) ); ?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-meta">
-		<?php
-			/* translators: used between list items, there is a space after the comma */
-			$category_list = get_the_category_list( __( ', ', 'kmol' ) );
-
-			/* translators: used between list items, there is a space after the comma */
+			<div class="tag_marcador alignleft"><?php /* translators: used between list items, there is a space after the comma */
 			$tag_list = get_the_tag_list( '', ', ' );
 
 			if ( ! kmol_categorized_blog() ) {
@@ -46,14 +36,58 @@
 			} // end check for categories on this blog
 
 			printf(
-				$meta_text,
-				$category_list,
-				$tag_list,
-				get_permalink(),
-				the_title_attribute( 'echo=0' )
+				//$meta_text,
+				//$category_list,
+				$tag_list
+				//get_permalink(),
+				//the_title_attribute( 'echo=0' )
 			);
-		?>
+		?></div>
+		
+		<div class="sharing_post alignright">
+			<img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/mail_share.png"/>
+			<img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/twitter_share.png"/>
+			<img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/facebook_share.png"/>
+			<img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/linkedin_share.png"/>
+			<img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/comment_share.png"/>
+		</div>
+	</header><!-- .entry-header -->
 
-		<?php edit_post_link( __( 'Edit', 'kmol' ), '<span class="edit-link">', '</span>' ); ?>
+	<span class="clear"></span>
+
+	<div class="entry-content">
+		<?php the_content(); ?>
+		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'kmol' ), 'after' => '</div>' ) ); ?>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+
+
+		<!-- <?php edit_post_link( __( 'Edit', 'kmol' ), '<span class="edit-link">', '</span>' ); ?> -->
+
+	<div class="sharing_post alignright">
+			<img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/mail_share.png"/>
+			<img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/twitter_share.png"/>
+			<img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/facebook_share.png"/>
+			<img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/linkedin_share.png"/>
+			<img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/comment_share.png"/>
+		</div>
+
+<span class="clear"></span>
+		<div class="author_container">
+
+			<img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/ivo_granja.png"/>
+			<div class="author_title">Ivo Granja</div>
+			<div class="author_description">Licenciado em Economia, a concluir o Mestrado em Inteligência Competitiva; 
+				LinkedIn: http://pt.linkedin.com/in/ivogranja</div>
+				<div class="autor_tags tag_marcador">
+						<a href="/">gestão_de_conhecimento</a>
+                        <a href="/">ferramentas_sociais</a>
+                        <a href="/">tecnologia web2.0</a>
+                        <a href="/">cultura_organizacional</a>
+				</div>
+
+		</div>
+
 	</footer><!-- .entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->

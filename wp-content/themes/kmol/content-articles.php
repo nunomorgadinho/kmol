@@ -10,8 +10,8 @@
 	<div class="grid_9 alpha">
 		<div class="default_page">
 			<select class="filter alignright"  name="filter">
-				<option value="Autor">filtrar por autor</option>
-				<option value="Data" selected>filtrar por data</option>
+				<option value="Autor"><?php _e ('filtrar por autor','kmol'); ?></option>
+				<option value="Data" selected><?php _e ('filtrar por data','kmol'); ?></option>
 			</select>
 			<div class="general_title alignleft">Artigos</div>
 			<div class="news_title title_single">Inteligência Competitiva nas organizações em Portugal</div>
@@ -68,7 +68,7 @@
 
 				<div class="grid_8 alpha">
 				     		<div class="more_single alignright">
-				     			Artigos mais antigos
+				     			<?php _e ('Artigos mais antigos','kmol'); ?>
 				     		</div>     
 				</div>
 

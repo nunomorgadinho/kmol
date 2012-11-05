@@ -33,7 +33,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	border: 0;
 	font-family: 'RobotoLight';
 	font-size: 100%;
-	font-weight: normal;
+	/*font-weight: normal;*/
 	margin: 0;
 	outline: 0;
 	padding: 0;
@@ -91,8 +91,8 @@ a img {
 }
 
 .logo {
-	margin-top: 35px;
-	margin-bottom: 40px;
+	margin-top: 25px;
+	margin-bottom: 30px;
 }
 
 #searchform input::-webkit-input-placeholder {color: #999;}
@@ -347,10 +347,10 @@ dd {
 	margin: 0 1.5em 1.5em;
 }
 b, strong {
-	font-weight: bold;
+	font-family: 'RobotoBold';
 }
 dfn, cite, em, i {
-	font-style: italic;
+	font-family: 'RobotoBlack';
 }
 blockquote {
 	margin: 0 1.5em;
@@ -412,10 +412,10 @@ th {
 }
 
 ::selection {
-	background: #e6e6e6; /* Safari */
+	background: #a9cf55; /* Safari */
 	}
 ::-moz-selection {
-	background: #E6E6E6; /* Firefox */}
+	background: #a9cf55; /* Firefox */}
 
 button,
 input,
@@ -486,6 +486,7 @@ input[type="search"] {
 }
 input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
 	-webkit-appearance: none;
+	 -moz-appearance: none;
 }
 button::-moz-focus-inner,
 input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
@@ -515,15 +516,15 @@ textarea {
 
 /* Links */
 a {
-	color: royalblue;
+	color: #999999;
 }
 a:visited {
-	color: purple;
+	color: #999999;
 }
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: black;
 }
 
 /* Alignment */
@@ -689,6 +690,71 @@ a:active {
 	overflow: hidden;
 }
 
+.comment-content {
+	font-size: 13px;
+}
+
+.comment-meta {
+	text-transform: uppercase;
+	font-size: 9px;
+	margin-bottom: 10px;
+	letter-spacing: normal;
+	vertical-align:baseline;
+}
+
+.reply {
+	font-size: 14px;
+	text-decoration: underline;
+	float: right;
+}
+
+#respond {
+	clear:both;
+}
+
+#respond input{
+	border: none;
+	margin-left: 10px;
+	outline: 0;
+}
+
+#respond p{
+	margin-bottom: 15px;
+}
+
+#respond label{
+	color: #999999;
+}
+
+#comment {
+	outline: 0;
+	width: 99%;
+}
+
+#comments {
+	padding-top: 15px;
+}
+
+.commentlist {
+	margin-bottom: 5px;
+}
+
+.form-allowed-tags {
+	display:none;
+}
+
+#respond .form-submit input{
+	background: #b3b3b3;
+	box-shadow: none;
+	float: right;
+	text-shadow: none;
+	color: white;
+	border-radius: 0;
+	font-family: 'RobotoBold';
+	font-size: 15px;
+	padding: 10px 20px;
+}
+
 .site-header img,
 .entry-content img,
 .comment-content img,
@@ -715,7 +781,6 @@ img.size-full {
 	padding: 0;
 }
 .wp-caption {
-	border: 1px solid #ccc;
 	max-width: 100%;
 }
 .wp-caption.aligncenter,
@@ -729,7 +794,9 @@ img.size-full {
 	max-width: 98%;
 }
 .wp-caption-text {
-	text-align: center;
+	text-align: left;
+	font-size: 13px;
+	color: #999999;
 }
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
@@ -780,6 +847,10 @@ object {
 /* =Comments
 ----------------------------------------------- */
 
+#comment {
+	border: none;
+}
+
 .bypostauthor {
 }
 
@@ -798,6 +869,7 @@ object {
 #searchsubmit {
 	background: #a9cf54 url(images/search_icon.png) no-repeat center;
 	-webkit-appearance: none;
+	 -moz-appearance: none;
 	border:none;
 	border-radius:0;
 	width:39px;
@@ -822,9 +894,10 @@ object {
 	color: #999;
 	font-size: 17px;
 	font-family: 'RobotoLight';
-	padding: 7px;
+	padding: 0 7px 0 7px;
 	line-height: 1.5;
 	float:left;
+	height: 39px;
 }
 
 .social {
@@ -881,7 +954,7 @@ object {
 #tabs ul li{
 	display: inline;
 	margin-right: 10px;
-	padding: 10px;
+	padding: 11px 10px 10px 10px;
 }
 
 .ui-state-active {
@@ -971,6 +1044,7 @@ height: 66px;
 position: absolute;
 color: #6c9ebb;
 -webkit-appearance: none;
+ -moz-appearance: none;
 text-indent: 9999px;
 border: none;
 background: transparent;
@@ -1258,6 +1332,7 @@ background: transparent;
 
 .filter {
 	-webkit-appearance: none;
+	 -moz-appearance: none;
 	outline: 0;
 	border: none;
 	background-image: url(images/selectors_icon.png);
@@ -1280,7 +1355,7 @@ background: transparent;
 
 .title_single {
 	clear: both;
-	width: 80%;
+	width: 70%;
 	line-height: 135%;
 }
 
@@ -1302,6 +1377,18 @@ background: transparent;
 	font-family: 'RobotoBold';
 	font-size: 11px;
 	text-transform: uppercase;
+	color: #1a1a1a;
+	cursor: pointer;
+
+	transition: color 0.2s;
+	-moz-transition: color 0.2s; /* Firefox 4 */
+	-webkit-transition: color 0.2s; /* Safari and Chrome */
+	-o-transition: color 0.2s; /* Opera */
+
+}
+
+.readmore_single:hover {
+	color: #999999;
 }
 .readmore_single:before{
 	content: ' | ';
@@ -1383,24 +1470,26 @@ background: transparent;
 	overflow: hidden;
 }
 
-.book_marcador {
-	margin-top: 15px;
+.tag_marcador {
+	margin-top: 8px;
 }
 
-.book_marcador p {
+.tag_marcador a {
 	font-size: 12px;
 	float: left;
 	background:  #a9cf55;
 	padding: 0 3px;
 	margin-right: 2px;
 	margin-bottom: 5px;
+	color: white;
+	text-transform: capitalize;
 }
 
-.book_marcador p a:link, .book_marcador p a:visited {
+.tag_marcador a:link, .tag_marcador a:visited {
 	color: white;
 }
 
-.book_marcador p a:hover {
+.tag_marcador a:hover {
 	text-decoration: underline;
 }
 
@@ -1419,6 +1508,16 @@ background: transparent;
 	font-family: 'RobotoBold';
 	color: #999999;
 	margin-top: 15px;
+	cursor:pointer;
+
+	transition: color 0.2s;
+	-moz-transition: color 0.2s; /* Firefox 4 */
+	-webkit-transition: color 0.2s; /* Safari and Chrome */
+	-o-transition: color 0.2s; /* Opera */	
+}
+
+.comments:hover{
+	color: #b3b3b3;
 }
 
 .book_row {
@@ -1458,4 +1557,168 @@ background: transparent;
 .recommend_title {
 	margin-top: 20px;
 	font-size: 21px;
+}
+
+.popup_page {
+	width: 100%;
+	height: 100%;
+	opacity: 0.75;
+	background: #333333;
+	color: white;
+}
+
+.popup_container {
+	margin: 0 auto;
+	overflow:hidden;
+	max-width: 500px;
+}
+
+.popup_counter {
+	background: #6c9ebb;
+	float: left;
+	margin: 0 15px 15px 0;
+	padding: 5px;
+	width: 190px;
+	text-align: center;
+}
+
+.popup_title {
+	background: #a9cf55;
+	width: auto;
+	overflow: hidden;
+	margin-top: 50px;
+	padding: 15px 5px 5px 20px;
+	line-height: 200%;
+}
+
+.popup_register {
+	clear:both;
+	background: #a9cf55;
+	margin-left: 50px;
+	padding: 30px;
+	overflow: hidden;
+}
+
+.popup_register p{
+	font-size: 20px;
+}
+
+.popup_container h1{
+	font-size: 33px;
+	font-family: 'RobotoBlack';
+}
+
+.popup_container h2{
+	font-size: 20px;
+	font-family: 'RobotoLight';
+}
+
+.popup_box_register {
+}
+
+.popup_field {
+	margin-bottom: 20px;
+	border: none;
+	width: 60%;
+	min-width: 200px;
+	padding: 0 10px;
+}
+
+
+.popup_register input[type="text"], .popup_register input[type="email"], .popup_register textarea {
+color: #1a1a1a;
+}
+
+
+.popup_register input[type="checkbox"], .popup_register input[type="radio"] {
+	border: none;
+	background: #f2f2f2;
+	-webkit-appearance: none;
+	 -moz-appearance: none;
+	width: 15px;
+	height: 15px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.popup_register input[type="checkbox"]:hover, .popup_register input[type="radio"]:hover {
+	background: #e6e6e6;
+}
+
+.popup_register input[type="checkbox"]:checked, .popup_register input[type="radio"]:checked {
+	background: #f2f2f2 url(images/check_icon.png) no-repeat;
+}
+
+
+.label_principal {
+	margin-right: 15px;
+	font-size: 20px;
+}
+
+.label_secondary {
+	font-size:14px;
+}
+
+.popup_submit{
+	margin-top: 120px;
+	box-shadow: none;
+}
+
+.popup_submit input {
+	box-shadow: none;
+	font-family: 'RobotoBold';
+	background: white;
+	color: #a9cf55;
+	text-shadow: none;
+	font-size: 19px;
+	padding: 7px 15px;
+	border:none;
+	border-radius: 0;
+}
+
+.popup_submit input:hover {
+	background: #a9cf55;
+	color: white;
+	box-shadow: none;
+	font-family: 'RobotoBold';
+	text-shadow: none;
+	font-size: 19px;
+	padding: 7px 15px;
+	border: none;
+}
+
+.sharing_post img{
+	margin-left: 3px;
+	opacity: 0.4;
+
+	transition: opacity 0.3s;
+	-moz-transition: opacity 0.3s; /* Firefox 4 */
+	-webkit-transition: opacity 0.3s; /* Safari and Chrome */
+	-o-transition: opacity 0.3s; /* Opera */
+}
+
+.sharing_post img:hover {
+	opacity: 1.0;
+}
+
+.author_container {
+	margin-top: 20px;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	padding: 20px 0;
+	overflow: hidden;
+}
+
+.author_container img {
+	float: left;
+	padding: 15px 15px 15px 0;
+}
+
+.author_title {
+	font-family: 'RobotoBlack';
+	margin-top: 15px;
+}
+
+.author_description {
+	font-size: 14px;
 }

@@ -89,7 +89,7 @@
                     </div>
                     <div class="subscribe_home">
                         <input type="text" id="subscribe_home_box" placeholder="mail..."/>
-                        <input type="submit" id="subscribe_home_submit" value="subscribe"/>
+                        <input type="submit" id="subscribe_home_submit" value="<?php _e('Subscreva','kmol'); ?>"/>
                     </div>
                 </div>
                 <span class="triangle"></span>

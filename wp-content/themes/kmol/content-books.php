@@ -10,8 +10,8 @@
 	<div class="grid_12 alpha">
 		<div class="default_page book_page">
 			<select class="filter alignright"  name="filter">
-				<option value="Autor">filtrar por autor</option>
-				<option value="Data" selected>filtrar por data</option>
+				<option value="Autor"><?php _e ('filtrar por autor','kmol'); ?></option>
+				<option value="Data" selected><?php _e ('filtrar por data','kmol'); ?></option>
 			</select>
 			<div class="general_title alignleft">Livros</div>
 			<span class="clear"></span>
@@ -30,7 +30,7 @@
                     </div>
                     <span class="clear"></span>
 
-                    <div class="grid_7 alpha book_marcador">
+                    <div class="grid_7 alpha tag_marcador">
                         <p><a href="/">gestão_de_conhecimento</a></p>
                         <p><a href="/">ferramentas_sociais</a></p>
                         <p><a href="/">tecnologia web2.0</a></p>
@@ -54,7 +54,7 @@
                                 <h2 class="marcador_subtitle">Paul Corney</h2>
                                 <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
                             <span class="clear"></span>
-                                <div class="book_marcador">
+                                <div class="tag_marcador">
                                 <p><a href="/">gestão_de_conhecimento</a></p>
                                 <p><a href="/">ferramentas_sociais</a></p>
                                 <p><a href="/">tecnologia web2.0</a></p>
@@ -69,7 +69,7 @@
                                 <h2 class="marcador_subtitle">Paul Corney</h2>
                                 <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
                             <span class="clear"></span>
-                                <div class="book_marcador">
+                                <div class="tag_marcador">
                                 <p><a href="/">gestão_de_conhecimento</a></p>
                                 <p><a href="/">ferramentas_sociais</a></p>
                                 <p><a href="/">tecnologia web2.0</a></p>
@@ -87,7 +87,7 @@
                                 <h2 class="marcador_subtitle">Paul Corney</h2>
                                 <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
                             <span class="clear"></span>
-                                <div class="book_marcador">
+                                <div class="tag_marcador">
                                 <p><a href="/">gestão_de_conhecimento</a></p>
                                 <p><a href="/">ferramentas_sociais</a></p>
                                 <p><a href="/">tecnologia web2.0</a></p>
@@ -102,7 +102,7 @@
                                 <h2 class="marcador_subtitle">Paul Corney</h2>
                                 <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
                             <span class="clear"></span>
-                                <div class="book_marcador">
+                                <div class="tag_marcador">
                                 <p><a href="/">gestão_de_conhecimento</a></p>
                                 <p><a href="/">ferramentas_sociais</a></p>
                                 <p><a href="/">tecnologia web2.0</a></p>
@@ -116,7 +116,7 @@
 
                 <span class="clear"></span>
                 <div class=" more_single alignright">
-                        Livros mais antigos    
+                        <?php _e ('Livros mais antigos','kmol'); ?>    
                 </div>
                 <span class="clear"></span>
 
@@ -131,7 +131,7 @@
                                 <h2 class="marcador_subtitle">Paul Corney</h2>
                                 <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
                             <span class="clear"></span>
-                                <div class="book_marcador">
+                                <div class="tag_marcador">
                                 <p><a href="/">gestão_de_conhecimento</a></p>
                                 <p><a href="/">ferramentas_sociais</a></p>
                                 <p><a href="/">tecnologia web2.0</a></p>
@@ -146,7 +146,7 @@
                                 <h2 class="marcador_subtitle">Paul Corney</h2>
                                 <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
                             <span class="clear"></span>
-                                <div class="book_marcador">
+                                <div class="tag_marcador">
                                 <p><a href="/">gestão_de_conhecimento</a></p>
                                 <p><a href="/">ferramentas_sociais</a></p>
                                 <p><a href="/">tecnologia web2.0</a></p>
@@ -159,7 +159,7 @@
 
                  <span class="clear"></span>
                 <div class=" more_single alignright">
-                        Recomendações mais antigas    
+                        <?php _e ('Recomendaçõs mais antigas','kmol'); ?>  
                 </div>
 
 
