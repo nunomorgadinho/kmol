@@ -48,6 +48,10 @@ html {
 body {
 	background: #fff;
 }
+
+.grey {
+	background: #E6E6E6;
+}
 article,
 aside,
 details,
@@ -1331,15 +1335,10 @@ background: transparent;
 }
 
 .filter {
-	-webkit-appearance: none;
-	 -moz-appearance: none;
 	outline: 0;
 	border: none;
-	background-image: url(images/selectors_icon.png);
-	background-repeat: no-repeat;
 	background-color: #f2f2f2;
-	background-position: 95% 50%;
-	padding: 2px 12px 2px 5px;
+	padding: 5px;
 	cursor: pointer;
 }
 
@@ -1721,4 +1720,16 @@ color: #1a1a1a;
 
 .author_description {
 	font-size: 14px;
+}
+
+.profile_container {
+	padding: 25px 35px 35px 35px;
+}
+
+.profile_sidebar {
+	padding: 25px 35px 35px 0;
+}
+
+.padding-right {
+	padding-right: 20px;
 }

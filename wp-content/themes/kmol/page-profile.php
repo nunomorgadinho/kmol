@@ -9,23 +9,27 @@
  *
  * @package kmol
  * @since kmol 1.0
- * @Template Name: Books
+ * @Template Name: Profile
  */
 
 get_header(); ?>
 
-		<div id="primary" class="content-area">
+
+<div class="container_12">
+    <div class="grid_12 alpha">
+		<div id="primary" class="content-area default_page">
 			<div id="content" class="site-content" role="main">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'content', 'books' ); ?>
+					<?php get_template_part( 'content', 'profile' ); ?>
 
 				<?php endwhile; // end of the loop. ?>
 
 			</div><!-- #content .site-content -->
 		</div><!-- #primary .content-area -->
-
+</div>
+</div>
 <div class="container_12">
 		<!-- Banner -->
                         <div class="grid_9 alpha banner4">
@@ -65,6 +69,7 @@ get_header(); ?>
                 </div>
 
             </div>
+
 
 	<?php get_sidebar(); ?>
 	<?php get_footer(); ?>

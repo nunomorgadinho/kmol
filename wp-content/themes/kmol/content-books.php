@@ -169,43 +169,4 @@
                 </article>
             </div>
 
-
-        <!-- Banner -->
-                        <div class="grid_9 alpha banner4">
-                        Banner4 //
-                        </div>
-
-                        <div class="grid_3 omega banner3">
-                        Banner 3//
-                        </div>
-
-        <!-- Marcadores -->
-                <div class="grid_12 alpha omega marcadores">
-                        <div class="grid_4 alpha marcador">
-                            <h1 class="marcador_title">Entrevistas</h1>
-                            <div class="marcador_short">
-                            <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-                            <h2 class="marcador_subtitle">Paul Corney</h2>
-                            <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
-                            </div>
-                        </div>
-                        <div class="grid_4 marcador">
-                            <h1 class="marcador_title">Casos</h1>
-                            <div class="marcador_short">
-                            <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-                            <h2 class="marcador_subtitle">Paul Corney</h2>
-                            <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
-                            </div>
-                        </div>
-                        <div class="grid_4 marcador omega">
-                            <h1 class="marcador_title">Livros</h1>
-                            <div class="marcador_short">
-                            <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-                            <h2 class="marcador_subtitle">Paul Corney</h2>
-                            <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
-                            </div>
-                        </div>
-                </div>
-
-
 </div>
