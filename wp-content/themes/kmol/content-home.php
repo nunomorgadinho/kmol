@@ -83,9 +83,9 @@
                     <!-- <div class="phrase">
                 <p>Faltam 50 para chegar a</p><h3>2.500 seguidores!</h3></div> -->
                     <div class="numbers">
-                        <input id="twitter" class="knob countersingle numbers_margin" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="22">
-                        <input id="facebook" class="knob countersingle numbers_margin" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="42">
-                        <input id="rss" class="knob countersingle" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="60">
+                        <input id="twitter" class="knob countersingle numbers_margin twitter" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="22">
+                        <input id="facebook" class="knob countersingle numbers_margin facebook" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="42">
+                        <input id="rss" class="knob countersingle rss" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="60">
                     </div>
                     <div class="subscribe_home">
                         <input type="text" id="subscribe_home_box" placeholder="mail..."/>
