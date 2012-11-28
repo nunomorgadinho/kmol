@@ -6,6 +6,13 @@
  * @since kmol 1.0
  */
 ?>
+
+<?php 
+
+global $post;
+$temp = $post;
+?>
+
 <div class="background_home">
 
 <!-- Início das Tabs -->
@@ -73,56 +80,54 @@
     
     <div id="popular">    
         <div class="principal">
-        
+      <?php //if (function_exists('wpp_get_mostpopular')) wpp_get_mostpopular("range=monthly&order_by=views"); ?>
         
                     <?php 
-			 	   $args = array(
-			 	   				'posts_per_page' => 3,
-			    				'post_status' => 'publish',
-			 	   				'gdsr_sort' => 'rating',
-			 	   				'nopaging' => 0,
-					 	   		'post__not_in' => get_option('sticky_posts'),
-			 	   				'gdsr_order' => 'desc'
-			 	 		  );
-			 	   /* query posts array */
-			 	   $query = new WP_Query( $args  );
-			 	   
-			 	   $i=1;
-			 	   if($query->have_posts()): while ($query->have_posts()) : $query->the_post();
-			 	  	 if($i==1)
-			 	   	{
-				 	   				//latest post
-				 	   	?>
-				 	  	 <div class="news_principal">
-				 	  		 <p class="news_title"><a href="<?php the_permalink();?>" target="_blank"><?php the_title();?></a>
-				 	  		 	<span class="news_meta"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></span>
-				 	  		 </p><span class="clear"></span>
-				 	  	 	<?php
-				 	 	  	if(has_post_thumbnail()){
-				 	  	 	?>
-				 	   		<div class="image_principal">
-				 	   			<?php the_post_thumbnail('medium');?>
-				 	  		</div>
-				 	 	  <?php } ?>
-				 	  	 <p class="news_excerpt"><?php the_excerpt();?> </p>
-				 	   </div> <!-- .news_principal -->
-				 	   
-				 	   <?php
- 	   				}	else{
-				 	   // second and third post
-				 	   if($i==2) {?><div class="grid_8 alpha"><?php }?>
-				 	  				 <div class="sublayer grid_4 alpha">
-				 	  					 <p class="sublayer_title"><a href="<?php the_permalink();?>" target="_blank"><?php the_title();?></a></p>
-				 	  					 <div class="sublayer_meta news_meta"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></div>
-				 	   				</div>
-				 	   
- 	   			<?php }
- 	  			 $i++;
- 	  			 endwhile; endif;
-    			?>
-    							</div> <!-- grid_8 -->
                     
-                    
+                    $pp = new WordpressPopularPosts();
+                    $popular = array();
+                    if(isset($pp))
+ 	                   $popular = $pp->get_popular_posts(array('range' => 'monthly','order_by' => 'views',),true);
+				
+                    if(!empty($popular))
+                    {
+                    	$i=1;
+                    	foreach ($popular as $ppopular){
+                    		$post = get_post($ppopular['id']);
+                    		setup_postdata($post);
+                    		if($i==1)
+                    		{
+                    			//latest post
+                    			?>
+                    			<div class="news_principal">
+                    				<p class="news_title"><a href="<?php the_permalink();?>" target="_blank"><?php the_title();?></a>
+                    					<span class="news_meta"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></span>
+                    				</p><span class="clear"></span>
+                    			<?php
+                    			if(has_post_thumbnail()){
+                    			?>
+                    				<div class="image_principal">
+                    				<?php the_post_thumbnail('medium');?>
+                    				</div>
+                    			<?php } ?>
+                    			<p class="news_excerpt"><?php the_excerpt();?> </p>
+                    			</div> <!-- .news_principal -->
+                    		
+                    			<?php
+                    		}	
+                    		else{
+                    			// second and third post
+                    			if($i==2) {?><div class="grid_8 alpha"><?php }?>
+                    				<div class="sublayer grid_4 alpha">
+                    					<p class="sublayer_title"><a href="<?php echo $post->guid;?>" target="_blank"><?php echo $post->title;?></a></p>
+                    					<div class="sublayer_meta news_meta"><?php echo get_the_author_meta('nicename',$post->post_author);?>, <?php //kmol_posted_on();?></div>
+                    				</div>
+                    		<?php }?>
+                   		<?php if(count($popular) > 1) {?></div><!-- grid_8 --><?php } 
+                    		$i++;
+                    	}//enf foreach
+                    }?>
+                                        
         	  </div><!-- .principal -->
 		</div> <!-- #popular -->
 	</div><!-- tabs -->
@@ -210,4 +215,4 @@
         </div> -->
     </div>
 
-
+<?php setup_postdata($temp);?>

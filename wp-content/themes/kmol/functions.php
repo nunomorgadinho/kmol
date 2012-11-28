@@ -262,3 +262,284 @@ add_action('wp_head','knob_script');
  * Implement the Custom Header feature
  */
 //require( get_template_directory() . '/inc/custom-header.php' );
+
+
+/**
+ * Excerpt Read More
+ * @param unknown_type $more
+ */
+function new_excerpt_more($more) {
+       global $post;
+		return '<a class="moretag" href="'. get_permalink($post->ID) . '">'.__(' ler mais &rarr;','kmol').'</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+
+
+/**
+ * POPULAR POSTS
+ */
+ /*
+// prints popular posts
+function get_popular_posts_list($instance, $return = false) {
+
+	// set default values
+	$defaults = array(
+			'title' => __('Popular Posts', 'wordpress-popular-posts'),
+			'limit' => 10,
+			'range' => 'daily',
+			'order_by' => 'comments',
+			'post_type' => 'post,page',
+			'author' => '',
+			'cat' => '',
+			'shorten_title' => array(
+					'active' => false,
+					'length' => 25,
+					'keep_format' => false
+			),
+			'post-excerpt' => array(
+					'active' => false,
+					'length' => 55
+			),
+			'thumbnail' => array(
+					'active' => false,
+					'width' => 15,
+					'height' => 15
+			),
+			'rating' => false,
+			'stats_tag' => array(
+					'comment_count' => true,
+					'views' => false,
+					'author' => false,
+					'date' => array(
+							'active' => false,
+							'format' => 'F j, Y'
+					)
+			),
+			'markup' => array(
+					'custom_html' => false,
+					'wpp-start' => '&lt;ul&gt;',
+					'wpp-end' => '&lt;/ul&gt;',
+					'post-start' => '&lt;li&gt;',
+					'post-end' => '&lt;/li&gt;',
+					'title-start' => '&lt;h2&gt;',
+					'title-end' => '&lt;/h2&gt;',
+					'pattern' => array(
+							'active' => false,
+							'form' => '{image} {title}: {summary} {stats}'
+					)
+			)
+	);
+
+	// update instance's default options
+	$instance = wp_parse_args( (array) $instance, $defaults );
+
+	global $wpdb;
+	$table = $wpdb->prefix . "popularpostsdata";
+
+	$fields = "";
+	$join = "";
+	$where = "";
+	$having = "";
+	$orderby = "";
+	$cat = (is_category()) ? get_query_var('cat') : '';
+	$content = "";
+
+	if ($instance['range'] == "all") { // data - all
+
+		// views
+		if ($instance['order_by'] == "views" || $instance['order_by'] == "avg" || $instance['stats_tag']['views']) {
+			$join .= " LEFT JOIN {$table} v ON p.ID = v.postid ";
+
+			if ( $instance['order_by'] == "avg" ) {
+				$fields .= ", ( IFNULL(v.pageviews, 0)/(IF ( DATEDIFF('".$this->now()."', MIN(v.day)) > 0, DATEDIFF('".$this->now()."', MIN(v.day)), 1) )) AS 'avg_views' ";
+			} else {
+				$fields .= ", IFNULL(v.pageviews, 0) AS 'pageviews' ";
+			}
+		}
+
+		// comments
+		if ($instance['order_by'] == "comments" || $instance['stats_tag']['comment_count']) {
+			$fields .= ", p.comment_count AS 'comment_count' ";
+		}
+
+	} else if ($instance['range'] == "yesterday" || $instance['range'] == "daily") { // data - last 24 hours
+
+		// views
+		if ($instance['order_by'] == "views" || $instance['order_by'] == "avg" || $instance['stats_tag']['views']) {
+			$join .= " LEFT JOIN (SELECT id, SUM(pageviews) AS 'pageviews', day FROM (SELECT id, pageviews, day FROM {$table}cache WHERE day > DATE_SUB('".$this->now()."', INTERVAL 1 DAY) ORDER BY day) sv GROUP BY id) v ON p.ID = v.id ";
+
+			$fields .= ", IFNULL(v.pageviews, 0) AS 'pageviews' ";
+		}
+
+		// comments
+		if ($instance['order_by'] == "comments" || $instance['stats_tag']['comment_count']) {
+			$fields .= ", IFNULL(c.comment_count, 0) AS 'comment_count' ";
+			$join .= " LEFT JOIN (SELECT comment_post_ID, COUNT(comment_post_ID) AS 'comment_count' FROM $wpdb->comments WHERE comment_approved = 1 AND comment_date > DATE_SUB('".$this->now()."', INTERVAL 1 DAY) GROUP BY comment_post_ID ORDER BY comment_date DESC) c ON p.ID = c.comment_post_ID ";
+		}
+
+	} else if ($instance['range'] == "weekly") { // data - last 7 days
+
+		// views
+		if ($instance['order_by'] == "views" || $instance['order_by'] == "avg" || $instance['stats_tag']['views']) {
+			$join .= " LEFT JOIN (SELECT id, SUM(pageviews) AS 'pageviews', day FROM (SELECT id, pageviews, day FROM {$table}cache WHERE day > DATE_SUB('".$this->now()."', INTERVAL 1 WEEK) ORDER BY day) sv GROUP BY id) v ON p.ID = v.id ";
+
+			if ( $instance['order_by'] == "avg" ) {
+				$fields .= ", ( IFNULL(v.pageviews, 0)/(IF ( DATEDIFF('".$this->now()."', MIN(v.day)) > 0, DATEDIFF('".$this->now()."', MIN(v.day)), 1) )) AS 'avg_views' ";
+			} else {
+				$fields .= ", IFNULL(v.pageviews, 0) AS 'pageviews' ";
+			}
+		}
+
+		// comments
+		if ($instance['order_by'] == "comments" || $instance['stats_tag']['comment_count']) {
+			$fields .= ", IFNULL(c.comment_count, 0) AS 'comment_count' ";
+			$join .= " LEFT JOIN (SELECT comment_post_ID, COUNT(comment_post_ID) AS 'comment_count' FROM $wpdb->comments WHERE comment_approved = 1 AND comment_date > DATE_SUB('".$this->now()."', INTERVAL 1 WEEK) GROUP BY comment_post_ID ORDER BY comment_date DESC) c ON p.ID = c.comment_post_ID ";
+		}
+
+	} else if ($instance['range'] == "monthly") { // data - last 30 days
+
+		// views
+		if ($instance['order_by'] == "views" || $instance['order_by'] == "avg" || $instance['stats_tag']['views']) {
+			$join .= " LEFT JOIN (SELECT id, SUM(pageviews) AS 'pageviews', day FROM (SELECT id, pageviews, day FROM {$table}cache WHERE day > DATE_SUB('".$this->now()."', INTERVAL 1 MONTH) ORDER BY day) sv GROUP BY id) v ON p.ID = v.id ";
+
+			if ( $instance['order_by'] == "avg" ) {
+				$fields .= ", ( IFNULL(v.pageviews, 0)/(IF ( DATEDIFF('".$this->now()."', MIN(v.day)) > 0, DATEDIFF('".$this->now()."', MIN(v.day)), 1) )) AS 'avg_views' ";
+			} else {
+				$fields .= ", IFNULL(v.pageviews, 0) AS 'pageviews' ";
+			}
+		}
+
+		// comments
+		if ($instance['order_by'] == "comments" || $instance['stats_tag']['comment_count']) {
+			$fields .= ", IFNULL(c.comment_count, 0) AS 'comment_count' ";
+			$join .= " LEFT JOIN (SELECT comment_post_ID, COUNT(comment_post_ID) AS 'comment_count' FROM $wpdb->comments WHERE comment_approved = 1 AND comment_date > DATE_SUB('".$this->now()."', INTERVAL 1 MONTH) GROUP BY comment_post_ID ORDER BY comment_date DESC) c ON p.ID = c.comment_post_ID ";
+		}
+
+	}
+
+	// sorting options
+	switch( $instance['order_by'] ) {
+		case 'comments':
+			if ($instance['range'] == "all") {
+				$where .= " AND p.comment_count > 0 ";
+				$orderby = 'p.comment_count';
+			} else {
+				$where .= " AND c.comment_count > 0 ";
+				$orderby = 'c.comment_count';
+			}
+			break;
+
+		case 'views':
+			$where .= " AND v.pageviews > 0 ";
+			$orderby = 'v.pageviews';
+			break;
+
+		case 'avg':
+			if ($instance['range'] == "yesterday" || $instance['range'] == "daily") {
+				$where .= " AND v.pageviews > 0 ";
+				$orderby = 'v.pageviews';
+			} else {
+				$having = " HAVING avg_views > 0.0000 ";
+				$orderby = 'avg_views';
+			}
+
+			break;
+
+		default:
+			$orderby = 'comment_count';
+		break;
+	}
+
+	// post filters
+	// * post types - based on code seen at https://github.com/williamsba/WordPress-Popular-Posts-with-Custom-Post-Type-Support
+	$post_types = explode(",", $instance['post_type']);
+	$i = 0;
+	$len = count($post_types);
+	$sql_post_types = "";
+
+	if ($len > 1) { // we are getting posts from more that one ctp
+		foreach ( $post_types as $post_type ) {
+			$sql_post_types .= "'" .$post_type. "'";
+
+			if ($i != $len - 1) $sql_post_types .= ",";
+
+			$i++;
+		}
+
+		$where .= " AND p.post_type IN({$sql_post_types}) ";
+	} else if ($len == 1) { // post from one ctp only
+		$where .= " AND p.post_type = '".$instance['post_type']."' ";
+	}
+
+	// * categories
+	if ( !empty($instance['cat']) ) {
+		$cat_ids = explode(",", $instance['cat']);
+		$in = array();
+		$out = array();
+		$not_in = "";
+
+		usort($cat_ids, array(&$this, 'sorter'));
+
+		for ($i=0; $i < count($cat_ids); $i++) {
+			if ($cat_ids[$i] >= 0) $in[] = $cat_ids[$i];
+			if ($cat_ids[$i] < 0) $out[] = $cat_ids[$i];
+		}
+
+		$in_cats = implode(",", $in);
+		$out_cats = implode(",", $out);
+		$out_cats = preg_replace( '|[^0-9,]|', '', $out_cats );
+
+		if ($in_cats != "" && $out_cats == "") { // get posts from from given cats only
+			$where .= " AND p.ID IN (
+			SELECT object_id
+			FROM $wpdb->term_relationships AS r
+			JOIN $wpdb->term_taxonomy AS x ON x.term_taxonomy_id = r.term_taxonomy_id
+			JOIN $wpdb->terms AS t ON t.term_id = x.term_id
+			WHERE x.taxonomy = 'category' AND t.term_id IN($in_cats)
+			) ";
+	} else if ($in_cats == "" && $out_cats != "") { // exclude posts from given cats only
+	$where .= " AND p.ID NOT IN (
+	SELECT object_id
+	FROM $wpdb->term_relationships AS r
+	JOIN $wpdb->term_taxonomy AS x ON x.term_taxonomy_id = r.term_taxonomy_id
+	JOIN $wpdb->terms AS t ON t.term_id = x.term_id
+	WHERE x.taxonomy = 'category' AND t.term_id IN($out_cats)
+		) ";
+	} else { // mixed, and possibly a heavy load on the DB
+	$where .= " AND p.ID IN (
+	SELECT object_id
+	FROM $wpdb->term_relationships AS r
+	JOIN $wpdb->term_taxonomy AS x ON x.term_taxonomy_id = r.term_taxonomy_id
+	JOIN $wpdb->terms AS t ON t.term_id = x.term_id
+	WHERE x.taxonomy = 'category' AND t.term_id IN($in_cats)
+	) AND p.ID NOT IN (
+	SELECT object_id
+	FROM $wpdb->term_relationships AS r
+	JOIN $wpdb->term_taxonomy AS x ON x.term_taxonomy_id = r.term_taxonomy_id
+	JOIN $wpdb->terms AS t ON t.term_id = x.term_id
+	WHERE x.taxonomy = 'category' AND t.term_id IN($out_cats)
+	) ";
+}
+}
+
+// * authors
+if ( !empty($instance['author']) ) {
+$authors = explode(",", $instance['author']);
+$len = count($authors);
+
+	if ($len > 1) { // we are getting posts from more that one author
+	$where .= " AND p.post_author IN(".$instance['author'].") ";
+} else if ($len == 1) { // post from one author only
+	$where .= " AND p.post_author = '".$instance['author']."' ";
+}
+}
+
+$query = "SELECT p.ID AS 'id', p.post_title AS 'title', p.post_date AS 'date', p.post_author AS 'uid' {$fields} FROM {$wpdb->posts} p {$join} WHERE p.post_status = 'publish' AND p.post_password = '' {$where} GROUP BY p.ID {$having} ORDER BY {$orderby} DESC LIMIT " . $instance['limit'] . ";";
+
+//echo $query;
+//return $content;
+
+
+
+$mostpopular = $wpdb->get_results($query);*/
