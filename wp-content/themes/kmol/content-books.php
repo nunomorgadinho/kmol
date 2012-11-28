@@ -13,13 +13,13 @@
 				<option value="Autor"><?php _e ('filtrar por autor','kmol'); ?></option>
 				<option value="Data" selected><?php _e ('filtrar por data','kmol'); ?></option>
 			</select>
-			<div class="general_title alignleft">Livros</div>
+			<div class="general_title alignleft"><?php _e ('Livros','kmol'); ?></div>
 			<span class="clear"></span>
             
             <div class="book_big_marcador">
                     <div class="grid_4 alpha">
                         <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-                        <h2 class="marcador_subtitle">Paul Corney</h2>
+                        <h2 class="marcador_subtitle"><a href="#">Paul Corney</a></h2>
                         <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
                     </div>
                     <div class="grid_6 omega book_description">
@@ -40,7 +40,7 @@
                     </div>
                     <div class="grid_3 omega">
 
-                        <h1 class="alignright comments">18 Comentários</h1>
+                        <h1 class="alignright comments"><a href="#">18 Comentários</a></h1>
                     </div>
 
             </div>
@@ -51,7 +51,7 @@
                     <div class="marcador_container">
                         <div class="book_small_marcador">
                                 <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-                                <h2 class="marcador_subtitle">Paul Corney</h2>
+                                <h2 class="marcador_subtitle"><a href="#">Paul Corney</a></h2>
                                 <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
                             <span class="clear"></span>
                                 <div class="tag_marcador">
@@ -60,13 +60,13 @@
                                 <p><a href="/">tecnologia web2.0</a></p>
                                 </div>
                             <span class="clear"></span>
-                            <h1 class="alignright comments">18 Comentários</h1>
+                            <h1 class="alignright comments"><a href="#">18 Comentários</a></h1>
                         </div>
                     </div>
                         <div class="marcador_container last">
                         <div class="book_small_marcador">
                                 <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-                                <h2 class="marcador_subtitle">Paul Corney</h2>
+                                <h2 class="marcador_subtitle"><a href="#">Paul Corney</a></h2>
                                 <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
                             <span class="clear"></span>
                                 <div class="tag_marcador">
@@ -75,7 +75,7 @@
                                 <p><a href="/">tecnologia web2.0</a></p>
                                 </div>
                             <span class="clear"></span>
-                            <h1 class="alignright comments">18 Comentários</h1>
+                            <h1 class="alignright comments"><a href="#">18 Comentários</a></h1>
                         </div>
                         </div>
                 </div>
@@ -84,7 +84,7 @@
                     <div class="marcador_container">
                         <div class="book_small_marcador">
                                 <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-                                <h2 class="marcador_subtitle">Paul Corney</h2>
+                                <h2 class="marcador_subtitle"><a href="#">Paul Corney</a></h2>
                                 <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
                             <span class="clear"></span>
                                 <div class="tag_marcador">
@@ -93,13 +93,13 @@
                                 <p><a href="/">tecnologia web2.0</a></p>
                                 </div>
                             <span class="clear"></span>
-                            <h1 class="alignright comments">18 Comentários</h1>
+                            <h1 class="alignright comments"><a href="#">18 Comentários</a></h1>
                         </div>
                     </div>
                         <div class="marcador_container last">
                         <div class="book_small_marcador">
                                 <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-                                <h2 class="marcador_subtitle">Paul Corney</h2>
+                                <h2 class="marcador_subtitle"><a href="#">Paul Corney</a></h2>
                                 <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
                             <span class="clear"></span>
                                 <div class="tag_marcador">
@@ -108,7 +108,7 @@
                                 <p><a href="/">tecnologia web2.0</a></p>
                                 </div>
                             <span class="clear"></span>
-                            <h1 class="alignright comments">18 Comentários</h1>
+                            <h1 class="alignright comments"><a href="#">18 Comentários</a></h1>
                         </div>
                         </div>
                 </div>
@@ -116,7 +116,7 @@
 
                 <span class="clear"></span>
                 <div class=" more_single alignright">
-                        <?php _e ('Livros mais antigos','kmol'); ?>    
+                        <a href="#"><?php _e ('<?php _e ('Livros','kmol'); ?> mais antigos','kmol'); ?></a>    
                 </div>
                 <span class="clear"></span>
 
@@ -128,7 +128,7 @@
                     <div class="marcador_container">
                         <div class="book_small_marcador">
                                 <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-                                <h2 class="marcador_subtitle">Paul Corney</h2>
+                                <h2 class="marcador_subtitle"><a href="#">Paul Corney</a></h2>
                                 <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
                             <span class="clear"></span>
                                 <div class="tag_marcador">
@@ -137,13 +137,13 @@
                                 <p><a href="/">tecnologia web2.0</a></p>
                                 </div>
                             <span class="clear"></span>
-                            <h1 class="alignright comments">18 Comentários</h1>
+                            <h1 class="alignright comments"><a href="#">18 Comentários</a></h1>
                         </div>
                     </div>
                         <div class="marcador_container last">
                         <div class="book_small_marcador">
                                 <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-                                <h2 class="marcador_subtitle">Paul Corney</h2>
+                                <h2 class="marcador_subtitle"><a href="#">Paul Corney</a></h2>
                                 <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
                             <span class="clear"></span>
                                 <div class="tag_marcador">
@@ -152,14 +152,14 @@
                                 <p><a href="/">tecnologia web2.0</a></p>
                                 </div>
                             <span class="clear"></span>
-                            <h1 class="alignright comments">18 Comentários</h1>
+                            <h1 class="alignright comments"><a href="#">18 Comentários</a></h1>
                         </div>
                         </div>
                 </div>
 
                  <span class="clear"></span>
                 <div class=" more_single alignright">
-                        <?php _e ('Recomendaçõs mais antigas','kmol'); ?>  
+                        <a href="#"><?php _e ('Recomendaçõs mais antigas','kmol'); ?></a>  
                 </div>
 
 

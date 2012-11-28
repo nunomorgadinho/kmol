@@ -7,8 +7,8 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<h1 class="entry-title news_title title_single alignleft"><?php the_title(); ?></h1>
-		<div class="general_title alignright">Artigos</div>
+		<h1 class="entry-title news_title title_single alignleft"><a href="#"><?php the_title(); ?></a></h1>
+		<div class="general_title alignright"><?php _e ('Artigos','kmol'); ?></div>
 
 		<div class="entry-meta news_meta">
 			<?php kmol_posted_on(); ?></div><!-- .entry-meta -->

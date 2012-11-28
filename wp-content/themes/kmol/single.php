@@ -35,7 +35,7 @@ get_header(); ?>
         <div class="topics">
 		<div class="grid_3 omega">
 			<div class="marcador_title">
-				Tópicos mais usados
+				<?php _e ('Tópicos mais usados','kmol'); ?>
 			</div>
 			<div class="sidebar_description">
 				<p><a href="/">gestão_de_conhecimento</a></p>
@@ -49,7 +49,7 @@ get_header(); ?>
 
 		<div class="grid_3 omega">
 			<div class="marcador_title">
-				Últimos comentários
+				<?php _e ('Últimos comentários','kmol'); ?>
 			</div>
 			<div class="sidebar_description">
 				<p><a href="/">gestão_de_conhecimento</a></p>
@@ -76,26 +76,26 @@ get_header(); ?>
 
         <div class="grid_12 alpha omega marcadores">
                 <div class="grid_4 alpha marcador">
-                    <h1 class="marcador_title">Entrevistas</h1>
+                    <h1 class="marcador_title"><?php _e ('Entrevistas','kmol'); ?></h1>
                     <div class="marcador_short">
                     <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-                    <h2 class="marcador_subtitle">Paul Corney</h2>
+                    <h2 class="marcador_subtitle"><a href="#">Paul Corney</a></h2>
                     <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
                     </div>
                 </div>
                 <div class="grid_4 marcador">
-                    <h1 class="marcador_title">Casos</h1>
+                    <h1 class="marcador_title"><?php _e ('Casos','kmol'); ?></h1>
                     <div class="marcador_short">
                     <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-                    <h2 class="marcador_subtitle">Paul Corney</h2>
+                    <h2 class="marcador_subtitle"><a href="#">Paul Corney</a></h2>
                     <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
                     </div>
                 </div>
                 <div class="grid_4 marcador omega">
-                    <h1 class="marcador_title">Livros</h1>
+                    <h1 class="marcador_title"><?php _e ('Livros','kmol'); ?></h1>
                     <div class="marcador_short">
                     <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-                    <h2 class="marcador_subtitle">Paul Corney</h2>
+                    <h2 class="marcador_subtitle"><a href="#">Paul Corney</a></h2>
                     <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
                     </div>
                 </div>

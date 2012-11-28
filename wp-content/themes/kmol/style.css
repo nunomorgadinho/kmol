@@ -1116,12 +1116,19 @@ background: transparent;
 	height: 210px;
 }
 
-.news_title {
+.news_title a, .news_title a:link, .news_title a:visited{
 	font-size: 30px;
 	font-family: 'RobotoBlack';
 	font-weight: bold;
 	margin-bottom:15px;
+	color: #1a1a1a;
+	cursor:pointer;
+	line-height: 1.2;
 } 
+
+.news_title a:hover{
+	color: #999;
+}
 
 .news_title span{
 	margin-left: 10px;
@@ -1147,11 +1154,17 @@ background: transparent;
 	margin-left: 0;
 }
 
-.sublayer_title {
+.sublayer_title a, .sublayer_title a:link, .sublayer_title a:visited{
 	margin-bottom: 5px;
 	font-family: 'RobotoBold';
 	font-size: 16px;
 	line-height: 130%;
+	cursor:pointer;
+	color: #1a1a1a;
+}
+
+.sublayer_title a:hover {
+	color: #999;
 }
 
 .social_timelines {
@@ -1212,8 +1225,14 @@ background: transparent;
 	border-bottom: 1px solid #e6e6e6;
 }
 
-.marcador_subtitle {
+.marcador_subtitle a, .marcador_subtitle a:link, .marcador_subtitle a:visited{
 	font-family: 'RobotoBold';
+	color: #1a1a1a;
+	cursor:pointer;
+}
+
+.marcador_subtitle a:hover {
+	color: #999;
 }
 
 .marcador_description {
@@ -1372,7 +1391,7 @@ background: transparent;
 	float: right;
 }
 
-.readmore_single {
+.readmore_single a, .readmore_single a:link, .readmore_single a:visited{
 	font-family: 'RobotoBold';
 	font-size: 11px;
 	text-transform: uppercase;
@@ -1403,11 +1422,11 @@ background: transparent;
 	float:left;
 }
 
-.more_single {
+.more_single a, .more_single a:link, .more_single a:visited{
 	margin-top: 30px;
 	color: white;
 	background: #a9cf55;
-	padding: 2px 8px;
+	padding: 8px 8px;
 	font-size: 14px;
 	cursor:pointer;
 
@@ -1417,10 +1436,10 @@ background: transparent;
 	-o-transition: background 0.2s; /* Opera */
 }
 
-.more_single:hover {
+.more_single a:hover {
 	background: #6c9dbb;
 }
-.more_single:after {
+.more_single a:after {
 	content:'»';
 	font-size: 20px;
 	font-family: 'RobotoThin';
@@ -1502,7 +1521,7 @@ background: transparent;
 	font-size: 14px;
 }
 
-.comments {
+.comments a, .comments a:link, .commments a:visited{
 	font-size: 13px;
 	font-family: 'RobotoBold';
 	color: #999999;
@@ -1515,7 +1534,7 @@ background: transparent;
 	-o-transition: color 0.2s; /* Opera */	
 }
 
-.comments:hover{
+.comments a:hover{
 	color: #b3b3b3;
 }
 
@@ -1778,11 +1797,15 @@ color: #1a1a1a;
 	clear:both;
 }
 
-.profile_text_title {
+.profile_text_title a, .profile_text_title a:link, .profile_text_title a:visited{
 	font-size: 18px;
-	color: #999999;
+	color: #1a1a1a;
 	font-family: 'RobotoBlack';
 	margin-bottom: 10px;
+}
+
+.profile_text_title a:hover {
+	color: #999;
 }
 
 .profile_text_short {

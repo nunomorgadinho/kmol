@@ -20,7 +20,7 @@
 
         <div class="principal">
             <div class="news_principal">
-                <p class="news_title">UPoint<span class="news_meta">por Ana Neves, 30 ago</span></p>
+                <p class="news_title"><a href="#">UPoint</a><span class="news_meta">por Ana Neves, 30 ago</span></p>
                 <span class="clear"></span>
                 <div class="image_principal"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/img_news_principal.png"/></div>
                 <p class="news_excerpt">Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin 
@@ -30,12 +30,12 @@
 
             <div class="grid_8 alpha">
                 <div class="sublayer grid_4 alpha">
-                    <p class="sublayer_title">Influenciando comportamentos</p>
+                    <p class="sublayer_title"><a href="#">Influenciando comportamentos</a></p>
                     <div class="sublayer_meta news_meta">por João Neves, 25 Out</div>
                 </div>
 
                 <div class="sublayer grid_4 omega">
-                    <p class="sublayer_title">Influenciando comportamentos</p>
+                    <p class="sublayer_title"><a href="#">Influenciando comportamentos</a></p>
                     <div class="sublayer_meta news_meta">por João Neves, 25 Out</div>
                 </div>
             </div>   
@@ -47,7 +47,7 @@
         
         <div class="principal">
                     <div class="news_principal">
-                        <p class="news_title">RIC<span class="news_meta">por Ana Neves, 30 ago</span></p>
+                        <p class="news_title"><a href="#">RIC</a><span class="news_meta">por Ana Neves, 30 ago</span></p>
                         <span class="clear"></span>
                         <div class="image_principal"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/img_news_principal2.jpg"/></div>
                         <p class="news_excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu nisi nibh, at convallis turpis. 
@@ -57,12 +57,12 @@
 
                     <div class="grid_8 alpha">
                         <div class="sublayer grid_4 alpha">
-                            <p class="sublayer_title">Quatro pontos sobre ferramentas sociais para a organização</p>
+                            <p class="sublayer_title"><a href="#">Quatro pontos sobre ferramentas sociais para a organização</a></p>
                             <div class="sublayer_meta news_meta">por João Neves, 25 Out</div>
                         </div>
 
                         <div class="sublayer grid_4 omega">
-                            <p class="sublayer_title">Influenciando comportamentos</p>
+                            <p class="sublayer_title"><a href="#">Influenciando comportamentos</a></p>
                             <div class="sublayer_meta news_meta">por João Neves, 25 Out</div>
                         </div>
                     </div>   
@@ -102,18 +102,18 @@
         <div class="grid_8 alpha marcadores">
             <div class="grid_8 alpha">
                 <div class="grid_4 alpha marcador">
-                    <h1 class="marcador_title">Entrevistas</h1>
+                    <h1 class="marcador_title"><?php _e ('Entrevistas','kmol'); ?></h1>
                     <div class="marcador_short">
                     <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-                    <h2 class="marcador_subtitle">Paul Corney</h2>
+                    <h2 class="marcador_subtitle"><a href="#">Paul Corney</a></h2>
                     <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
                     </div>
                 </div>
                 <div class="grid_4 omega marcador">
-                    <h1 class="marcador_title">Casos</h1>
+                    <h1 class="marcador_title"><?php _e ('Casos','kmol'); ?></h1>
                     <div class="marcador_short">
                     <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-                    <h2 class="marcador_subtitle">Paul Corney</h2>
+                    <h2 class="marcador_subtitle"><a href="#">Paul Corney</a></h2>
                     <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
                     </div>
                 </div>
@@ -124,10 +124,10 @@
                     Banner //
                 </div>
                 <div class="grid_4 omega marcador">
-                    <h1 class="marcador_title">Livros</h1>
+                    <h1 class="marcador_title"><?php _e ('Livros','kmol'); ?></h1>
                     <div class="marcador_short">
                     <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-                    <h2 class="marcador_subtitle">Paul Corney</h2>
+                    <h2 class="marcador_subtitle"><a href="#">Paul Corney</a></h2>
                     <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
                     </div>
                 </div>

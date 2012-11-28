@@ -9,7 +9,7 @@
 
 <article id="post-<?php the_ID(); ?>" class="alignleft"<?php post_class(); ?>>
 	<header class="entry-header">
-		<h1 class="entry-title news_title title_single alignleft"><?php the_title(); ?></h1>
+		<h1 class="entry-title news_title title_single alignleft"><a href="#"><?php the_title(); ?></a></h1>
 
 	</header><!-- .entry-header -->
 <span class="clear"></span>
@@ -28,7 +28,7 @@
 		</div>
 		<div class="profile_texts_info">
 			<div class="profile_text_title">
-				Influenciando comportamentos
+				<a href="#">Influenciando comportamentos</a>
 				<span class="news_meta">
 					12 jun - 2012
 				</span>
@@ -38,12 +38,12 @@
 				Partilho aqui o vídeo para que não fiquem com inveja e possam partilhar destes mesmos sorrisos.
 			</div>
 
-			<span class="readmore_single alignright">Ler Mais...</span>
+			<span class="readmore_single alignright"><a href="#"><?php _e ('Ler Mais...','kmol'); ?></a></span>
 		</div>
 
 		<div class="profile_texts_info">
 			<div class="profile_text_title">
-				Influenciando comportamentos
+				<a href="#">Influenciando comportamentos</a>
 				<span class="news_meta">
 					12 jun - 2012
 				</span>
@@ -53,12 +53,12 @@
 				Partilho aqui o vídeo para que não fiquem com inveja e possam partilhar destes mesmos sorrisos.
 			</div>
 
-			<span class="readmore_single alignright">Ler Mais...</span>
+			<span class="readmore_single alignright"><a href="#"><?php _e ('Ler Mais...','kmol'); ?></a></span>
 		</div>
 
 		<div class="profile_texts_info">
 			<div class="profile_text_title">
-				Influenciando comportamentos
+				<a href="#">Influenciando comportamentos</a>
 				<span class="news_meta">
 					12 jun - 2012
 				</span>
@@ -68,11 +68,11 @@
 				Partilho aqui o vídeo para que não fiquem com inveja e possam partilhar destes mesmos sorrisos.
 			</div>
 
-			<span class="readmore_single alignright">Ler Mais...</span>
+			<span class="readmore_single alignright"><a href"#"><?php _e ('Ler Mais...','kmol'); ?></a></span>
 		</div>
 
 			<div class="more_single alignright">
-				 <?php _e ('Artigos mais antigos','kmol'); ?>
+				 <a href="#"><?php _e ('Artigos mais antigos','kmol'); ?></a>
 			</div>  
 
 
@@ -91,7 +91,7 @@
 			</div>
 
 			<div class="more_single alignright">
-				 <?php _e ('Comentários mais antigos','kmol'); ?>
+				 <a href="#"><?php _e ('Comentários mais antigos','kmol'); ?></a>
 			</div> 
 
 	</div><!-- .entry-content -->
