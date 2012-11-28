@@ -10,66 +10,122 @@
 
 <!-- Início das Tabs -->
 
-    <div class="container_highlight container_12">
-        <div id="tabs" class="grid_8 highlight alpha">
+<div class="container_highlight container_12">
+    <div id="tabs" class="grid_8 highlight alpha">
     <ul>
-        <li><a href="#tabs-1">Recentes no Blog</a></li>
-        <li><a href="#tabs-2">Populares no Blog</a></li>
+        <li><a href="#recent"><?php _e('Recentes no Blog','kmol');?></a></li>
+        <li><a href="#popular"><?php _e('Populares no Blog','kmol');?></a></li>
     </ul>
-    <div id="tabs-1">
 
-        <div class="principal">
-            <div class="news_principal">
-                <p class="news_title">UPoint<span class="news_meta">por Ana Neves, 30 ago</span></p>
-                <span class="clear"></span>
-                <div class="image_principal"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/img_news_principal.png"/></div>
-                <p class="news_excerpt">Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin 
-                mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean 
-                tempor ullamcorper. </p>
-            </div>
-
-            <div class="grid_8 alpha">
-                <div class="sublayer grid_4 alpha">
-                    <p class="sublayer_title">Influenciando comportamentos</p>
-                    <div class="sublayer_meta news_meta">por João Neves, 25 Out</div>
-                </div>
-
-                <div class="sublayer grid_4 omega">
-                    <p class="sublayer_title">Influenciando comportamentos</p>
-                    <div class="sublayer_meta news_meta">por João Neves, 25 Out</div>
-                </div>
-            </div>   
-        </div>
+    <div id="recent">
+   	 <div class="principal">
     
-
-    </div>
-    <div id="tabs-2">
-        
+    
+    <?php 
+ 	   $args = array(
+ 	   				'posts_per_page' => 3,
+    				'post_status' => 'publish',
+ 	   				'gdsr_sort' => 'rating',
+ 	   				'nopaging' => 0,
+		 	   		'post__not_in' => get_option('sticky_posts'),
+ 	   				'gdsr_order' => 'desc'
+ 	 		  );
+ 	   /* query posts array */
+ 	   $query = new WP_Query( $args  );
+ 	   
+ 	   $i=1;
+ 	   if($query->have_posts()): while ($query->have_posts()) : $query->the_post();
+ 	  	 if($i==1)
+ 	   	{
+	 	   	//latest post
+	 	   	?>
+	 	  	 <div class="news_principal">
+	 	  		 <p class="news_title"><a href="<?php the_permalink();?>" target="_blank"><?php the_title();?></a>
+	 	  		 	<span class="news_meta"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></span>
+	 	  		 </p><span class="clear"></span>
+	 	  	 	<?php
+	 	 	  	if(has_post_thumbnail()){
+	 	  	 	?>
+	 	   		<div class="image_principal">
+	 	   			<?php the_post_thumbnail('medium');?>
+	 	  		</div>
+	 	 	  <?php } ?>
+	 	  	 <div class="news_excerpt"><?php the_excerpt();?> </div>
+	 	   </div> <!-- .news_principal -->
+	 	   
+	 	   <?php
+ 	   }	else{
+ 	   // second and third post
+ 	   if($i==2) {?><div class="grid_8 alpha"><?php }?>
+ 	  				 <div class="sublayer grid_4 alpha">
+ 	  					 <p class="sublayer_title"><a href="<?php the_permalink();?>" target="_blank"><?php the_title();?></a></p>
+ 	  					 <div class="sublayer_meta news_meta"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></div>
+ 	   				</div>
+ 	   
+ 	   <?php }
+ 	   $i++;
+ 	   endwhile; endif;
+    	?>
+    		</div> <!-- grid_8 -->
+    		
+       </div> <!-- .principal -->
+    </div> <!-- recent -->
+    
+    <div id="popular">    
         <div class="principal">
-                    <div class="news_principal">
-                        <p class="news_title">RIC<span class="news_meta">por Ana Neves, 30 ago</span></p>
-                        <span class="clear"></span>
-                        <div class="image_principal"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/img_news_principal2.jpg"/></div>
-                        <p class="news_excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu nisi nibh, at convallis turpis. 
-                            Maecenas consectetur facilisis suscipit. Donec consectetur sagittis nibh, sit amet blandit mi scelerisque eget. 
-                            Sed at faucibus.
-                        </div>
-
-                    <div class="grid_8 alpha">
-                        <div class="sublayer grid_4 alpha">
-                            <p class="sublayer_title">Quatro pontos sobre ferramentas sociais para a organização</p>
-                            <div class="sublayer_meta news_meta">por João Neves, 25 Out</div>
-                        </div>
-
-                        <div class="sublayer grid_4 omega">
-                            <p class="sublayer_title">Influenciando comportamentos</p>
-                            <div class="sublayer_meta news_meta">por João Neves, 25 Out</div>
-                        </div>
-                    </div>   
-                </div>
-
-        </div>
-        </div>
+        
+        
+                    <?php 
+			 	   $args = array(
+			 	   				'posts_per_page' => 3,
+			    				'post_status' => 'publish',
+			 	   				'gdsr_sort' => 'rating',
+			 	   				'nopaging' => 0,
+					 	   		'post__not_in' => get_option('sticky_posts'),
+			 	   				'gdsr_order' => 'desc'
+			 	 		  );
+			 	   /* query posts array */
+			 	   $query = new WP_Query( $args  );
+			 	   
+			 	   $i=1;
+			 	   if($query->have_posts()): while ($query->have_posts()) : $query->the_post();
+			 	  	 if($i==1)
+			 	   	{
+				 	   				//latest post
+				 	   	?>
+				 	  	 <div class="news_principal">
+				 	  		 <p class="news_title"><a href="<?php the_permalink();?>" target="_blank"><?php the_title();?></a>
+				 	  		 	<span class="news_meta"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></span>
+				 	  		 </p><span class="clear"></span>
+				 	  	 	<?php
+				 	 	  	if(has_post_thumbnail()){
+				 	  	 	?>
+				 	   		<div class="image_principal">
+				 	   			<?php the_post_thumbnail('medium');?>
+				 	  		</div>
+				 	 	  <?php } ?>
+				 	  	 <p class="news_excerpt"><?php the_excerpt();?> </p>
+				 	   </div> <!-- .news_principal -->
+				 	   
+				 	   <?php
+ 	   				}	else{
+				 	   // second and third post
+				 	   if($i==2) {?><div class="grid_8 alpha"><?php }?>
+				 	  				 <div class="sublayer grid_4 alpha">
+				 	  					 <p class="sublayer_title"><a href="<?php the_permalink();?>" target="_blank"><?php the_title();?></a></p>
+				 	  					 <div class="sublayer_meta news_meta"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></div>
+				 	   				</div>
+				 	   
+ 	   			<?php }
+ 	  			 $i++;
+ 	  			 endwhile; endif;
+    			?>
+    							</div> <!-- grid_8 -->
+                    
+                    
+        	  </div><!-- .principal -->
+		</div> <!-- #popular -->
+	</div><!-- tabs -->
   
 <!-- Final das Tabs -->        
 
@@ -93,10 +149,12 @@
                     </div>
                 </div>
                 <span class="triangle"></span>
-                </div>
+                
+</div> <!-- .container_highlight -->
+</div><!-- background_home -->
 <!-- Final do Separador -->
 
-</div>
+
 
     <div class="container_12 boxes">
         <div class="grid_8 alpha marcadores">
@@ -139,7 +197,8 @@
 
 
         </div>
-        <div class="grid_4 omega social_timelines">
+        
+     <!--    <div class="grid_4 omega social_timelines">
             <div class="twitter_timeline">
             <a class="twitter-timeline" href="https://twitter.com/ananeves" data-widget-id="263314596876652544">Tweets by @ananeves</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
@@ -148,7 +207,7 @@
             <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FportalKMOL&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe>
             </div>
 
-        </div>
+        </div> -->
     </div>
 
 
