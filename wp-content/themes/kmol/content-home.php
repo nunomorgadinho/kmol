@@ -73,7 +73,7 @@ $temp = $post;
  	   $i++;
  	   endwhile; endif;
     	?>
-    		</div> <!-- grid_8 -->
+    	<?php if($i>1){?>	</div> <?php }?> <!-- grid_8 -->
     		
        </div> <!-- .principal -->
     </div> <!-- recent -->
