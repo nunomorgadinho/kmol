@@ -165,22 +165,51 @@ $temp = $post;
     <div class="container_12 boxes">
         <div class="grid_8 alpha marcadores">
             <div class="grid_8 alpha">
-                <div class="grid_4 alpha marcador">
-                    <h1 class="marcador_title"><?php _e ('Entrevistas','kmol'); ?></h1>
-                    <div class="marcador_short">
-                    <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-                    <h2 class="marcador_subtitle"><a href="#">Paul Corney</a></h2>
-                    <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
-                    </div>
-                </div>
-                <div class="grid_4 omega marcador">
-                    <h1 class="marcador_title"><?php _e ('Casos','kmol'); ?></h1>
-                    <div class="marcador_short">
-                    <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-                    <h2 class="marcador_subtitle"><a href="#">Paul Corney</a></h2>
-                    <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
-                    </div>
-                </div>
+               
+               <!-- Entrevistas -->
+               <?php 
+               
+               $interviews_cat =  get_option('interviews'); 
+               $args = array(
+               		'posts_per_page' => 1,
+               		'post_status' => 'publish',
+               		'cat' => $interviews_cat
+               );
+               /* query posts array */
+               $query = new WP_Query( $args  );
+               if($query->have_posts()): while ($query->have_posts()) : $query->the_post();
+               ?>
+	                <div class="grid_4 alpha marcador">
+	                    <h1 class="marcador_title"><?php _e ('Entrevistas','kmol'); ?></h1>
+	                    <div class="marcador_short">
+	                    <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
+	                    <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
+	                    <div class="marcador_description"><?php the_excerpt();?></div>
+	                    </div>
+	                </div>
+               <?php endwhile; endif;?>
+                
+                <?php 
+              	   $cat =  get_option('cases'); 
+	              	 $args = array(
+	               		'posts_per_page' => 1,
+	               		'post_status' => 'publish',
+	               		'cat' => $cat
+	               	);
+              	 	/* query posts array */
+              		 $query = new WP_Query( $args  );
+              		 if($query->have_posts()): while ($query->have_posts()) : $query->the_post();
+              		 ?>
+		                <div class="grid_4 omega marcador">
+		                    <h1 class="marcador_title"><?php _e ('Casos','kmol'); ?></h1>
+		                    <div class="marcador_short">
+		                    <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
+		                    <h2 class="marcador_subtitle"><a href="<?php the_p ?>">Paul Corney</a></h2>
+		                    <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
+		                    </div>
+		                </div>
+                 <?php endwhile; endif;?>
+                
             </div>
 
             <div class="grid_8 alpha">
