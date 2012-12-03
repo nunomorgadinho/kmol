@@ -116,7 +116,7 @@
 
                 <span class="clear"></span>
                 <div class=" more_single alignright">
-                        <a href="#"><?php _e ('<?php _e ('Livros','kmol'); ?> mais antigos','kmol'); ?></a>    
+                        <a href="#"> <?php _e('Livros mais Antigos' ,'kmol'); ?></a>    
                 </div>
                 <span class="clear"></span>
 
