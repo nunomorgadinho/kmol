@@ -564,6 +564,9 @@ a:active {
 	display: block;
 	float: left;
 	width: auto;
+	-moz-box-shadow: 2px 2px 5px 0px #ccc;
+ 	-webkit-box-shadow:2px 2px 5px 0px #ccc;
+	box-shadow: 2px 2px 5px 0px #ccc; /*aaires*/
 }
 .main-navigation ul {
 	list-style: none;
@@ -928,6 +931,10 @@ object {
 	-moz-transition: padding 0.5s; /* Firefox 4 */
 	-webkit-transition: padding 0.5s; /* Safari and Chrome */
 	-o-transition: padding 0.5s; /* Opera */
+	
+	-moz-box-shadow: 2px 2px 5px 0px #ccc;
+ 	-webkit-box-shadow:2px 2px 5px 0px #ccc;
+	box-shadow: 2px 2px 5px 0px #ccc; /*aaires*/
 
 }
 
@@ -959,6 +966,9 @@ object {
 	display: inline;
 	margin-right: 10px;
 	padding: 11px 10px 10px 10px;
+	-moz-box-shadow: 2px 2px 5px 0px #ccc;
+ 	-webkit-box-shadow:2px 2px 5px 0px #ccc;
+	box-shadow: 2px 2px 5px 0px #ccc; /*aaires*/
 }
 
 .ui-state-active {
@@ -990,6 +1000,9 @@ object {
 	height: auto;
 	margin-top: -7px;
 	margin-left: 30px;
+	-moz-box-shadow: 2px 2px 5px 0px #ccc;
+ 	-webkit-box-shadow:2px 2px 5px 0px #ccc;
+	box-shadow: 2px 2px 5px 0px #ccc; /*aaires*/
 }
 
 .triangle {
