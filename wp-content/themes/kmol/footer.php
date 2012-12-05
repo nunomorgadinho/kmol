@@ -23,27 +23,32 @@
          <div class="grid_3">
          	<h1 class="footer_title"><?php _e('Contribuir')?></h1>
 		<?php 
-			$towrite = get_page_by_path('escrever');
+			$towrite = get_page_by_path(__('escrever','kmol'));
+			$reviews = get_page_by_path(__('livro-de-visitas','kmol'));
+			
+			$sponsor = get_page_by_path(__('patrocionar','kmol'));
+			$adds = get_page_by_path(__('anunciar','kmol'));
+			
+			$kmol = get_page_by_path(__('sobre-o-kmol','kmol'));
 			 
 		?>
          	<h2 class="footer_subtitle"><a href="<?php echo get_permalink($towrite->ID);?>"><?php _e('Escrever','kmol');?></a></h2>
-         	<h2 class="footer_subtitle"><a href="/">Livro de Visitas</a></h2>
+         	<h2 class="footer_subtitle"><a href="<?php echo get_permalink($reviews->ID);?>"><?php _e('Livro de Visitas','kmol');?></a></h2>
          </div>
          <div class="grid_3">
-         	<h1 class="footer_title">Apoiar</h1>
+         	<h1 class="footer_title"><?php _e('Apoiar','kmol');?></h1>
 
-         	<h2 class="footer_subtitle"><a href="/">Patrocinar</a></h2>
-         	<h2 class="footer_subtitle"><a href="/">Anunciar</a></h2>
+         	<h2 class="footer_subtitle"><a href="<?php echo get_permalink($sponsor->ID);?>"><?php _e('Patrocinar','kmol');?></a></h2>
+         	<h2 class="footer_subtitle"><a href="<?php echo get_permalink($adds->ID);?>"><?php _e('Anunciar','kmol');?></a></h2>
          </div>
          <div class="grid_3 omega">
-         	<h1 class="footer_title">Sobre</h1>
+         	<h1 class="footer_title"><?php _e('Sobre','kmol');?></h1>
 
-         	<h2 class="footer_subtitle"><a href="/">O Portal</a></h2>
-         	<div class="footer_contact">
-         	<h2 class="footer_subtitle"><a href="/">Contactar</a></h2>
+         	<h2 class="footer_subtitle"><a href="<?php echo get_permalink($kmol->ID);?>"><?php _e('O Portal');?></a></h2>
+         	<div class="footer_contact"><br/>
+         	<h2 class="footer_subtitle"><?php _e('Contactar','kmol');?></h2>
          	<h2 class="footer_link"><a href="mailto:marketing@kmol.online.pt">marketing@kmol.online.pt</a></h2>
          	</div>
-         	<h2 class="footer_subtitle"><a href="/">Créditos</a></h2>
          </div>
          <div class="grid_12 copyright alpha omega"><center>
          	<p>Copyright &copy; 2012 knowman | <?php _e('Todos os direitos reservados','kmol');?></p>
