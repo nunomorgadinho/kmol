@@ -1,4 +1,4 @@
-8<?php
+<?php
 /**
  * The Template for displaying all single posts.
  *
@@ -14,11 +14,11 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php kmol_content_nav( 'nav-above' ); ?>
+				<?php // kmol_content_nav( 'nav-above' ); ?>
 
 				<?php get_template_part( 'content', 'single' ); ?>
 
-				<?php kmol_content_nav( 'nav-below' ); ?>
+				<?php // kmol_content_nav( 'nav-below' ); ?>
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template

@@ -1214,7 +1214,7 @@ background: transparent;
 }
 
 .twitter_timeline {
-	height: 350px;
+	height: 525px;
 }
 
 .marcador {
@@ -1598,6 +1598,10 @@ background: transparent;
 	margin-right:0;
 }
 
+.last_profile_text {
+	margin-bottom: 20px;
+}
+
 .book_page {
 	padding: 25px 60px 35px 60px;
 }
@@ -1623,6 +1627,7 @@ background: transparent;
 	margin: 0 auto;
 	overflow:hidden;
 	max-width: 500px;
+	padding: 5px;
 }
 
 .popup_counter {
@@ -1632,6 +1637,8 @@ background: transparent;
 	padding: 5px;
 	width: 190px;
 	text-align: center;
+	-webkit-box-shadow: 2px 2px 6px 0px #2B2B2B;
+	box-shadow: 2px 2px 6px 0px #2B2B2B;
 }
 
 .popup_title {
@@ -1641,6 +1648,8 @@ background: transparent;
 	margin-top: 50px;
 	padding: 15px 5px 5px 20px;
 	line-height: 200%;
+	-webkit-box-shadow: 2px 2px 6px 0px #2B2B2B;
+	box-shadow: 2px 2px 6px 0px #2B2B2B;
 }
 
 .popup_register {
@@ -1649,6 +1658,8 @@ background: transparent;
 	margin-left: 50px;
 	padding: 30px;
 	overflow: hidden;
+	-webkit-box-shadow: 2px 2px 6px 0px #2B2B2B;
+	box-shadow: 2px 2px 6px 0px #2B2B2B;
 }
 
 .popup_register p{
@@ -1852,6 +1863,10 @@ color: #1a1a1a;
 	overflow: hidden;
 	padding-bottom: 10px;
 	margin-top: 20px;
+}
+
+.profile_comments {
+	margin-bottom: 20px;
 }
 
 .profile_comments p{

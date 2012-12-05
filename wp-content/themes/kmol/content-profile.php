@@ -56,7 +56,7 @@
 			<span class="readmore_single alignright"><a href="#"><?php _e ('Ler Mais...','kmol'); ?></a></span>
 		</div>
 
-		<div class="profile_texts_info">
+		<div class="profile_texts_info last_profile_text">
 			<div class="profile_text_title">
 				<a href="#">Influenciando comportamentos</a>
 				<span class="news_meta">
