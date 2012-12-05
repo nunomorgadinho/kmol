@@ -29,8 +29,10 @@ $temp = $post;
    	 <div class="principal">
     
     <?php 
+	   $cat =  get_option('blog');
  	   $args = array(
  	   				'posts_per_page' => 3,
+ 	   				'cat' => $cat,
     				'post_status' => 'publish',
  	   				'gdsr_sort' => 'rating',
  	   				'nopaging' => 0,
@@ -84,11 +86,11 @@ $temp = $post;
       <?php //if (function_exists('wpp_get_mostpopular')) wpp_get_mostpopular("range=monthly&order_by=views"); ?>
         
                     <?php 
-                    
+                    $cat =  get_option('blog');
                     $pp = new WordpressPopularPosts();
                     $popular = array();
                     if(isset($pp))
- 	                   $popular = $pp->get_popular_posts(array('range' => 'monthly','order_by' => 'views',),true);
+ 	                   $popular = $pp->get_popular_posts(array('range' => 'monthly','order_by' => 'views','cat'=>$cat),true);
 				
                     if(!empty($popular))
                     {
@@ -182,7 +184,7 @@ $temp = $post;
 	                <div class="grid_4 alpha marcador">
 	                    <h1 class="marcador_title"><?php _e ('Entrevistas','kmol'); ?></h1>
 	                    <div class="marcador_short">
-	                    <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
+	                    <?php if(has_post_thumbnail()) the_post_thumbnail('thumbnail');?>
 	                    <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
 	                    <div class="marcador_description"><?php the_excerpt();?></div>
 	                    </div>
@@ -203,46 +205,76 @@ $temp = $post;
 		                <div class="grid_4 omega marcador">
 		                    <h1 class="marcador_title"><?php _e ('Casos','kmol'); ?></h1>
 		                    <div class="marcador_short">
-		                    <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-		                    <h2 class="marcador_subtitle"><a href="<?php the_p ?>">Paul Corney</a></h2>
-		                    <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
+		                   <?php if(has_post_thumbnail()) the_post_thumbnail('thumbnail');?>
+		                    <h2 class="marcador_subtitle"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
+		                    <p class="marcador_description"><?php the_excerpt();?></p>
 		                    </div>
 		                </div>
                  <?php endwhile; endif;?>
                 
             </div>
-
+            
+	<!-- BANNER 1  -->
             <div class="grid_8 alpha">
                 <div class="grid_4 alpha banner1">
-                    Banner //
+                    <?php 
+                    	$img_url = get_option('banner1');
+                    	if(isset($img_url)){
+                    ?>
+	                    <img src="<?php echo $img_url;?>" width="300" height="251"/>
+	                <?php } else {echo "Banner 1//";}?>
                 </div>
+                
+                
+                
+	<!-- BOOKS  -->
+                <?php 
+              	   $cat =  get_option('books'); 
+	              	 $args = array(
+	               		'posts_per_page' => 1,
+	               		'post_status' => 'publish',
+	               		'cat' => $cat
+	               	);
+              	 	/* query posts array */
+              		 $query = new WP_Query( $args  );
+              		 if($query->have_posts()): while ($query->have_posts()) : $query->the_post();
+              	?>
                 <div class="grid_4 omega marcador">
                     <h1 class="marcador_title"><?php _e ('Livros','kmol'); ?></h1>
                     <div class="marcador_short">
-                    <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-                    <h2 class="marcador_subtitle"><a href="#">Paul Corney</a></h2>
-                    <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
+                    <?php if(has_post_thumbnail()) the_post_thumbnail('thumbnail');?>
+                    <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+                    <p class="marcador_description"><?php the_excerpt();?></p>
                     </div>
                 </div>
+	          <?php endwhile; endif;?>
             </div>
-
+	
+	<!-- BANNER 2  -->
             <div class="grid_8 alpha omega banner2">
-                Banner2 //
+                  <?php 
+                    	$img_url = get_option('banner2');
+                    	if(isset($img_url)){
+                    ?>
+	                    <img src="<?php echo $img_url;?>" width="620" height="100"/>
+	                <?php } else {echo "Banner 2//";}?>
             </div>
 
 
         </div>
         
-     <!--    <div class="grid_4 omega social_timelines">
+        <div class="grid_4 omega social_timelines">
+           
             <div class="twitter_timeline">
-            <a class="twitter-timeline" href="https://twitter.com/ananeves" data-widget-id="263314596876652544">Tweets by @ananeves</a>
+           	 <a class="twitter-timeline" href="https://twitter.com/ananeves" data-widget-id="263314596876652544"><?php _e('Tweets por @ananeves','kmol');?></a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
             </div>
+           
             <div class="facebook_home">
-            <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FportalKMOL&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe>
+            	<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FportalKMOL&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe>
             </div>
 
-        </div> -->
+        </div>
     </div>
 
 <?php setup_postdata($temp);?>

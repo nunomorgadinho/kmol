@@ -21,9 +21,12 @@
          		</div>
          </div>
          <div class="grid_3">
-         	<h1 class="footer_title">Contribuir</h1>
-
-         	<h2 class="footer_subtitle"><a href="/">Escrever</a></h2>
+         	<h1 class="footer_title"><?php _e('Contribuir')?></h1>
+		<?php 
+			$towrite = get_page_by_path('escrever');
+			 
+		?>
+         	<h2 class="footer_subtitle"><a href="<?php echo get_permalink($towrite->ID);?>"><?php _e('Escrever','kmol');?></a></h2>
          	<h2 class="footer_subtitle"><a href="/">Livro de Visitas</a></h2>
          </div>
          <div class="grid_3">
@@ -37,13 +40,13 @@
 
          	<h2 class="footer_subtitle"><a href="/">O Portal</a></h2>
          	<div class="footer_contact">
-         	<h2 class="footer_subtitle"<a href="/">Contactar</a></h2>
-         	<h2 class="footer_link"><a href="/">marketing@kmol.online.pt</a></h2>
+         	<h2 class="footer_subtitle"><a href="/">Contactar</a></h2>
+         	<h2 class="footer_link"><a href="mailto:marketing@kmol.online.pt">marketing@kmol.online.pt</a></h2>
          	</div>
          	<h2 class="footer_subtitle"><a href="/">Créditos</a></h2>
          </div>
          <div class="grid_12 copyright alpha omega"><center>
-         	<p>Copyright &copy; 2012 knowman | Todos os direitos reservados</p>
+         	<p>Copyright &copy; 2012 knowman | <?php _e('Todos os direitos reservados','kmol');?></p>
          </center></div>
 	</footer><!-- #colophon .site-footer -->
 </div>

@@ -37,9 +37,9 @@ function kmol_setup() {
 	//require( get_template_directory() . '/inc/tweaks.php' );
 
 	/**
-	 * Custom Theme Options
+	 * Custom Theme options
 	 */
-	//require( get_template_directory() . '/inc/theme-options/theme-options.php' );
+	require( get_template_directory() . '/inc/theme-options/theme-options.php' );
 
 	/**
 	 * Make theme available for translation
@@ -143,6 +143,8 @@ function kmol_scripts() {
 
 	//wp_enqueue_script ('jquery-ui-tabs');
 	
+	
+	
 }
 
 
@@ -157,11 +159,33 @@ function kmol_stylesheets_method(){
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	wp_enqueue_style('960_12_col', get_template_directory_uri().'/layouts/960_12_col.css');
 	
+	
 } 
 
 add_action('wp_print_styles','kmol_stylesheets_method');
 
 
+
+
+function my_admin_scripts() {
+	
+	// for media upload
+	wp_enqueue_script('media-upload');
+	wp_enqueue_script('thickbox');
+	wp_register_script('my-upload', get_template_directory_uri() . '/js/my-script.js', array('jquery','media-upload','thickbox'));
+	wp_enqueue_script('my-upload');
+}
+
+function my_admin_styles() {
+	//for media upload
+	wp_enqueue_style('thickbox');
+}
+
+
+if (isset($_GET['page']) && (strpos($_GET['page'],'theme-options.php') !== false)) { 
+	add_action('admin_print_scripts', 'my_admin_scripts');
+	add_action('admin_print_styles', 'my_admin_styles');
+}
 
 //add scripts to the header
 function my_scripts() { 
@@ -276,81 +300,3 @@ add_filter('excerpt_more', 'new_excerpt_more');
 
 
 
-/*
- ===============================================================
-Theme Options Page
-===============================================================
-*/
-
-// create custom theme settings menu
-add_action('admin_menu', 'kmol_options');
-
-function kmol_options() {
-
-	//create new top-level menu
-	add_menu_page('Opções KMOL', 'KMOL', 'administrator', __FILE__, 'kmol_options_page',plugins_url('/images/icon.png', __FILE__));
-
-	//call register settings function
-	add_action( 'admin_init', 'register_kmol_options' );
-}
-
-
-function register_kmol_options() {
-	//register our settings
-	register_setting( 'slagenzonen-social-settings-group', 'articles' );
-	register_setting( 'slagenzonen-social-settings-group', 'books' );
-	register_setting( 'slagenzonen-social-settings-group', 'interviews' );
-	register_setting( 'slagenzonen-social-settings-group', 'cases' );
-	register_setting( 'slagenzonen-social-settings-group', 'blog' );
-}
-
-function kmol_options_page() {
-	?>
-<div class="wrap">
-	<h2>Opções Tema KMOL</h2>
-
-	<form method="post" action="options.php">
-		<?php settings_fields( 'slagenzonen-social-settings-group' ); ?>
-		
-		<table class="form-table">
-			<tr valign="top">
-				<th scope="row"><?php _e('Artigos','kmol');?></th>
-				<td>
-					<?php wp_dropdown_categories(array('name'=>'articles', 'selected'=>get_option('articles'))); ?>
-				</td>
-			</tr>
- 
-			<tr valign="top">
-				<th scope="row"><?php _e('Livros','kmol');?></th>
-				<td>
-					<?php wp_dropdown_categories(array('name'=>'books', 'selected'=>get_option('books'))); ?>
-				</td>
-			</tr>
-	
-			<tr valign="top">
-				<th scope="row"><?php _e('Entrevistas','kmol');?></th>
-				<td><?php wp_dropdown_categories(array('name'=>'interviews','selected'=>get_option('interviews'))); ?></td>
-			</tr>
-	
-			<tr valign="top">
-				<th scope="row"><?php _e('Casos','kmol');?></th>
-				<td><?php wp_dropdown_categories(array('name'=>'cases','selected'=>get_option('cases'))); ?></td>
-			</tr> 
-			
-			<tr valign="top">
-				<th scope="row"><?php _e('Blog');?></th>
-				<td>
-					<?php wp_dropdown_categories(array('name'=>'blog','selected'=>get_option('blog'))); ?></td>
-			</tr> 
-		</table>
-	
-		<?php submit_button(); ?>
-
-	</form>
-</div>
-<?php }
-/*
-===============================================================
-END Theme Options Page
-===============================================================
-*/

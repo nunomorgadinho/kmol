@@ -909,6 +909,7 @@ object {
 
 .social {
 	margin-top: 5px;
+	min-width: 150px;
 }
 
 .socialmedia-buttons a{
@@ -1217,12 +1218,12 @@ background: transparent;
 }
 
 .marcador {
-	height: 175px;
+	height: 275px; /*175 aaires*/
 	margin-bottom: 20px;
 }
 
 .banner1 {
-	height: 175px;
+	height: 251px; /*155 aaires*/
 	background: #e6e6e6;
 }
 
@@ -1247,13 +1248,14 @@ background: transparent;
 }
 
 .marcador_short {
-	height: 124px;
+	height: 200px; /*124 aaires*/
 	padding-top: 20px;
 	padding-left: 15px;
 	padding-right: 15px;
 	border-left: 1px solid #e6e6e6;
 	border-right: 1px solid #e6e6e6;
 	border-bottom: 1px solid #e6e6e6;
+	overflow:hidden;
 }
 
 .marcador_subtitle a, .marcador_subtitle a:link, .marcador_subtitle a:visited{
