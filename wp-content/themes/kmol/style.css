@@ -1619,7 +1619,7 @@ background: transparent;
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	z-index: 1000;
+	z-index: 10002;
 	color: white;
 }
 
@@ -1882,3 +1882,20 @@ color: #1a1a1a;
 	text-decoration: underline;
 }
 
+table.register_table{
+	width:99% !important;
+}
+
+table.register_table tr{
+	height:40px;
+}
+
+.courtain{
+	background-color:rgba(33,33,33,0.7);
+	height:1985px;
+	width:1547px;
+	position:fixed;
+	left:0px;
+	top:0px;
+	z-index:10001;
+}
