@@ -301,5 +301,30 @@ function new_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
+function wpe_excerptlength_teaser( $length ) {
 
+	return 45;
+}
+function wpe_excerptlength_index( $length ) {
 
+	return 40;
+}
+function wpe_excerptmore( $more ) {
+
+	return '...';
+}
+
+function wpe_excerpt( $length_callback = '', $more_callback = '' ) {
+
+	if ( function_exists( $length_callback ) )
+		add_filter( 'excerpt_length', $length_callback );
+
+	if ( function_exists( $more_callback ) )
+		add_filter( 'excerpt_more', $more_callback );
+
+	$output = get_the_excerpt();
+	$output = apply_filters( 'wptexturize', $output );
+	$output = apply_filters( 'convert_chars', $output );
+	$output = '<p>' . $output . '</p>'; // maybe wpautop( $foo, $br )
+	echo $output;
+}

@@ -65,7 +65,7 @@ $temp = $post;
 	 	   			<?php the_post_thumbnail('medium');?>
 	 	  		</div>
 	 	 	  <?php } ?>
-	 	  	 <div class="news_excerpt"><?php the_excerpt();?> </div>
+	 	  	 <div class="news_excerpt"><?php wpe_excerpt('wpe_excerptlength_index', 'wpe_excerptmore');?> </div>
 	 	   </div> <!-- .news_principal -->
 	 	   
 	 	   <?php
@@ -119,7 +119,7 @@ $temp = $post;
                     				<?php the_post_thumbnail('medium');?>
                     				</div>
                     			<?php } ?>
-                    			<p class="news_excerpt"><?php the_excerpt();?> </p>
+                    			<p class="news_excerpt"><?php wpe_excerpt('wpe_excerptlength_index', 'wpe_excerptmore');?> </p>
                     			</div> <!-- .news_principal -->
                     		
                     			<?php
@@ -192,7 +192,7 @@ $temp = $post;
 	                    <div class="marcador_short">
 	                    <?php if(has_post_thumbnail()) the_post_thumbnail('thumbnail');?>
 	                    <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
-	                    <div class="marcador_description"><?php the_excerpt();?></div>
+	                    <div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_index', 'wpe_excerptmore');?></div>
 	                    </div>
 	                </div>
                <?php endwhile; endif;?>
@@ -213,7 +213,7 @@ $temp = $post;
 		                    <div class="marcador_short">
 		                   <?php if(has_post_thumbnail()) the_post_thumbnail('thumbnail');?>
 		                    <h2 class="marcador_subtitle"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
-		                    <div class="marcador_description"><?php the_excerpt();?></div>
+		                    <div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_index', 'wpe_excerptmore');?></div>
 		                    </div>
 		                </div>
                  <?php endwhile; endif;?>
@@ -250,7 +250,7 @@ $temp = $post;
                     <div class="marcador_short">
                     <?php if(has_post_thumbnail()) the_post_thumbnail('thumbnail');?>
                     <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
-                    <div class="marcador_description"><?php the_excerpt();?></div>
+                    <div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_index', 'wpe_excerptmore');?></div>
                     </div>
                 </div>
 	          <?php endwhile; endif;?>
