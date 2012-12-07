@@ -564,9 +564,9 @@ a:active {
 	display: block;
 	float: left;
 	width: auto;
-	-moz-box-shadow: 2px 2px 5px 0px #ccc;
- 	-webkit-box-shadow:2px 2px 5px 0px #ccc;
-	box-shadow: 2px 2px 5px 0px #ccc; /*aaires*/
+	-moz-box-shadow: 2px 2px 2px 0px #CCC;
+ 	-webkit-box-shadow: 2px 2px 2px 0px #CCC;
+	box-shadow: 2px 2px 2px 0px #CCC; /*aaires*/
 }
 .main-navigation ul {
 	list-style: none;
@@ -1174,6 +1174,41 @@ background: transparent;
 }
 
 
+#container_blog {
+	overflow: hidden;
+	clear: both;
+	padding-bottom: 20px;
+}
+
+#container_blog p{
+	margin-bottom: 8px;
+}
+
+#container_blog .excerpt_single {
+	padding-top: 0;
+}
+
+#container_blog .sublayer_title a{
+	font-size: 23px;
+}
+
+#container_blog img {
+	padding-bottom: 10px;
+}
+
+#container_blog .sublayer_single {
+	border-bottom: 2px solid;
+	border-top: none;
+}
+
+#container_blog .sublayer {
+	padding-bottom: 10px;
+}
+
+#container_blog .more_single {
+	padding-top: 10px;
+}
+
 .image_principal{
 	clear:both;
 	float: left;
@@ -1181,7 +1216,7 @@ background: transparent;
 }
 
 .sublayer {
-	border-top: solid 4px #1a1a1a;
+	/*border-top: solid 4px #1a1a1a;*/
 	padding-top: 10px;
 	margin-left: 0;
 }
@@ -1279,6 +1314,32 @@ background: transparent;
 	height: 100px;
 }
 
+.image_blog {
+	overflow:hidden;
+	padding:10px 10px 10px 10px;
+	background-image: url('images/ananeves_blog.png');
+	height: 162px;
+	background-repeat: no-repeat;
+}
+
+.image_blog img {
+	opacity: 0.4;
+
+	transition: opacity 0.3s;
+	-moz-transition: opacity 0.3s; /* Firefox 4 */
+	-webkit-transition: opacity 0.3s; /* Safari and Chrome */
+	-o-transition: opacity 0.3s; /* Opera */
+}
+
+.image_blog img:hover{
+	opacity: 1.0;
+}
+
+.image_blog_title {
+	font-family: 'RobotoLight';
+	font-size: 25px;
+	color: #f2f2f2;
+}
 /* --- Footer ---- */
 
 .site-footer {
