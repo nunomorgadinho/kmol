@@ -17,6 +17,7 @@
 	<div id="popup_register" class="popup_box_register register_form">
 
 		<div class="popup_title">
+			<span class="close_register"><a href="#"><img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/close.png"></a></span>
 			<h2><?php _e('Registe-se no','kmol');?> </h2>
 			<h1><?php _e('KMOL','kmol');?></h1>
 		</div>
