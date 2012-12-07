@@ -8,7 +8,7 @@
 ?>
 
 
-<?php get_template_part( 'content', 'popup' ); ?>
+<?php //get_template_part( 'content', 'popup' ); ?>
 
 
 
@@ -213,7 +213,7 @@ $temp = $post;
 		                    <div class="marcador_short">
 		                   <?php if(has_post_thumbnail()) the_post_thumbnail('thumbnail');?>
 		                    <h2 class="marcador_subtitle"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
-		                    <p class="marcador_description"><?php the_excerpt();?></p>
+		                    <div class="marcador_description"><?php the_excerpt();?></div>
 		                    </div>
 		                </div>
                  <?php endwhile; endif;?>
@@ -250,7 +250,7 @@ $temp = $post;
                     <div class="marcador_short">
                     <?php if(has_post_thumbnail()) the_post_thumbnail('thumbnail');?>
                     <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
-                    <p class="marcador_description"><?php the_excerpt();?></p>
+                    <div class="marcador_description"><?php the_excerpt();?></div>
                     </div>
                 </div>
 	          <?php endwhile; endif;?>
