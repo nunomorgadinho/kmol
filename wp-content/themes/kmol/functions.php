@@ -309,6 +309,10 @@ function wpe_excerptlength_index( $length ) {
 
 	return 30;
 }
+function wpe_excerptmore( $more ) {
+
+	return '...';
+}
 
 function wpe_excerpt( $length_callback = '', $more_callback = '' ) {
 
