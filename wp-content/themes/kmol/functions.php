@@ -307,7 +307,7 @@ function wpe_excerptlength_teaser( $length ) {
 }
 function wpe_excerptlength_index( $length ) {
 
-	return 30;
+	return 45;
 }
 function wpe_excerptmore( $more ) {
 
