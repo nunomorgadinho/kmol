@@ -140,6 +140,9 @@ function kmol_scripts() {
 
 	wp_register_script ('custom', get_template_directory_uri(). '/js/custom.js');
 	wp_enqueue_script('custom');
+	
+	wp_register_script('my-upload', get_template_directory_uri() . '/js/kmol.js', array('jquery'));
+	wp_enqueue_script('kmol');
 
 	//wp_enqueue_script ('jquery-ui-tabs');
 	

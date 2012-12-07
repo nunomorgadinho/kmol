@@ -77,6 +77,7 @@
 					</tbody>
 				</table>
 		</form>
+		<div class="login-register"><?php _e('Já estou registado. Quero fazer Login','kmol');?> </div>
 		</div> <!-- #LoginWithAjax_Register -->
 		
 		
@@ -96,6 +97,7 @@
 			<?php
 			login_with_ajax(array( 'is_widget' => false, 'profile_link' => false, 'registration' =>1 ));
 			?>
+			<div class="login-register"><?php _e('Ainda não estou registado. Quero Registar-me','kmol');?> </div>
 		</div> <!-- .popup_register -->
 	</div> <!-- .login_form -->
 
