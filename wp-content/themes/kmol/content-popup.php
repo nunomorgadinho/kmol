@@ -96,7 +96,7 @@
 		<div class="popup_register">  <!-- login -->
 			<p><?php _e('Faça login, comente e aceda à sua página pessoal com registo das suas contribuições!','kmol');?></p>
 			<?php
-			login_with_ajax(array( 'is_widget' => false, 'profile_link' => false, 'registration' =>1 ));
+			//login_with_ajax(array( 'is_widget' => false, 'profile_link' => false, 'registration' =>1 ));
 			?>
 			<div class="login-register"><?php _e('Ainda não estou registado. Quero Registar-me','kmol');?> </div>
 		</div> <!-- .popup_register -->
