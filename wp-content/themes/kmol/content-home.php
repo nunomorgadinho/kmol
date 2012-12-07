@@ -8,7 +8,7 @@
 ?>
 
 
-<?php get_template_part( 'content', 'popup' ); ?>
+<?php //get_template_part( 'content', 'popup' ); ?>
 
 
 
