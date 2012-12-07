@@ -1216,7 +1216,7 @@ background: transparent;
 }
 
 .sublayer {
-	/*border-top: solid 4px #1a1a1a;*/
+	border-top: solid 4px #1a1a1a;
 	padding-top: 10px;
 	margin-left: 0;
 }
