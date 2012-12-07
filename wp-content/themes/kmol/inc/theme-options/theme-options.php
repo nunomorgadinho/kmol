@@ -12,14 +12,27 @@ add_action('admin_menu', 'kmol_options');
 function kmol_options() {
 
 	//create new top-level menu
-	add_menu_page('Opções KMOL', 'KMOL', 'administrator', __FILE__, 'kmol_options_page',plugins_url('/images/icon.png', __FILE__));
+	add_menu_page('Opções KMOL', 'KMOL', 'administrator', 'kmol_options_page', 'kmol_options_page');
 
-	//call register settings function
-	add_action( 'admin_init', 'register_kmol_options' );
+
 }
 
+//call register settings function
+add_action( 'admin_init', 'register_kmol_options' );
 
 function register_kmol_options() {
+
+	if (isset($_POST["update_settings"])) {
+		// Do the saving
+		update_option('articles', $_POST['articles']);
+		update_option('books', $_POST['books']);
+		update_option('interviews', $_POST['interviews']);
+		update_option('cases', $_POST['cases']);
+		update_option('blog', $_POST['blog']);
+	}
+	
+	
+	
 	//register our settings
 	register_setting( 'categories-group', 'articles' );
 	register_setting( 'categories-group', 'books' );
@@ -124,7 +137,7 @@ function kmol_options_page() {
 			</tr>
 		</table>
 		
-		
+		<input type="hidden" name="update_settings" value="Y" />  
 	
 		<?php submit_button(); ?>
 
