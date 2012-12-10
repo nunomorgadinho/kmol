@@ -1135,6 +1135,7 @@ background: transparent;
 .news_title {
 	overflow: hidden;
 	padding-right: 10px;
+	padding-bottom: 15px;
 	font-size: 30px;
 	font-family: 'RobotoBlack';
 	font-weight: bold;
@@ -1267,6 +1268,7 @@ background: transparent;
 .marcador img {
 	float: left;
 	padding-right: 10px;
+	padding-bottom: 25px;
 }
 
 .marcador_title {

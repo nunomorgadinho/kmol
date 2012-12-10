@@ -55,7 +55,7 @@ $temp = $post;
 	 	   	//latest post
 	 	   	?>
 	 	  	 <div class="news_principal">
-	 	  		 <div><a class="news_title" href="<?php the_permalink();?>" target="_blank"><?php the_title();?></a>
+	 	  		 <div class="news_title"><a href="<?php the_permalink();?>" target="_blank"><?php the_title();?></a>
 	 	  		 	<span class="news_meta"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></span>
 	 	  		 </div><span class="clear"></span>
 	 	  	 	<?php
@@ -109,7 +109,7 @@ $temp = $post;
                     			//latest post
                     			?>
                     			<div class="news_principal">
-                                 <div><a class="news_title" href="<?php the_permalink();?>" target="_blank"><?php the_title();?></a>
+                                 <div class="news_title"><a href="<?php the_permalink();?>" target="_blank"><?php the_title();?></a>
                                     <span class="news_meta"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></span>
                                  </div><span class="clear"></span>
                     			<?php
