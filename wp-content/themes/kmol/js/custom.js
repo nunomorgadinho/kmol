@@ -58,4 +58,13 @@ function handle_register_login(){
 		jQuery('.popup_page').hide();
 	});
 	
+	
+	// top page register or logout link
+	jQuery('.register').click(function(){
+		
+		jQuery('.courtain').show();
+		jQuery('.popup_page').show();
+		
+	});
+	
 }
