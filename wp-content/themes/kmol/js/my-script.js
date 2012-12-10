@@ -7,7 +7,7 @@ jQuery(document).ready(function() {
 		return false;
 	});
 
-	window.send_to_editor = function(html) {
+	window.send_to_editor = function(html) { 
 		imgurl = jQuery('img',html).attr('src'); 
 		jQuery('#banner1').val(imgurl);
 		tb_remove();
@@ -20,7 +20,7 @@ jQuery(document).ready(function() {
 		return false;
 	});
 
-	window.send_to_editor = function(html) {
+	window.send_to_editor = function(html) { 
 		imgurl = jQuery('img',html).attr('src'); 
 		jQuery('#banner2').val(imgurl);
 		tb_remove();

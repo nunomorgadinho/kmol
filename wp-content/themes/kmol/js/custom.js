@@ -29,5 +29,42 @@ jQuery( document ).ready( function( $ ) {
 	}
 	
 
+	handle_register_login();
 	
 });
+
+function handle_register_login(){
+	
+	
+	jQuery('#go-to-login').click(function(){
+		
+		
+		jQuery('.register_form').hide();
+		jQuery('.login_form').show();
+		
+	});
+	
+	jQuery('#go-to-register').click(function(){
+		
+		jQuery('.login_form').hide();
+		jQuery('.register_form').show();
+		
+		
+	});
+	
+	jQuery('.close_popup').click(function(){
+		
+		jQuery('.courtain').hide();
+		jQuery('.popup_page').hide();
+	});
+	
+	
+	// top page register or logout link
+	jQuery('.register').click(function(){
+		
+		jQuery('.courtain').show();
+		jQuery('.popup_page').show();
+		
+	});
+	
+}

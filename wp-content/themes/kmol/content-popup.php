@@ -12,12 +12,13 @@
 		<h2><?php _e('utilizadores registados','kmol');?></h2>
 	</div>
 
+	<span class="close_popup"><a href="#"><img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/close.png"></a></span>
 
 	<!-- Register Stuff -->
 	<div id="popup_register" class="popup_box_register register_form">
 
 		<div class="popup_title">
-			<span class="close_register"><a href="#"><img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/close.png"></a></span>
+		
 			<h2><?php _e('Registe-se no','kmol');?> </h2>
 			<h1><?php _e('KMOL','kmol');?></h1>
 		</div>
@@ -78,7 +79,7 @@
 					</tbody>
 				</table>
 		</form>
-		<div class="login-register"><?php _e('Já estou registado. Quero fazer Login','kmol');?> </div>
+		<div class="login-register"><a id="go-to-login" href="#"><?php _e('Já estou registado. Quero fazer Login','kmol');?></a> </div>
 		</div> <!-- #LoginWithAjax_Register -->
 		
 		
@@ -88,7 +89,7 @@
 
 
 	<!-- Login Stuff -->
-	<div id="popup_register" class="popup_box_register login_form">
+	<div id="popup_register" class="popup_box_register login_form" style="display:none;">
 		<div class="popup_title">
 			<h2><?php _e('Login','kmol');?> </h2>
 			<h1><?php _e('KMOL','kmol');?></h1>
@@ -96,9 +97,9 @@
 		<div class="popup_register">  <!-- login -->
 			<p><?php _e('Faça login, comente e aceda à sua página pessoal com registo das suas contribuições!','kmol');?></p>
 			<?php
-			//login_with_ajax(array( 'is_widget' => false, 'profile_link' => false, 'registration' =>1 ));
+				login_with_ajax(array( 'is_widget' => false, 'profile_link' => false, 'registration' =>0 ));
 			?>
-			<div class="login-register"><?php _e('Ainda não estou registado. Quero Registar-me','kmol');?> </div>
+			<div class="login-register"><a href="#" id="go-to-register"><?php _e('Ainda não estou registado. Quero Registar-me','kmol');?></a></div>
 		</div> <!-- .popup_register -->
 	</div> <!-- .login_form -->
 

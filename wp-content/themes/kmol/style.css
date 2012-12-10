@@ -1725,13 +1725,13 @@ background: transparent;
 	box-shadow: 2px 5px 6px 0px #2B2B2B;
 }
 
-.close_register {
+.close_popup {
 	float: right;
 	padding-right: 6px;
 	opacity: 0.5;
 }
 
-.close_register:hover {
+.close_popup:hover {
 	opacity: 1.0;
 }
 
@@ -1972,3 +1972,5 @@ table.register_table tr{
 	top:0px;
 	z-index:10001;
 }
+
+.login_form #LoginWithAjax_Links_Register{display:none;}

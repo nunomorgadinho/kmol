@@ -29,6 +29,12 @@ function register_kmol_options() {
 		update_option('interviews', $_POST['interviews']);
 		update_option('cases', $_POST['cases']);
 		update_option('blog', $_POST['blog']);
+		
+		update_option('banner1', $_POST['banner1']);
+		update_option('banner2', $_POST['banner2']);
+		
+		update_option('twitter', $_POST['twitter']);
+		update_option('facebook', $_POST['facebook']);
 	}
 	
 	

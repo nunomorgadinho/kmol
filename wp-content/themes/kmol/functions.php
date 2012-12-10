@@ -185,7 +185,7 @@ function my_admin_styles() {
 }
 
 
-if (isset($_GET['page']) && (strpos($_GET['page'],'theme-options.php') !== false)) { 
+if (isset($_GET['page']) && ($_GET['page'] == 'kmol_options_page')) {  
 	add_action('admin_print_scripts', 'my_admin_scripts');
 	add_action('admin_print_styles', 'my_admin_styles');
 }
