@@ -1352,11 +1352,11 @@ background: transparent;
 	margin-top: 40px;
 }
 
-.subscribe_footer {
+.subscribe_footer, .phplist {
 	height: 18px;
 }
 
-#subscribe_footer_box{
+#subscribe_footer_box, .phplist input[type="text"]{
 	color: #999;
 	border: none;
 	background: #F8F8F8;
@@ -1366,7 +1366,7 @@ background: transparent;
 	font-size: 14px;
 }
 
-#subscribe_footer_submit {
+#subscribe_footer_submit, .phplist input[type="submit"] {
 	background: #a9cf54;
 	box-shadow: none;
 	border: none;
@@ -1381,12 +1381,16 @@ background: transparent;
 	-moz-transition: background 0.2s; /* Firefox 4 */
 	-webkit-transition: background 0.2s; /* Safari and Chrome */
 	-o-transition: background 0.2s; /* Opera */
+	cursor:pointer !important;
 
 }
 
-#subscribe_footer_submit:hover {
-	background:#6C9EBB;
+#subscribe_footer_submit:hover, .phplist input[type="submit"]:hover {
+	background:#6C9EBB !important;
+	
 }
+
+.phplist label{display:none !important;}
 
 .footer_title {
 	font-family: 'RobotoBold';

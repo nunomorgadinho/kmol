@@ -12,14 +12,15 @@
 	</div><!-- #main .site-main -->
 <div class="full_width_footer">
 	<footer id="colophon" class="site-footer container_12" role="contentinfo">
-		<div class="grid_3 alpha">
+		<div class="grid_3 alpha footer-left">
 				<h1 class="footer_title">Subscrever</h1>
 				<div class="social alignleft"><?php dynamic_sidebar('Social_Widget'); ?></div>
-                <div class="subscribe_footer">
-                <input type="text" id="subscribe_footer_box" placeholder="mail..."/>
-                <input type="submit" id="subscribe_footer_submit" value="Newsletter"/>
-         		</div>
+               
+                <?php
+          		  $content = apply_filters('the_content', '<!--phplist form-->');
+            	  echo $content;?> 
          </div>
+        
          <div class="grid_3">
          	<h1 class="footer_title"><?php _e('Contribuir')?></h1>
 		<?php 
@@ -52,7 +53,8 @@
          </div>
          <div class="grid_12 copyright alpha omega"><center>
          	<p>Copyright &copy; 2012 knowman | <?php _e('Todos os direitos reservados','kmol');?></p>
-         </center></div>
+         </center>
+         </div>
 	</footer><!-- #colophon .site-footer -->
 </div>
 

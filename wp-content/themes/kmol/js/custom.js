@@ -31,8 +31,13 @@ jQuery( document ).ready( function( $ ) {
 
 	handle_register_login();
 	
+	fix_newsletter_forms();
+	
 });
 
+/**
+ * This function handles register and login popups.
+ */
 function handle_register_login(){
 	
 	
@@ -65,6 +70,27 @@ function handle_register_login(){
 		jQuery('.courtain').show();
 		jQuery('.popup_page').show();
 		
+	});
+	
+}
+
+/**
+ * We are using phplist plugin. In order to keep the plugin as it is
+ * we need to add placeholder or change buttons names by jquery
+ */
+function fix_newsletter_forms(){
+
+	jQuery('.footer-left #contactsubmit').val('newsletter');
+	jQuery('.subscribe_home #contactsubmit').val('Subscreva');
+	
+	
+	if(jQuery('.phplist #email').val() == "")
+		jQuery('.phplist #email').attr('placeholder','e-mail...');
+	
+	
+	jQuery('.footer-left .phplist #email').focus(function(){   
+		if(jQuery('.footer-left .phplist #email').val() == "")
+			jQuery('.footer-left .phplist #email').attr('placeholder','e-mail...');
 	});
 	
 }

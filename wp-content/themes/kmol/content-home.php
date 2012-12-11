@@ -162,8 +162,11 @@ $temp = $post;
                         <input id="rss" class="knob countersingle rss" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="60">
                     </div>
                     <div class="subscribe_home">
-                        <input type="text" id="subscribe_home_box" placeholder="mail..."/>
-                        <input type="submit" id="subscribe_home_submit" value="<?php _e('Subscreva','kmol'); ?>"/>
+                    <?php
+		          		  $content = apply_filters('the_content', '<!--phplist form-->');
+        		    	  echo $content;?> 
+                <!--         <input type="text" id="subscribe_home_box" placeholder="mail..."/>
+                        <input type="submit" id="subscribe_home_submit" value="<?php _e('Subscreva','kmol'); ?>"/> -->
                     </div>
                 </div>
                 <span class="triangle"></span>
