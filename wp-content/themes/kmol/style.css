@@ -905,6 +905,8 @@ object {
 	line-height: 1.5;
 	float:left;
 	height: 39px;
+	width: 243px;
+
 }
 
 .social {
@@ -1095,7 +1097,29 @@ background: transparent;
 	height: 39px;
 	width: 90%;
 	padding: 20px 15px;
-	
+}
+
+.phplist br{
+	display:none; 
+}
+
+.phplist {
+	clear: both;
+}
+
+.required {
+	background: #e86f47;
+	color: white !important;
+	font-weight: normal !important;
+	padding: 3px 10px;
+	width: 74px;
+	height: auto;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 13px;
+    margin-bottom: 5px;
 }
 
 #subscribe_home_box{
@@ -1127,6 +1151,25 @@ background: transparent;
 
 #subscribe_home_submit:hover {
 	background: #999;
+}
+
+.subscribe_home #contactsubmit {
+	padding: 12px 10px 11px 10px;
+}
+
+#contactsubmit {
+	margin-left: 0;
+}
+
+.subscribe_home #email {
+	background: #e6e6e6;
+	width: auto;
+	padding: 10px;
+	margin-bottom: 15px;
+}
+
+#email {
+	margin-left: 0;
 }
 
 			/* News*/
@@ -1256,7 +1299,7 @@ background: transparent;
 }
 
 .facebook_home {
-	margin-top: 20px;
+	margin-top: 18px;
 	border-top: solid 1px #e6e6e6;
 	padding-top: 20px;
 }
@@ -1266,7 +1309,7 @@ background: transparent;
 }
 
 .marcador {
-	height: 275px; /*175 aaires*/
+	height: auto; /*275 dmorais*/ /*175 aaires*/
 	margin-bottom: 20px;
 }
 
@@ -2002,3 +2045,32 @@ table.register_table tr{
 }
 
 .login_form #LoginWithAjax_Links_Register{display:none;}
+
+/* Search */
+
+.search_single {
+	border-bottom: 2px solid;
+	padding-bottom: 10px;
+}
+
+
+.search_single .entry-summary {
+	margin-top: 10px;
+}
+
+.search_single .entry-summary p{
+	font-size: 15px;
+}
+
+.search_single .entry-title a{
+	font-size: 18px;
+}
+
+.search_single .entry-meta {
+	font-size: 13px;
+}
+
+.search_word {
+	font-family: 'RobotoThin';
+	font-weight: normal;
+}
