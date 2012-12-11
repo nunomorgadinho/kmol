@@ -947,6 +947,18 @@ object {
 	padding-top: 15px;
 }
 
+.register p:hover {
+	opacity: 0.6;
+}
+
+.register a{
+	color: white;
+}
+
+.register a:hover {
+	opacity: 0.6;
+}
+
 
 
 
@@ -1135,6 +1147,7 @@ background: transparent;
 .news_title {
 	overflow: hidden;
 	padding-right: 10px;
+	padding-bottom: 15px;
 	font-size: 30px;
 	font-family: 'RobotoBlack';
 	font-weight: bold;
@@ -1267,6 +1280,7 @@ background: transparent;
 .marcador img {
 	float: left;
 	padding-right: 10px;
+	padding-bottom: 25px;
 }
 
 .marcador_title {
@@ -1730,7 +1744,10 @@ background: transparent;
 .close_popup {
 	float: right;
 	padding-right: 6px;
-	opacity: 0.5;
+	opacity: 0.6;
+	margin-top: 60px;
+	position: absolute;
+	margin-left: 470px;
 }
 
 .close_popup:hover {
@@ -1739,6 +1756,15 @@ background: transparent;
 
 .popup_register p{
 	font-size: 20px;
+}
+
+.popup_register a{
+	color: #1a1a1a;
+	opacity: 1.0;
+}
+
+.popup_register a:hover {
+	opacity: 0.5;
 }
 
 .popup_container h1{
