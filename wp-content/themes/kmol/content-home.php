@@ -156,12 +156,18 @@ $temp = $post;
                         <p><?php _e('Ajude-nos a chegar aos','kmol');?></p><h3><?php _e('1.000 gostos!','kmol');?></h3></div>
                
                     <div class="numbers">
-                        <input id="twitter" class="knob countersingle numbers_margin twitter" data-displayInput="true" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true title="<?php echo count_twitter_followers();?>" value="<?php echo count_twitter_followers();?>">
-                      	<span><?php echo count_twitter_followers();?><br/><?php _e('seguidores','kmol');?></span>
-                        <input id="facebook" class="knob countersingle numbers_margin facebook" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="<?php echo count_facebook_followers();?>">
-                     	<span><?php echo count_twitter_followers();?><br/><?php _e('gostos','kmol');?></span>
-                        <input id="rss" class="knob countersingle rss" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="<?php echo count_rss_followers();?>">
-                 		<span><?php echo count_twitter_followers();?><br/><?php _e('assinantes','kmol');?></span>
+                        <div class="counters_container">
+                          <input id="twitter" class="knob countersingle numbers_margin twitter" data-displayInput="true" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true title="<?php echo count_twitter_followers();?>" value="<?php echo count_twitter_followers();?>">
+                        <center><span><h1><?php echo count_twitter_followers();?></h1><h2><?php _e('seguidores','kmol');?></h2></span></center>
+                        </div>
+                        <div class="counters_container">
+                          <input id="facebook" class="knob countersingle numbers_margin facebook" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="<?php echo count_facebook_followers();?>">
+                        <center><span><h1><?php echo count_facebook_followers();?></h1><h2><?php _e('gostos','kmol');?></h2></span></center>
+                        </div>
+                        <div class="counters_container">
+                          <input id="rss" class="knob countersingle rss" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="<?php echo count_rss_followers();?>">
+                 		       <center><span><h1><?php echo count_rss_followers();?></h1><h2><?php _e('assinantes','kmol');?></h2></span></center>
+                    </div>
                     </div>
                     <div class="subscribe_home">
                     <?php

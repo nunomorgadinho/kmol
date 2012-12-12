@@ -1020,6 +1020,25 @@ object {
 	box-shadow: 2px 2px 5px 0px #ccc; /*aaires*/
 }
 
+.counters_container {
+	float:left;
+	margin-right: 3px;
+	margin-bottom: 25px;
+}
+
+.counters_container h1 {
+	font-size: 26px;
+	font-family: 'RobotoBold';
+	margin-top: 5px;
+	line-height: 23px;
+}
+
+.counters_container h2 {
+	font-size: 16px;
+	font-family: 'RobotoLight';
+	font-weight: normal;
+}
+
 .triangle {
 width: 0px;
 height: 0px;
