@@ -6,20 +6,15 @@ jQuery( document ).ready( function( $ ) {
 	var i_twitter = 0;
 	var i_facebook = 0;
 	var i_rss = 0;
-	
-	
-		console.log(jQuery('.numbers #twitter').val()/10);
-		console.log(jQuery('.numbers #facebook').val()/10);
-		console.log(jQuery('.numbers #rss').val()/10);
-		
-	  	var twitter = 101;
-  		var facebook = 50;
-  		var rss = 10;
+			
+	  	var twitter = jQuery('.numbers #twitter').val()*0.1;
+  		var facebook = jQuery('.numbers #facebook').val()*0.1;
+  		var rss = 80*0.1;
   			
   		
   		var max = Math.max(twitter,facebook,rss);
   		
-  		console.log('max' + max);
+  		
   		
   		var myVar=setInterval(function(){myTimer()},10);
 
