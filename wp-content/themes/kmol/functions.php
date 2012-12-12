@@ -402,26 +402,12 @@ function count_twitter_followers(){
  * get it's number of rss folowwers
  * @return number
  */
-function count_rss_followers(){
-	$count_rss = 0;
-
-	$feed = "http://feeds.feedburner.com/online/oOLP";
-// If Feedburner is enabled...
-		if ( isset( $instance['feedburner'] ) && $instance['feedburner'] ) {
-			// ...get Feedburner data
-			$url = 'https://feedburner.google.com/api/awareness/1.0/GetFeedData?uri='.$feed;
-			$get_feedburner = wp_remote_get( $url );
-
-			// Check for errors. If none proceed...
-			if ( ! is_wp_error( $get_feedburner ) ) { 
-					// Decode the XML response and cast the number of followers as integer
-					$feedburner_data = new SimpleXmlElement( $get_feedburner['body'], LIBXML_NOCDATA );
-					$count_rss = $feedburner_data->feed->entry['circulation'];
-			}	
-
-		}
+function count_newsletter_followers(){
+	$count_newsletter = 0;
 	
+	$config=&WYSIJA::get("config","model");
+	if((int)$config->getValue('total_subscribers')) return (int)$config->getValue('total_subscribers');
 
-	return $count_rss;
+	return $count_newsletter;
 }
 ?>

@@ -165,8 +165,8 @@ $temp = $post;
                         <center><span><h1><?php echo count_facebook_followers();?></h1><h2><?php _e('gostos','kmol');?></h2></span></center>
                         </div>
                         <div class="counters_container">
-                          <input id="rss" class="knob countersingle rss" data-fgColor="#6c9ebb" data-max="150" data-thickness=".3" data-readOnly=true value="<?php echo count_rss_followers();?>">
-                 		       <center><span><h1>80</h1><h2><?php _e('assinantes','kmol');?></h2></span></center>
+                          <input id="rss" class="knob countersingle rss" data-fgColor="#6c9ebb" data-max="150" data-thickness=".3" data-readOnly=true value="<?php echo count_newsletter_followers();?>">
+                 		       <center><span><h1><?php echo count_newsletter_followers();?></h1><h2><?php _e('assinantes','kmol');?></h2></span></center>
                   	  </div>
                   </div>
                     <div class="subscribe_home">
@@ -196,7 +196,7 @@ $temp = $post;
                     		'success' => __('Veja na sua caixa de correio como confirmar a subscrição.','kmol'),
                     		'widget_id' => 'wysija-2-php',
                     );
-                    $widgetNL=new WYSIJA_NL_Widget(1);
+                    $widgetNL= new WYSIJA_NL_Widget(1); 
                     $subscriptionForm= $widgetNL->widget($widgetdata,$widgetdata);
                     echo $subscriptionForm;
                     
