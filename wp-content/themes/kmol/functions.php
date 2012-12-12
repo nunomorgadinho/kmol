@@ -328,3 +328,101 @@ function wpe_excerpt( $length_callback = '', $more_callback = '' ) {
 	$output = '<p>' . $output . '</p>'; // maybe wpautop( $foo, $br )
 	echo $output;
 }
+
+
+
+add_action('wp_head','define_ajaxurl');
+function define_ajaxurl() {
+	?>
+		<script type="text/javascript">
+			var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+		</script>
+	<?php
+}
+
+/**
+ * For the facebook page we defined on the kmol option page
+ * get it's number of folowwers
+ * @return number
+ */
+function count_facebook_followers(){
+	$count_facebook = 0;
+	
+	// If Facebook is enabled...
+	$facebook = get_option('facebook');
+	if ( isset( $facebook  ) ) {
+		// ...get Facebook data
+		$url = 'https://graph.facebook.com/' .$facebook . '?fields=likes';
+		$get_facebook = wp_remote_get( $url );
+	
+		
+		$count_facebook = 0;
+		// Check for errors. If none proceed...
+		if ( ! is_wp_error( $get_facebook ) ) {
+			// Decode JSON response and cast the number of likes as integer
+			$facebook_data = json_decode( $get_facebook['body'] );
+			$count_facebook = (int) $facebook_data->likes;
+			
+		}
+	}
+	
+	return $count_facebook;
+}
+
+
+/**
+ * For the twitter account we defined on the kmol option page
+ * get it's number of folowwers
+ * @return number
+ */
+function count_twitter_followers(){
+	$count_twitter = 0;
+
+		// If Twitter is enabled...
+		$twitter = get_option('twitter');
+		if ( isset( $twitter ) ) {
+			// ...get Twitter data
+			$url = 'https://api.twitter.com/1/users/lookup.json?screen_name=' . $twitter;
+			$get_twitter = wp_remote_get( $url );
+
+			// Check for errors. If none proceed...
+			if ( ! is_wp_error( $get_twitter ) ) { 
+				// Decode the JSON response and cast the number of followers as integer
+				$twitter_data = json_decode( $get_twitter['body'] );
+				if ( is_array( $twitter_data ) ) {
+					$count_twitter = (int) $twitter_data[0]->followers_count;
+				}
+			}
+		}
+	error_log('teiiter '.$count_twitter);
+	return $count_twitter;
+}
+
+/**
+ * get it's number of rss folowwers
+ * @return number
+ */
+function count_rss_followers(){
+	$count_facebook = 0;
+
+	// If Facebook is enabled...
+	$facebook = get_option('facebook');
+	if ( isset( $facebook  ) ) {
+		// ...get Facebook data
+		$url = 'https://graph.facebook.com/' .$facebook . '?fields=likes';
+		$get_facebook = wp_remote_get( $url );
+
+
+		$count_facebook = 0;
+		// Check for errors. If none proceed...
+		if ( ! is_wp_error( $get_facebook ) ) {
+			// Decode JSON response and cast the number of likes as integer
+			$facebook_data = json_decode( $get_facebook['body'] );
+			$count_facebook = (int) $facebook_data->likes;
+
+		}
+	}
+
+	return $count_facebook;
+}
+?>

@@ -150,23 +150,23 @@ $temp = $post;
 
 
 <!-- Separador com números de redes sociais -->
-
+	
                 <div class="counters grid_4 omega">
                     <div class="phrase">
-                        <p>Ajude-nos a chegar aos</p><h3>1.000 gostos!</h3></div>
-                    <!-- <div class="phrase">
-                <p>Faltam 50 para chegar a</p><h3>2.500 seguidores!</h3></div> -->
+                        <p><?php _e('Ajude-nos a chegar aos','kmol');?></p><h3><?php _e('1.000 gostos!','kmol');?></h3></div>
+               
                     <div class="numbers">
-                        <input id="twitter" class="knob countersingle numbers_margin twitter" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="22">
-                        <input id="facebook" class="knob countersingle numbers_margin facebook" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="42">
-                        <input id="rss" class="knob countersingle rss" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="60">
+                        <input id="twitter" class="knob countersingle numbers_margin twitter" data-displayInput="true" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true title="<?php echo count_twitter_followers();?>" value="<?php echo count_twitter_followers();?>">
+                      	<span><?php echo count_twitter_followers();?><br/><?php _e('seguidores','kmol');?></span>
+                        <input id="facebook" class="knob countersingle numbers_margin facebook" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="<?php echo count_facebook_followers();?>">
+                     	<span><?php echo count_twitter_followers();?><br/><?php _e('gostos','kmol');?></span>
+                        <input id="rss" class="knob countersingle rss" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="<?php echo count_rss_followers();?>">
+                 		<span><?php echo count_twitter_followers();?><br/><?php _e('assinantes','kmol');?></span>
                     </div>
                     <div class="subscribe_home">
                     <?php
 		          		  $content = apply_filters('the_content', '<!--phplist form-->');
         		    	  echo $content;?> 
-                <!--         <input type="text" id="subscribe_home_box" placeholder="mail..."/>
-                        <input type="submit" id="subscribe_home_submit" value="<?php _e('Subscreva','kmol'); ?>"/> -->
                     </div>
                 </div>
                 <span class="triangle"></span>
