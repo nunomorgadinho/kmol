@@ -6,75 +6,101 @@
  * @since kmol 1.0
  */
 ?>
+
 <div class="container_12">
 	<div class="grid_9 alpha">
 		<div class="default_page">
-			<select class="filter alignright"  name="filter">
-				<option value="Autor"><?php _e ('filtrar por autor','kmol'); ?></option>
-				<option value="Data" selected><?php _e ('filtrar por data','kmol'); ?></option>
-			</select>
-			<div class="general_title alignleft"><?php _e ('Artigos','kmol'); ?></div>
-			<div class="news_title title_single"><a href="#">Inteligência Competitiva nas organizações em Portugal</a></div>
-			<div class="image_principal image_single"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/gestao_conhecimento.jpg"/></div>
-            <p class="news_excerpt excerpt_single">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu nisi nibh, at convallis turpis. 
-                            Maecenas consectetur facilisis suscipit. Donec consectetur sagittis nibh, sit amet blandit mi scelerisque eget. 
-                            Sed at faucibus.
-            <div class="news_meta meta_single">por Ana Neves, 30 ago<span class="readmore_single"><a href="#"><?php _e ('Ler Mais...','kmol'); ?></a></span></div>
+		
+		<!-- unavailable by now -->
+	<!-- 	<select class="filter alignright"  name="filter">
+				<option value="Autor"><?php _e('filtrar por autor','kmol'); ?></option>
+				<option value="Data" selected><?php _e('filtrar por data','kmol'); ?></option>
+			</select> -->
+			
+		<div class="general_title alignleft"><?php the_title(); ?></div>
+
+<?php 
+	//get first post
+
+	$cat =  get_option('articles');
+	$args = array(
+			'posts_per_page' => 1,
+			'cat' => $cat,
+			'post_status' => 'publish',
+			'gdsr_sort' => 'rating',
+			'nopaging' => 0,
+			'gdsr_order' => 'desc'
+	);
+	/* query posts array */
+	$query_first = new WP_Query( $args  );
+
+	
+	if($query_first->have_posts()): while ($query_first->have_posts()) : $query_first->the_post();
+?>
+		<div class="news_title title_single"><a href="<?php the_permalink();?>"><?php the_title();?></a></div>
+			<?php if(has_post_thumbnail()){?> <div class="image_principal image_single"> <?php the_post_thumbnail('medium');?></div><?php }?>
+            <div class="news_excerpt excerpt_single"><?php the_excerpt();?></div>
+            <div class="news_meta meta_single"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?><span class="readmore_single"><a href="<?php the_permalink();?>"><?php _e ('Ler Mais...','kmol'); ?></a></span></div>
             <span class="clear"></span>
-         	 
-<!--   First Row  -->
-			<div class="grid_8 alpha">
-	         	 <div class="sublayer grid_4 alpha sublayer_single">
-	                    <p class="sublayer_title"><a href="#">O Trabalhador da Mudança</a></p>
-	                    <div class="sublayer_meta news_meta">por João Neves, 25 Out</div>
-	                    <span class="readmore_single"><a href="#"><?php _e ('Ler Mais...','kmol'); ?></a></span>
-	                </div>
+<?php
+	endwhile;
+	endif;
+?>
 
-	                <div class="sublayer grid_4 omega sublayer_single">
-	                    <p class="sublayer_title"><a href="#">Influenciando comportamentos</a></p>
-	                    <div class="sublayer_meta news_meta">por João Neves, 25 Out</div>
-	                    <span class="readmore_single"><a href="#"><?php _e ('Ler Mais...','kmol'); ?></a></span>
-	                </div>
-	        </div>
-<!--   Second Row  -->
-			<div class="grid_8 alpha">
-                <div class="sublayer grid_4 alpha sublayer_single">
-                	<div class="image_sublayer"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/barometro_inovacao.jpg"/></div>
-                    <p class="sublayer_title"><a href="#">O Trabalhador da Mudança</a></p>
-                    <div class="sublayer_meta news_meta">por João Neves, 25 Out</div>
-                    <span class="readmore_single"><a href="#"><?php _e ('Ler Mais...','kmol'); ?></a></span>
-                </div>
+	<div class="grid_8 alpha">
+	<?php 
+	//get remaining post
 
-                <div class="sublayer grid_4 omega sublayer_single">
-                    <p class="sublayer_title"><a href="#">Influenciando comportamentos</a></p>
-                    <div class="sublayer_meta news_meta">por João Neves, 25 Out</div>
-                    <span class="readmore_single"><a href="#"><?php _e ('Ler Mais...','kmol'); ?></a></span>
-                </div>
-            </div>
-<!--   Third Row  -->
-			<div class="grid_8 alpha">
-                <div class="sublayer grid_4 alpha sublayer_single">
-                    <p class="sublayer_title"><a href="#">O Trabalhador da Mudança</a></p>
-                    <div class="sublayer_meta news_meta">por João Neves, 25 Out</div>
-                    <span class="readmore_single"><a href="#"><?php _e ('Ler Mais...','kmol'); ?></a></span>
-                </div>
+	$cat =  get_option('articles');
+	
+	$args = array(
+			'posts_per_page' =>7,
+			'cat' => $cat,
+			'post_status' => 'publish',
+			'gdsr_sort' => 'rating',
+			'nopaging' => 0,
+			'gdsr_order' => 'desc',
+			'paged' =>	(get_query_var('paged')) ? get_query_var('paged') : 1
+			
+	);
+	/* query posts array */
+	$query = new WP_Query( $args  );
 
-                <div class="sublayer grid_4 omega sublayer_single">
-                    <p class="sublayer_title"><a href="#">Influenciando comportamentos</a></p>
-                    <div class="sublayer_meta news_meta">por João Neves, 25 Out</div>
-                    <span class="readmore_single"><a href="#"><?php _e ('Ler Mais...','kmol'); ?></a></span>
-                </div>
-           	</div>      
+	$i=1;
+	if($query->have_posts()): while ($query->have_posts()) : $query->the_post(); ?>
+		<?php if($i==1) {$i++; continue;}?>
+			 <div class="sublayer grid_4 <?php if ($i % 2 == 0) echo "alpha"; else echo "omega";?> sublayer_single">
+			 	<?php if(has_post_thumbnail()) {?> 
+			 		<div class="image_sublayer"><?php the_post_thumbnail('thumbnail');?></div>
+			 	<?php }?>
+	         	<div class="sublayer_title"><a href="<?php the_permalink();?>"><?php the_title();?></a></div>
+	             <div class="sublayer_meta news_meta"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></div>
+	                 <span class="readmore_single"><a href="<?php the_permalink();?>"><?php _e ('Ler Mais...','kmol'); ?></a></span>
+	         </div>
+		
+	<?php 
+		$i++;
+	endwhile;
+	endif;
+ 
+?>
 
-				<div class="grid_8 alpha">
-				     		<div class="more_single alignright">
-				     			<a href="#"><?php _e ('Artigos mais antigos','kmol'); ?></a>
-				     		</div>     
-				</div>
+    </div>  <!-- grid_8 alpha -->    
 
-</article><!-- #post-<?php the_ID(); ?> -->
-</div>
-</div>
+    
+	<div class="grid_8 alpha more_single">
+	
+	<?php next_posts_link(__('Artigos mais antigos ','kmol'),$query->max_num_pages); ?>
+	<div class="alignright">
+	<?php previous_posts_link(__('Artigos mais recentes ','kmol')); ?>
+	</div>
+		     
+	</div>
+
+			
+		</div><!-- default_page -->
+	</div> <!-- grid_9 -->
+
 	<div class="topics">
 		<div class="grid_3 omega">
 			<div class="marcador_title">
@@ -103,7 +129,7 @@
 				<p><a href="/">actores_do_conhecimento</a></p>
 			</div>
 		</div>
-	</div>
+	</div> <!-- .topics -->
 
 		<div class="grid_3 omega banner3">
 			Banner3 //
@@ -144,4 +170,4 @@
                 </div>
         </div>
 
-</div>
+</div> <!-- container_12 -->
