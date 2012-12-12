@@ -17,8 +17,37 @@
 				<div class="social alignleft"><?php dynamic_sidebar('Social_Widget'); ?></div>
                
                 <?php
-          		  $content = apply_filters('the_content', '<!--phplist form-->');
-            	  echo $content;?> 
+                    $widgetdata=array (
+                    		'title' => '',
+                    		'instruction' => '',
+                    		'lists' =>
+                    		array (
+                    				0 => '1',
+                    		),
+                    		'lists_name' =>
+                    		array (
+                    				1 => 'A minha primeira lista',
+                    		),
+                    		'autoregister' => 'not_auto_register',
+                    		'labelswithin' => 'labels_within',
+                    		'customfields' =>
+                    		array (
+                    				'email' =>
+                    				array (
+                    						'label' => '',
+                    						'placeholder'=> 'e-mail'
+                    				),
+                    		),
+                    		'submit' => 'Newsletter',
+                    		'success' => 'Veja na sua caixa de correio como confirmar a subscrição.',
+                    		'widget_id' => 'wysija-3-php',
+                    );
+                    $widgetNL=new WYSIJA_NL_Widget(1);
+                    $subscriptionForm= $widgetNL->widget($widgetdata,$widgetdata);
+                    echo $subscriptionForm;
+                    
+                    
+                    ?> 
          </div>
         
          <div class="grid_3">

@@ -8,27 +8,39 @@ jQuery( document ).ready( function( $ ) {
 	var i_rss = 0;
 	
 	
-		//console.log(jQuery('.numbers #twitter').val());
-	  	var twitter = jQuery('.numbers #twitter').val();
-  		var facebook = jQuery('.numbers #facebook').val()/10;
-  		var rss = 100;
+		console.log(jQuery('.numbers #twitter').val()/10);
+		console.log(jQuery('.numbers #facebook').val()/10);
+		console.log(jQuery('.numbers #rss').val()/10);
+		
+	  	var twitter = 101;
+  		var facebook = 50;
+  		var rss = 10;
   			
+  		
+  		var max = Math.max(twitter,facebook,rss);
+  		
+  		console.log('max' + max);
+  		
   		var myVar=setInterval(function(){myTimer()},10);
 
   		function myTimer()
   		{
-  			$('.twitter').val(i_twitter).trigger('change');
-  			$('.facebook').val(i_facebook).trigger('change');
-  			$('.rss').val(i_rss).trigger('change');
+  			jQuery('.twitter').val(i_twitter).trigger('change');
+  			jQuery('.facebook').val(i_facebook).trigger('change');
+  			jQuery('.rss').val(i_rss).trigger('change');
   			
   			if (i_twitter < twitter)
   				i_twitter++;
-  			if (i_facebook < facebook)
+  			if (i_facebook < facebook) 
   				i_facebook++;
   			if (i_rss < rss)
   				i_rss++;
+  			
   			else
+  			{
+  				if((i_twitter > twitter && i_twitter > max) && (i_facebook > facebook && i_facebook > max) && (i_rss > rss && i_rss > max) )
   				clearInterval(myVar);
+  			}
   		}
 	
 

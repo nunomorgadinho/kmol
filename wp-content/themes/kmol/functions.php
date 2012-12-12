@@ -403,26 +403,25 @@ function count_twitter_followers(){
  * @return number
  */
 function count_rss_followers(){
-	$count_facebook = 0;
+	$count_rss = 0;
 
-	// If Facebook is enabled...
-	$facebook = get_option('facebook');
-	if ( isset( $facebook  ) ) {
-		// ...get Facebook data
-		$url = 'https://graph.facebook.com/' .$facebook . '?fields=likes';
-		$get_facebook = wp_remote_get( $url );
+	$feed = "http://feeds.feedburner.com/online/oOLP";
+// If Feedburner is enabled...
+		if ( isset( $instance['feedburner'] ) && $instance['feedburner'] ) {
+			// ...get Feedburner data
+			$url = 'https://feedburner.google.com/api/awareness/1.0/GetFeedData?uri='.$feed;
+			$get_feedburner = wp_remote_get( $url );
 
-
-		$count_facebook = 0;
-		// Check for errors. If none proceed...
-		if ( ! is_wp_error( $get_facebook ) ) {
-			// Decode JSON response and cast the number of likes as integer
-			$facebook_data = json_decode( $get_facebook['body'] );
-			$count_facebook = (int) $facebook_data->likes;
+			// Check for errors. If none proceed...
+			if ( ! is_wp_error( $get_feedburner ) ) { 
+					// Decode the XML response and cast the number of followers as integer
+					$feedburner_data = new SimpleXmlElement( $get_feedburner['body'], LIBXML_NOCDATA );
+					$count_rss = $feedburner_data->feed->entry['circulation'];
+			}	
 
 		}
-	}
+	
 
-	return $count_facebook;
+	return $count_rss;
 }
 ?>

@@ -153,26 +153,55 @@ $temp = $post;
 	
                 <div class="counters grid_4 omega">
                     <div class="phrase">
-                        <p><?php _e('Ajude-nos a chegar aos','kmol');?></p><h3><?php _e('1.000 gostos!','kmol');?></h3></div>
+                        <p><?php _e('Ajude-nos a chegar aos','kmol');?></p><h3><?php _e('1500 gostos!','kmol');?></h3></div>
                
                     <div class="numbers">
                         <div class="counters_container">
-                          <input id="twitter" class="knob countersingle numbers_margin twitter" data-displayInput="true" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true title="<?php echo count_twitter_followers();?>" value="<?php echo count_twitter_followers();?>">
-                        <center><span><h1><?php echo count_twitter_followers();?></h1><h2><?php _e('seguidores','kmol');?></h2></span></center>
+                          <input id="twitter" class="knob countersingle numbers_margin twitter" data-max="150" data-displayInput="true" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true title="<?php echo count_twitter_followers();?>" value="<?php echo count_twitter_followers();?>">
+                        	<center><span><h1><?php echo count_twitter_followers();?></h1><h2><?php _e('seguidores','kmol');?></h2></span></center>
                         </div>
                         <div class="counters_container">
-                          <input id="facebook" class="knob countersingle numbers_margin facebook" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="<?php echo count_facebook_followers();?>">
+                          <input id="facebook" class="knob countersingle numbers_margin facebook" data-max="150" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="<?php echo count_facebook_followers();?>">
                         <center><span><h1><?php echo count_facebook_followers();?></h1><h2><?php _e('gostos','kmol');?></h2></span></center>
                         </div>
                         <div class="counters_container">
-                          <input id="rss" class="knob countersingle rss" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="<?php echo count_rss_followers();?>">
-                 		       <center><span><h1><?php echo count_rss_followers();?></h1><h2><?php _e('assinantes','kmol');?></h2></span></center>
-                    </div>
-                    </div>
+                          <input id="rss" class="knob countersingle rss" data-fgColor="#6c9ebb" data-max="150" data-thickness=".3" data-readOnly=true value="<?php echo count_rss_followers();?>">
+                 		       <center><span><h1>80</h1><h2><?php _e('assinantes','kmol');?></h2></span></center>
+                  	  </div>
+                  </div>
                     <div class="subscribe_home">
                     <?php
-		          		  $content = apply_filters('the_content', '<!--phplist form-->');
-        		    	  echo $content;?> 
+                    $widgetdata=array (
+                    		'title' => '',
+                    		'instruction' => '',
+                    		'lists' =>
+                    		array (
+                    				0 => '1',
+                    		),
+                    		'lists_name' =>
+                    		array (
+                    				1 => 'A minha primeira lista',
+                    		),
+                    		'autoregister' => 'not_auto_register',
+                    		'labelswithin' => 'labels_within',
+                    		'customfields' =>
+                    		array (
+                    				'email' =>
+                    				array (
+                    						'label' => '',
+                    						'placeholder'=> 'e-mail'
+                    				),
+                    		),
+                    		'submit' => __('Subscrever!','kmol'),
+                    		'success' => __('Veja na sua caixa de correio como confirmar a subscrição.','kmol'),
+                    		'widget_id' => 'wysija-2-php',
+                    );
+                    $widgetNL=new WYSIJA_NL_Widget(1);
+                    $subscriptionForm= $widgetNL->widget($widgetdata,$widgetdata);
+                    echo $subscriptionForm;
+                    
+                    
+                    ?> 
                     </div>
                 </div>
                 <span class="triangle"></span>

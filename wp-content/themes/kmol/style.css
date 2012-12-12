@@ -1104,6 +1104,7 @@ background: transparent;
 
 .numbers {
 	padding: 25px 5px 0 15px;
+	min-height:140px;
 }
 
 .numbers canvas {
@@ -1428,11 +1429,17 @@ background: transparent;
 	margin-top: 40px;
 }
 
-.subscribe_footer, .phplist {
+.widget_wysija_cont p{margin:0;}
+
+.subscribe_footer, .widget_wysija_cont {
 	height: 18px;
 }
 
-#subscribe_footer_box, .phplist input[type="text"]{
+.subscribe_home .widget_wysija_cont input[type="text"]{
+	background-color:#E6E6E6;
+	
+}
+#subscribe_footer_box, .widget_wysija_cont input[type="text"]{
 	color: #999;
 	border: none;
 	background: #F8F8F8;
@@ -1442,7 +1449,7 @@ background: transparent;
 	font-size: 14px;
 }
 
-#subscribe_footer_submit, .phplist input[type="submit"] {
+#subscribe_footer_submit, .widget_wysija_cont input[type="submit"] {
 	background: #a9cf54;
 	box-shadow: none;
 	border: none;
@@ -1461,12 +1468,12 @@ background: transparent;
 
 }
 
-#subscribe_footer_submit:hover, .phplist input[type="submit"]:hover {
+#subscribe_footer_submit:hover, .widget_wysija_cont input[type="submit"]:hover {
 	background:#6C9EBB !important;
 	
 }
 
-.phplist label{display:none !important;}
+
 
 .footer_title {
 	font-family: 'RobotoBold';
