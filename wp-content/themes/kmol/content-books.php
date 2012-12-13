@@ -9,13 +9,22 @@
 <div class="container_12">
 	<div class="grid_12 alpha">
 		<div class="default_page book_page">
-			<select class="filter alignright"  name="filter">
-				<option value="Autor"><?php _e ('filtrar por autor','kmol'); ?></option>
-				<option value="Data" selected><?php _e ('filtrar por data','kmol'); ?></option>
-			</select>
-			<div class="general_title alignleft"><?php _e ('Livros','kmol'); ?></div>
+			
+			
+			<!-- TODO unavailable by now -->
+			<!-- <select class="filter alignright"  name="filter">
+				<option value="Autor"><?php _e('filtrar por autor','kmol'); ?></option>
+				<option value="Data" selected><?php _e('filtrar por data','kmol'); ?></option>
+			</select> -->
+			
+			
+			<!-- Page Title -->
+			<div class="general_title alignleft"><?php the_title(); ?></div>
 			<span class="clear"></span>
             
+            
+            
+            <!-- Featured Book -->
             <div class="book_big_marcador">
                     <div class="grid_4 alpha">
                         <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
@@ -43,11 +52,23 @@
                         <h1 class="alignright comments"><a href="#">18 Comentários</a></h1>
                     </div>
 
-            </div>
+            </div><!-- book_big_marcador -->
 
-                    <span class="clear"></span>
+            <span class="clear"></span>
 
-                <div class="book_row">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="book_row">
                     <div class="marcador_container">
                         <div class="book_small_marcador">
                                 <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
@@ -164,9 +185,9 @@
 
 
 
+              
+    	</div><!-- .default_page book_page -->
 
+	</div><!-- grid_12 alpha -->
 
-                </article>
-            </div>
-
-</div>
+</div><!-- .container_12 -->

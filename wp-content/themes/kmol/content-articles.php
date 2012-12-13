@@ -7,11 +7,10 @@
  */
 ?>
 
-<div class="container_12">
 	<div class="grid_9 alpha">
 		<div class="default_page">
 		
-			<!-- unavailable by now -->
+			<!-- TODO unavailable by now -->
 			<!-- 	<select class="filter alignright"  name="filter">
 					<option value="Autor"><?php _e('filtrar por autor','kmol'); ?></option>
 					<option value="Data" selected><?php _e('filtrar por data','kmol'); ?></option>
@@ -101,28 +100,5 @@
 	</div> <!-- grid_9 -->
 
 	
-	<?php get_sidebar(); ?>
-	
-	
-	<div class="grid_3 omega banner3">
-    	<?php 
-        	$img_url = get_option('banner3'); echo $img_url;
-            if(isset($img_url) && $img_url!=''){
-        ?>
-	    		<img src="<?php echo $img_url;?>" width="220" height="100"/>
-		<?php } else {echo "Banner 3//";}?>
-    </div> <!-- banner 3 -->
-    
-    <div class="grid_9 alpha omega banner4">
-    	<?php 
-        	$img_url = get_option('banner4'); echo $img_url;
-            if(isset($img_url)  && $img_url!=''){
-        ?>
-	    		<img src="<?php echo $img_url;?>" width="700" height="100"/>
-		<?php } else {echo "Banner 4//";}?>
-    </div> <!-- banner 3 -->
-	
-	
-    <?php get_template_part( 'content', 'markers' ); ?>
 
-</div> <!-- container_12 -->
+
