@@ -1632,11 +1632,20 @@ background: transparent;
 .sidebar_description {
 	background: #f2f2f2;
 	padding: 20px 20px;
+	font-size: 14px;
 }
 
 .sidebar_description p {
 	margin-bottom: 3px;
 	font-size: 14px;
+}
+
+aside ul{
+	/*list-style:none;*/
+	margin:0;
+}
+aside ul li{
+	margin-top:3px;
 }
 
 .banner3 {
@@ -1646,7 +1655,7 @@ background: transparent;
 	margin-top: 20px;
 }
 
-.topics {
+.topics, #secondary {
 	margin-bottom: 20px;
 	overflow: hidden;
 }

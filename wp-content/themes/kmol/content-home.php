@@ -267,7 +267,7 @@ $temp = $post;
                 <div class="grid_4 alpha banner1">
                     <?php 
                     	$img_url = get_option('banner1');
-                    	if(isset($img_url)){
+                    	if(isset($img_url)  && $img_url!=''){
                     ?>
 	                    <img src="<?php echo $img_url;?>" width="300" height="251"/>
 	                <?php } else {echo "Banner 1//";}?>
@@ -302,7 +302,7 @@ $temp = $post;
             <div class="grid_8 alpha omega banner2">
                   <?php 
                     	$img_url = get_option('banner2');
-                    	if(isset($img_url)){
+                    	if(isset($img_url) && $img_url!=''){
                     ?>
 	                    <img src="<?php echo $img_url;?>" width="620" height="100"/>
 	                <?php } else {echo "Banner 2//";}?>

@@ -83,10 +83,10 @@ function kmol_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Sidebar', 'kmol' ),
 		'id' => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h1 class="widget-title">',
-		'after_title' => '</h1>',
+		'before_widget' => '<aside id="%1$s" class="widget grid_3 omega %2$s">',
+		'after_widget' => '</div></aside>',
+		'before_title' => '<div class="widget-title marcador_title">',
+		'after_title' => '</div><div class="sidebar_description">',
 	) );
 
 	register_sidebar( array(
