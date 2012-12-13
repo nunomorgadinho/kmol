@@ -44,7 +44,7 @@ get_header(); ?>
 			        ?>
 				    		<img src="<?php echo $img_url;?>" width="700" height="100"/>
 					<?php } else {echo "Banner 4//";}?>
-			    </div> <!-- banner 3 -->
+			    </div> <!-- banner 4 -->
 			
 			
 			    <?php get_template_part( 'content', 'markers' ); ?>
