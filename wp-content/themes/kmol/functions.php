@@ -297,13 +297,13 @@ add_action('wp_head','knob_script');
  */
 function new_excerpt_more($more) {
        global $post;
-		return '<a class="moretag" href="'. get_permalink($post->ID) . '">'.__(' ler mais &rarr;','kmol').'</a>';
+		return '<a class="moretag" href="'. get_permalink($post->ID) . '">'.__('... ler mais &rarr;','kmol').'</a>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
 function wpe_excerptlength_teaser( $length ) {
 
-	return 45;
+	return 55;
 }
 function wpe_excerptlength_index( $length ) {
 
