@@ -1749,12 +1749,16 @@ aside ul li{
 
 .book_small_marcador .marcador_subtitle{
 	
-	min-height:45px;
+	min-height:48px;
 }
 
 .book_small_marcador .marcador_description{
 	
 	min-height:120px;
+}
+
+.book_small_marcador .tag_marcador{
+	min-height:46px;
 }
 
 .marcador_container {

@@ -29,6 +29,7 @@ function register_kmol_options() {
 		update_option('interviews', $_POST['interviews']);
 		update_option('cases', $_POST['cases']);
 		update_option('blog', $_POST['blog']);
+		update_option('recomend', $_POST['recomend']);
 		
 		update_option('banner1', $_POST['banner1']);
 		update_option('banner2', $_POST['banner2']);
@@ -47,6 +48,7 @@ function register_kmol_options() {
 	register_setting( 'categories-group', 'interviews' );
 	register_setting( 'categories-group', 'cases' );
 	register_setting( 'categories-group', 'blog' );
+	register_setting( 'categories-group', 'recomend' );
 	
 	register_setting( 'banners-home', 'banner1' );
 	register_setting('banners-home', 'banner2');
@@ -97,6 +99,12 @@ function kmol_options_page() {
 				<th scope="row"><?php _e('Blog');?></th>
 				<td>
 					<?php wp_dropdown_categories(array('name'=>'blog','selected'=>get_option('blog'))); ?></td>
+			</tr> 
+			
+			<tr valign="top">
+				<th scope="row"><?php _e('Recomendações','kmol');?></th>
+				<td>
+					<?php wp_dropdown_categories(array('name'=>'recomend','selected'=>get_option('recomend'))); ?></td>
 			</tr> 
 		</table>
 	

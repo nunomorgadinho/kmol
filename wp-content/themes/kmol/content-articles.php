@@ -19,35 +19,6 @@
 			<div class="general_title alignleft"><?php the_title(); ?></div>
 
 			<?php 
-				//get first post
-			
-				$cat =  get_option('articles');
-				$args = array(
-						'posts_per_page' => 1,
-						'cat' => $cat,
-						'post_status' => 'publish',
-						'gdsr_sort' => 'rating',
-						'nopaging' => 0,
-						'gdsr_order' => 'desc'
-				);
-				/* query posts array */
-				$query_first = new WP_Query( $args  );
-			
-				
-				if($query_first->have_posts()): while ($query_first->have_posts()) : $query_first->the_post();
-			?>
-					<div class="news_title title_single"><a href="<?php the_permalink();?>"><?php the_title();?></a></div>
-					<?php if(has_post_thumbnail()){?> <div class="image_principal image_single"> <?php the_post_thumbnail('medium');?></div><?php }?>
-			        <div class="news_excerpt excerpt_single"><?php the_excerpt();?></div>
-			       	<div class="news_meta meta_single"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?><span class="readmore_single"><a href="<?php the_permalink();?>"><?php _e ('Ler Mais...','kmol'); ?></a></span></div>
-			        <span class="clear"></span>
-			<?php
-				endwhile;
-				endif;
-			?>
-
-			<div class="grid_8 alpha">
-			<?php 
 			//get remaining post
 		
 			$cat =  get_option('articles');
@@ -67,7 +38,22 @@
 		
 			$i=1;
 			if($query->have_posts()): while ($query->have_posts()) : $query->the_post(); ?>
-				<?php if($i==1) {$i++; continue;}?>
+
+				<?php if($i==1) {?>
+					
+					
+					<div class="news_title title_single"><a href="<?php the_permalink();?>"><?php the_title();?></a></div>
+					<?php if(has_post_thumbnail()){?> <div class="image_principal image_single"> <?php the_post_thumbnail('medium');?></div><?php }?>
+			        <div class="news_excerpt excerpt_single"><?php the_excerpt();?></div>
+			       	<div class="news_meta meta_single"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?><span class="readmore_single"><a href="<?php the_permalink();?>"><?php _e ('Ler Mais...','kmol'); ?></a></span></div>
+			        <span class="clear"></span>
+					
+					
+					
+				<div class="grid_8 alpha">		
+				<?php $i++; }
+					else{
+				?>
 					 <div class="sublayer grid_4 <?php if ($i % 2 == 0) echo "alpha"; else echo "omega";?> sublayer_single">
 					 	<?php if(has_post_thumbnail()) {?> 
 					 		<div class="image_sublayer"><?php the_post_thumbnail('thumbnail');?></div>
@@ -78,7 +64,7 @@
 			         </div>
 				
 			<?php 
-				$i++;
+				$i++;}
 			endwhile;
 			endif;
 		 
