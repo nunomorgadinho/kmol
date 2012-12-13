@@ -135,7 +135,7 @@ function kmol_scripts() {
 	wp_enqueue_script( 'slideshow_cycle' );
 
 
-	wp_register_script ('knob', get_template_directory_uri(). '/js/jquery.knob.js');
+	wp_register_script ('knob', get_template_directory_uri(). '/js/jquery.knob.js',true);
 	wp_enqueue_script('knob');
 
 	wp_register_script ('custom', get_template_directory_uri(). '/js/custom.js');
@@ -218,77 +218,6 @@ function my_scripts2() {
 <?php }
 add_action('wp_head','my_scripts2');
 
-
-function knob_script() { 
-?>
-<script type="text/javascript">
-   jQuery(document).ready(function () {
-                jQuery(".knob").knob({
-                    /*change : function (value) {
-                        //console.log("change : " + value);
-                    },
-                    release : function (value) {
-                        console.log("release : " + value);
-                    },
-                    cancel : function () {
-                        console.log("cancel : " + this.value);
-                    },*/
-                    /*draw : function () {
-
-                        // "tron" case
-                        if(this.$.data('skin') == 'tron') {
-
-                            var a = this.angle(this.cv)  // Angle
-                                , sa = this.startAngle          // Previous start angle
-                                , sat = this.startAngle         // Start angle
-                                , ea                            // Previous end angle
-                                , eat = sat + a                 // End angle
-                                , r = 1;
-
-                            this.g.lineWidth = this.lineWidth;
-
-                            this.o.cursor
-                                && (sat = eat - 0.3)
-                                && (eat = eat + 0.3);
-
-                            if (this.o.displayPrevious) {
-                                ea = this.startAngle + this.angle(this.v);
-                                this.o.cursor
-                                    && (sa = ea - 0.3)
-                                    && (ea = ea + 0.3);
-                                this.g.beginPath();
-                                this.g.strokeStyle = this.pColor;
-                                this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sa, ea, false);
-                                this.g.stroke();
-                            }
-
-                            this.g.beginPath();
-                            this.g.strokeStyle = r ? this.o.fgColor : this.fgColor ;
-                            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sat, eat, false);
-                            this.g.stroke();
-
-                            this.g.lineWidth = 2;
-                            this.g.beginPath();
-                            this.g.strokeStyle = this.o.fgColor;
-                            this.g.arc( this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
-                            this.g.stroke();
-
-                            return false;
-                        }
-                    } */
-                });
-
-    });
-    </script>
-
-<?php }
-add_action('wp_head','knob_script');
-
-
-/**
- * Implement the Custom Header feature
- */
-//require( get_template_directory() . '/inc/custom-header.php' );
 
 
 /**

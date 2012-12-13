@@ -21,7 +21,8 @@
 			<?php 
 			//get remaining post
 		
-			$cat =  get_option('articles');
+			
+			global $cat;
 			
 			$args = array(
 					'posts_per_page' =>7,

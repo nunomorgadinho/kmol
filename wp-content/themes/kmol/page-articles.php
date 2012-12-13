@@ -18,7 +18,7 @@ get_header(); ?>
 			<div id="content" class="site-content" role="main">
 				<div class="container_12">
 	
-					<?php while ( have_posts() ) : the_post(); ?>
+					<?php while ( have_posts() ) : the_post(); global $cat; $cat = get_option('articles'); ?>
 	
 						<?php get_template_part( 'content', 'articles' ); ?>
 	
