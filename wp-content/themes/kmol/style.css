@@ -1747,6 +1747,16 @@ aside ul li{
 	overflow:hidden;
 }
 
+.book_small_marcador .marcador_subtitle{
+	
+	min-height:45px;
+}
+
+.book_small_marcador .marcador_description{
+	
+	min-height:120px;
+}
+
 .marcador_container {
 	width: 400px;
 	float: left;

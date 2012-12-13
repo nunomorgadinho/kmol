@@ -137,9 +137,14 @@
             
        
                 <span class="clear"></span>
-                <div class=" more_single alignright">
-                        <a href="#"> <?php _e('Livros mais Antigos' ,'kmol'); ?></a>    
+                
+                <div class="more_single">
+	                <?php next_posts_link(__('Livros mais antigos ','kmol'),$query->max_num_pages); ?>
+						<div class="alignright">
+						<?php previous_posts_link(__('Livros mais recentes ','kmol')); ?>
+					</div>
                 </div>
+
                 <span class="clear"></span>
 
             <div class="recommend_title">
