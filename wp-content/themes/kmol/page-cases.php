@@ -17,17 +17,23 @@ get_header(); ?>
 		<div id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
 				<div class="container_12">
-	
+				<div class="grid_9 alpha">
 				<?php while ( have_posts() ) : the_post(); global $cat; $cat = get_option('cases'); ?>
 
 					<?php get_template_part( 'content', 'articles' ); ?>
 
 				<?php endwhile; // end of the loop. ?>
+				</div>
 				
+				
+
+
+				<div class="grid_3 omega">
+
 				<?php get_sidebar(); ?>
-				
-				<!-- BANNERS -->
-				<div class="grid_3 omega banner3">
+			    	
+				<div class="banner3">
+
 			    	<?php 
 			        	$img_url = get_option('banner3'); echo $img_url;
 			            if(isset($img_url) && $img_url!=''){
@@ -35,7 +41,8 @@ get_header(); ?>
 				    		<img src="<?php echo $img_url;?>" width="220" height="100"/>
 					<?php } else {echo "Banner 3//";}?>
 			    </div> <!-- banner 3 -->
-		    
+				</div><!-- BANNERS -->
+		   
 			    <div class="grid_9 alpha omega banner4">
 			    	<?php 
 			        	$img_url = get_option('banner4'); echo $img_url;
