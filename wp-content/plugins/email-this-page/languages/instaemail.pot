@@ -1,0 +1,199 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-21 14:11+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: instaemail.php:282
+msgid "The text size you entered is too high, please stay below 25px."
+msgstr ""
+
+#: instaemail.php:290
+msgid ""
+"The color you entered is not valid, it must be a valid hexadecimal RGB font "
+"color."
+msgstr ""
+
+#: instaemail.php:304
+msgid "InstaEmail Options"
+msgstr ""
+
+#: instaemail.php:304
+msgid "InstaEmail"
+msgstr ""
+
+#: instaemail.php:314
+msgid "Need Help?"
+msgstr ""
+
+#: instaemail.php:315
+#, php-format
+msgid "Be sure to check out the %s!"
+msgstr ""
+
+#: instaemail.php:315
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: instaemail.php:352 instaemail.php:510
+msgid "Settings"
+msgstr ""
+
+#: instaemail.php:518
+msgid "Pick a Button and/or Text"
+msgstr ""
+
+#: instaemail.php:522
+msgid "Pick Your Button Style"
+msgstr ""
+
+#: instaemail.php:532
+msgid "Custom Image URL"
+msgstr ""
+
+#: instaemail.php:534
+msgid ""
+".JPG .GIF or .PNG Absolute (http://www.example.com/...), or Relative (/wp/wp-"
+"content/uploads/example.png)"
+msgstr ""
+
+#: instaemail.php:540
+msgid "Button Text"
+msgstr ""
+
+#: instaemail.php:545
+msgid "Style the Button and Text"
+msgstr ""
+
+#: instaemail.php:549
+msgid "Text Color"
+msgstr ""
+
+#: instaemail.php:553
+msgid ""
+"Use the color picker, or enter a valid hex color in the color picker input "
+"box."
+msgstr ""
+
+#: instaemail.php:557
+msgid "Text Size"
+msgstr ""
+
+#: instaemail.php:560 instaemail.php:566
+msgid "In pixels (px)"
+msgstr ""
+
+#: instaemail.php:564
+msgid "Margin"
+msgstr ""
+
+#: instaemail.php:566 instaemail.php:581
+msgid "Left"
+msgstr ""
+
+#: instaemail.php:567 instaemail.php:582
+msgid "Right"
+msgstr ""
+
+#: instaemail.php:568
+msgid "Top"
+msgstr ""
+
+#: instaemail.php:569
+msgid "Bottom"
+msgstr ""
+
+#: instaemail.php:574
+msgid "Button Placement"
+msgstr ""
+
+#: instaemail.php:578
+msgid "Horizontal Alignment"
+msgstr ""
+
+#: instaemail.php:580
+msgid "None"
+msgstr ""
+
+#: instaemail.php:583
+msgid "Center"
+msgstr ""
+
+#: instaemail.php:587
+msgid "Vertical Position"
+msgstr ""
+
+#: instaemail.php:589
+msgid "Before Content"
+msgstr ""
+
+#: instaemail.php:590
+msgid "After Content"
+msgstr ""
+
+#: instaemail.php:594
+msgid "Add InstaEmail To"
+msgstr ""
+
+#: instaemail.php:596
+msgid "Homepage, Archives, Posts, and Pages"
+msgstr ""
+
+#: instaemail.php:597
+msgid "Posts and Pages"
+msgstr ""
+
+#: instaemail.php:598
+msgid "Posts"
+msgstr ""
+
+#: instaemail.php:599
+msgid "Manual"
+msgstr ""
+
+#: instaemail.php:601
+msgid "Copy and paste the code below anywhere in your template pages."
+msgstr ""
+
+#: instaemail.php:608
+msgid "Other Settings"
+msgstr ""
+
+#: instaemail.php:612
+msgid "CSS Stylesheet"
+msgstr ""
+
+#: instaemail.php:614
+msgid "Add CSS to pages"
+msgstr ""
+
+#: instaemail.php:616
+msgid ""
+"If you uncheck this box you have to add the styling for the InstaEmail "
+"button to your theme's stylesheet."
+msgstr ""
+
+#: instaemail.php:627
+msgid "Like InstaEmail?"
+msgstr ""
+
+#: instaemail.php:627
+msgid "Give us a rating"
+msgstr ""
+
+#: instaemail.php:627
+msgid "Need help or have suggestions?"
+msgstr ""
