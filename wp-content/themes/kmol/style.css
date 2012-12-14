@@ -1268,6 +1268,10 @@ background: transparent;
 	letter-spacing: normal;
 }
 
+.blog_page .news_meta{
+	position:relative;
+	float:left;
+}
 
 #container_blog {
 	overflow: hidden;
@@ -1733,7 +1737,7 @@ aside ul li{
 	margin-top: 8px;
 }
 
-.tag_marcador a {
+.tag_marcador a, .tag_marcador span {
 	font-size: 12px;
 	float: left;
 	background:  #a9cf55;

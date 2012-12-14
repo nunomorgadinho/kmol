@@ -8,7 +8,7 @@
 ?>
 
 <div class="grid_9 alpha">
-	<div class="default_page">
+	<div class="default_page blog_page">
 		
 		<!-- TODO unavailable by now -->
 			<!-- <select class="filter alignright"  name="filter">
@@ -48,6 +48,17 @@
 				  <div class="sublayer grid_8 alpha sublayer_single">
 					  <?php if(has_post_thumbnail()) :?><div class="image_sublayer"><?php the_post_thumbnail('thumbnail');?></div> <?php endif;?>
 	                    <div class="sublayer_title"><a href="<?php the_permalink();?>"><?php the_title();?></a></div>
+	                   <div class="news_meta">
+						<?php kmol_posted_on(); ?>
+									<div class="tag_marcador alignleft"><?php /* translators: used between list items, there is a space after the comma */
+									$tag_list = get_the_tag_list( '', ' ' );
+									printf($tag_list);
+									?></div>
+						
+						</div><!-- .entry-meta -->
+						
+						<span class="clear"></span>
+
 	                    <div class="news_excerpt excerpt_single">
 	                    	<?php wpe_excerpt('wpe_excerptlength_teaser');?>
 	                    </div> 
