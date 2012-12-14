@@ -916,7 +916,14 @@ object {
 
 .social {
 	margin-top: 5px;
-	min-width: 150px;
+	/*min-width: 150px;*/
+	width: auto;
+}
+
+#social-widget-3 h2 {
+	font-family: 'RobotoLight';
+	color: #999;
+	font-weight: normal;
 }
 
 .socialmedia-buttons a{
@@ -1119,7 +1126,7 @@ background: transparent;
 }
 
 .subscribe_home{
-	height: 39px;
+	/*height: 39px;*/
 	width: 90%;
 	padding: 20px 15px;
 }
@@ -1200,7 +1207,6 @@ background: transparent;
 .subscribe_home .wysija-email {
 	padding: 12px 10px;
 }
-
 #email {
 	margin-left: 0;
 }
@@ -1302,6 +1308,10 @@ background: transparent;
 	clear:both;
 	float: left;
 	padding-right: 20px;
+}
+
+.image_principal img{
+	background: white;
 }
 
 .sublayer {
@@ -1443,6 +1453,9 @@ background: transparent;
 }
 
 .widget_wysija_cont p{margin:0;}
+.widget_wysija_cont {
+	clear: both;
+}
 
 /*.subscribe_footer, .widget_wysija_cont {
 	height: 18px;
@@ -1627,7 +1640,7 @@ background: transparent;
 
 
 .sublayer_single {
-	margin: 10px 20px 10px 20px;
+	margin: 20px 20px 10px 20px;
 	border-top: 2px solid;
 	min-height:150px;
 }
@@ -1635,6 +1648,10 @@ background: transparent;
 .image_sublayer {
 	padding-right: 15px;
 	float:left;
+}
+
+.more_single{
+	padding-top: 20px;
 }
 
 .more_single a, .more_single a:link, .more_single a:visited{
