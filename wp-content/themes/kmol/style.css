@@ -105,6 +105,11 @@ input {
 	outline: 0;
 }
 
+
+.entry-content #searchform .field {
+	background: #f8f8f8;
+}
+
 /* ------------- Fonts ------------- */
 
 @font-face {
@@ -1085,8 +1090,8 @@ margin-top: 26px;
 #rss{
 background-image: url(images/rss_icon.png);
 background-repeat: no-repeat;
-margin-left: -60px;
-margin-top: 25px;
+margin-left: -63px;
+margin-top: 26px;
 }
 
 .countersingle {
@@ -1186,6 +1191,14 @@ background: transparent;
 	width: auto;
 	padding: 10px;
 	margin-bottom: 15px;
+}
+
+.subscribe_home .wysija-submit-field{
+	padding: 13px 10px 10px 10px;
+}
+
+.subscribe_home .wysija-email {
+	padding: 12px 10px;
 }
 
 #email {
@@ -1435,12 +1448,31 @@ background: transparent;
 
 .widget_wysija_cont p{margin:0;}
 
-.subscribe_footer, .widget_wysija_cont {
+/*.subscribe_footer, .widget_wysija_cont {
 	height: 18px;
+}*/
+
+.formErrorContent {
+	border: none !important;
+	border-radius: 3px;
+	width: auto !important;
+	background: #e85c44 !important;
+}
+
+
+.form-wysija-2-php-wysija-toformError {
+	top: 516px !important;
+	left: 1105px !important;
+}
+
+#colophon .wysija-submit-field {
+	padding: 4px 10px 3px 10px;
 }
 
 .subscribe_home .widget_wysija_cont input[type="text"]{
 	background-color:#E6E6E6;
+	padding: 10px 10px;
+	width: 55%;
 	
 }
 #subscribe_footer_box, .widget_wysija_cont input[type="text"]{
@@ -1458,7 +1490,6 @@ background: transparent;
 	box-shadow: none;
 	border: none;
 	border-radius: 0;
-	padding: 4px 10px 3px 10px;
 	color: white;
 	font-family: 'RobotoLight';
 	text-transform: none;
@@ -1716,6 +1747,18 @@ aside ul li{
 
 .book_description {
 	font-size: 14px;
+}
+
+#recent-comments-2 {
+	margin-left: 0;
+}
+
+#recentcomments {
+	list-style: none;
+}
+
+.recentcomments {
+	margin-bottom: 12px;
 }
 
 .comments a, .comments a:link, .commments a:visited{
