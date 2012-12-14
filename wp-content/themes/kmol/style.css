@@ -1474,8 +1474,8 @@ background: transparent;
 
 
 .form-wysija-2-php-wysija-toformError {
-	top: 516px !important;
-	left: 1105px !important;
+	margin-top: 40px !important;
+	margin-left: 7px;
 }
 
 #colophon .wysija-submit-field {
