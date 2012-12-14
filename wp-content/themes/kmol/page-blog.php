@@ -36,9 +36,9 @@ get_header(); ?>
 							</div>
 						</div>
 					</div> <!-- .topics -->
-					
+					<div class="grid_3 omega">
 					<?php get_sidebar();?>
-		
+		</div>
 		
 	        		<div class="grid_9 alpha banner4">
 		                <?php 

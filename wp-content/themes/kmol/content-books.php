@@ -151,7 +151,7 @@
 				$comments = get_comment_count($post->ID);
 			?>
 			
-                    <div class="marcador_container <?php if ($i % 2 != 0) echo "last";?>">
+                    <div class="marcador_container_recommend <?php if ($i % 2 != 0) echo "last";?>">
                         <div class="book_small_marcador">
                         		<?php if(has_post_thumbnail()) {?> 
 					 				<div class="marcador_img"><?php the_post_thumbnail('thumbnail');?></div>
