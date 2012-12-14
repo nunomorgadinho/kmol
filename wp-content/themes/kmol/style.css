@@ -869,6 +869,14 @@ object {
 /* =Widgets
 ----------------------------------------------- */
 
+.widget-area .widget {
+	margin-left: 0;
+}
+
+.sidebar_description {
+	list-style: none;
+}
+
 .widget {
 	margin: 0 0 10px;
 }
@@ -1692,6 +1700,10 @@ background: transparent;
 	font-size: 14px;
 }
 
+.sidebar_description ul{
+	list-style: none;
+}
+
 .sidebar_description p {
 	margin-bottom: 3px;
 	font-size: 14px;
@@ -1773,6 +1785,7 @@ aside ul li{
 
 #recent-comments-2 {
 	margin-left: 0;
+	margin-bottom: 0;
 }
 
 #recentcomments {
