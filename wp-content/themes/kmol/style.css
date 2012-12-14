@@ -1730,7 +1730,7 @@ aside ul li{
 }
 
 .sidebar_description a:link, .sidebar_description a:visited {
-	color: #404040;
+	color: #999;
 } 
 
 .sidebar_description a:hover {
@@ -1790,11 +1790,24 @@ aside ul li{
 
 #recentcomments {
 	list-style: none;
+	color: #999;
 }
 
 .recentcomments {
 	margin-bottom: 12px;
+	font-family: 'RobotoBold';
+	color: #999;
 }
+
+.recentcomments a{
+	font-family: 'RobotoBold';
+	color: #999;
+}
+
+.recentcomments a:last-child {
+	font-family: 'RobotoItalic';
+}
+
 
 .comments a, .comments a:link, .commments a:visited{
 	font-size: 13px;
