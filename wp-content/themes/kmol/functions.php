@@ -226,6 +226,7 @@ add_action('wp_head','my_scripts2');
  */
 function new_excerpt_more($more) {
        global $post;
+     
 		return '<a class="moretag" href="'. get_permalink($post->ID) . '">'.__('... ler mais &rarr;','kmol').'</a>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
@@ -238,9 +239,15 @@ function wpe_excerptlength_index( $length ) {
 
 	return 40;
 }
+
+function wpe_excerptlength_small( $length ) {
+
+	return 25;
+}
+
 function wpe_excerptmore( $more ) {
 
-	return '...';
+	new_excerpt_more($more);
 }
 
 function wpe_excerpt( $length_callback = '', $more_callback = '' ) {

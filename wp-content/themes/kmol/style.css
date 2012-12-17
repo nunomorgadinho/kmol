@@ -1634,7 +1634,7 @@ background: transparent;
 	float: right;
 }
 
-.readmore_single a, .readmore_single a:link, .readmore_single a:visited{
+.readmore_single a, .readmore_single a:link, .readmore_single a:visited, .moretag{
 	font-family: 'RobotoBold';
 	font-size: 11px;
 	text-transform: uppercase;
