@@ -28,7 +28,7 @@
 			<div id="LoginWithAjax_Register" style="display:block;" class="">
 				<p><?php _e('Diga-nos quem é, comente e obtenha a sua página pessoal com registo das suas contribuições!','kmol');?></p>
 		
-				<form name="registerform" id="registerform" action="http://kmol.me/wp-login.php?action=register&callback=?&template=" method="post">
+				<form name="registerform" id="registerform" action="<?php echo get_bloginfo('siteurl'); ?>/wp-login.php?action=register&callback=?&template=" method="post">
 		
 				<table width="99%" cellspacing="0" cellpadding="0" class="register_table">
 					<tbody>
@@ -58,15 +58,6 @@
 								<label class="label_secondary" for="checkbox-1"><?php _e('Clique para receber por email a newsletter mensal do KMOL','kmol');?></label>
 							</td>
 						</tr>
-						
-						<tr id="RegisterWithAjax_email">
-							<td colspan="2">
-								<input type="checkbox"></input>
-								<label class="label_secondary" for="checkbox-2"><?php _e('Clique para receber por email informação de parceiros','kmol');?></label>
-							</td>
-						</tr>
-						
-						<tr><td colspan="2"></td></tr>
 		
 						<tr id="LoginWithAjax_Submit">
 							<td id="LoginWithAjax_SubmitButton" colspan="2">

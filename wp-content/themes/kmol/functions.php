@@ -331,7 +331,7 @@ function count_twitter_followers(){
 			// ...get Twitter data
 			$url = 'https://api.twitter.com/1/users/lookup.json?screen_name=' . $twitter;
 			
-			error_log($url);
+			
 			
 			$get_twitter = wp_remote_get( $url );
 
