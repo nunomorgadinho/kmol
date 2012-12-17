@@ -104,7 +104,7 @@ $temp = $post;
                     	$i=1;
                     	foreach ($popular as $ppopular){
                     		$post = get_post($ppopular['id']);
-                    		setup_postdata($post);
+                    		setup_postdata($post); 
                     		if($i==1)
                     		{
                     			//latest post
@@ -129,8 +129,8 @@ $temp = $post;
                     			// second and third post
                     			if($i==2) {?><div class="grid_8 alpha"><?php }?>
                     				<div class="sublayer grid_4 alpha">
-                    					<p class="sublayer_title"><a href="<?php echo $post->guid;?>" target="_blank"><?php echo $post->title;?></a></p>
-                    					<div class="sublayer_meta news_meta"><?php echo get_the_author_meta('nicename',$post->post_author);?>, <?php //kmol_posted_on();?></div>
+                    					<p class="sublayer_title"><a href="<?php the_permalink();?>" target="_blank"><?php echo the_title();?></a></p>
+                    					<div class="sublayer_meta news_meta"><?php echo get_the_author_meta('nicename',$post->post_author);?>, <?php kmol_posted_on();?></div>
                     				</div>
                     		<?php }
                     		$i++;
