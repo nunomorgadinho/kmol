@@ -359,7 +359,8 @@ b, strong {
 	font-family: 'RobotoBold';
 }
 dfn, cite, em, i {
-	font-family: 'RobotoBlack';
+	font-family: 'RobotoBlackItalic';
+	font-style: normal;
 }
 blockquote {
 	margin: 0 1.5em;
@@ -1876,6 +1877,10 @@ aside ul li{
 	width: 400px;
 	float: right;
 	margin-right: 20px;
+}
+
+.marcador_img {
+	margin-top: 15px;
 }
 
 .last {
