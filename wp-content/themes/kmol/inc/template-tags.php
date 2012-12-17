@@ -36,7 +36,7 @@ function kmol_content_nav( $nav_id ) {
 
 	?>
 	<nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="assistive-text"><?php _e( 'Post navigation', 'kmol' ); ?></h1>
+		<h1 class="assistive-text"><?php _e( 'Nevegação por artigos', 'kmol' ); ?></h1>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
@@ -46,11 +46,11 @@ function kmol_content_nav( $nav_id ) {
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
 		<?php if ( get_next_posts_link() ) : ?>
-		<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'kmol' ) ); ?></div>
+		<div class="nav-previous left_mark"><?php next_posts_link( __( 'Artigos mais antigos', 'kmol' ) ); ?></div>
 		<?php endif; ?>
 
 		<?php if ( get_previous_posts_link() ) : ?>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'kmol' ) ); ?></div>
+		<div class="nav-next right_mark"><?php previous_posts_link( __( 'Artigos mais recentes', 'kmol' ) ); ?></div>
 		<?php endif; ?>
 
 	<?php endif; ?>
@@ -75,7 +75,7 @@ function kmol_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'kmol' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'kmol' ), ' ' ); ?></p>
+		<p><?php _e( 'Pingback:', 'kmol' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Editar)', 'kmol' ), ' ' ); ?></p>
 	<?php
 			break;
 		default :
@@ -85,10 +85,10 @@ function kmol_comment( $comment, $args, $depth ) {
 			<footer>
 				<div class="comment-author vcard">
 					<?php echo get_avatar( $comment, 40 ); ?>
-					<?php printf( __( '%s <span class="says">says:</span>', 'kmol' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<?php printf( __( '%s <span class="says">diz:</span>', 'kmol' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 				</div><!-- .comment-author .vcard -->
 				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em><?php _e( 'Your comment is awaiting moderation.', 'kmol' ); ?></em>
+					<em><?php _e( 'O seu comentário aguarda moderação.', 'kmol' ); ?></em>
 					<br />
 				<?php endif; ?>
 
@@ -96,9 +96,9 @@ function kmol_comment( $comment, $args, $depth ) {
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time pubdate datetime="<?php comment_time( 'c' ); ?>">
 					<?php
 						/* translators: 1: date, 2: time */
-						printf( __( '%1$s at %2$s', 'kmol' ), get_comment_date(), get_comment_time() ); ?>
+						printf( __( '%1$s em %2$s', 'kmol' ), get_comment_date(), get_comment_time() ); ?>
 					</time></a>
-					<?php edit_comment_link( __( '(Edit)', 'kmol' ), ' ' );
+					<?php edit_comment_link( __( '(Editar)', 'kmol' ), ' ' );
 					?>
 				</div><!-- .comment-meta .commentmetadata -->
 			</footer>
@@ -123,13 +123,13 @@ if ( ! function_exists( 'kmol_posted_on' ) ) :
  * @since kmol 1.0
  */
 function kmol_posted_on() {
-	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'kmol' ),
+	printf( __( 'Publicado em <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> por <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'kmol' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() ),
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'kmol' ), get_the_author() ) ),
+		esc_attr( sprintf( __( 'Ver todos os artigos de %s', 'kmol' ), get_the_author() ) ),
 		esc_html( get_the_author() )
 	);
 }

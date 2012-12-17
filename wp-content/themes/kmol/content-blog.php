@@ -69,8 +69,10 @@
                 
 
 			<div class="grid_8 alpha more_single">
+				<span class="left_mark">
 					<?php next_posts_link(__('Artigos mais antigos ','kmol'),$query->max_num_pages); ?>
-				<div class="alignright">
+				</span>
+				<div class="alignright right_mark">
 					<?php previous_posts_link(__('Artigos mais recentes ','kmol')); ?>
 				</div>  
 			</div> <!-- grid_8 nav -->

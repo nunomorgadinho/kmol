@@ -1659,7 +1659,7 @@ background: transparent;
 .sublayer_single {
 	margin: 20px 20px 10px 20px;
 	border-top: 2px solid;
-	min-height:100px;
+	min-height:118px;
 }
 
 .image_sublayer {
@@ -1688,11 +1688,20 @@ background: transparent;
 .more_single a:hover {
 	background: #6c9dbb;
 }
-.more_single a:after {
-	content:'»';
+
+
+.left_mark a:before {
+	content:'« ';
 	font-size: 20px;
 	font-family: 'RobotoThin';
 }
+
+.right_mark a:after{
+	content:' »';
+	font-size: 20px;
+	font-family: 'RobotoThin';
+}
+
 
 .sidebar_description {
 	background: #f2f2f2;
