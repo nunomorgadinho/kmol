@@ -879,7 +879,8 @@ object {
 }
 
 .widget {
-	margin: 0 0 10px;
+	/*margin: 0 0 10px;*/
+	margin: 0;
 }
 
 .widget_search {
@@ -1152,7 +1153,7 @@ background: transparent;
 	background: #e86f47;
 	color: white !important;
 	font-weight: normal !important;
-	padding: 3px 10px;
+	padding: 1px 5px;
 	width: 74px;
 	height: auto;
 	-moz-border-radius: 5px;
@@ -1379,7 +1380,7 @@ background: transparent;
 .marcador img {
 	float: left;
 	padding-right: 10px;
-	padding-bottom: 10px;
+	padding-bottom: 0px;
 }
 
 .marcador_title {
@@ -1397,14 +1398,19 @@ background: transparent;
 
 .marcador_short {
 	height: 200px; /*124 aaires*/
-	padding-top: 20px;
+	padding-top: 5px;
 	padding-left: 15px;
-	padding-right: 15px;
-	padding-bottom: 20px;
+	padding-right: 10px;
+	padding-bottom: 25px;
 	border-left: 1px solid #e6e6e6;
 	border-right: 1px solid #e6e6e6;
 	border-bottom: 1px solid #e6e6e6;
 	overflow:hidden;
+}
+
+
+.marcador_subtitle {
+	line-height: 1.4;
 }
 
 .marcador_subtitle a, .marcador_subtitle a:link, .marcador_subtitle a:visited{
@@ -1880,7 +1886,7 @@ aside ul li{
 }
 
 .marcador_img {
-	margin-top: 15px;
+	margin-top: 10px;
 }
 
 .last {
