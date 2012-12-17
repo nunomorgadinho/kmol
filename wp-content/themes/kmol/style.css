@@ -105,6 +105,11 @@ input {
 	outline: 0;
 }
 
+
+.entry-content #searchform .field {
+	background: #f8f8f8;
+}
+
 /* ------------- Fonts ------------- */
 
 @font-face {
@@ -864,6 +869,14 @@ object {
 /* =Widgets
 ----------------------------------------------- */
 
+.widget-area .widget {
+	margin-left: 0;
+}
+
+.sidebar_description {
+	list-style: none;
+}
+
 .widget {
 	margin: 0 0 10px;
 }
@@ -911,7 +924,14 @@ object {
 
 .social {
 	margin-top: 5px;
-	min-width: 150px;
+	/*min-width: 150px;*/
+	width: auto;
+}
+
+#social-widget-3 h2 {
+	font-family: 'RobotoLight';
+	color: #999;
+	font-weight: normal;
 }
 
 .socialmedia-buttons a{
@@ -1085,8 +1105,8 @@ margin-top: 26px;
 #rss{
 background-image: url(images/rss_icon.png);
 background-repeat: no-repeat;
-margin-left: -60px;
-margin-top: 25px;
+margin-left: -63px;
+margin-top: 26px;
 }
 
 .countersingle {
@@ -1114,7 +1134,7 @@ background: transparent;
 }
 
 .subscribe_home{
-	height: 39px;
+	/*height: 39px;*/
 	width: 90%;
 	padding: 20px 15px;
 }
@@ -1188,6 +1208,13 @@ background: transparent;
 	margin-bottom: 15px;
 }
 
+.subscribe_home .wysija-submit-field{
+	padding: 13px 10px 10px 10px;
+}
+
+.subscribe_home .wysija-email {
+	padding: 12px 10px;
+}
 #email {
 	margin-left: 0;
 }
@@ -1249,6 +1276,10 @@ background: transparent;
 	letter-spacing: normal;
 }
 
+.blog_page .news_meta{
+	position:relative;
+	float:left;
+}
 
 #container_blog {
 	overflow: hidden;
@@ -1291,6 +1322,10 @@ background: transparent;
 	padding-right: 20px;
 }
 
+.image_principal img{
+	background: white;
+}
+
 .sublayer {
 	border-top: solid 4px #1a1a1a;
 	padding-top: 10px;
@@ -1319,7 +1354,7 @@ background: transparent;
 }
 
 .facebook_home {
-	margin-top: 18px;
+	margin-top: 35px;
 	border-top: solid 1px #e6e6e6;
 	padding-top: 20px;
 }
@@ -1343,7 +1378,7 @@ background: transparent;
 .marcador img {
 	float: left;
 	padding-right: 10px;
-	padding-bottom: 25px;
+	padding-bottom: 10px;
 }
 
 .marcador_title {
@@ -1364,6 +1399,7 @@ background: transparent;
 	padding-top: 20px;
 	padding-left: 15px;
 	padding-right: 15px;
+	padding-bottom: 20px;
 	border-left: 1px solid #e6e6e6;
 	border-right: 1px solid #e6e6e6;
 	border-bottom: 1px solid #e6e6e6;
@@ -1384,6 +1420,10 @@ background: transparent;
 	font-size: 14px;
 	line-height: 140%;
 	margin-top: 10px;
+}
+
+.marcador_description p {
+	margin-bottom: 5px;
 }
 
 .banner2 {
@@ -1430,13 +1470,35 @@ background: transparent;
 }
 
 .widget_wysija_cont p{margin:0;}
+.widget_wysija_cont {
+	clear: both;
+}
 
-.subscribe_footer, .widget_wysija_cont {
+/*.subscribe_footer, .widget_wysija_cont {
 	height: 18px;
+}*/
+
+.formErrorContent {
+	border: none !important;
+	border-radius: 3px;
+	width: auto !important;
+	background: #e85c44 !important;
+}
+
+
+.form-wysija-2-php-wysija-toformError {
+	margin-top: 40px !important;
+	margin-left: 7px;
+}
+
+#colophon .wysija-submit-field {
+	padding: 4px 10px 3px 10px;
 }
 
 .subscribe_home .widget_wysija_cont input[type="text"]{
 	background-color:#E6E6E6;
+	padding: 10px 10px;
+	width: 55%;
 	
 }
 #subscribe_footer_box, .widget_wysija_cont input[type="text"]{
@@ -1454,7 +1516,6 @@ background: transparent;
 	box-shadow: none;
 	border: none;
 	border-radius: 0;
-	padding: 4px 10px 3px 10px;
 	color: white;
 	font-family: 'RobotoLight';
 	text-transform: none;
@@ -1596,14 +1657,18 @@ background: transparent;
 
 
 .sublayer_single {
-	margin: 10px 20px 10px 20px;
+	margin: 20px 20px 10px 20px;
 	border-top: 2px solid;
-	min-height:150px;
+	min-height:118px;
 }
 
 .image_sublayer {
 	padding-right: 15px;
 	float:left;
+}
+
+.more_single{
+	padding-top: 20px;
 }
 
 .more_single a, .more_single a:link, .more_single a:visited{
@@ -1623,20 +1688,42 @@ background: transparent;
 .more_single a:hover {
 	background: #6c9dbb;
 }
-.more_single a:after {
-	content:'»';
+
+
+.left_mark a:before {
+	content:'« ';
 	font-size: 20px;
 	font-family: 'RobotoThin';
 }
 
+.right_mark a:after{
+	content:' »';
+	font-size: 20px;
+	font-family: 'RobotoThin';
+}
+
+
 .sidebar_description {
 	background: #f2f2f2;
 	padding: 20px 20px;
+	font-size: 14px;
+}
+
+.sidebar_description ul{
+	list-style: none;
 }
 
 .sidebar_description p {
 	margin-bottom: 3px;
 	font-size: 14px;
+}
+
+aside ul{
+	/*list-style:none;*/
+	margin:0;
+}
+aside ul li{
+	margin-top:3px;
 }
 
 .banner3 {
@@ -1646,13 +1733,13 @@ background: transparent;
 	margin-top: 20px;
 }
 
-.topics {
+.topics, #secondary {
 	margin-bottom: 20px;
 	overflow: hidden;
 }
 
 .sidebar_description a:link, .sidebar_description a:visited {
-	color: #404040;
+	color: #999;
 } 
 
 .sidebar_description a:hover {
@@ -1676,7 +1763,7 @@ background: transparent;
 	margin-top: 8px;
 }
 
-.tag_marcador a {
+.tag_marcador a, .tag_marcador span {
 	font-size: 12px;
 	float: left;
 	background:  #a9cf55;
@@ -1704,6 +1791,32 @@ background: transparent;
 .book_description {
 	font-size: 14px;
 }
+
+#recent-comments-2 {
+	margin-left: 0;
+	margin-bottom: 0;
+}
+
+#recentcomments {
+	list-style: none;
+	color: #999;
+}
+
+.recentcomments {
+	margin-bottom: 12px;
+	font-family: 'RobotoBold';
+	color: #999;
+}
+
+.recentcomments a{
+	font-family: 'RobotoBold';
+	color: #999;
+}
+
+.recentcomments a:last-child {
+	font-family: 'RobotoItalic';
+}
+
 
 .comments a, .comments a:link, .commments a:visited{
 	font-size: 13px;
@@ -1738,9 +1851,29 @@ background: transparent;
 	overflow:hidden;
 }
 
+.book_small_marcador .marcador_subtitle{
+	
+	min-height:48px;
+}
+
+.book_small_marcador .marcador_description{
+	
+	min-height:120px;
+}
+
+.book_small_marcador .tag_marcador{
+	min-height:46px;
+}
+
 .marcador_container {
 	width: 400px;
 	float: left;
+	margin-right: 20px;
+}
+
+.marcador_container_recommend {
+	width: 400px;
+	float: right;
 	margin-right: 20px;
 }
 

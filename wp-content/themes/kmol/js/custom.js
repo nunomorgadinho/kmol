@@ -38,7 +38,11 @@ jQuery( document ).ready( function( $ ) {
   			}
   		}
 	
-
+  		//init knob for social feedback on homepage
+  		 jQuery(".knob").knob({
+             
+         });
+  		 
 	handle_register_login();
 	
 	fix_newsletter_forms();
