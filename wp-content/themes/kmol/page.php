@@ -29,44 +29,28 @@ get_header(); ?>
 		</div><!-- #primary .content-area -->
 	</div>
 
-						<div class="grid_9 alpha banner4">
-                        Banner4 //
-                        </div>
-
-                        <div class="grid_3 omega banner3">
-                        Banner 3//
-                        </div>
-
-
-        <div class="grid_12 alpha omega marcadores">
-                <div class="grid_4 alpha marcador">
-                    <h1 class="marcador_title"><?php _e ('Entrevistas','kmol'); ?></h1>
-                    <div class="marcador_short">
-                    <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-                    <h2 class="marcador_subtitle"><a href="#">Paul Corney</a></h2>
-                    <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
-                    </div>
+<!-- Banner -->
+            	<div class="grid_9 alpha banner4">
+                <?php 
+        			$img_url = get_option('banner4'); echo $img_url;
+            		if(isset($img_url)  && $img_url!=''){
+        		?>
+	    				<img src="<?php echo $img_url;?>" width="700" height="100"/>
+				<?php } else {echo "Banner 4//";}?>
                 </div>
-                <div class="grid_4 marcador">
-                    <h1 class="marcador_title"><?php _e ('Casos','kmol'); ?></h1>
-                    <div class="marcador_short">
-                    <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-                    <h2 class="marcador_subtitle"><a href="#">Paul Corney</a></h2>
-                    <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
-                    </div>
+
+                <div class="grid_3 omega banner3">
+               	 <?php 
+        			$img_url = get_option('banner3'); echo $img_url;
+           			 if(isset($img_url) && $img_url!=''){
+       			 ?>
+	    				<img src="<?php echo $img_url;?>" width="220" height="100"/>
+				<?php } else {echo "Banner 3//";}?>
                 </div>
-                <div class="grid_4 marcador omega">
-                    <h1 class="marcador_title"><?php _e ('Livros','kmol'); ?></h1>
-                    <div class="marcador_short">
-                    <img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/paul_corney.jpg">
-                    <h2 class="marcador_subtitle"><a href="#">Paul Corney</a></h2>
-                    <p class="marcador_description">Entrevistámos Paul Corney, managing partner da Sparknow.</p>
-                    </div>
-                </div>
-        </div>
+	
+		<?php get_template_part( 'content', 'markers' ); ?>	
+	</div>
 
 
-</div>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -53,13 +53,13 @@
          <div class="grid_3">
          	<h1 class="footer_title"><?php _e('Contribuir')?></h1>
 		<?php 
-			$towrite = get_page_by_path(__('escrever','kmol'));
+			$towrite = get_page_by_path(__('publicar','kmol'));
 			$reviews = get_page_by_path(__('livro-de-visitas','kmol'));
 			
-			$sponsor = get_page_by_path(__('patrocionar','kmol'));
+			$sponsor = get_page_by_path(__('patrocinar','kmol'));
 			$adds = get_page_by_path(__('anunciar','kmol'));
 			
-			$kmol = get_page_by_path(__('sobre-o-kmol','kmol'));
+			$kmol = get_page_by_path(__('sobre','kmol'));
 			 
 		?>
          	<h2 class="footer_subtitle"><a href="<?php echo get_permalink($towrite->ID);?>"><?php _e('Escrever','kmol');?></a></h2>

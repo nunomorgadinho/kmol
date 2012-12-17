@@ -100,7 +100,7 @@ $temp = $post;
                     $pp = new WordpressPopularPosts();
                     $popular = array();
                     if(isset($pp))
- 	                   $popular = $pp->get_popular_posts(array('range' => 'monthly','order_by' => 'views','cat'=>$cat),true);
+ 	                   $popular = $pp->get_popular_posts(array('range' => 'all','order_by' => 'views','cat'=>$cat, 'post_type' => 'post'),true);
 				
                     if(!empty($popular))
                     {

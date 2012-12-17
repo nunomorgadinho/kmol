@@ -116,8 +116,10 @@
                 <span class="clear"></span>
                 
                 <div class="more_single">
+                	<span class="left_mark">
 	                <?php next_posts_link(__('Livros mais antigos ','kmol'),$query->max_num_pages); ?>
-						<div class="alignright">
+	                </span>
+						<div class="alignright right_mark">
 						<?php previous_posts_link(__('Livros mais recentes ','kmol')); ?>
 					</div>
                 </div>

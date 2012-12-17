@@ -61,7 +61,7 @@
 					 	<?php }?>
 			         	<div class="sublayer_title"><a href="<?php the_permalink();?>"><?php the_title();?></a></div>
 			             <div class="sublayer_meta news_meta"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></div>
-			                 <span class="readmore_single"><a href="<?php the_permalink();?>"><?php _e ('Ler Mais...','kmol'); ?></a></span>
+			                <a class="moretag" href="<?php get_permalink($post->ID) ?>"><?php _e('Ler artigo completo &rarr;','kmol')?></a>
 			         </div>
 				
 			<?php 
@@ -74,9 +74,10 @@
 
 		    <!-- Previous and Next articles -->
 			<div class="grid_8 alpha more_single">
-			
-			<?php next_posts_link(__('Artigos mais antigos ','kmol'),$query->max_num_pages); ?>
-			<div class="alignright">
+			<span class="left_mark">
+				<?php next_posts_link(__('Artigos mais antigos ','kmol'),$query->max_num_pages); ?>
+			</span>
+			<div class="alignright right_mark">
 				<?php previous_posts_link(__('Artigos mais recentes ','kmol')); ?>
 			</div>
 				     
