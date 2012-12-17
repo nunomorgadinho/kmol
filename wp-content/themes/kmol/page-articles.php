@@ -24,6 +24,16 @@ get_header(); ?>
 	
 					<?php endwhile; // end of the loop. ?>
 			
+					<div class="grid_9 alpha omega banner4">
+			    	<?php 
+			        	$img_url = get_option('banner4'); echo $img_url;
+			            if(isset($img_url)  && $img_url!=''){
+			        ?>
+				    		<img src="<?php echo $img_url;?>" width="700" height="100"/>
+					<?php } else {echo "Banner 4//";}?>
+			    </div>
+
+			
 			</div>
 					
 				<div class="grid_3 omega">
@@ -38,14 +48,7 @@ get_header(); ?>
 					<?php } else {echo "Banner 3//";}?>
 			    </div> <!-- banner 3 -->
 		    </div>
-			    <div class="grid_9 alpha omega banner4">
-			    	<?php 
-			        	$img_url = get_option('banner4'); echo $img_url;
-			            if(isset($img_url)  && $img_url!=''){
-			        ?>
-				    		<img src="<?php echo $img_url;?>" width="700" height="100"/>
-					<?php } else {echo "Banner 4//";}?>
-			    </div> <!-- banner 4 -->
+			     <!-- banner 4 -->
 			
 			
 			    <?php get_template_part( 'content', 'markers' ); ?>
