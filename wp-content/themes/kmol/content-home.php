@@ -31,7 +31,7 @@ $temp = $post;
     <div id="tabs" class="grid_8 highlight alpha">
     <ul>
         <li><a href="#recent"><?php _e('Recentes no Blog','kmol');?></a></li>
-        <li><a href="#popular"><?php _e('Populares no Blog','kmol');?></a></li>
+        <li><a href="#popular"><?php _e('Mais Populares','kmol');?></a></li>
     </ul>
 
 
@@ -100,7 +100,7 @@ $temp = $post;
                     $pp = new WordpressPopularPosts();
                     $popular = array();
                     if(isset($pp))
- 	                   $popular = $pp->get_popular_posts(array('range' => 'all','order_by' => 'views','cat'=>$cat, 'post_type' => 'post'),true);
+ 	                   $popular = $pp->get_popular_posts(array('range' => 'monthly','order_by' => 'views','post_type' => 'post'),true);
 				
                     if(!empty($popular))
                     {
