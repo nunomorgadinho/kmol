@@ -96,11 +96,11 @@ $temp = $post;
       <?php //if (function_exists('wpp_get_mostpopular')) wpp_get_mostpopular("range=monthly&order_by=views"); ?>
         
                     <?php 
-                    $cat =  get_option('blog');
+                   // $cat =  get_option('blog');
                     $pp = new WordpressPopularPosts();
                     $popular = array();
                     if(isset($pp))
- 	                   $popular = $pp->get_popular_posts(array('range' => 'all','order_by' => 'views','post_type' => 'post'),true);
+ 	                   $popular = $pp->get_popular_posts(array('range' => 'all','order_by' => 'comments','post_type' => 'post'),true);
 				
                     if(!empty($popular))
                     {
