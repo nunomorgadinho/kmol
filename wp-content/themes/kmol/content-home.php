@@ -31,7 +31,7 @@ $temp = $post;
     <div id="tabs" class="grid_8 highlight alpha">
     <ul>
         <li><a href="#recent"><?php _e('Recentes no Blog','kmol');?></a></li>
-        <li><a href="#popular"><?php _e('Populares no Blog','kmol');?></a></li>
+        <li><a href="#popular"><?php _e('Mais Populares','kmol');?></a></li>
     </ul>
 
 
@@ -91,16 +91,13 @@ $temp = $post;
     </div> <!-- recent -->
     
     <div id="popular">    
-        <div class="principal">
-
-      <?php //if (function_exists('wpp_get_mostpopular')) wpp_get_mostpopular("range=monthly&order_by=views"); ?>
-        
+        <div class="principal">       
                     <?php 
-                    $cat =  get_option('blog');
+                   // $cat =  get_option('blog');
                     $pp = new WordpressPopularPosts();
                     $popular = array();
                     if(isset($pp))
- 	                   $popular = $pp->get_popular_posts(array('range' => 'all','order_by' => 'views','cat'=>$cat, 'post_type' => 'post'),true);
+ 	                   $popular = $pp->get_popular_posts(array('range' => 'all','order_by' => 'comments','post_type' => 'post', 'limit'=>3),true);
 				
                     if(!empty($popular))
                     {
@@ -135,11 +132,13 @@ $temp = $post;
                     					<p class="sublayer_title"><a href="<?php echo $post->guid;?>" target="_blank"><?php echo $post->title;?></a></p>
                     					<div class="sublayer_meta news_meta"><?php echo get_the_author_meta('nicename',$post->post_author);?>, <?php //kmol_posted_on();?></div>
                     				</div>
-                    		<?php }?>
-                   		<?php if(count($popular) > 1) {?></div><!-- grid_8 --><?php } 
+                    		<?php }
                     		$i++;
                     	}//enf foreach
-                    }?>
+                    	?>
+                    	<?php if($i>1){?>	</div> <?php }?> <!-- grid_8 -->
+                    	<?php 
+                   }?>
                                         
         	  </div><!-- .principal -->
 		</div> <!-- #popular -->
