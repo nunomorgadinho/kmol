@@ -56,10 +56,12 @@ get_header(); ?>
 		<?php endif;?>
 	
 		
-		
+		<div class="grid_3 omega">
 	
        <?php get_sidebar();?>
        
+   </div>
+
        <div class="grid_3 omega banner3">
 	   <?php 
 			$img_url = get_option('banner3'); echo $img_url;

@@ -928,7 +928,7 @@ object {
 	width: auto;
 }
 
-#social-widget-3 h2 {
+.social h2{
 	font-family: 'RobotoLight';
 	color: #999;
 	font-weight: normal;
@@ -1795,17 +1795,16 @@ aside ul li{
 
 .recentcomments {
 	margin-bottom: 12px;
-	font-family: 'RobotoBold';
+	font-family: 'RobotoLightItalic';
 	color: #999;
 }
 
-.recentcomments a{
+.recentcomments a:first-child{
 	font-family: 'RobotoBold';
-	color: #999;
 }
 
 .recentcomments a:last-child {
-	font-family: 'RobotoItalic';
+	font-family: 'RobotoMediumItalic';
 }
 
 
