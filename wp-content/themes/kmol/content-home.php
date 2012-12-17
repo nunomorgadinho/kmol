@@ -91,10 +91,7 @@ $temp = $post;
     </div> <!-- recent -->
     
     <div id="popular">    
-        <div class="principal">
-
-      <?php //if (function_exists('wpp_get_mostpopular')) wpp_get_mostpopular("range=monthly&order_by=views"); ?>
-        
+        <div class="principal">       
                     <?php 
                    // $cat =  get_option('blog');
                     $pp = new WordpressPopularPosts();
@@ -135,11 +132,13 @@ $temp = $post;
                     					<p class="sublayer_title"><a href="<?php echo $post->guid;?>" target="_blank"><?php echo $post->title;?></a></p>
                     					<div class="sublayer_meta news_meta"><?php echo get_the_author_meta('nicename',$post->post_author);?>, <?php //kmol_posted_on();?></div>
                     				</div>
-                    		<?php }?>
-                   		<?php if(count($popular) > 1) {?></div><!-- grid_8 --><?php } 
+                    		<?php }
                     		$i++;
                     	}//enf foreach
-                    }?>
+                    	?>
+                    	<?php if($i>1){?>	</div> <?php }?> <!-- grid_8 -->
+                    	<?php 
+                   }?>
                                         
         	  </div><!-- .principal -->
 		</div> <!-- #popular -->
