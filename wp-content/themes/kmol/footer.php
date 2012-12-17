@@ -56,7 +56,7 @@
 			$towrite = get_page_by_path(__('publicar','kmol'));
 			$reviews = get_page_by_path(__('livro-de-visitas','kmol'));
 			
-			$sponsor = get_page_by_path(__('patrocionar','kmol'));
+			$sponsor = get_page_by_path(__('patrocinar','kmol'));
 			$adds = get_page_by_path(__('anunciar','kmol'));
 			
 			$kmol = get_page_by_path(__('sobre-o-kmol','kmol'));
