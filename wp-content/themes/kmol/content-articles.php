@@ -61,7 +61,7 @@
 					 	<?php }?>
 			         	<div class="sublayer_title"><a href="<?php the_permalink();?>"><?php the_title();?></a></div>
 			             <div class="sublayer_meta news_meta"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></div>
-			                 <span class="readmore_single"><a href="<?php the_permalink();?>"><?php _e ('Ler Mais...','kmol'); ?></a></span>
+			                <a class="moretag" href="<?php get_permalink($post->ID) ?>"><?php _e('Ler artigo completo &rarr;','kmol')?></a>
 			         </div>
 				
 			<?php 

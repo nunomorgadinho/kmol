@@ -1648,7 +1648,9 @@ background: transparent;
 
 }
 
-.readmore_single:hover {
+a.moretag {color:#000;}
+
+.readmore_single:hover a.moretag:hover {
 	color: #999999;
 }
 .readmore_single:before{

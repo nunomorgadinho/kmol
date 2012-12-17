@@ -231,6 +231,20 @@ function new_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
+function wpe_excerptmore( $more ) {
+
+	new_excerpt_more($more);
+}
+
+function wpe_excerpt_more_article($more) {
+	global $post;
+
+	return '<a class="moretag" href="'. get_permalink($post->ID) . '">'.__('Ler artigo completo &rarr;','kmol').'</a>';
+}
+
+
+
+
 function wpe_excerptlength_teaser( $length ) {
 
 	return 55;
@@ -245,10 +259,7 @@ function wpe_excerptlength_small( $length ) {
 	return 25;
 }
 
-function wpe_excerptmore( $more ) {
 
-	new_excerpt_more($more);
-}
 
 function wpe_excerpt( $length_callback = '', $more_callback = '' ) {
 
