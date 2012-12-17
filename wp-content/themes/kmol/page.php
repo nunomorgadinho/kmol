@@ -47,13 +47,10 @@ get_header(); ?>
 	    				<img src="<?php echo $img_url;?>" width="220" height="100"/>
 				<?php } else {echo "Banner 3//";}?>
                 </div>
+	
+		<?php get_template_part( 'content', 'markers' ); ?>	
 	</div>
 
-
-        <?php get_template_part( 'content', 'markers' ); ?>
-
-
-</div>
 
 
 <?php get_footer(); ?>
