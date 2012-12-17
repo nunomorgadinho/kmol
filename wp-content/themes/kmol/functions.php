@@ -330,6 +330,9 @@ function count_twitter_followers(){
 		if ( isset( $twitter ) ) {
 			// ...get Twitter data
 			$url = 'https://api.twitter.com/1/users/lookup.json?screen_name=' . $twitter;
+			
+			error_log($url);
+			
 			$get_twitter = wp_remote_get( $url );
 
 			// Check for errors. If none proceed...
@@ -341,7 +344,7 @@ function count_twitter_followers(){
 				}
 			}
 		}
-	error_log('teiiter '.$count_twitter);
+	error_log('twitter '.$count_twitter);
 	return $count_twitter;
 }
 
