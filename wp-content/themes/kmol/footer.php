@@ -53,7 +53,7 @@
          <div class="grid_3">
          	<h1 class="footer_title"><?php _e('Contribuir')?></h1>
 		<?php 
-			$towrite = get_page_by_path(__('escrever','kmol'));
+			$towrite = get_page_by_path(__('publicar','kmol'));
 			$reviews = get_page_by_path(__('livro-de-visitas','kmol'));
 			
 			$sponsor = get_page_by_path(__('patrocionar','kmol'));
