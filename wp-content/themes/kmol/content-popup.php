@@ -27,7 +27,6 @@
 		
 			<div id="LoginWithAjax_Register" style="display:block;" class="">
 				<p><?php _e('Diga-nos quem é, comente e obtenha a sua página pessoal com registo das suas contribuições!','kmol');?></p>
-		
 				<form name="registerform" id="registerform" action="<?php echo get_bloginfo('siteurl'); ?>/wp-login.php?action=register&callback=?&template=" method="post">
 		
 				<table width="99%" cellspacing="0" cellpadding="0" class="register_table">
@@ -88,12 +87,14 @@
 		<div class="popup_register">  <!-- login -->
 			<p><?php _e('Faça login, comente e aceda à sua página pessoal com registo das suas contribuições!','kmol');?></p>
 			<?php
-				login_with_ajax(array( 'is_widget' => false, 'profile_link' => false, 'registration' =>0 ));
+				login_with_ajax('[login-with-ajax is_widget=false profile_link=false registration="0"]' );
 			?>
 			<div class="login-register"><a href="#" id="go-to-register"><?php _e('Ainda não estou registado. Quero Registar-me','kmol');?></a></div>
 		</div> <!-- .popup_register -->
 	</div> <!-- .login_form -->
 
+	
+	
 
 
 </div> <!-- .popup_container -->

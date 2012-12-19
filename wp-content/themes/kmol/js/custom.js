@@ -47,6 +47,29 @@ jQuery( document ).ready( function( $ ) {
 	
 	fix_newsletter_forms();
 	
+	
+	//sticky menu
+	/*var nav_container = jQuery(".scrollingNav");
+	  var nav = jQuery(".scrollingDiv");
+	  nav_container.waypoint({
+	    handler: function(event, direction) {
+	        nav.toggleClass('sticky', direction==direction);
+	        if (direction == 'down')
+	        	  nav_container.css({ 'height':nav.outerHeight() });
+	        	else
+	        	  nav_container.css({ 'height':'auto' });
+	    }
+	  
+	  });*/
+	
+	
+	jQuery.waypoints.settings.scrollThrottle = 30;
+	jQuery('.scrollingDiv').waypoint(function(event, direction) { console.log(direction);
+		jQuery(this).toggleClass('sticky', direction === "down");
+		event.stopPropagation();
+	});
+
+	
 });
 
 

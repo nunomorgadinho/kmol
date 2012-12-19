@@ -569,7 +569,7 @@ a:active {
 	clear: both;
 	display: block;
 	float: left;
-	width: auto;
+	width: 500px; /*auto*/
 	-moz-box-shadow: 2px 2px 2px 0px #CCC;
  	-webkit-box-shadow: 2px 2px 2px 0px #CCC;
 	box-shadow: 2px 2px 2px 0px #CCC; /*aaires*/
@@ -2246,4 +2246,9 @@ table.register_table tr{
 .search_word {
 	font-family: 'RobotoThin';
 	font-weight: normal;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
 }
