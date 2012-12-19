@@ -33,7 +33,7 @@ get_header(); ?>
 					<?php } else {echo "Banner 4//";}?>
 			    </div>
 
-			
+
 			</div>
 					
 				<div class="grid_3 omega">
@@ -48,7 +48,6 @@ get_header(); ?>
 					<?php } else {echo "Banner 3//";}?>
 			    </div> <!-- banner 3 -->
 		    </div>
-			     <!-- banner 4 -->
 			
 			
 			    <?php get_template_part( 'content', 'markers' ); ?>
