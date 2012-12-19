@@ -99,12 +99,12 @@ a img {
 	margin-bottom: 30px;
 }
 
-#searchform input::-webkit-input-placeholder {color: #999;}
-#searchform input:-moz-placeholder {color:#999;}
+.widget input::-webkit-input-placeholder {color: #999;}
+.widget input:-moz-placeholder {color:#999;}
 input {
 	outline: 0;
 }
-
+.sticky input::-webkit-input-placeholder {color: #e6e6e6;}
 
 .entry-content #searchform .field {
 	background: #f8f8f8;
@@ -546,7 +546,7 @@ a:active {
 .alignright {
 	display: inline;
 	float: right;
-	margin-left: 1.5em;
+	margin: 0 0 0 1.5em !important;
 }
 .aligncenter {
 	clear: both;
@@ -565,14 +565,82 @@ a:active {
 /* =Menu
 ----------------------------------------------- */
 
+.sticky {
+	background-color: #999;
+	padding-bottom: 5px;
+}
+
+.sticky a[title="menu_first"] {
+	text-indent: -9999px;
+	background-image: url(images/kmol_logo_sticky.png);
+	background-repeat: no-repeat;
+	width: 75px;
+	height: 30px;
+	padding-right: 5px;
+}
+
+.sticky #s{
+	background-color: #999;
+	color: #e6e6e6;
+	width: 140px;
+	padding-top: 4px;
+}
+
+.sticky_social {
+	display: none;
+}
+
+.sticky .sticky_social {
+	display:block;
+}
+
+.sticky .sticky_social a{
+	float: right;
+	margin-left: 8px;
+	padding: 12px 0 10px 0px;
+	transition: opacity 0.2s;
+	-moz-transition: opacity 0.2s;
+	-webkit-transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+	opacity: 0.4;
+}
+
+.sticky .sticky_social a:hover{
+	opacity: 1.0;
+}
+
+.sticky #searchsubmit {
+	background-color: #999;
+	transition: background 0.2s;
+	-moz-transition: background 0.2s;
+	-webkit-transition: background 0.2s;
+	-o-transition: background 0.2s;
+	height: 44px;
+	padding-bottom: 1px;
+}
+
+.sticky #searchsubmit:hover {
+	background-color: #A9CF54;
+}
+.sticky .menu-item a {
+	padding-top: 4px;
+}
+
+.sticky #menu-primary {
+	padding-bottom: 0;
+}
+
+
+
 .main-navigation {
 	clear: both;
 	display: block;
 	float: left;
-	width: 500px; /*auto*/
-	-moz-box-shadow: 2px 2px 2px 0px #CCC;
+	width: 940px; /*auto*/
+	/*-moz-box-shadow: 2px 2px 2px 0px #CCC;
  	-webkit-box-shadow: 2px 2px 2px 0px #CCC;
 	box-shadow: 2px 2px 2px 0px #CCC; /*aaires*/
+	height: 39px;
 }
 .main-navigation ul {
 	list-style: none;
@@ -598,6 +666,11 @@ a:active {
 		top: 1.5em;
 		left: 0;
 	z-index: 99999;
+}
+
+.menu-primary-container {
+	width: 500px;
+	float: left;
 }
 
 
@@ -684,6 +757,8 @@ a:active {
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+.sticky 
 
 
 /* =Asides

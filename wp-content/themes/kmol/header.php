@@ -61,9 +61,14 @@
 				<nav role="navigation" class="site-navigation main-navigation scrollingDiv">
 					<h1 class="assistive-text"><?php _e( 'Menu', 'kmol' ); ?></h1>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary') ); ?>
+					<div class="search alignright"><?php dynamic_sidebar('Search'); ?></div>
+					<div class="sticky_social">
+						<a href="#"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/twitter_sticky.png"/></a>
+						<a href="#"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/facebook_sticky.png"/></a>
+						<a href="#"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/mail_sticky.png"/></a>
+					</div>
 				</nav><!-- .site-navigation .main-navigation -->
 			</div>
-		<div class="search alignright"><?php dynamic_sidebar('Search'); ?></div>
 		</div> <!-- .grid_12 alpha -->
 	</header><!-- #masthead .site-header -->
 
