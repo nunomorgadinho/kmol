@@ -63,9 +63,8 @@
 					<?php wp_nav_menu( array( 'theme_location' => 'primary') ); ?>
 					<div class="search alignright"><?php dynamic_sidebar('Search'); ?></div>
 					<div class="sticky_social">
-						<a href="#"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/twitter_sticky.png"/></a>
-						<a href="#"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/facebook_sticky.png"/></a>
-						<a href="#"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/mail_sticky.png"/></a>
+						<a href="<?php echo 'http://www.twitter.com/'. get_option('twitter');?>" target="_blank"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/twitter_sticky.png"/></a>
+						<a href="<?php echo 'http://www.facebook.com/'. get_option('facebook');?>" target="_blank"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/facebook_sticky.png"/></a>
 					</div>
 				</nav><!-- .site-navigation .main-navigation -->
 			</div>
