@@ -60,7 +60,7 @@
 			<div class="scrollingNav">
 				<nav role="navigation" class="site-navigation main-navigation scrollingDiv">
 					<h1 class="assistive-text"><?php _e( 'Menu', 'kmol' ); ?></h1>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary') ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary','container_class'=>'menu-primary-container','menu_id'=>'menu-primary') ); ?>
 					<div class="search alignright"><?php dynamic_sidebar('Search'); ?></div>
 					<div class="sticky_social">
 						<a href="<?php echo 'http://www.twitter.com/'. get_option('twitter');?>" target="_blank"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/twitter_sticky.png"/></a>
