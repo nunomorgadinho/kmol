@@ -1029,13 +1029,17 @@ object {
 .social {
 	margin-top: 5px;
 	/*min-width: 150px;*/
-	width: auto;
+	width: 170px;
+	padding-bottom: 10px;
 }
 
 .social h2{
 	font-family: 'RobotoLight';
 	color: #999;
 	font-weight: normal;
+	margin-top: 5px;
+	margin-right: 10px;
+	float: left;
 }
 
 .socialmedia-buttons a{
