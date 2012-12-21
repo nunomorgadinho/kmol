@@ -235,7 +235,7 @@ $temp = $post;
                       <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
                     <div class="news_meta"><?php echo "Por ".get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></div></div>
 	                    <?php if(has_post_thumbnail()) the_post_thumbnail('thumbnail');?>
-	                    <div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_index', 'wpe_excerptmore');?></div>
+	                    <div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_small', 'wpe_excerptmore');?></div>
 	                    </div>
 	                </div>
                <?php endwhile; endif;?>
@@ -258,7 +258,7 @@ $temp = $post;
                         <h2 class="marcador_subtitle"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
                       <div class="news_meta"><?php echo "Por ".get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></div></div>
 		                   <?php if(has_post_thumbnail()) the_post_thumbnail('thumbnail');?>
-		                    <div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_index', 'wpe_excerptmore');?></div>
+		                    <div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_small', 'wpe_excerptmore');?></div>
 		                    </div>
 		                </div>
                  <?php endwhile; endif;?>
@@ -297,7 +297,7 @@ $temp = $post;
                     <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
                   <div class="news_meta"><?php echo "Por ".get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></div></div>
                     <?php if(has_post_thumbnail()) the_post_thumbnail('thumbnail');?>
-                    <div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_index', 'wpe_excerptmore');?></div>
+                    <div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_small', 'wpe_excerptmore');?></div>
                     </div>
                 </div>
 	          <?php endwhile; endif;?>
