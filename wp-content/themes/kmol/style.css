@@ -2360,3 +2360,5 @@ table.register_table tr{
   position: fixed;
   top: 0;
 }
+
+.search .widgettitle{display:none;}

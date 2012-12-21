@@ -13,7 +13,7 @@
 <div class="full_width_footer">
 	<footer id="colophon" class="site-footer container_12" role="contentinfo">
 		<div class="grid_3 alpha footer-left">
-				<h1 class="footer_title">Subscrever</h1>
+				<h1 class="footer_title"><?php _e('Subscrever','kmol');?></h1>
 				<div class="social alignleft"><?php dynamic_sidebar('Social_Widget'); ?></div>
                
                 <?php

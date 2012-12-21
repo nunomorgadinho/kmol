@@ -54,18 +54,22 @@
 		<div class="grid_12 alpha ">
 			<a  class="logo alignleft" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/kmol_logo.png"/></a>
 	
-			<div class="register alignright"><p><?php if(!is_user_logged_in()) _e('Registar-se', 'kmol'); else  wp_loginout(true); ?></p></div>
+			<div class="register alignright">
+			
+			<p><?php if(!is_user_logged_in()) _e('Registar-se', 'kmol'); else  wp_loginout(true); ?></p>
+			<?php do_action('icl_language_selector'); ?>
+			
+			</div>
 	
 			<div class="social alignright"><?php dynamic_sidebar('Social_Widget'); ?></div>
 			<div class="scrollingNav">
 				<nav role="navigation" class="site-navigation main-navigation scrollingDiv">
 					<h1 class="assistive-text"><?php _e( 'Menu', 'kmol' ); ?></h1>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary') ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary','container_class'=>'menu-primary-container','menu_id'=>'menu-primary') ); ?>
 					<div class="search alignright"><?php dynamic_sidebar('Search'); ?></div>
 					<div class="sticky_social">
-						<a href="#"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/twitter_sticky.png"/></a>
-						<a href="#"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/facebook_sticky.png"/></a>
-						<a href="#"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/mail_sticky.png"/></a>
+						<a href="<?php echo 'http://www.twitter.com/'. get_option('twitter');?>" target="_blank"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/twitter_sticky.png"/></a>
+						<a href="<?php echo 'http://www.facebook.com/'. get_option('facebook');?>" target="_blank"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/facebook_sticky.png"/></a>
 					</div>
 				</nav><!-- .site-navigation .main-navigation -->
 			</div>
