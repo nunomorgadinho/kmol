@@ -77,7 +77,7 @@ $temp = $post;
  	   // second and third post
  	   if($i==2) {?><div class="grid_8 alpha"><?php }?>
  	  				 <div class="sublayer grid_4 alpha">
- 	  					 <p class="sublayer_title"><a href="<?php the_permalink();?>" target="_blank"><?php the_title();?></a></p>
+ 	  					 <h1 class="sublayer_title"><a href="<?php the_permalink();?>" target="_blank"><?php the_title();?></a></h1>
  	  					 <div class="sublayer_meta news_meta"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></div>
  	   				</div>
  	   
@@ -129,7 +129,7 @@ $temp = $post;
                     			// second and third post
                     			if($i==2) {?><div class="grid_8 alpha"><?php }?>
                     				<div class="sublayer grid_4 alpha">
-                    					<p class="sublayer_title"><a href="<?php the_permalink();?>" target="_blank"><?php echo the_title();?></a></p>
+                    					<h1 class="sublayer_title"><a href="<?php the_permalink();?>" target="_blank"><?php echo the_title();?></a></h1>
                     					<div class="sublayer_meta news_meta"><?php echo get_the_author_meta('nicename',$post->post_author);?>, <?php kmol_posted_on();?></div>
                     				</div>
                     		<?php }

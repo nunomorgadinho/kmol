@@ -54,13 +54,12 @@
 		<div class="grid_12 alpha ">
 			<a  class="logo alignleft" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/kmol_logo.png"/></a>
 	
+			<div class="language_select alignright"><?php do_action('icl_language_selector'); ?></div>
 			<div class="register alignright">
 			
 			<p><?php if(!is_user_logged_in()) _e('Registar-se', 'kmol'); else  wp_loginout(true); ?></p>
-			<?php do_action('icl_language_selector'); ?>
 			
 			</div>
-	
 			<div class="social alignright"><?php dynamic_sidebar('Social_Widget'); ?></div>
 			<div class="scrollingNav">
 				<nav role="navigation" class="site-navigation main-navigation scrollingDiv">
