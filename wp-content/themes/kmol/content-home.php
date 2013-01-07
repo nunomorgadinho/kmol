@@ -173,10 +173,6 @@ $temp = $post;
                     		array (
                     				0 => '1',
                     		),
-                    		'lists_name' =>
-                    		array (
-                    				1 => 'A minha primeira lista',
-                    		),
                     		'autoregister' => 'not_auto_register',
                     		'labelswithin' => 'labels_within',
                     		'customfields' =>

@@ -53,7 +53,7 @@
 					
 						<tr id="RegisterWithAjax_email">
 							<td colspan="2">
-								<input type="checkbox"></input>
+								<input name="checkbox-1" id="checkbox-1" type="checkbox" checked="checked"></input>
 								<label class="label_secondary" for="checkbox-1"><?php _e('Clique para receber por email a newsletter mensal do KMOL','kmol');?></label>
 							</td>
 						</tr>

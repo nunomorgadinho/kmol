@@ -110,12 +110,12 @@ class LoginWithAjax {
 			$plugin_url = path_join(WP_PLUGIN_URL, basename( dirname( __FILE__ ) ));
 			//Enqueue scripts - Only one script enqueued here.... theme JS takes priority, then default JS
 			if( !is_admin() ) {
-				if( file_exists(get_stylesheet_directory().'/plugins/login-with-ajax/login-with-ajax.js') ){ //Child Theme (or just theme)
-					wp_enqueue_script( "login-with-ajax", get_stylesheet_directory_uri()."/plugins/login-with-ajax/login-with-ajax.js", array( 'jquery' ) );
-				}else if( file_exists(get_template_directory().'/plugins/login-with-ajax/login-with-ajax.js') ){ //Parent Theme (if parent exists)
-					wp_enqueue_script( "login-with-ajax", get_template_directory_uri()."/plugins/login-with-ajax/login-with-ajax.js", array( 'jquery' ) );
+				if( file_exists(get_stylesheet_directory().'/plugins/login-with-ajax/login-with-ajax.source.js') ){ //Child Theme (or just theme)
+					wp_enqueue_script( "login-with-ajax", get_stylesheet_directory_uri()."/plugins/login-with-ajax/login-with-ajax.source.js", array( 'jquery' ) );
+				}else if( file_exists(get_template_directory().'/plugins/login-with-ajax/login-with-ajax.source.js') ){ //Parent Theme (if parent exists)
+					wp_enqueue_script( "login-with-ajax", get_template_directory_uri()."/plugins/login-with-ajax/login-with-ajax.source.js", array( 'jquery' ) );
 				}else{ //Default file in plugin folder
-					wp_enqueue_script( "login-with-ajax", $plugin_url."/widget/login-with-ajax.js", array( 'jquery' ) );
+					wp_enqueue_script( "login-with-ajax", $plugin_url."/widget/login-with-ajax.source.js", array( 'jquery' ) );
 				}
 
 				//Enqueue stylesheets - Only one style enqueued here.... theme CSS takes priority, then default CSS
@@ -491,5 +491,37 @@ function login_with_ajax_remove_update_nag($value) {
 	unset($value->response[ plugin_basename(__FILE__) ]);
 	return $value;
 }
+
+/**
+ * handle users registration + signup newsletter
+ */
+/* ajax signup */
+add_action('wp_ajax_nopriv_kmol_subscribe_user', 'kmol_subscribe_user_callback');
+add_action('wp_ajax_kmol_subscribe_user', 'kmol_subscribe_user_callback');
+
+/**
+ * New user is checking for invite.
+ * check if user already exists. If so return false otherwise
+ */
+function kmol_subscribe_user_callback(){
+	$email = $_POST['email'];
+	
+	//in this array firstname and lastname are optional
+	$userData=array(
+			'email'=>$email,
+			'firstname'=>'',
+			'lastname'=>'');
+	$data=array(
+			'user'=>$userData,
+			'user_list'=>array('list_ids'=>array(1))
+	);
+	
+	$userHelper=&WYSIJA::get('user','helper');
+	$userHelper->addSubscriber($data);
+	//this function will add the subscriber to wysija
+	
+	die('0');
+}
+
 
 ?>

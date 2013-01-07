@@ -100,8 +100,8 @@ class WYSIJA_help_user extends WYSIJA_object{
     }
     
     function addSubscriber($data,$backend=false){
-
-        if(!$backend){
+    	
+    	        if(!$backend){
             $validEmail=apply_filters( 'wysija_beforeAddSubscriber', true ,$data['user']['email']);
             if(!$validEmail){
                 $this->error(sprintf(__('The email %1$s is not valid!',WYSIJA),'<strong>'.$data['user']['email'].'</strong>'),true);

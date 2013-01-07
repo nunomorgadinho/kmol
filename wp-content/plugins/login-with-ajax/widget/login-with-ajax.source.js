@@ -87,6 +87,18 @@ jQuery(document).ready( function($) {
 					$('#'+statusElement).attr('class','confirm').html(data.message);
 				}else{
 					$('<span id="'+statusElement+'" class="confirm">'+data.message+'</span>').prependTo( prependTo );
+					
+					if(jQuery('#checkbox-1').is(':checked'))
+					{
+						var data = {
+			  		 			action: 'kmol_subscribe_user',
+			  		 			email: jQuery('#user_email').attr('value')
+			  		 			
+			  		 		};
+								jQuery.post(ajaxurl, data, function() {
+			  				});
+					}
+					
 				}
 			}else{
 				//Login Failed
