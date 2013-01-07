@@ -482,4 +482,14 @@ function login_with_ajax($atts = ''){
 global $LoginWithAjax;
 $LoginWithAjax = new LoginWithAjax();
 
+
+/**
+ * Avoid updates on this plugin since we changed it directly
+ */
+add_filter('site_transient_update_plugins', 'login_with_ajax_remove_update_nag');
+function login_with_ajax_remove_update_nag($value) {
+	unset($value->response[ plugin_basename(__FILE__) ]);
+	return $value;
+}
+
 ?>
