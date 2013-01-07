@@ -81,7 +81,7 @@
          	</div>
          </div>
          <div class="grid_12 copyright alpha omega"><center>
-         	<p>Copyright &copy; 2012 knowman | <?php _e('Todos os direitos reservados','kmol');?></p>
+         	<p>Copyright &copy; <?php echo date('Y');?> knowman | <?php _e('Todos os direitos reservados','kmol');?></p>
          </center>
          </div>
 	</footer><!-- #colophon .site-footer -->

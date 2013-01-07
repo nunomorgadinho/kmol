@@ -8,11 +8,7 @@
 ?>
 
 
-<?php 
-	// no need to show register form if user is logged in
-	if(!is_user_logged_in())
-		get_template_part( 'content', 'popup' ); 
-?>
+
 
 
 
