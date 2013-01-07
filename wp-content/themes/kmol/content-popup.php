@@ -63,7 +63,7 @@
 							<?php do_action('register_form'); ?>
 								<div id="reg_passmail"><?php _e('A password will be e-mailed to you.') ?></div>
 								<div class="submit"><input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="<?php esc_attr_e('Register'); ?>" tabindex="100" /></div>
-								<input type="hidden" name="lwa" value="1" />
+								<input type="hidden" name="lwa" value="0" />
 							</td>
 						</tr>
 					</tbody>
