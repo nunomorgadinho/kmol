@@ -53,7 +53,6 @@ jQuery(document).ready( function($) {
 		var url = $('#LoginWithAjax_Register form').attr('action');
 		//Get POST data
 		
-		console.log('url '+url);
 		
 		var postData = getPostData('#LoginWithAjax_Register form *[name]');
 		
@@ -93,9 +92,9 @@ jQuery(document).ready( function($) {
 				//Login Failed
 				//If there already is an error element, replace text contents, otherwise create a new one and insert it
 				if( $('#'+statusElement).length > 0 ){
-					$('#'+statusElement).attr('class','invalid').html(data.error); console.log('ERRO');
+					$('#'+statusElement).attr('class','invalid').html(data.error); 
 				}else{
-					$('<span id="'+statusElement+'" class="invalid">'+data.error+'</span>').prependTo( prependTo );console.log(data);
+					$('<span id="'+statusElement+'" class="invalid">'+data.error+'</span>').prependTo( prependTo );
 				}
 				//We assume a link in the status message is for a forgotten password
 				$('#'+statusElement).click(function(event){
@@ -105,9 +104,9 @@ jQuery(document).ready( function($) {
 			}
 		}else{	
 			//If there already is an error element, replace text contents, otherwise create a new one and insert it
-			if( $('#'+statusElement).length > 0 ){console.log('ERRO3');
+			if( $('#'+statusElement).length > 0 ){
 				$('#'+statusElement).attr('class','invalid').html('An error has occured. Please try again.');
-			}else{console.log('ERRO4');
+			}else{
 				$('<span id="'+statusElement+'" class="invalid">An error has occured. Please try again.</span>').prependTo( prependTo );
 			}
 		}
@@ -120,8 +119,6 @@ jQuery(document).ready( function($) {
 			el = $(el);
 			postData[el.attr('name')] = el.attr('value');
 			
-			console.log('getting data for '+el.attr('name'));
-			console.log('retrieve value '+el.attr('value'));
 			
 		});
 		return postData

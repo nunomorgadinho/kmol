@@ -85,8 +85,28 @@
             </table>
         </form>
 	</div>
-	<?php if( get_option('users_can_register') && $lwa_data['registration'] == '1' ): ?>
-	
+	<?php // if( get_option('users_can_register') && $lwa_data['registration'] == '1' ): 
+    	if(false) :                    
+    ?>
+	<div id="LoginWithAjax_Footer">
+		<div id="LoginWithAjax_Register" style="display:none;" class="default">
+			<h4 class="message register"><?php _e('Register For This Site') ?></h4>
+			<form name="registerform" id="registerform" action="<?php echo $this->url_register ?>" method="post">
+				<p>
+					<label><?php _e('Username') ?><br />
+					<input type="text" name="user_login" id="user_login" class="input" size="20" tabindex="10" /></label>
+				</p>
+				<p>
+					<label><?php _e('E-mail') ?><br />
+					<input type="text" name="user_email" id="user_email" class="input" size="25" tabindex="20" /></label>
+				</p>
+				<?php do_action('register_form'); ?>
+				<p id="reg_passmail"><?php _e('A password will be e-mailed to you.') ?></p>
+				<p class="submit"><input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="<?php esc_attr_e('Register'); ?>" tabindex="100" /></p>
+				<input type="hidden" name="lwa" value="1" />
+			</form>
+		</div>
+	</div>
 	<script type="text/javascript">
 		jQuery(document).ready(function($) {
 			var triggers = $("#LoginWithAjax_Links_Register").overlay({
