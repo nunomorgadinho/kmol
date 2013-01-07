@@ -33,7 +33,7 @@
 					<tbody>
 						<tr id="RegisterWithAjax_Username">
 							<td class="username_label">
-								<label><?php _e('Username') ?></label>
+								<label for="username_input"><?php _e('Username') ?></label>
 							</td>
 							<td class="username_input">
 								<input type="text" name="user_login" id="user_login" class="input"  />
@@ -41,8 +41,8 @@
 						</tr>
 						
 						<tr id="RegisterWithAjax_email">
-							<td class="password_label">
-								<label><?php _e('E-mail') ?></label>
+							<td class="email_label">
+								<label for="email_input"><?php _e('E-mail') ?></label>
 							</td>
 							<td class="email_input">
 								<input type="text" name="user_email" id="user_email" class="input"  />

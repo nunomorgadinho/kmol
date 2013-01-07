@@ -96,9 +96,9 @@ jQuery(document).ready( function($) {
 				//Login Failed
 				//If there already is an error element, replace text contents, otherwise create a new one and insert it
 				if( $('#'+statusElement).length > 0 ){
-					$('#'+statusElement).attr('class','invalid').html(data.error);
+					$('#'+statusElement).attr('class','invalid').html(data.error); console.log('ERRO');
 				}else{
-					$('<span id="'+statusElement+'" class="invalid">'+data.error+'</span>').prependTo( prependTo );
+					$('<span id="'+statusElement+'" class="invalid">'+data.error+'</span>').prependTo( prependTo );console.log('ERRO2');
 				}
 				//We assume a link in the status message is for a forgotten password
 				$('#'+statusElement).click(function(event){
@@ -108,9 +108,9 @@ jQuery(document).ready( function($) {
 			}
 		}else{	
 			//If there already is an error element, replace text contents, otherwise create a new one and insert it
-			if( $('#'+statusElement).length > 0 ){
+			if( $('#'+statusElement).length > 0 ){console.log('ERRO3');
 				$('#'+statusElement).attr('class','invalid').html('An error has occured. Please try again.');
-			}else{
+			}else{console.log('ERRO4');
 				$('<span id="'+statusElement+'" class="invalid">An error has occured. Please try again.</span>').prependTo( prependTo );
 			}
 		}
