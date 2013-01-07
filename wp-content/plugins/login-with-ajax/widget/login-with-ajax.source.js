@@ -57,22 +57,13 @@ jQuery(document).ready( function($) {
 		
 		var postData = getPostData('#LoginWithAjax_Register form *[name]');
 		
-		console.log('postData '+postData);
+	
 		
 		$.post(url, postData, function(data){
 			//variable status not here anymore
 			lwaAjax( data, 'LoginWithAjax_Register_Status', '#LoginWithAjax_Register' );
 		}, "json");
-		/*$.ajax({
-		  type: 'POST',
-		  url: url,
-		  data: postData,
-		  success: function(data){
-				//variable status not here anymore
-				lwaAjax( data, 'LoginWithAjax_Register_Status', '#LoginWithAjax_Register' );
-		  },
-		  dataType: "json"
-		});*/
+		
 	});	
  	
 	//Visual Effects for hidden items
