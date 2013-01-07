@@ -215,9 +215,6 @@ class LoginWithAjax {
 			$return = array();
 			if ('POST' == $_SERVER['REQUEST_METHOD']) {
 				require_once( ABSPATH . WPINC . '/registration.php');
-				
-				error_log(print_r($_POST,true));
-				
 				$errors = register_new_user($_POST['user_login'], $_POST['user_email']);
 				if ( !is_wp_error($errors) ) {
 					//Success
@@ -346,7 +343,7 @@ class LoginWithAjax {
 		}
 	}
 
-	function shortcode($atts){ 
+	function shortcode($atts){
 		$defaults = array( 'is_widget' => false, 'profile_link' => false, 'registration' => 1 );
 		$atts = shortcode_atts($defaults, $atts);
 		ob_start();

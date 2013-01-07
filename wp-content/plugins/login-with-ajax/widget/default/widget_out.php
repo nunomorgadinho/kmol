@@ -50,7 +50,7 @@
                                 	$register_link = bp_get_signup_page();
                                 }elseif ( file_exists( ABSPATH."/wp-signup.php" ) ) { //MU + WP3
                                     $register_link = site_url('wp-signup.php', 'login');
-                                } else { 
+                                } else {
                                     $register_link = site_url('wp-login.php?action=register', 'login');
                                 }
                                 ?>
