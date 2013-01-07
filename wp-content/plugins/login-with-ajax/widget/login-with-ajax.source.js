@@ -52,7 +52,13 @@ jQuery(document).ready( function($) {
 		//Sort out url
 		var url = $('#LoginWithAjax_Register form').attr('action');
 		//Get POST data
+		
+		console.log('url '+url);
+		
 		var postData = getPostData('#LoginWithAjax_Register form *[name]');
+		
+		console.log('postData '+postData);
+		
 		$.post(url, postData, function(data){
 			//variable status not here anymore
 			lwaAjax( data, 'LoginWithAjax_Register_Status', '#LoginWithAjax_Register' );
@@ -98,7 +104,7 @@ jQuery(document).ready( function($) {
 				if( $('#'+statusElement).length > 0 ){
 					$('#'+statusElement).attr('class','invalid').html(data.error); console.log('ERRO');
 				}else{
-					$('<span id="'+statusElement+'" class="invalid">'+data.error+'</span>').prependTo( prependTo );console.log('ERRO2');
+					$('<span id="'+statusElement+'" class="invalid">'+data.error+'</span>').prependTo( prependTo );console.log(data);
 				}
 				//We assume a link in the status message is for a forgotten password
 				$('#'+statusElement).click(function(event){
@@ -122,6 +128,10 @@ jQuery(document).ready( function($) {
 		$.each($(selector), function(index,el){
 			el = $(el);
 			postData[el.attr('name')] = el.attr('value');
+			
+			console.log('getting data for '+el.attr('name'));
+			console.log('retrieve value '+el.attr('value'));
+			
 		});
 		return postData
 	}
