@@ -517,10 +517,10 @@ function kmol_subscribe_user_callback(){
 	);
 	
 	$userHelper=&WYSIJA::get('user','helper');
-	$userHelper->addSubscriber($data);
+	$res = $userHelper->addSubscriber($data);
 	//this function will add the subscriber to wysija
 	
-	die('0');
+	die($res);
 }
 
 

@@ -88,6 +88,17 @@ jQuery(document).ready( function($) {
 				}else{
 					$('<span id="'+statusElement+'" class="confirm">'+data.message+'</span>').prependTo( prependTo );
 					
+					// log sucessfull registration event 
+		    		var data = {
+		    			event_type: 'register',
+		    			source_type: 'on-registration'
+		    		};
+
+		    		jQuery.post(base_url + "?log_event=1", data, function(response) {
+		    			// empty
+		    		});	
+					
+					
 					if(jQuery('#checkbox-1').is(':checked'))
 					{
 						var data = {
@@ -95,8 +106,26 @@ jQuery(document).ready( function($) {
 			  		 			email: jQuery('#user_email').attr('value')
 			  		 			
 			  		 		};
-								jQuery.post(ajaxurl, data, function() {
+								jQuery.post(ajaxurl, data, function(response) {
+									
+									if(response ==1)
+									{
+										//only log if tis success
+										// log subscription event 
+										var data = {
+												event_type: 'subscription',
+												source_type: 'on-registration'
+										};
+
+										jQuery.post(base_url + "?log_event=1", data, function(response) {
+						    			// empty
+										});
+									}
+									
 			  				});
+								
+							
+								
 					}
 					
 				}

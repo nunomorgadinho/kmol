@@ -286,6 +286,7 @@ function define_ajaxurl() {
 	?>
 		<script type="text/javascript">
 			var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+			var base_url = '<?php echo get_bloginfo('siteurl'); ?>';
 		</script>
 	<?php
 }
@@ -347,7 +348,7 @@ function count_twitter_followers(){
 				}
 			}
 		}
-	error_log('twitter '.$count_twitter);
+
 	return $count_twitter;
 }
 
