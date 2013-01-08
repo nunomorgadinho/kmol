@@ -84,8 +84,23 @@ function kmol_comment( $comment, $args, $depth ) {
 		<article id="comment-<?php comment_ID(); ?>" class="comment">
 			<footer>
 				<div class="comment-author vcard">
-					<?php echo get_avatar( $comment, 40 ); $user = get_user_by('login',get_comment_author_link());  ?>
-					<?php printf( __( '<a href="'.esc_url( get_author_posts_url( $user->ID  ) ).'" >%s</a> <span class="says">diz:</span>', 'kmol' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+				
+				<?php //print_r( $comment); 
+				
+				
+				$u = get_user_by_email($comment->comment_author_email);
+				
+				?>
+				
+					<?php echo get_avatar( $comment, 40 );?>
+					<?php 
+					if(isset($u) && !empty($u))
+					{printf( __( '<a href="'.esc_url( get_author_posts_url($u->ID  ) ).'" >%s</a> <span class="says">diz:</span>', 'kmol' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); }
+						else
+						{		printf( __( '%s <span class="says">diz:</span>', 'kmol' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); }
+						
+						?>
+						
 				</div><!-- .comment-author .vcard -->
 				<?php if ( $comment->comment_approved == '0' ) : ?>
 					<em><?php _e( 'O seu comentário aguarda moderação.', 'kmol' ); ?></em>

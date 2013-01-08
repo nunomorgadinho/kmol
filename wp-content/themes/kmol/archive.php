@@ -176,6 +176,27 @@ get_header(); ?>
 				</div> <!-- .default page -->
 		      </div><!-- .grid_9 -->
 		      
+		      
+		      
+		      	<?php 
+		if(true) :
+		?>	
+			<div class="topics">
+				<div class="grid_3 omega ">
+					<div class="image_blog_title author_avatar">
+						<?php if(isset($uid)) echo $uid->user_nicename;?>
+					</div>
+					<div class="blog_share">
+					
+						<?php  echo get_avatar($uid->user_email,220);?>
+						
+					
+					</div>
+				</div>
+			</div> <!-- .topics -->
+		<?php endif;?>
+		      
+		      
 		      <div class="grid_3 omega">
 					<?php get_sidebar();?>
 				</div>
