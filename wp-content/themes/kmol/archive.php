@@ -10,12 +10,33 @@
 
 get_header(); ?>
 
+
+<?php 
+
+	$author_has_comments = false;
+	if(is_author())
+	{
+		$author =  get_query_var('author_name');
+		$uid=  get_user_by('login', $author); 
+		$user_id =  $uid->ID;
+				
+		global $wpdb;
+					
+		$myrows = $wpdb->get_results($wpdb->prepare(
+					"SELECT * FROM " . $wpdb->prefix . "comments
+					WHERE user_id =  %s AND comment_approved = 1 ORDER BY comment_ID DESC
+					", $user_id));
+		
+		if(count($myrows) >0) $author_has_comments = true;
+	}
+?>
+
 	<section id="primary" class="content-area ">
 		<div id="content" class="site-content" role="main">
 			<div class="container_12">
 				<div class="grid_9 alpha">
 				<div class="default_page ">
-				<?php if ( have_posts() ) : ?>
+				<?php if ( have_posts() ) :  ?>
 	
 					<header class="page-header">
 						<h1 class="page-title">
@@ -31,6 +52,9 @@ get_header(); ?>
 									 * what author we're dealing with (if that is the case).
 									*/
 									the_post();
+									
+								
+									
 									printf( __( 'Arquivos do autor: %s', 'kmol' ), '<span class="vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( "ID" ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
 									/* Since we called the_post() above, we need to
 									 * rewind the loop back to the beginning that way
@@ -38,6 +62,8 @@ get_header(); ?>
 									 */
 									rewind_posts();
 	
+								
+								
 								} elseif ( is_day() ) {
 									printf( __( 'Arquivos Diários: %s', 'kmol' ), '<span>' . get_the_date() . '</span>' );
 	
@@ -88,11 +114,65 @@ get_header(); ?>
 				<div class="grid_8 alpha more_single">
 					<?php kmol_content_nav( 'nav-below' ); ?>
 				</div>
-				<?php else : ?>
-	
-					<?php get_template_part( 'no-results', 'archive' ); ?>
+				
+				
+				<?php else : 
+				
+					if($author_has_comments)
+					{
+				?>		
+						<header class="page-header">
+							<h1 class="page-title">
+							<?php printf( __( 'Contribuições do utilizador: %s', 'kmol' ), '<span class="vcard">'.$uid->user_nicename.'</span>' );
+					?>
+						</h1>
+						</header>
+					<?php 	
+					}			
+					else
+						 get_template_part( 'no-results', 'archive' );
+				?>
 	
 				<?php endif; ?>
+				
+				<?php
+				if($author_has_comments) 
+				{
+				?>
+					
+					<?php foreach ($myrows as $comment): //print_r($comment);
+							?>
+							
+					<div id="container_blog">		
+						 <div class="sublayer grid_8 alpha sublayer_single author_comments">
+	
+				
+						<div class="news_excerpt excerpt_single">
+						<img src="<?php echo get_bloginfo('stylesheet_directory').'/images/quote.png'?>" width="50" height="28"/>
+		                    	<?php echo $comment->comment_content;?> 
+		                    	<a class="moretag" href="<?php echo get_bloginfo('url') ."/?p=".$comment->comment_post_ID;?>"><?php _e('... ler artigo &rarr;','kmol')?></a>
+		                </div>
+	
+					     <div class="">em <a href="<?php echo get_bloginfo('url') ."/?p=".$comment->comment_post_ID;?>"><?php echo  get_post_field('post_title', $comment->comment_post_ID);?></a></div>
+	
+		                   <div class="news_meta">
+							<?php echo mysql2date(get_option('date_format'), $comment->comment_date); ?>
+							<div class="tag_marcador alignleft"><?php /* translators: used between list items, there is a space after the comma */
+										$tag_list = get_the_tag_list( '', ' ','',$comment->comment_post_ID );
+										printf($tag_list);
+										?></div>
+							
+							</div><!-- .entry-meta -->
+							
+							<span class="clear"></span>
+	 
+		              </div>
+		              </div>
+					<?php endforeach; ?>
+					
+			<?php }?>
+				
+				
 				</div> <!-- .default page -->
 		      </div><!-- .grid_9 -->
 		      
