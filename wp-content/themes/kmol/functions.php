@@ -327,7 +327,7 @@ function count_facebook_followers(){
  * @return number
  */
 function count_twitter_followers(){
-	$count_twitter = 0;
+	$count_twitter = 1143;
 
 		// If Twitter is enabled...
 		$twitter = get_option('twitter');
@@ -348,7 +348,6 @@ function count_twitter_followers(){
 				}
 			}
 		}
-
 	return $count_twitter;
 }
 
