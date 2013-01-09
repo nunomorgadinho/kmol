@@ -11,22 +11,22 @@
 
 <article id="post-0" class="post no-results not-found">
 	<header class="entry-header">
-		<h1 class="entry-title"><?php _e( 'Nothing Found', 'kmol' ); ?></h1>
+		<h1 class="entry-title"><?php _e( 'Nenhuma correspondência', 'kmol' ); ?></h1>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-			<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'kmol' ), admin_url( 'post-new.php' ) ); ?></p>
+			<p><?php printf( __( 'Pronto para publicar o seu primeiro artigo? <a href="%1$s">Comece aqui</a>.', 'kmol' ), admin_url( 'post-new.php' ) ); ?></p>
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'kmol' ); ?></p>
+			<p><?php _e( 'Não foi encontrado conteúdo para os paramêtros desta pesquisa. Por favor tente novamente com diferentes keywords.', 'kmol' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php else : ?>
 
-			<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'kmol' ); ?></p>
+			<p><?php _e( 'Não conseguimos encontrar o que procura. Talvez pesquisar ajude.', 'kmol' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php endif; ?>
