@@ -36,7 +36,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-<link rel="icon" type="image/ico" href="<?php echo get_bloginfo('stylesheet_dir'); ?>/favicon.ico">
+<link rel="icon" type="image/ico" href="<?php echo get_bloginfo('siteurl'); ?>/favicon.ico">
 
 
 
