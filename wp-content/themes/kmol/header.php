@@ -33,7 +33,7 @@
 		echo ' | ' . sprintf( __( 'Page %s', 'kmol' ), max( $paged, $page ) );
 
 	?></title>
-<link rel="shortcut icon" href="<?php echo get_bloginfo('siteurl'); ?>/favicon.ico" />
+<link rel="icon" href="<?php echo get_bloginfo('siteurl'); ?>/favicon.ico" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
