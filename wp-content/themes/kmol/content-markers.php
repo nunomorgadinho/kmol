@@ -18,7 +18,7 @@
 			<div class="marcador_short">
 				<div class="marcador_subtitle_container">
 				<h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
-				<div class="news_meta"><?php echo "Por ".get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></div></div>
+				<div class="news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( "ID" ) );?>"><?php _e('Por ',''); echo get_the_author_meta('display_name');?></a>, <?php kmol_posted_on();?></div></div>
 				 <?php if(has_post_thumbnail()){?> <div class="marcador_img"><?php the_post_thumbnail('thumbnail');?> </div> <?php }?>
 				<div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_small', 'new_excerpt_more');?></div>
 			</div>
@@ -42,7 +42,7 @@
 			<div class="marcador_short">
 				<div class="marcador_subtitle_container">
 				<h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
-				<div class="news_meta"><?php echo "Por ".get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></div></div>
+				<div class="news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( "ID" ) );?>"><?php _e('Por ','kmol'); echo get_the_author_meta('display_name');?></a>, <?php kmol_posted_on();?></div></div>
 				 <?php if(has_post_thumbnail()){?> <div class="marcador_img"><?php the_post_thumbnail('thumbnail');?> </div> <?php }?>
 				<div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_small', 'new_excerpt_more');?></div>
 			</div>
@@ -66,7 +66,7 @@
 			<div class="marcador_short">
 				<div class="marcador_subtitle_container">
 				<h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
-				<div class="news_meta"><?php echo "Por ".get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></div></div>
+				<div class="news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( "ID" ) );?>"><?php _e('Por ','kmol'); echo get_the_author_meta('display_name');?></a>, <?php kmol_posted_on();?></div></div>
 			 	<?php if(has_post_thumbnail()){?> <div class="marcador_img"><?php the_post_thumbnail('thumbnail');?> </div> <?php }?>
 				<div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_small', 'new_excerpt_more');?></div>
 			</div>
