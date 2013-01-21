@@ -297,7 +297,7 @@ function define_ajaxurl() {
  * @return number
  */
 function count_facebook_followers(){
-	$count_facebook = 0;
+	$count_facebook = 266;
 	
 	// If Facebook is enabled...
 	$facebook = get_option('facebook');
@@ -350,6 +350,9 @@ function count_twitter_followers(){
 		}
 	return $count_twitter;
 }
+
+
+
 
 /**
  * get it's number of rss folowwers

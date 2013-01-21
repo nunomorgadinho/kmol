@@ -2444,3 +2444,9 @@ table.register_table tr{
 .courtain, .popup_page{display:none;}
 
 .author_avatar{position:absolute; margin-top:10px; margin-left:10px;}
+
+.first_container:hover{
+	cursor:pointer;
+	
+	height:200px;
+}

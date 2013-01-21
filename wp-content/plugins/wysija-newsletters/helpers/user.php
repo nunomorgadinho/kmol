@@ -150,6 +150,9 @@ class WYSIJA_help_user extends WYSIJA_object{
 
             $sendConfForIds=array();
             foreach($data['user_list']['list_ids'] as $listid){
+            	
+            	
+            	
                 if(!in_array($listid, $arrayListids)){
                     $sendConfForIds[]=$listid;
                 }

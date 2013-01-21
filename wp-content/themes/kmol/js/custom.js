@@ -81,6 +81,12 @@ jQuery( document ).ready( function( $ ) {
 function handle_register_login(){
 	
 	
+	jQuery('.first_container').click(function(){ console.log('estou aqui detectei coisas');
+		jQuery('.courtain').show();
+		jQuery('.popup_page').show();
+		
+	});
+	
 	jQuery('#go-to-login').click(function(){
 		
 		
