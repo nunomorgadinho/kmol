@@ -1211,7 +1211,7 @@ margin-top: 26px;
 }
 
 #rss{
-background-image: url(images/rss_icon.png);
+background-image: url(images/users_icon.png);
 background-repeat: no-repeat;
 margin-left: -63px;
 margin-top: 26px;
@@ -2444,3 +2444,16 @@ table.register_table tr{
 .courtain, .popup_page{display:none;}
 
 .author_avatar{position:absolute; margin-top:10px; margin-left:10px;}
+
+a.logo {
+	font-family: 'RobotoMedium' !important;
+	line-height: 120%;
+	color: #989a8c;
+	font-size: 15px;
+	margin-right: 10px;
+}
+
+.text_logo {
+	margin-top: 74px;
+	letter-spacing: -2px;
+}
