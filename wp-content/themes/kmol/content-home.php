@@ -56,7 +56,7 @@ $temp = $post;
 	 	   	?>
 	 	  	 <div class="news_principal">
 	 	  		 <div class="news_title"><a href="<?php the_permalink();?>"><?php the_title();?></a>
-	 	  		 	<span class="news_meta"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></span>
+	 	  		 	<span class="news_meta"><?php _e('Por ','kmol'); echo get_the_author_meta('display_name');?>, <?php kmol_posted_on();?></span>
 	 	  		 </div><span class="clear"></span>
 	 	  	 	<?php
 	 	 	  	if(has_post_thumbnail()){
@@ -74,7 +74,7 @@ $temp = $post;
  	   if($i==2) {?><div class="grid_8 alpha"><?php }?>
  	  				 <div class="sublayer grid_4 alpha">
  	  					 <h1 class="sublayer_title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h1>
- 	  					 <div class="sublayer_meta news_meta"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></div>
+ 	  					 <div class="sublayer_meta news_meta"><?php _e('Por ','kmol'); echo get_the_author_meta('display_name');?>, <?php kmol_posted_on();?></div>
  	   				</div>
  	   
  	   <?php }
@@ -107,7 +107,7 @@ $temp = $post;
                     			?>
                     			<div class="news_principal">
                                  <div class="news_title"><a href="<?php the_permalink();?>"><?php the_title();?></a>
-                                    <span class="news_meta"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></span>
+                                    <span class="news_meta"><?php _e('Por ','kmol'); echo get_the_author_meta('display_name');?>, <?php kmol_posted_on();?></span>
                                  </div><span class="clear"></span>
                     			<?php
                     			if(has_post_thumbnail()){
@@ -126,7 +126,7 @@ $temp = $post;
                     			if($i==2) {?><div class="grid_8 alpha"><?php }?>
                     				<div class="sublayer grid_4 alpha">
                     					<h1 class="sublayer_title"><a href="<?php the_permalink();?>"><?php echo the_title();?></a></h1>
-                    					<div class="sublayer_meta news_meta"><?php echo get_the_author_meta('nicename',$post->post_author);?>, <?php kmol_posted_on();?></div>
+                    					<div class="sublayer_meta news_meta"><?php _e('Por '); echo get_the_author_meta('display_name',$post->post_author);?>, <?php kmol_posted_on();?></div>
                     				</div>
                     		<?php }
                     		$i++;
@@ -234,7 +234,11 @@ $temp = $post;
 	                    <div class="marcador_short">
                         <div class="marcador_subtitle_container">
                       <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
-                    <div class="news_meta"><?php echo "Por ".get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></div></div>
+                      
+                      
+                      <?php get_the_author_?>
+                      
+                    <div class="news_meta"><?php echo "Por ".get_the_author_meta('display_name');?>, <?php kmol_posted_on();?></div></div>
 	                    <?php if(has_post_thumbnail()) the_post_thumbnail('thumbnail');?>
 	                    <div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_small', 'new_excerpt_more');?></div>
 	                    </div>
@@ -257,7 +261,7 @@ $temp = $post;
 		                    <div class="marcador_short">
                           <div class="marcador_subtitle_container">
                         <h2 class="marcador_subtitle"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
-                      <div class="news_meta"><?php echo "Por ".get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></div></div>
+                      <div class="news_meta"><?php echo "Por ".get_the_author_meta('display_name');?>, <?php kmol_posted_on();?></div></div>
 		                   <?php if(has_post_thumbnail()) the_post_thumbnail('thumbnail');?>
 		                    <div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_small', 'new_excerpt_more');?></div>
 		                    </div>
@@ -296,7 +300,7 @@ $temp = $post;
                     <div class="marcador_short">
                     <div class="marcador_subtitle_container">
                     <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
-                  <div class="news_meta"><?php echo "Por ".get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></div></div>
+                  <div class="news_meta"><?php echo "Por ".get_the_author_meta('display_name');?>, <?php kmol_posted_on();?></div></div>
                     <?php if(has_post_thumbnail()) the_post_thumbnail('thumbnail');?>
                     <div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_small', 'new_excerpt_more');?></div>
                     </div>
