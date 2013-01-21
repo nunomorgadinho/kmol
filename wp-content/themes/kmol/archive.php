@@ -181,19 +181,39 @@ get_header(); ?>
 		      	<?php 
 		if(true) :
 		?>	
+		
+		
+			<?php 
+			if(isset($uid) && $uid->user_email == 'editor@kmol.online.pt') {
+			?><div class="topics">
+				<div class="grid_3 omega image_blog">
+					<div class="image_blog_title">
+						Ana Neves
+					</div>
+					<div class="blog_share">
+						<a href="mailto:ana.neves@knowman.pt"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/mail_blog.png"/></a>
+						<a href="<?php echo "http://twitter.com/".get_option('twitter');?>" target="_blank"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/twitter_blog.png"/></a>
+						<a href="<?php echo "http://pt.linkedin.com/in/".get_option('twitter');?>" target="_blank"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/linkedin_blog.png"/></a>
+					</div>
+				</div>
+			</div> <!-- .topics -->
+			<?php } else {?>
+		
 			<div class="topics">
 				<div class="grid_3 omega ">
-					<div class="image_blog_title author_avatar">
-						<?php if(isset($uid)) echo $uid->user_nicename;?>
+					<div class="image_blog_title author_avatar ">
+						<?php if(isset($uid)) echo $uid->display_name;?>
 					</div>
 					<div class="blog_share">
 					
-						<?php  echo get_avatar($uid->user_email,220);?>
-						
+						<?php
+							echo get_avatar($uid->user_email,220);
+						?>
 					
 					</div>
 				</div>
 			</div> <!-- .topics -->
+			<?php }?>
 		<?php endif;?>
 		      
 		      
