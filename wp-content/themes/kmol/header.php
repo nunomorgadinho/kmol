@@ -33,12 +33,9 @@
 		echo ' | ' . sprintf( __( 'Page %s', 'kmol' ), max( $paged, $page ) );
 
 	?></title>
+<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
-
-
-
 
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
