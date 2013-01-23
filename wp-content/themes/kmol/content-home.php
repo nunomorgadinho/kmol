@@ -56,8 +56,11 @@ $temp = $post;
 	 	   	?>
 	 	  	 <div class="news_principal">
 	 	  		 <div class="news_title"><a href="<?php the_permalink();?>"><?php the_title();?></a>
-	 	  		 	<span class="news_meta"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></span>
+	 	  		 	<span class="news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( "ID" ) );?>"><?php _e('Por ','kmol'); echo get_the_author_meta('display_name');?></a>, <?php kmol_posted_on();?></span>
 	 	  		 </div><span class="clear"></span>
+	 	  		 
+	 	  		 
+	 	  		 
 	 	  	 	<?php
 	 	 	  	if(has_post_thumbnail()){
 	 	  	 	?>
@@ -74,7 +77,7 @@ $temp = $post;
  	   if($i==2) {?><div class="grid_8 alpha"><?php }?>
  	  				 <div class="sublayer grid_4 alpha">
  	  					 <h1 class="sublayer_title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h1>
- 	  					 <div class="sublayer_meta news_meta"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></div>
+ 	  					 <div class="sublayer_meta news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( "ID" ) );?>"><?php _e('Por ','kmol'); echo get_the_author_meta('display_name');?></a>, <?php kmol_posted_on();?></div>
  	   				</div>
  	   
  	   <?php }
@@ -107,7 +110,7 @@ $temp = $post;
                     			?>
                     			<div class="news_principal">
                                  <div class="news_title"><a href="<?php the_permalink();?>"><?php the_title();?></a>
-                                    <span class="news_meta"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></span>
+                                    <span class="news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( "ID" ) );?>"><?php _e('Por ','kmol'); echo get_the_author_meta('display_name');?></a>, <?php kmol_posted_on();?></span>
                                  </div><span class="clear"></span>
                     			<?php
                     			if(has_post_thumbnail()){
@@ -126,7 +129,7 @@ $temp = $post;
                     			if($i==2) {?><div class="grid_8 alpha"><?php }?>
                     				<div class="sublayer grid_4 alpha">
                     					<h1 class="sublayer_title"><a href="<?php the_permalink();?>"><?php echo the_title();?></a></h1>
-                    					<div class="sublayer_meta news_meta"><?php echo get_the_author_meta('nicename',$post->post_author);?>, <?php kmol_posted_on();?></div>
+                    					<div class="sublayer_meta news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( $post->post_author ) );?>"><?php _e('Por '); echo get_the_author_meta('display_name',$post->post_author);?></a>, <?php kmol_posted_on();?></div>
                     				</div>
                     		<?php }
                     		$i++;
@@ -145,23 +148,32 @@ $temp = $post;
 
 
 <!-- Separador com números de redes sociais -->
+		<?php 
+			$users = count(get_users(array('role'         => 'subscriber' )));
+			$nfacebook = count_facebook_followers();
+			$nnewsletter = count_newsletter_followers();
+		?>
 	
                 <div class="counters grid_4 omega">
                     <div class="phrase">
-                        <p><?php _e('Ajude-nos a chegar aos','kmol');?></p><h3><?php _e('1500 gostos!','kmol');?></h3></div>
+                        <p><?php _e('Ajude-nos a chegar aos','kmol');?></p><h3><?php _e('1000 gostos!','kmol');?></h3></div>
                
                     <div class="numbers">
-                        <div class="counters_container">
-                          <input id="twitter" class="knob countersingle numbers_margin twitter" data-max="150" data-displayInput="true" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true title="<?php echo count_twitter_followers();?>" value="<?php echo count_twitter_followers();?>">
-                        	<center><span><h1><?php echo count_twitter_followers();?></h1><h2><?php _e('seguidores','kmol');?></h2></span></center>
+                        <div class="counters_container" title="<?php _e('Clique para se registar');?>">
+                        <a target="_blank" class="first_container">
+                          <input id="twitter" class="knob countersingle numbers_margin twitter " data-max="100" data-displayInput="true" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true title="<?php echo $users;?>" value="<?php echo $users;?>">
+                        </a>
+                        	<center><span><h1><?php echo $users;?></h1><h2><?php _e('seguidores','kmol');?></h2></span></center>
+                        </div>
+                        <div class="counters_container" title="<?php _e('Clique para fazer Like');?>">
+                        <a target="_blank" href="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FportalKMOL&send=false&layout=standard&width=450&show_faces=false&font&colorscheme=light&action=like&height=35&appId=259428177513896">
+                          <input id="facebook" class="knob countersingle numbers_margin facebook" data-max="100" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="<?php echo $nfacebook;?>">
+                        </a>
+                        <center><span><h1><?php echo $nfacebook;?></h1><h2><?php _e('gostos','kmol');?></h2></span></center>
                         </div>
                         <div class="counters_container">
-                          <input id="facebook" class="knob countersingle numbers_margin facebook" data-max="150" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="<?php echo count_facebook_followers();?>">
-                        <center><span><h1><?php echo count_facebook_followers();?></h1><h2><?php _e('gostos','kmol');?></h2></span></center>
-                        </div>
-                        <div class="counters_container">
-                          <input id="rss" class="knob countersingle rss" data-fgColor="#6c9ebb" data-max="150" data-thickness=".3" data-readOnly=true value="<?php echo count_newsletter_followers();?>">
-                 		       <center><span><h1><?php echo count_newsletter_followers();?></h1><h2><?php _e('assinantes','kmol');?></h2></span></center>
+                          <input id="rss" class="knob countersingle rss" data-fgColor="#6c9ebb" data-max="100" data-thickness=".3" data-readOnly=true value="<?php echo $nnewsletter;?>">
+                 		       <center><span><h1><?php echo $nnewsletter;?></h1><h2><?php _e('assinantes','kmol');?></h2></span></center>
                   	  </div>
                   </div>
                     <div class="subscribe_home">
@@ -225,7 +237,11 @@ $temp = $post;
 	                    <div class="marcador_short">
                         <div class="marcador_subtitle_container">
                       <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
-                    <div class="news_meta"><?php echo "Por ".get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></div></div>
+                      
+                      
+                      <?php get_the_author_?>
+                      
+                    <div class="news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( "ID" ) );?>"><?php echo "Por ".get_the_author_meta('display_name');?></a>, <?php kmol_posted_on();?></div></div>
 	                    <?php if(has_post_thumbnail()) the_post_thumbnail('thumbnail');?>
 	                    <div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_small', 'new_excerpt_more');?></div>
 	                    </div>
@@ -248,7 +264,7 @@ $temp = $post;
 		                    <div class="marcador_short">
                           <div class="marcador_subtitle_container">
                         <h2 class="marcador_subtitle"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
-                      <div class="news_meta"><?php echo "Por ".get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></div></div>
+                      <div class="news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( "ID" ) );?>"><?php echo "Por ".get_the_author_meta('display_name');?></a>, <?php kmol_posted_on();?></div></div>
 		                   <?php if(has_post_thumbnail()) the_post_thumbnail('thumbnail');?>
 		                    <div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_small', 'new_excerpt_more');?></div>
 		                    </div>
@@ -287,7 +303,7 @@ $temp = $post;
                     <div class="marcador_short">
                     <div class="marcador_subtitle_container">
                     <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
-                  <div class="news_meta"><?php echo "Por ".get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></div></div>
+                  <div class="news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( "ID" ) );?>"><?php echo "Por ".get_the_author_meta('display_name');?>, <?php kmol_posted_on();?></a></div></div>
                     <?php if(has_post_thumbnail()) the_post_thumbnail('thumbnail');?>
                     <div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_small', 'new_excerpt_more');?></div>
                     </div>

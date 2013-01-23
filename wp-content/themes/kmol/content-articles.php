@@ -46,7 +46,7 @@
 					<div class="news_title title_single"><a href="<?php the_permalink();?>"><?php the_title();?></a></div>
 					<?php if(has_post_thumbnail()){?> <div class="image_principal image_single"> <?php the_post_thumbnail('medium');?></div><?php }?>
 			        <div class="news_excerpt excerpt_single"><?php the_excerpt();?></div>
-			       	<div class="news_meta meta_single"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?><span class="readmore_single"><a href="<?php the_permalink();?>"><?php _e ('Ler Mais...','kmol'); ?></a></span></div>
+			       	<div class="news_meta meta_single"><a href="<?php echo get_author_posts_url( get_the_author_meta( "ID" ) );?>"><?php _e('Por ','kmol'); echo get_the_author_meta('display_name');?></a>, <?php kmol_posted_on();?><span class="readmore_single"><a href="<?php the_permalink();?>"><?php _e ('Ler Mais...','kmol'); ?></a></span></div>
 			        <span class="clear"></span>
 					
 					
@@ -60,7 +60,7 @@
 					 		<div class="image_sublayer"><?php the_post_thumbnail('thumbnail');?></div>
 					 	<?php }?>
 			         	<div class="sublayer_title"><a href="<?php the_permalink();?>"><?php the_title();?></a></div>
-			             <div class="sublayer_meta news_meta"><?php echo get_the_author_meta('nicename');?>, <?php kmol_posted_on();?></div>
+			             <div class="sublayer_meta news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( "ID" ) );?>"><?php _e('Por ','kmol'); echo get_the_author_meta('display_name');?></a>, <?php kmol_posted_on();?></div>
 			                <a class="moretag" href="<?php get_permalink($post->ID) ?>"><?php _e('Ler artigo completo &rarr;','kmol')?></a>
 			         </div>
 				

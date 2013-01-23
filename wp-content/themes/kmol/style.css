@@ -2445,6 +2445,13 @@ table.register_table tr{
 
 .author_avatar{position:absolute; margin-top:10px; margin-left:10px;}
 
+
+.first_container:hover{
+	cursor:pointer;
+	
+	height:200px;
+}
+
 a.logo {
 	font-family: 'RobotoMedium' !important;
 	line-height: 120%;
@@ -2456,4 +2463,5 @@ a.logo {
 .text_logo {
 	margin-top: 74px;
 	letter-spacing: -2px;
+
 }

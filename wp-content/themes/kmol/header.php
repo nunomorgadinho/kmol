@@ -49,7 +49,7 @@
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header container_12" role="banner">
 		<div class="grid_12 alpha ">
-			<a  class="logo alignleft" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/kmol_logo_v2.png"/>
+			<a  class="logo alignleft" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/kmol_logo.png"/>
 			</a>
 			<a  class="logo alignleft text_logo" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 			<?php _e('Gestão de Conhecimento e<br/> Aprendizagem Organizacional');?>
