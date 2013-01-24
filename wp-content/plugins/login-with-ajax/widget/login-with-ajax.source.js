@@ -52,7 +52,7 @@ jQuery(document).ready( function($) {
 		//Sort out url
 		var url = $('#LoginWithAjax_Register form').attr('action');
 		//Get POST data
-		
+		console.log(url);
 		
 		var postData = getPostData('#LoginWithAjax_Register form *[name]');
 		

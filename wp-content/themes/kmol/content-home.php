@@ -57,7 +57,18 @@ $temp = $post;
 	 	  	 <div class="news_principal">
 	 	  		 <div class="news_title"><a href="<?php the_permalink();?>"><?php the_title();?></a>
 	 	  		 	<span class="news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( "ID" ) );?>"><?php _e('Por ','kmol'); echo get_the_author_meta('display_name');?></a>, <?php kmol_posted_on();?></span>
-	 	  		 </div><span class="clear"></span>
+	 	  		 </div>
+	 	  		 <span class="tag_marcador">
+	 	  			<?php $cats = wp_get_post_categories($post->ID);
+	 	  					foreach ($cats as $cat)
+	 	  					{
+	 	  						$c = get_category($cat);
+	 	  						echo '<a href="'.get_category_link( $cat ).'">'.$c->name."</a>";
+	 	  					}
+	 	  			?>
+	 	  		 </span>	
+	 	  		 
+	 	  		 <span class="clear"></span>
 	 	  		 
 	 	  		 
 	 	  		 
@@ -77,7 +88,17 @@ $temp = $post;
  	   if($i==2) {?><div class="grid_8 alpha"><?php }?>
  	  				 <div class="sublayer grid_4 alpha">
  	  					 <h1 class="sublayer_title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h1>
+ 	  					 <span class="tag_marcador">
+			 	  			<?php $cats = wp_get_post_categories($post->ID);
+			 	  					foreach ($cats as $cat)
+			 	  					{
+			 	  						$c = get_category($cat);
+			 	  						echo '<a href="'.get_category_link( $cat ).'">'.$c->name."</a>";
+			 	  					}
+			 	  			?>
+	 	  		 		</span>		<span class="clear"></span>
  	  					 <div class="sublayer_meta news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( "ID" ) );?>"><?php _e('Por ','kmol'); echo get_the_author_meta('display_name');?></a>, <?php kmol_posted_on();?></div>
+ 	   					
  	   				</div>
  	   
  	   <?php }
@@ -111,7 +132,17 @@ $temp = $post;
                     			<div class="news_principal">
                                  <div class="news_title"><a href="<?php the_permalink();?>"><?php the_title();?></a>
                                     <span class="news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( "ID" ) );?>"><?php _e('Por ','kmol'); echo get_the_author_meta('display_name');?></a>, <?php kmol_posted_on();?></span>
-                                 </div><span class="clear"></span>
+                                 </div>
+				                 <span class="tag_marcador">
+					 	  			<?php $cats = wp_get_post_categories($post->ID);
+					 	  					foreach ($cats as $cat)
+					 	  					{
+					 	  						$c = get_category($cat);
+					 	  						echo '<a href="'.get_category_link( $cat ).'">'.$c->name."</a>";
+					 	  					}
+					 	  			?>
+	 	  						 </span>	
+                                 <span class="clear"></span>
                     			<?php
                     			if(has_post_thumbnail()){
                     			?>
@@ -129,7 +160,17 @@ $temp = $post;
                     			if($i==2) {?><div class="grid_8 alpha"><?php }?>
                     				<div class="sublayer grid_4 alpha">
                     					<h1 class="sublayer_title"><a href="<?php the_permalink();?>"><?php echo the_title();?></a></h1>
+                    					<span class="tag_marcador">
+							 	  			<?php $cats = wp_get_post_categories($post->ID);
+							 	  					foreach ($cats as $cat)
+							 	  					{
+							 	  						$c = get_category($cat);
+							 	  						echo '<a href="'.get_category_link( $cat ).'">'.$c->name."</a>";
+							 	  					}
+							 	  			?>
+	 	  							 	</span>	<span class="clear"></span>
                     					<div class="sublayer_meta news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( $post->post_author ) );?>"><?php _e('Por '); echo get_the_author_meta('display_name',$post->post_author);?></a>, <?php kmol_posted_on();?></div>
+                    				
                     				</div>
                     		<?php }
                     		$i++;
@@ -161,18 +202,18 @@ $temp = $post;
                     <div class="numbers">
                         <div class="counters_container" title="<?php _e('Clique para se registar');?>">
                         <a target="_blank" class="first_container">
-                          <input id="twitter" class="knob countersingle numbers_margin twitter " data-max="100" data-displayInput="true" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true title="<?php echo $users;?>" value="<?php echo $users;?>">
+                          <input id="twitter" class="knob countersingle numbers_margin twitter " data-displayInput="true" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly="true" title="<?php echo $users;?>" value="<?php echo $users;?>" data-maxvalue="<?php echo $users;?>">
                         </a>
                         	<center><span><h1><?php echo $users;?></h1><h2><?php _e('seguidores','kmol');?></h2></span></center>
                         </div>
                         <div class="counters_container" title="<?php _e('Clique para fazer Like');?>">
                         <a target="_blank" href="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FportalKMOL&send=false&layout=standard&width=450&show_faces=false&font&colorscheme=light&action=like&height=35&appId=259428177513896">
-                          <input id="facebook" class="knob countersingle numbers_margin facebook" data-max="100" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="<?php echo $nfacebook;?>">
+                          <input id="facebook" class="knob countersingle numbers_margin facebook" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly="true" value="<?php echo $nfacebook;?>" data-maxvalue="<?php echo $nfacebook;?>">
                         </a>
                         <center><span><h1><?php echo $nfacebook;?></h1><h2><?php _e('gostos','kmol');?></h2></span></center>
                         </div>
                         <div class="counters_container">
-                          <input id="rss" class="knob countersingle rss" data-fgColor="#6c9ebb" data-max="100" data-thickness=".3" data-readOnly=true value="<?php echo $nnewsletter;?>">
+                          <input id="rss" class="knob countersingle rss" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly="true" value="<?php echo $nnewsletter;?>" data-maxvalue="<?php echo $nnewsletter;?>">
                  		       <center><span><h1><?php echo $nnewsletter;?></h1><h2><?php _e('assinantes','kmol');?></h2></span></center>
                   	  </div>
                   </div>
@@ -228,12 +269,15 @@ $temp = $post;
                		'post_status' => 'publish',
                		'cat' => $interviews_cat
                );
+               
+               $page = get_page_by_title(__('Entrevistas'));
+               
                /* query posts array */
                $query = new WP_Query( $args  );
                if($query->have_posts()): while ($query->have_posts()) : $query->the_post();
                ?>
 	                <div class="grid_4 alpha marcador">
-	                    <h1 class="marcador_title"><?php _e ('Entrevistas','kmol'); ?></h1>
+	                    <a href="<?php echo $page->guid;?>"><h1 class="marcador_title home-section-title"><?php _e('Entrevistas','kmol'); ?></h1></a>
 	                    <div class="marcador_short">
                         <div class="marcador_subtitle_container">
                       <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
@@ -255,12 +299,15 @@ $temp = $post;
 	               		'post_status' => 'publish',
 	               		'cat' => $cat
 	               	);
+	              	 
+	              	 $page = get_page_by_title(__('Casos'));
+	              	 
               	 	/* query posts array */
               		 $query = new WP_Query( $args  );
               		 if($query->have_posts()): while ($query->have_posts()) : $query->the_post();
               		 ?>
 		                <div class="grid_4 omega marcador">
-		                    <h1 class="marcador_title"><?php _e ('Casos','kmol'); ?></h1>
+		                    <a href="<?php echo $page->guid;?>"><h1 class="marcador_title"><?php _e ('Casos','kmol'); ?></h1></a>
 		                    <div class="marcador_short">
                           <div class="marcador_subtitle_container">
                         <h2 class="marcador_subtitle"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
@@ -294,12 +341,15 @@ $temp = $post;
 	               		'post_status' => 'publish',
 	               		'cat' => $cat
 	               	);
+	              	
+	              	 $page = get_page_by_title(__('Livros'));
+	              	 
               	 	/* query posts array */
               		 $query = new WP_Query( $args  );
               		 if($query->have_posts()): while ($query->have_posts()) : $query->the_post();
               	?>
                 <div class="grid_4 omega marcador">
-                    <h1 class="marcador_title"><?php _e ('Livros','kmol'); ?></h1>
+                    <a href="<?php echo $page->guid;?>"><h1 class="marcador_title"><?php _e ('Livros','kmol'); ?></h1></a>
                     <div class="marcador_short">
                     <div class="marcador_subtitle_container">
                     <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
