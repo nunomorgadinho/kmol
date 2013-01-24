@@ -1517,6 +1517,9 @@ background: transparent;
 	padding: 4px 15px;
 }
 
+.home-section-title a{color:#fff; font-weight:bold;}
+.home-section-title a:hover h1{color:#999;}
+
 .marcador_title:after {
 	content: '  //';
 }

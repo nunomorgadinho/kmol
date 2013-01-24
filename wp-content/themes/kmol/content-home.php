@@ -88,8 +88,7 @@ $temp = $post;
  	   if($i==2) {?><div class="grid_8 alpha"><?php }?>
  	  				 <div class="sublayer grid_4 alpha">
  	  					 <h1 class="sublayer_title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h1>
- 	  					 <div class="sublayer_meta news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( "ID" ) );?>"><?php _e('Por ','kmol'); echo get_the_author_meta('display_name');?></a>, <?php kmol_posted_on();?></div>
- 	   					 <span class="tag_marcador">
+ 	  					 <span class="tag_marcador">
 			 	  			<?php $cats = wp_get_post_categories($post->ID);
 			 	  					foreach ($cats as $cat)
 			 	  					{
@@ -97,7 +96,9 @@ $temp = $post;
 			 	  						echo '<a href="'.get_category_link( $cat ).'">'.$c->name."</a>";
 			 	  					}
 			 	  			?>
-	 	  		 		</span>		
+	 	  		 		</span>		<span class="clear"></span>
+ 	  					 <div class="sublayer_meta news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( "ID" ) );?>"><?php _e('Por ','kmol'); echo get_the_author_meta('display_name');?></a>, <?php kmol_posted_on();?></div>
+ 	   					
  	   				</div>
  	   
  	   <?php }
@@ -159,7 +160,6 @@ $temp = $post;
                     			if($i==2) {?><div class="grid_8 alpha"><?php }?>
                     				<div class="sublayer grid_4 alpha">
                     					<h1 class="sublayer_title"><a href="<?php the_permalink();?>"><?php echo the_title();?></a></h1>
-                    					<div class="sublayer_meta news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( $post->post_author ) );?>"><?php _e('Por '); echo get_the_author_meta('display_name',$post->post_author);?></a>, <?php kmol_posted_on();?></div>
                     					<span class="tag_marcador">
 							 	  			<?php $cats = wp_get_post_categories($post->ID);
 							 	  					foreach ($cats as $cat)
@@ -168,7 +168,9 @@ $temp = $post;
 							 	  						echo '<a href="'.get_category_link( $cat ).'">'.$c->name."</a>";
 							 	  					}
 							 	  			?>
-	 	  							 	</span>	
+	 	  							 	</span>	<span class="clear"></span>
+                    					<div class="sublayer_meta news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( $post->post_author ) );?>"><?php _e('Por '); echo get_the_author_meta('display_name',$post->post_author);?></a>, <?php kmol_posted_on();?></div>
+                    				
                     				</div>
                     		<?php }
                     		$i++;
@@ -267,12 +269,15 @@ $temp = $post;
                		'post_status' => 'publish',
                		'cat' => $interviews_cat
                );
+               
+               $page = get_page_by_title(__('Entrevistas'));
+               
                /* query posts array */
                $query = new WP_Query( $args  );
                if($query->have_posts()): while ($query->have_posts()) : $query->the_post();
                ?>
 	                <div class="grid_4 alpha marcador">
-	                    <h1 class="marcador_title"><?php _e ('Entrevistas','kmol'); ?></h1>
+	                    <a href="<?php echo $page->guid;?>"><h1 class="marcador_title home-section-title"><?php _e('Entrevistas','kmol'); ?></h1></a>
 	                    <div class="marcador_short">
                         <div class="marcador_subtitle_container">
                       <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
@@ -294,12 +299,15 @@ $temp = $post;
 	               		'post_status' => 'publish',
 	               		'cat' => $cat
 	               	);
+	              	 
+	              	 $page = get_page_by_title(__('Casos'));
+	              	 
               	 	/* query posts array */
               		 $query = new WP_Query( $args  );
               		 if($query->have_posts()): while ($query->have_posts()) : $query->the_post();
               		 ?>
 		                <div class="grid_4 omega marcador">
-		                    <h1 class="marcador_title"><?php _e ('Casos','kmol'); ?></h1>
+		                    <a href="<?php echo $page->guid;?>"><h1 class="marcador_title"><?php _e ('Casos','kmol'); ?></h1></a>
 		                    <div class="marcador_short">
                           <div class="marcador_subtitle_container">
                         <h2 class="marcador_subtitle"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
@@ -333,12 +341,15 @@ $temp = $post;
 	               		'post_status' => 'publish',
 	               		'cat' => $cat
 	               	);
+	              	
+	              	 $page = get_page_by_title(__('Livros'));
+	              	 
               	 	/* query posts array */
               		 $query = new WP_Query( $args  );
               		 if($query->have_posts()): while ($query->have_posts()) : $query->the_post();
               	?>
                 <div class="grid_4 omega marcador">
-                    <h1 class="marcador_title"><?php _e ('Livros','kmol'); ?></h1>
+                    <a href="<?php echo $page->guid;?>"><h1 class="marcador_title"><?php _e ('Livros','kmol'); ?></h1></a>
                     <div class="marcador_short">
                     <div class="marcador_subtitle_container">
                     <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
