@@ -2,46 +2,25 @@
  * Custom Code
  */
 jQuery( document ).ready( function( $ ) {
-		
-	var i_twitter = 0;
-	var i_facebook = 0;
-	var i_rss = 0;
-			
-	  	var twitter = jQuery('.numbers #twitter').val()*0.1;
-  		var facebook = jQuery('.numbers #facebook').val()*0.1;
-  		var rss = jQuery('.numbers #rss').val()*0.1;
-  			
-  		
-  		var max = Math.max(twitter,facebook,rss);
-  		
-  		
-  		
-  		var myVar=setInterval(function(){myTimer()},10);
-
-  		function myTimer()
-  		{
-  			jQuery('.twitter').val(i_twitter).trigger('change');
-  			jQuery('.facebook').val(i_facebook).trigger('change');
-  			jQuery('.rss').val(i_rss).trigger('change');
-  			
-  			if (i_twitter < twitter)
-  				i_twitter++;
-  			if (i_facebook < facebook) 
-  				i_facebook++;
-  			if (i_rss < rss)
-  				i_rss++;
-  			
-  			else
-  			{
-  				if((i_twitter > twitter && i_twitter > max) && (i_facebook > facebook && i_facebook > max) && (i_rss > rss && i_rss > max) )
-  				clearInterval(myVar);
-  			}
-  		}
 	
-  		//init knob for social feedback on homepage
-  		 jQuery(".knob").knob({
-             
-         });
+	$('.knob').each(function( index, elm ) {
+		var max = $(elm).data('maxvalue');
+		$(elm).val('0');
+		$({value: 0}).delay(1000).animate({value: max}, {
+		    duration: 1000,
+		    easing:'swing',
+		    step: function() {
+		    	//console.log(this.value);
+		    	$(elm).val( Math.ceil( this.value ) ).trigger('change');
+		    }
+		})
+		
+	}).knob({
+	 	'min' : 0,
+	 	'max' : 1000,
+	 	'cursor' : false,
+	 	'dynamicDraw': true,
+	});
   		 
 	handle_register_login();
 	
