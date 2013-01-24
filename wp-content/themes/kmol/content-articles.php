@@ -9,7 +9,7 @@
 
 	<div class="grid_9 alpha">
 		<div class="default_page">
-		OLA
+		
 			<!-- TODO unavailable by now -->
 			<!-- 	<select class="filter alignright"  name="filter">
 					<option value="Autor"><?php _e('filtrar por autor','kmol'); ?></option>
