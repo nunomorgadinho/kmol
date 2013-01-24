@@ -297,7 +297,10 @@ function define_ajaxurl() {
  * @return number
  */
 function count_facebook_followers(){
-	$count_facebook = 266;
+	//$count_facebook = 266;
+	
+	if ( $cache = get_transient( 'kmol_facebook_count' ) )
+		return $cache;
 	
 	// If Facebook is enabled...
 	$facebook = get_option('facebook');
@@ -313,6 +316,7 @@ function count_facebook_followers(){
 			// Decode JSON response and cast the number of likes as integer
 			$facebook_data = json_decode( $get_facebook['body'] );
 			$count_facebook = (int) $facebook_data->likes;
+			set_transient( 'kmol_facebook_count', $count_facebook, 3600 );
 			
 		}
 	}
@@ -327,28 +331,34 @@ function count_facebook_followers(){
  * @return number
  */
 function count_twitter_followers(){
-	$count_twitter = 1143;
+	//$count_twitter = 1143;
 
-		// If Twitter is enabled...
-		$twitter = get_option('twitter');
-		if ( isset( $twitter ) ) {
-			// ...get Twitter data
-			$url = 'https://api.twitter.com/1/users/lookup.json?screen_name=' . $twitter;
-			
-			
-			
-			$get_twitter = wp_remote_get( $url );
+	if ( $cache = get_transient( 'kmol_twitter_count' ) )
+		return $cache;
+	
+	// If Twitter is enabled...
+	$twitter = get_option('twitter');
+	if ( isset( $twitter ) ) {
+		// ...get Twitter data
+		$url = 'https://api.twitter.com/1/users/lookup.json?screen_name=' . $twitter;
+		
+		
+		
+		$get_twitter = wp_remote_get( $url );
 
-			// Check for errors. If none proceed...
-			if ( ! is_wp_error( $get_twitter ) ) { 
-				// Decode the JSON response and cast the number of followers as integer
-				$twitter_data = json_decode( $get_twitter['body'] );
-				if ( is_array( $twitter_data ) ) {
-					$count_twitter = (int) $twitter_data[0]->followers_count;
-				}
+		// Check for errors. If none proceed...
+		if ( ! is_wp_error( $get_twitter ) ) { 
+			// Decode the JSON response and cast the number of followers as integer
+			$twitter_data = json_decode( $get_twitter['body'] );
+			if ( is_array( $twitter_data ) ) {
+				$count_twitter = (int) $twitter_data[0]->followers_count;
+				set_transient( 'kmol_twitter_count', $count_twitter, 3600 );
 			}
 		}
+	}
+	
 	return $count_twitter;
+	
 }
 
 

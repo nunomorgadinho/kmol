@@ -200,18 +200,18 @@ $temp = $post;
                     <div class="numbers">
                         <div class="counters_container" title="<?php _e('Clique para se registar');?>">
                         <a target="_blank" class="first_container">
-                          <input id="twitter" class="knob countersingle numbers_margin twitter " data-max="100" data-displayInput="true" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true title="<?php echo $users;?>" value="<?php echo $users;?>">
+                          <input id="twitter" class="knob countersingle numbers_margin twitter " data-displayInput="true" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly="true" title="<?php echo $users;?>" value="<?php echo $users;?>" data-maxvalue="<?php echo $users;?>">
                         </a>
                         	<center><span><h1><?php echo $users;?></h1><h2><?php _e('seguidores','kmol');?></h2></span></center>
                         </div>
                         <div class="counters_container" title="<?php _e('Clique para fazer Like');?>">
                         <a target="_blank" href="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FportalKMOL&send=false&layout=standard&width=450&show_faces=false&font&colorscheme=light&action=like&height=35&appId=259428177513896">
-                          <input id="facebook" class="knob countersingle numbers_margin facebook" data-max="100" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly=true value="<?php echo $nfacebook;?>">
+                          <input id="facebook" class="knob countersingle numbers_margin facebook" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly="true" value="<?php echo $nfacebook;?>" data-maxvalue="<?php echo $nfacebook;?>">
                         </a>
                         <center><span><h1><?php echo $nfacebook;?></h1><h2><?php _e('gostos','kmol');?></h2></span></center>
                         </div>
                         <div class="counters_container">
-                          <input id="rss" class="knob countersingle rss" data-fgColor="#6c9ebb" data-max="100" data-thickness=".3" data-readOnly=true value="<?php echo $nnewsletter;?>">
+                          <input id="rss" class="knob countersingle rss" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly="true" value="<?php echo $nnewsletter;?>" data-maxvalue="<?php echo $nnewsletter;?>">
                  		       <center><span><h1><?php echo $nnewsletter;?></h1><h2><?php _e('assinantes','kmol');?></h2></span></center>
                   	  </div>
                   </div>
