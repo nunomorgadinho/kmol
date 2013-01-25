@@ -1029,7 +1029,7 @@ object {
 .social {
 	margin-top: 5px;
 	/*min-width: 150px;*/
-	width: 180px;
+	width: auto;
 	padding-bottom: 10px;
 }
 
@@ -2466,5 +2466,8 @@ a.logo {
 .text_logo {
 	margin-top: 74px;
 	/*letter-spacing: -2px;*/
+}
 
+.smw_left {
+	text-align: right;
 }
