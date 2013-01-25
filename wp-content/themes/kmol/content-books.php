@@ -30,9 +30,12 @@
 				//get first post
 			
 			$cat =  get_option('books');
-			
+			$paged = get_query_var('paged');
+			$per_page = 5;
+			if($paged>0)
+				$per_page = 6;
 			$args = array(
-					'posts_per_page' =>5,
+					'posts_per_page' =>$per_page,
 					'cat' => $cat,
 					'post_status' => 'publish',
 					'gdsr_sort' => 'rating',
@@ -48,7 +51,7 @@
 			if($query->have_posts()): while ($query->have_posts()) : $query->the_post(); ?>
 				<?php 
 				$comments = get_comment_count($post->ID);
-				if($i==1) {?>
+				if($i==1 && $paged==0) {?>
 						<div class="book_big_marcador">
 		                    <div class="grid_4 alpha">
 		                   	 	<?php if(has_post_thumbnail()){?> <div class="marcador_img"> <?php the_post_thumbnail('medium');?></div><?php }?>
@@ -78,9 +81,22 @@
 				<?php
 					$i++;
 				} else{
+					
+					if($paged > 0){
+						if($i % 2 != 0)
+							$side = "";
+						else
+							$side = "last";
+					}
+					else{
+						if($i % 2 != 0)
+							$side = "last";
+						else
+							$side = "";
+					}
 				?>
 				
-				<div class="marcador_container book_row <?php if ($i % 2 != 0) echo "last";?>">
+				<div class="marcador_container book_row <?php echo $side;?>">
                         <div class="book_small_marcador">
                       	  	
                       	  	<?php if(has_post_thumbnail()) {?> 
@@ -102,7 +118,7 @@
 	                            
                             <h1 class="alignright comments"><a href="<?php the_permalink();?>"><?php echo $comments['approved'];  _e(' Comentários','kmol');?></a></h1>
                         </div>
-                    </div>
+                   </div>
 				
 			<?php 
 				$i++;

@@ -22,9 +22,12 @@
 		
 			
 			global $cat;
-			
+			$paged = get_query_var('paged'); 
+			$per_page = 7;
+			if($paged>0)
+				$per_page = 8;
 			$args = array(
-					'posts_per_page' =>7,
+					'posts_per_page' =>$per_page,
 					'cat' => $cat,
 					'post_status' => 'publish',
 					'gdsr_sort' => 'rating',
@@ -36,10 +39,10 @@
 			/* query posts array */
 			$query = new WP_Query( $args  );
 		
-			$i=1;
+			$i=1; 
 			if($query->have_posts()): while ($query->have_posts()) : $query->the_post(); ?>
 
-				<?php if($i==1) {?>
+				<?php if($i==1 && $paged==0) {?>
 					
 					
 					<div class="news_title title_single"><a href="<?php the_permalink();?>"><?php the_title();?></a></div>
@@ -53,8 +56,32 @@
 				<div class="grid_8 alpha">		
 				<?php $i++; }
 					else{
+						
+						if($paged > 0 && $i == 1){
+							echo '<div class="grid_8 alpha">';
+							
+						}
+						
+						
+						if($paged > 0){
+							if($i % 2 == 0)
+								$side = "omega";
+							else
+								$side = "alpha";
+						}
+						else{
+							if($i % 2 == 0)
+								$side = "alpha";
+							else
+								$side = "omega";	
+						}
+						
+						
+						
+						
+						
 				?>
-					 <div class="sublayer grid_4 <?php if ($i % 2 == 0) echo "alpha"; else echo "omega";?> sublayer_single">
+					 <div class="sublayer grid_4 <?php echo $side;?> sublayer_single">
 					 	<?php if(has_post_thumbnail()) {?> 
 					 		<div class="image_sublayer"><?php the_post_thumbnail('thumbnail');?></div>
 					 	<?php }?>
