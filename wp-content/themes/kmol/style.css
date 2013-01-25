@@ -1029,7 +1029,7 @@ object {
 .social {
 	margin-top: 5px;
 	/*min-width: 150px;*/
-	width: 180px;
+	width: auto;
 	padding-bottom: 10px;
 }
 
@@ -1197,7 +1197,7 @@ margin-right: -10px;
 }
 
 #twitter {
-background-image: url(images/twitter_icon.png);
+background-image: url(images/users_icon.png);
 background-repeat: no-repeat;
 margin-left: -62px;
 margin-top: 28px;
@@ -1211,7 +1211,7 @@ margin-top: 26px;
 }
 
 #rss{
-background-image: url(images/users_icon.png);
+background-image: url(images/rss_icon.png);
 background-repeat: no-repeat;
 margin-left: -63px;
 margin-top: 26px;
@@ -1515,6 +1515,16 @@ background: transparent;
 	font-family: 'RobotoBold';
 	background: #6c9ebb;
 	padding: 4px 15px;
+
+	transition: background 0.3s;
+	-moz-transition: background 0.3s; /* Firefox 4 */
+	-webkit-transition: background 0.3s; /* Safari and Chrome */
+	-o-transition: background 0.3s; /* Opera */
+}
+
+.marcador_title:hover{
+	/*color: #c0e0f7;*/
+	background: #a9cf55;
 }
 
 .home-section-title a{color:#fff; font-weight:bold;}
@@ -2465,6 +2475,9 @@ a.logo {
 
 .text_logo {
 	margin-top: 74px;
-	letter-spacing: -2px;
+	/*letter-spacing: -2px;*/
+}
 
+.smw_left {
+	text-align: right;
 }
