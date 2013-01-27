@@ -21,7 +21,18 @@
 		
 
 		<div class="entry-meta news_meta">
-			<?php kmol_posted_on(); ?></div><!-- .entry-meta -->
+			<?php
+				if(has_category($cat)){
+					if(get_post_meta($post->ID,'bookyear',true))
+						_e('Ano ','kmol'); echo get_post_meta($post->ID,'bookyear',true);
+					if(get_post_meta($post->ID,'bookauthor',true))
+						_e(' Autor ','kmol'); echo get_post_meta($post->ID,'bookauthor',true);
+				}
+				else{
+					kmol_posted_on(); 
+				}
+			?>
+		</div><!-- .entry-meta -->
 			<span class="clear"></span>
 
 			<div class="tag_marcador alignleft"><?php /* translators: used between list items, there is a space after the comma */

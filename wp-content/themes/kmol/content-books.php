@@ -56,11 +56,24 @@
 		                    <div class="grid_4 alpha">
 		                   	 	<?php if(has_post_thumbnail()){?> <div class="marcador_img"> <?php the_post_thumbnail('medium');?></div><?php }?>
 		                        <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+
+		                    <div class="entry-meta news_meta">
+							<?php
+								if(get_post_meta($post->ID,'bookyear',true))
+									_e('Ano ','kmol'); echo get_post_meta($post->ID,'bookyear',true);
+								if(get_post_meta($post->ID,'bookauthor',true))
+									_e(' Autor ','kmol'); echo get_post_meta($post->ID,'bookauthor',true);
+							?>
+							</div><!-- .entry-meta -->
+		                    
+		                    
+		                        
 		                    </div>
 		                    <div class="grid_6 omega book_description">
 		                       <?php wpe_excerpt('wpe_excerptlength_teaser', 'new_excerpt_more');?>
 		                     
 		                    </div>
+		                   
 		                    <span class="clear"></span>
 		
 		              		<!-- TAGS -->
@@ -103,8 +116,15 @@
 					 			<div class="marcador_img"><?php the_post_thumbnail('thumbnail');?></div>
 					 		<?php }?>
                             
-                                <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
-                            
+                                <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a>
+                            	 <div class="entry-meta news_meta">
+							<?php
+								if(get_post_meta($post->ID,'bookyear',true))
+									_e('Ano ','kmol'); echo get_post_meta($post->ID,'bookyear',true);
+								if(get_post_meta($post->ID,'bookauthor',true))
+									_e(' Autor ','kmol'); echo get_post_meta($post->ID,'bookauthor',true);
+							?>
+							</div><!-- .entry-meta --></h2>
                                 <div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_index', 'new_excerpt_more');?></div>
                            
 	                            <span class="clear"></span>
