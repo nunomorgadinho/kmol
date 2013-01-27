@@ -7,10 +7,15 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<div class="book-image">
-	<?php  if(has_post_thumbnail())
+	
+	<div class="book-image">  
+	<?php  
+		$cat=  get_option('books');
+		if(has_category($cat) && has_post_thumbnail())
                	 	the_post_thumbnail('medium');?>
 	</div>
+	
+	
 	<header class="entry-header">
 		<h1 class="entry-title alignleft"><a class="news_title" href="#"><?php  the_title(); ?></a></h1>
 		
