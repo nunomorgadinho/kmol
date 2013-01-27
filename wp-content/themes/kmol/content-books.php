@@ -172,6 +172,7 @@
 				//get first post
 			
 				$cat =  get_option('recomend');
+				$category = get_category($cat);
 				$args = array(
 						'posts_per_page' => 2,
 						'cat' => $cat,
@@ -215,6 +216,12 @@
                 	$i++; 
                 	endwhile; endif;?>
                  </div> <!-- book_row recomend -->
+                 
+                 <div class="more_single">
+                	<span class="alignright right_mark">
+	                	<a href="<?php echo get_bloginfo('siteurl')?>/category/<?php echo $category->category_nicename; ?>"><?php _e('Outras Recomendações','kmol');?></a>	   
+	                </span>
+                </div>
 
                  <span class="clear"></span>
                 
