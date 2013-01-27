@@ -7,14 +7,14 @@
  * 
  */
 
-get_header(); ?>
+get_header(); global $local; ?>
 	<div class="container_12">
 		<div class="grid_9 alpha">
 		<div id="primary" class="content-area default_page">
 			<div id="content" class="site-content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
-
+				<?php global $post; $local = $post;?>
 				<?php // kmol_content_nav( 'nav-above' ); ?>
 
 				<?php get_template_part( 'content', 'single' ); ?>
@@ -56,12 +56,22 @@ get_header(); ?>
 		<?php endif;?>
 	
 		
+		<div class="grid_3 ">
+		<div class="book-image"> 
+	
+	</div>
+		</div>
+		
 		<div class="grid_3 omega">
+		
+		
+			<?php  global $post; 
+			if(has_post_thumbnail($post->ID))
+               	 the_post_thumbnail('medium');?>
 	
        <?php get_sidebar();?>
        
-   		</div>
-
+   		
        <div class="grid_3 omega banner3">
 	   <?php 
 			$img_url = get_option('banner3'); echo $img_url;

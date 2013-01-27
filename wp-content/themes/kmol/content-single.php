@@ -8,12 +8,13 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	
-	<div class="book-image">  
+	<!-- <div class="book-image">   -->
 	<?php  
-		$cat=  get_option('books');
+	/*	$cat=  get_option('books');
 		if(has_category($cat) && has_post_thumbnail())
-               	 	the_post_thumbnail('medium');?>
-	</div>
+               	 	the_post_thumbnail('medium');
+     */?>
+	<!--  </div> -->
 	
 	
 	<header class="entry-header">
@@ -27,6 +28,8 @@
 						_e('Ano ','kmol'); echo get_post_meta($post->ID,'bookyear',true);
 					if(get_post_meta($post->ID,'bookauthor',true))
 						_e(' Autor ','kmol'); echo get_post_meta($post->ID,'bookauthor',true);
+					if(get_post_meta($post->ID,'bookref',true))
+						_e(' Referência ','kmol'); echo get_post_meta($post->ID,'bookref',true);
 				}
 				else{
 					kmol_posted_on(); 
