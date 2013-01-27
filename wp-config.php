@@ -17,18 +17,15 @@ define('WP_CACHE', true); // Added by W3 Total Cache
  * @package WordPress
  */
 
-// ** Definições de MySQL - obtenha estes dados do seu serviço de alojamento** //
-/** O nome da base de dados do WordPress */
-define('DB_NAME', 'kmol');
-
-/** O nome do utilizador de MySQL */
-define('DB_USER', 'root');
-
-/** A password do utilizador de MySQL  */
-define('DB_PASSWORD', 'silva1');
-
-/** O nome do serviddor de  MySQL  */
-define('DB_HOST', '127.0.0.1');
+if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
+  include( dirname( __FILE__ ) . '/local-config.php' );
+  define( 'WP_LOCAL_DEV', true ); // We'll talk about this later
+} else {
+	define('DB_NAME', 'tiratema_kmol');
+	define('DB_USER', 'tiratema_kmol');
+	define('DB_PASSWORD', ';9X[qO)6d?k#');
+	define('DB_HOST', '127.0.0.1');
+}
 
 /** O "Database Charset" a usar na criação das tabelas. */
 define('DB_CHARSET', 'utf8');
