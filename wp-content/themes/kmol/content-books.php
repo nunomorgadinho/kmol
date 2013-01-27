@@ -164,7 +164,7 @@
 
                <!-- WE RECOMMEND -->
             <div class="recommend_title">
-                <?php _e('Últimas Recomendações KMOL','kmol');?>
+                <?php _e('Algumas Recomendações KMOL','kmol');?>
             </div>
 
             <div class="book_row">
@@ -178,6 +178,7 @@
 						'post_status' => 'publish',
 						'gdsr_sort' => 'rating',
 						'nopaging' => 0,
+						'orderby' => 'rand',
 						'gdsr_order' => 'desc'
 				);
 				/* query posts array */
