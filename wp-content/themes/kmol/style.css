@@ -2481,3 +2481,8 @@ a.logo {
 .smw_left {
 	text-align: right;
 }
+
+.book-image{
+	position: absolute;
+	margin-left: 560px;	
+}

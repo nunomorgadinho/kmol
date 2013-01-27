@@ -20,7 +20,7 @@ get_header(); ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
 					<?php get_template_part( 'content', 'books' ); ?>
-
+					
 				<?php endwhile; // end of the loop. ?>
 
 			</div><!-- #content .site-content -->
@@ -46,6 +46,7 @@ get_header(); ?>
 	    				<img src="<?php echo $img_url;?>" width="220" height="100"/>
 				<?php } else {echo "Banner 3//";}?>
                 </div>
+                
 
         	<!-- Marcadores -->
        		<?php get_template_part( 'content', 'markers' ); ?>

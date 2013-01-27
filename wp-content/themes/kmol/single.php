@@ -60,7 +60,7 @@ get_header(); ?>
 	
        <?php get_sidebar();?>
        
-   </div>
+   		</div>
 
        <div class="grid_3 omega banner3">
 	   <?php 
