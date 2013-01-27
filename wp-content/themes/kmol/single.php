@@ -56,11 +56,7 @@ get_header(); global $local; ?>
 		<?php endif;?>
 	
 		
-		<div class="grid_3 ">
-		<div class="book-image"> 
 	
-	</div>
-		</div>
 		
 		<div class="grid_3 omega">
 		
@@ -71,7 +67,8 @@ get_header(); global $local; ?>
 	
        <?php get_sidebar();?>
        
-   		
+   		</div>
+	
        <div class="grid_3 omega banner3">
 	   <?php 
 			$img_url = get_option('banner3'); echo $img_url;

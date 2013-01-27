@@ -50,10 +50,14 @@
 	                    <div class="sublayer_title"><a href="<?php the_permalink();?>"><?php the_title();?></a></div>
 	                   <div class="news_meta">
 						<?php kmol_posted_on(); ?>
+						
+
 									<div class="tag_marcador alignleft"><?php /* translators: used between list items, there is a space after the comma */
 									$tag_list = get_the_tag_list( '', ' ' );
 									printf($tag_list);
 									?></div>
+
+						
 						
 						</div><!-- .entry-meta -->
 						
@@ -62,6 +66,13 @@
 	                    <div class="news_excerpt excerpt_single">
 	                    	<?php wpe_excerpt('wpe_excerptlength_teaser');?>
 	                    </div> 
+	                    
+	                    <?php if(get_comments_number() > 0){?>
+	                    <div class="alignright">
+							<a href="<?php the_permalink()?>/#comments"><?php echo get_comments_number(); _e(' Comentários','kmol');?></a>
+							<img src="http://kmol.me/wp-content/themes/kmol/images/comment_share.png">
+						</div>		
+						<?php }?>
 	              </div>
                          <?php endwhile; endif; ?>
                 
