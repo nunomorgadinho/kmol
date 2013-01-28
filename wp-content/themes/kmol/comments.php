@@ -34,15 +34,8 @@
 			?>
 		</h2>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav role="navigation" id="comment-nav-above" class="site-navigation comment-navigation">
-			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'kmol' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Anteriores Comments', 'kmol' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Mais Recentes &rarr;', 'kmol' ) ); ?></div>
-		</nav><!-- #comment-nav-before .site-navigation .comment-navigation -->
-		<?php endif; // check for comment navigation ?>
 
-		<ol class="commentlist">
+		<ul class="commentlist">
 			<?php
 				/* Loop through and list the comments. Tell wp_list_comments()
 				 * to use kmol_comment() to format the comments.
@@ -50,9 +43,9 @@
 				 * define kmol_comment() and that will be used instead.
 				 * See kmol_comment() in inc/template-tags.php for more.
 				 */
-				wp_list_comments( array( 'callback' => 'kmol_comment' ) );
+				wp_list_comments( array( 'callback' => 'kmol_comment', 'style' => 'ul' ) );
 			?>
-		</ol><!-- .commentlist -->
+		</ul><!-- .commentlist -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav role="navigation" id="comment-nav-below" class="site-navigation comment-navigation">
