@@ -27,7 +27,7 @@
 	<?php // You can start editing here -- including this comment! ?>
 
 	<?php if ( have_comments() ) : ?>
-	
+	OLA
 		<h2 class="comments-title"> 
 			<?php
 				printf( _n( '1 Comentário em &ldquo;%2$s&rdquo;', '%1$s comentários em &ldquo;%2$s&rdquo;', get_comments_number(), 'kmol' ),
@@ -59,7 +59,7 @@
 					
 			);
 			
-				$comments = get_comments();
+				$comments = get_comments($args);
 				
 				wp_list_comments( array( 'callback' => 'kmol_comment', 'type' => 'all'), $comments );
 			?>
