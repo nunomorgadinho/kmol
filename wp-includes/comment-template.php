@@ -1448,7 +1448,7 @@ function wp_list_comments($args = array(), $comments = null ) {
 				return;
 			$_comments = $wp_query->comments_by_type[$r['type']]; echo "c";
 		} else {
-			$_comments = $wp_query->comments; echo "d";
+			$_comments = $wp_query->comments; echo "d";$_comments = $wp_query->comments_by_type[$r['type']]; echo "c";
 		}
 	}
 	
