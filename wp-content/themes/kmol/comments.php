@@ -25,9 +25,9 @@
 	<div id="comments" class="comments-area">
 
 	<?php // You can start editing here -- including this comment! ?>
-
+OLA
 	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
+		<h2 class="comments-title"> 
 			<?php
 				printf( _n( '1 Comentário em &ldquo;%2$s&rdquo;', '%1$s comentários em &ldquo;%2$s&rdquo;', get_comments_number(), 'kmol' ),
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
