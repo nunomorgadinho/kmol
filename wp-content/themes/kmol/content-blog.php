@@ -67,11 +67,9 @@
 	                    	<?php wpe_excerpt('wpe_excerptlength_teaser');?>
 	                    </div> 
 	                    
-	                    <?php if(get_comments_number() > 0){?>
-	                    <div class="alignright">
-							<a href="<?php the_permalink()?>/#comments"><?php echo get_comments_number(); _e(' Comentários','kmol');?></a>
-							<img src="http://kmol.me/wp-content/themes/kmol/images/comment_share.png">
-						</div>		
+	                    <?php if(get_comments_number() > 0){ $comments = get_comment_count($post->ID);?>
+                      <h1 class="alignright comments"><a href="<?php the_permalink();?>/#comments"><?php echo $comments['approved'];  _e(' Comentários','kmol');?></a></h1>
+	                    		
 						<?php }?>
 	              </div>
                          <?php endwhile; endif; ?>

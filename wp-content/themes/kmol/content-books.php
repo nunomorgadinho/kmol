@@ -57,14 +57,16 @@
 		                   	 	<?php if(has_post_thumbnail()){?> <div class="marcador_img"> <?php the_post_thumbnail('medium');?></div><?php }?>
 		                        <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
 
-		                    <div class="entry-meta news_meta">
+		                    <div class="book_moretag">
 							<?php
 								if(get_post_meta($post->ID,'bookyear',true))
-									_e('Ano ','kmol'); echo get_post_meta($post->ID,'bookyear',true);
+									echo '<span class="black">';	_e('Ano: ','kmol'); echo '</span>'.get_post_meta($post->ID,'bookyear',true);
 								if(get_post_meta($post->ID,'bookauthor',true))
-									_e(' Autor ','kmol'); echo get_post_meta($post->ID,'bookauthor',true);
+									echo '<span class="black">'; _e(' Autor: ','kmol'); echo '</span>'.get_post_meta($post->ID,'bookauthor',true);
+								if(get_post_meta($post->ID,'bookref',true))
+									echo '<span class="black">'; _e(' Referência: ','kmol'); echo '</span>'.get_post_meta($post->ID,'bookref',true);
 							?>
-							</div><!-- .entry-meta -->
+							</div><!-- .book_moretag-->
 		                    
 		                    
 		                        
@@ -116,15 +118,18 @@
 					 			<div class="marcador_img"><?php the_post_thumbnail('thumbnail');?></div>
 					 		<?php }?>
                             
-                                <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a>
-                            	 <div class="entry-meta news_meta">
-							<?php
-								if(get_post_meta($post->ID,'bookyear',true))
-									_e('Ano ','kmol'); echo get_post_meta($post->ID,'bookyear',true);
-								if(get_post_meta($post->ID,'bookauthor',true))
-									_e(' Autor ','kmol'); echo get_post_meta($post->ID,'bookauthor',true);
-							?>
-							</div><!-- .entry-meta --></h2>
+                                <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+                            		<div class="book_moretag">
+									<?php
+										if(get_post_meta($post->ID,'bookyear',true))
+											echo '<span class="black">';	_e('Ano: ','kmol'); echo '</span>'.get_post_meta($post->ID,'bookyear',true);
+										if(get_post_meta($post->ID,'bookauthor',true))
+											echo '<span class="black">'; _e(' Autor: ','kmol'); echo '</span>'.get_post_meta($post->ID,'bookauthor',true);
+										if(get_post_meta($post->ID,'bookref',true))
+											echo '<span class="black">'; _e(' Referência: ','kmol'); echo '</span>'.get_post_meta($post->ID,'bookref',true);
+									?>
+									</div><!-- .book_moretag-->
+                            	
                                 <div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_index', 'new_excerpt_more');?></div>
                            
 	                            <span class="clear"></span>

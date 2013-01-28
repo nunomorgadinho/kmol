@@ -1793,6 +1793,21 @@ background: transparent;
 
 }
 
+.book_moretag{
+	font-family: 'RobotoBold';
+	font-size: 11px;
+	text-transform: uppercase;
+	
+	cursor: pointer;
+
+	transition: color 0.2s;
+	-moz-transition: color 0.2s; /* Firefox 4 */
+	-webkit-transition: color 0.2s; /* Safari and Chrome */
+	-o-transition: color 0.2s; /* Opera */
+}
+
+.black{color:#000;}
+
 a.moretag {color:#000;}
 
 .readmore_single:hover a.moretag:hover {

@@ -26,7 +26,7 @@
 		<div class="popup_register">
 		
 			<div id="LoginWithAjax_Register" style="display:block;" class="">
-				<p><?php _e('Diga-nos quem é, comente e obtenha a sua página pessoal com registo das suas contribuições!','kmol');?></p>
+				<p><?php _e('Diga-nos quem é, comente e obtenha a sua página pessoal com registo das suas contribuições aqui no KMOL!','kmol');?></p>
 				<form name="registerform" id="registerform" action="<?php echo get_bloginfo('siteurl'); ?>/wp-login.php?action=register&callback=?&template=" method="post">
 		
 				<table width="99%" cellspacing="0" cellpadding="0" class="register_table">
@@ -69,7 +69,7 @@
 					</tbody>
 				</table>
 		</form>
-		<div class="login-register"><a id="go-to-login" href="#"><?php _e('Já estou registado. Quero fazer Login','kmol');?></a> </div>
+		<div class="login-register"><a id="go-to-login" class="button" href="#"><?php _e('Já estou registado. Quero fazer Login','kmol');?></a> </div>
 		</div> <!-- #LoginWithAjax_Register -->
 		
 		
