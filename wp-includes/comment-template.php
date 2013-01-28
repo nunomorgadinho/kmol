@@ -854,8 +854,8 @@ function comments_template( $file = '/comments.php', $separate_comments = false 
 	if ( !(is_single() || is_page() || $withcomments) || empty($post) )
 		return;
 
-	if ( empty($file) ){ echo "a";
-		$file = '/comments.php';}
+	if ( empty($file) )
+		$file = '/comments.php';
 
 	$req = get_option('require_name_email');
 
@@ -1451,6 +1451,8 @@ function wp_list_comments($args = array(), $comments = null ) {
 			$_comments = $wp_query->comments;
 		}
 	}
+	
+	print_r($_comments);
 
 	if ( '' === $r['per_page'] && get_option('page_comments') )
 		$r['per_page'] = get_query_var('comments_per_page');

@@ -22,7 +22,7 @@ get_header(); ?>
 
 					<?php get_template_part( 'content', 'page' ); ?>
 
-					<?php echo "estou aqyu"; comments_template( '', true ); ?>
+					<?php comments_template( '', true ); ?>
 
 				<?php endwhile; // end of the loop. ?>
 
