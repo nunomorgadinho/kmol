@@ -179,7 +179,7 @@ get_header(); ?>
 		      
 		      
 		      	<?php 
-		if(true) :
+		if(is_author()) :
 		?>	
 		
 		
