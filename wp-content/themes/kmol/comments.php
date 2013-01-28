@@ -27,6 +27,7 @@
 	<?php // You can start editing here -- including this comment! ?>
 OLA
 	<?php if ( have_comments() ) : ?>
+	TENHO COMMENTS
 		<h2 class="comments-title"> 
 			<?php
 				printf( _n( '1 Comentário em &ldquo;%2$s&rdquo;', '%1$s comentários em &ldquo;%2$s&rdquo;', get_comments_number(), 'kmol' ),
