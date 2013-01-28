@@ -25,9 +25,9 @@
 	<div id="comments" class="comments-area">
 
 	<?php // You can start editing here -- including this comment! ?>
-OLA
+
 	<?php if ( have_comments() ) : ?>
-	TENHO COMMENTS
+	
 		<h2 class="comments-title"> 
 			<?php
 				printf( _n( '1 Comentário em &ldquo;%2$s&rdquo;', '%1$s comentários em &ldquo;%2$s&rdquo;', get_comments_number(), 'kmol' ),
@@ -51,7 +51,7 @@ OLA
 				 * define kmol_comment() and that will be used instead.
 				 * See kmol_comment() in inc/template-tags.php for more.
 				 */
-				wp_list_comments( array( 'callback' => 'kmol_comment' ) );
+				wp_list_comments(  );
 			?>
 		</ol><!-- .commentlist -->
 
