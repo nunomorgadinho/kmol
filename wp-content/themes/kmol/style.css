@@ -1360,11 +1360,12 @@ background: transparent;
 	margin-bottom:15px;
 	line-height: 1.2;
 	color: #1a1a1a;
-	max-width: 440px;
+}
+
+.entry-title{max-width: 440px;
 	position: relative;
 	float: left;
-	left: 0.5em;
-}
+	left: 0.5em;}
 
 .news_title:hover {
 	color: #999;
