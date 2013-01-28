@@ -12,7 +12,7 @@
  */
 ?>
 
-<?php global $post;
+<?php
 	/*
 	 * If the current post is protected by a password and
 	 * the visitor has not yet entered the password we will
@@ -21,16 +21,13 @@
 	if ( post_password_required() )
 		return;
 ?>
-OLE
+
 	<div id="comments" class="comments-area">
 
 	<?php // You can start editing here -- including this comment! ?>
 
 	<?php if ( have_comments() ) : ?>
-	OLA
-	<?php 
-	print_r($post); ?>
-		<h2 class="comments-title"> 
+		<h2 class="comments-title">
 			<?php
 				printf( _n( '1 Comentário em &ldquo;%2$s&rdquo;', '%1$s comentários em &ldquo;%2$s&rdquo;', get_comments_number(), 'kmol' ),
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
@@ -53,17 +50,7 @@ OLE
 				 * define kmol_comment() and that will be used instead.
 				 * See kmol_comment() in inc/template-tags.php for more.
 				 */
-			/*global $post;  echo "post id ".$post->ID;
-			$args = array(
-					'post_ID' => $post->ID,
-					'post_id' => $post->ID,
-					'status' => 'approve'
-					
-			);*/
-			
-				$comments = get_comments($args);
-				
-				wp_list_comments( array( 'callback' => 'kmol_comment', 'type' => 'all'), $comments );
+				wp_list_comments( array( 'callback' => 'kmol_comment' ) );
 			?>
 		</ol><!-- .commentlist -->
 
