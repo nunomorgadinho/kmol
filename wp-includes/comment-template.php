@@ -854,8 +854,8 @@ function comments_template( $file = '/comments.php', $separate_comments = false 
 	if ( !(is_single() || is_page() || $withcomments) || empty($post) )
 		return;
 
-	if ( empty($file) )
-		$file = '/comments.php';
+	if ( empty($file) ){ echo "a";
+		$file = '/comments.php';}
 
 	$req = get_option('require_name_email');
 
