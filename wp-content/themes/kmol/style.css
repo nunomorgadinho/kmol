@@ -852,6 +852,7 @@ a:active {
 
 .commentlist {
 	margin-bottom: 5px;
+	list-style: none;
 }
 
 .form-allowed-tags {
