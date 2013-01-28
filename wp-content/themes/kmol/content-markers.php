@@ -4,17 +4,22 @@
 	<!-- INTERVIEWS -->
 	<?php 
     	$interviews_cat =  get_option('interviews'); 
+        
+    	$page = get_page_by_title(__('Entrevistas'));
+    	
         $args = array(
               		'posts_per_page' => 1,
                		'post_status' => 'publish',
                		'cat' => $interviews_cat
                );
         /* query posts array */
+        
+        
         $query = new WP_Query( $args  );
         if($query->have_posts()): while ($query->have_posts()) : $query->the_post();
                ?>
 		<div class="grid_4 alpha marcador">
-			<h1 class="marcador_title"><?php _e('Entrevistas','kmol'); ?></h1>
+			<a href="<?php echo $page->guid;?>"><h1 class="marcador_title"><?php _e('Entrevistas','kmol'); ?></h1></a>
 			<div class="marcador_short">
 				<div class="marcador_subtitle_container">
 				<h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
@@ -28,6 +33,7 @@
 	<!-- CASES -->
 	<?php 
     	$cat =  get_option('cases'); 
+    	$page = get_page_by_title(__('Casos'));
 	    $args = array(
 	    		'posts_per_page' => 1,
 	            'post_status' => 'publish',
@@ -38,7 +44,7 @@
         if($query->have_posts()): while ($query->have_posts()) : $query->the_post();
     ?>
 		<div class="grid_4 marcador">
-			<h1 class="marcador_title"><?php _e ('Casos','kmol'); ?></h1>
+			<a href="<?php echo $page->guid;?>"><h1 class="marcador_title"><?php _e ('Casos','kmol'); ?></h1></a>
 			<div class="marcador_short">
 				<div class="marcador_subtitle_container">
 				<h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
@@ -52,6 +58,7 @@
 	<!-- BOOKS -->
 	<?php 
     	$cat =  get_option('books'); 
+    	$page = get_page_by_title(__('Livros'));
 	    $args = array(
 	             'posts_per_page' => 1,
 	             'post_status' => 'publish',
@@ -62,7 +69,7 @@
           if($query->have_posts()): while ($query->have_posts()) : $query->the_post();
      ?>
 		<div class="grid_4 marcador omega">
-			<h1 class="marcador_title"><?php _e ('Livros','kmol'); ?></h1>
+			<a href="<?php echo $page->guid;?>"><h1 class="marcador_title"><?php _e ('Livros','kmol'); ?></h1></a>
 			<div class="marcador_short">
 				<div class="marcador_subtitle_container">
 				<h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
