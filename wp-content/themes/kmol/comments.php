@@ -51,7 +51,7 @@
 				 * define kmol_comment() and that will be used instead.
 				 * See kmol_comment() in inc/template-tags.php for more.
 				 */
-				wp_list_comments(  );
+				wp_list_comments( array( 'callback' => 'kmol_comment', 'type' => 'all') );
 			?>
 		</ol><!-- .commentlist -->
 
