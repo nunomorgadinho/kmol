@@ -1039,7 +1039,7 @@ object {
 	font-weight: normal;
 	margin-top: 5px;
 	margin-right: 10px;
-	float: left;
+	/*float: left;*/
 }
 
 .socialmedia-buttons a{
@@ -1604,6 +1604,11 @@ background: transparent;
 }
 /* --- Footer ---- */
 
+.footer-left .social, .footer-left .widgettitle {
+	margin-top: 0;
+}
+
+
 .site-footer {
 	color: #B3B3B3;
 }
@@ -1821,7 +1826,7 @@ a.moretag {color:#000;}
 .sublayer_single {
 	margin: 20px 20px 10px 20px;
 	border-top: 2px solid;
-	min-height:118px;
+	min-height:80px; /*dylan: 118px;*/
 }
 
 .image_sublayer {
@@ -2138,8 +2143,14 @@ aside ul li{
 	opacity: 1.0;
 }
 
+#go-to-login, #go-to-register{
+padding: 10px;
+	background-color: white;
+}
+
+
 .popup_register a:hover {
-	opacity: 0.5;
+	text-decoration: underline;
 }
 
 .popup_container h1{
