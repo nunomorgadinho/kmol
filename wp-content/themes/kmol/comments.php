@@ -51,7 +51,7 @@
 				 * define kmol_comment() and that will be used instead.
 				 * See kmol_comment() in inc/template-tags.php for more.
 				 */
-			global $post; 
+			global $post;  echo "post id ".$post->ID;
 			$args = array(
 					'post_ID' => $post->ID,
 					'post_id' => $post->ID,
@@ -59,7 +59,7 @@
 					
 			);
 			
-				$comments = get_comments($args);
+				$comments = get_comments();
 				
 				wp_list_comments( array( 'callback' => 'kmol_comment', 'type' => 'all'), $comments );
 			?>
