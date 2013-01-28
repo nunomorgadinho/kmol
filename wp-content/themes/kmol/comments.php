@@ -20,6 +20,8 @@
 	 */
 	if ( post_password_required() )
 		return;
+	
+	
 ?>
 
 	<div id="comments" class="comments-area">
@@ -28,10 +30,24 @@
 
 	<?php if ( have_comments() ) : ?>
 	
+	
+	<?php 
+		global $post;
+		$args = array(
+				'post_ID' => $post->ID,
+				'post_id' => $post->ID,
+				'status' => 'approve'
+		
+		);
+		
+		$comments = get_comments($args);
+		
+	?>
+	
 		<h2 class="comments-title"> 
 			<?php
-				printf( _n( '1 Comentário em &ldquo;%2$s&rdquo;', '%1$s comentários em &ldquo;%2$s&rdquo;', get_comments_number(), 'kmol' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+				printf( _n( '1 Comentário em &ldquo;%2$s&rdquo;', '%1$s comentários em &ldquo;%2$s&rdquo;', count($comments), 'kmol' ),
+					number_format_i18n( count($comments) ), '<span>' . get_the_title() . '</span>' );
 			?>
 		</h2>
 
@@ -51,15 +67,7 @@
 				 * define kmol_comment() and that will be used instead.
 				 * See kmol_comment() in inc/template-tags.php for more.
 				 */
-			global $post; 
-			$args = array(
-					'post_ID' => $post->ID,
-					'post_id' => $post->ID,
-					'status' => 'approve'
-					
-			);
-			
-				$comments = get_comments($args);
+		
 				
 				wp_list_comments( array( 'callback' => 'kmol_comment', 'type' => 'all'), $comments );
 			?>
