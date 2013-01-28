@@ -778,7 +778,14 @@ a:active {
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
+	text-align:justify;
 }
+
+.entry-thumb{
+	max-width: 190px;
+	position: relative;
+	float: left;}
+
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
@@ -1345,15 +1352,18 @@ background: transparent;
 
 .news_title {
 	overflow: hidden;
-	padding-right: 10px;
+/*	padding-right: 10px;*/
 /*	padding-bottom: 15px;*/
 	font-size: 30px;
 	font-family: 'RobotoBlack';
 	font-weight: bold;
 	margin-bottom:15px;
-	cursor:pointer;
 	line-height: 1.2;
 	color: #1a1a1a;
+	max-width: 440px;
+	position: relative;
+	float: left;
+	left: 0.5em;
 }
 
 .news_title:hover {
@@ -2403,6 +2413,8 @@ table.register_table tr{
 	font-size: 13px;
 }
 
+
+
 .search_word {
 	font-family: 'RobotoThin';
 	font-weight: normal;
@@ -2502,3 +2514,5 @@ a.logo {
 	position: absolute;
 	margin-left: 560px;	
 }
+
+a{ cursor:pointer};

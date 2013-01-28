@@ -18,7 +18,14 @@
 	
 	
 	<header class="entry-header">
-		<h1 class="entry-title alignleft"><a class="news_title" href="#"><?php  the_title(); ?></a></h1>
+	
+	<div class="entry-thumb">
+		<?php  global $post; 
+			if(has_post_thumbnail($post->ID))
+               	 the_post_thumbnail('medium');?>
+	</div>
+		<h1 class="entry-title news_title"><?php  the_title(); ?></h1>
+		
 		
 
 		<div class="entry-meta news_meta">

@@ -61,9 +61,7 @@ get_header(); global $local; ?>
 		<div class="grid_3 omega">
 		
 		
-			<?php  global $post; 
-			if(has_post_thumbnail($post->ID))
-               	 the_post_thumbnail('medium');?>
+			
 	
        <?php get_sidebar();?>
        
