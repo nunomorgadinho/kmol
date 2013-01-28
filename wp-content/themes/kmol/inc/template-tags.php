@@ -96,7 +96,7 @@ function kmol_comment( $comment, $args, $depth ) {
 					<?php 
 					if(isset($u) && !empty($u))
 					{
-						printf( __( '<a href="'.esc_url( get_author_posts_url($u->ID  ) ).'" >%s</a> <span class="says">diz2:</span>', 'kmol' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); }
+						printf( __( '<a href="'.esc_url( get_author_posts_url($u->ID  ) ).'" >%s</a> <span class="says">diz:</span>', 'kmol' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); }
 						else
 						{		printf( __( '%s <span class="says">diz:</span>', 'kmol' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); }
 						
