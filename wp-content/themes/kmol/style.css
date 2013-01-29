@@ -416,7 +416,7 @@ blockquote {
 }
 
 blockquote p:before {
-	content: url('images/aspas.png');
+	content: url('images/quote.png');
 	padding-right: 10px;
 }
 blockquote p{
@@ -1485,8 +1485,20 @@ background: transparent;
 #container_blog .author_comments .sublayer_title a{font-size:18px;}
 
 .author_comments .news_meta{position:relative; float:left;}
-.author_comments .excerpt_single {font-style:italic;}
+.author_comments .excerpt_single {font-family: 'TeXGyreBonumItalic'; font-size: 18px;}
 .author_comments .excerpt_single .moretag{font-style:normal;}
+
+.author_comments .excerpt_single img{
+    width: auto;
+    height: auto;
+    padding-bottom: 0;
+}
+
+.question:before{
+content: url('images/question2.png');
+padding-right: 5px;
+}
+
 
 #container_blog img {
 	padding-bottom: 10px;
