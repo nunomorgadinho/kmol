@@ -421,7 +421,7 @@ js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement
 		/* query posts array */
 		$query = new WP_Query( $args  );
 		if($query->have_posts()): while ($query->have_posts()) : $query->the_post(); ?>
-		
+		  <div class="event-container">
 			<div class="event-title">
 				<a href="<?php echo $page->guid.' /#'.get_the_ID();?>" title="<?php echo the_title();?>"><?php echo the_title();?></a>
 			</div>
@@ -440,7 +440,7 @@ js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement
 			?>
 			
 			</li>
-			
+			</div>
 		<?php  endwhile; endif;?>
         		</ul>
 				<a class="alignright" href="<?php echo $page->guid;?>">ver todos os eventos&rarr;</a>	

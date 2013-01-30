@@ -2609,8 +2609,12 @@ a.logo {
 
 a{ cursor:pointer;}
 
-.event-title {
-    padding-top: 20px;
+.event-container {
+    padding-bottom: 15px;
+}
+
+.event-container:last-child{
+    padding-bottom: 5px;
 }
 
 .event-title a:before {
