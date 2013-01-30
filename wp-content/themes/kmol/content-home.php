@@ -392,13 +392,14 @@ js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement
         
         
         <?php 
-        //EVENTS Área
+        //EVENTS AREA
+       
         ?>
         
          <div class="grid_4 omega">
 			<div id="secondary" class="widget-area" role="complementary">
 				<aside id="recent-posts-3" class="widget grid_4 omega widget_recent_entries">		
-				<div class="widget-title marcador_title">Artigos recentes</div>
+				<div class="widget-title marcador_title"><?php _e('Próximos Eventos','kmol');?></div>
 				<div class="sidebar_description">		
 				<ul>
         
@@ -409,13 +410,12 @@ js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement
         
         $cat = get_option('events');
 		$args = array(
-			'posts_per_page' =>4,
+			'posts_per_page' =>3,
 			'cat' => $cat,
 			'post_status' => 'publish',
 			'gdsr_sort' => 'rating',
 			'nopaging' => 0,
-			'gdsr_order' => 'desc',
-			'paged' =>	(get_query_var('paged')) ? get_query_var('paged') : 1
+			'gdsr_order' => 'desc'
 				
 		);
 		/* query posts array */
@@ -443,8 +443,12 @@ js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement
 			
 		<?php  endwhile; endif;?>
         		</ul>
+				<a class="alignright" href="<?php echo $page->guid;?>">ver todos os eventos&rarr;</a>	
 				</div>
-				</aside>		
+			
+				</aside>	
+				
+				
 			</div><!-- #secondary .widget-area -->
 		</div>
     	</div> <!-- .container_12 -->

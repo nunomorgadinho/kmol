@@ -1573,7 +1573,8 @@ padding-right: 5px;
 }
 
 .twitter_timeline {
-	height: 525px;
+/*	height: 525px;*/
+	height: 310px;
 }
 
 .marcador {

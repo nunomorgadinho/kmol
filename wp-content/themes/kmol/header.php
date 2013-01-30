@@ -52,7 +52,7 @@
 			<a  class="logo alignleft" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/kmol_logo.png"/>
 			</a>
 			<a  class="logo alignleft text_logo" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-			<?php _e('Gestão de Conhecimento e<br/> Aprendizagem Organizacional');?>
+			<?php _e('Gestão de Conhecimento e<br/> Aprendizagem Organizacional','kmol');?>
 			</a>
 	
 			<div class="language_select alignright"><?php do_action('icl_language_selector'); ?></div>
