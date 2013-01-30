@@ -387,7 +387,66 @@ js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement
             	<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FportalKMOL&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe>
             </div>
 
-        </div>
-    </div>
+        </div> <!-- social_timelines -->
+        
+        
+        
+        <?php 
+        //EVENTS Área
+        ?>
+        
+         <div class="grid_4 omega">
+			<div id="secondary" class="widget-area" role="complementary">
+				<aside id="recent-posts-3" class="widget grid_4 omega widget_recent_entries">		
+				<div class="widget-title marcador_title">Artigos recentes</div>
+				<div class="sidebar_description">		
+				<ul>
+        
+        <?php 
+		
+        $page = get_page_by_title(__('Eventos'));
+        
+        
+        $cat = get_option('events');
+		$args = array(
+			'posts_per_page' =>4,
+			'cat' => $cat,
+			'post_status' => 'publish',
+			'gdsr_sort' => 'rating',
+			'nopaging' => 0,
+			'gdsr_order' => 'desc',
+			'paged' =>	(get_query_var('paged')) ? get_query_var('paged') : 1
+				
+		);
+		/* query posts array */
+		$query = new WP_Query( $args  );
+		if($query->have_posts()): while ($query->have_posts()) : $query->the_post(); ?>
+		
+			<div class="event-title">
+				<a href="<?php echo $page->guid.' /#'.get_the_ID();?>" title="<?php echo the_title();?>"><?php echo the_title();?></a>
+			</div>
+	    
+        	<li>
+       		<?php //get date
+				$value = get_post_meta($post->ID,'event_dates',true);
+				$country = get_post_meta($post->ID,'event_country',true);
+				if(isset($value) && $value != '')
+				{
+					echo '<li class="event-detail-home">';
+						echo '<span class="event-value">'.$value.'</span>';
+						echo '<span class="event-value">, '.$country.'</span>';
+					echo '</li>';
+				}
+			?>
+			
+			</li>
+			
+		<?php  endwhile; endif;?>
+        		</ul>
+				</div>
+				</aside>		
+			</div><!-- #secondary .widget-area -->
+		</div>
+    	</div> <!-- .container_12 -->
 
 <?php setup_postdata($temp);?>

@@ -38,7 +38,7 @@
 				
 			
 				
-				  <div class="sublayer grid_8 alpha sublayer_single">
+				  <div id="<?php the_ID();?>" class="sublayer grid_8 alpha sublayer_single">
 					  <?php if(has_post_thumbnail()) :?><div class="image_sublayer"><?php the_post_thumbnail('thumbnail');?></div> <?php endif;?>
 	                    <div class="sublayer_title"><a href="<?php the_permalink();?>"><?php the_title();?></a></div>
 	                
