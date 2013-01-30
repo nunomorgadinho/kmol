@@ -305,6 +305,55 @@ input {
 }
 
 
+@font-face {
+    font-family: 'TeXGyreBonumRegular';
+    src: url('fonts/texgyrebonum-regular-webfont.eot');
+    src: url('fonts/texgyrebonum-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/texgyrebonum-regular-webfont.woff') format('woff'),
+         url('fonts/texgyrebonum-regular-webfont.ttf') format('truetype'),
+         url('fonts/texgyrebonum-regular-webfont.svg#TeXGyreBonumRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'TeXGyreBonumItalic';
+    src: url('fonts/texgyrebonum-italic-webfont.eot');
+    src: url('fonts/texgyrebonum-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/texgyrebonum-italic-webfont.woff') format('woff'),
+         url('fonts/texgyrebonum-italic-webfont.ttf') format('truetype'),
+         url('fonts/texgyrebonum-italic-webfont.svg#TeXGyreBonumItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'TeXGyreBonumBold';
+    src: url('fonts/texgyrebonum-bold-webfont.eot');
+    src: url('fonts/texgyrebonum-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/texgyrebonum-bold-webfont.woff') format('woff'),
+         url('fonts/texgyrebonum-bold-webfont.ttf') format('truetype'),
+         url('fonts/texgyrebonum-bold-webfont.svg#TeXGyreBonumBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'TeXGyreBonumBoldItalic';
+    src: url('fonts/texgyrebonum-bolditalic-webfont.eot');
+    src: url('fonts/texgyrebonum-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/texgyrebonum-bolditalic-webfont.woff') format('woff'),
+         url('fonts/texgyrebonum-bolditalic-webfont.ttf') format('truetype'),
+         url('fonts/texgyrebonum-bolditalic-webfont.svg#TeXGyreBonumBoldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
 
 /* =Global
 ----------------------------------------------- */
@@ -364,6 +413,15 @@ dfn, cite, em, i {
 }
 blockquote {
 	margin: 0 1.5em;
+}
+
+blockquote p:before {
+	content: url('images/quote.png');
+	padding-right: 10px;
+}
+blockquote p{
+	font-family: 'TeXGyreBonumItalic';
+	font-size: 18px;
 }
 address {
 	margin: 0 0 1.5em;
@@ -1047,7 +1105,7 @@ object {
 	font-weight: normal;
 	margin-top: 5px;
 	margin-right: 10px;
-	float: left;
+	/*float: left;*/
 }
 
 .socialmedia-buttons a{
@@ -1350,6 +1408,10 @@ background: transparent;
 	padding-top: 10px;
 }
 
+.news_principal .news_title {
+	margin-bottom: 0;
+}
+
 .news_title {
 	overflow: hidden;
 /*	padding-right: 10px;*/
@@ -1423,8 +1485,20 @@ background: transparent;
 #container_blog .author_comments .sublayer_title a{font-size:18px;}
 
 .author_comments .news_meta{position:relative; float:left;}
-.author_comments .excerpt_single {font-style:italic;}
+.author_comments .excerpt_single {font-family: 'TeXGyreBonumItalic'; font-size: 18px;}
 .author_comments .excerpt_single .moretag{font-style:normal;}
+
+.author_comments .excerpt_single img{
+    width: auto;
+    height: auto;
+    padding-bottom: 0;
+}
+
+.question:before{
+content: url('images/question2.png');
+padding-right: 5px;
+}
+
 
 #container_blog img {
 	padding-bottom: 10px;
@@ -1615,6 +1689,11 @@ background: transparent;
 	color: #f2f2f2;
 }
 /* --- Footer ---- */
+
+.footer-left .social, .footer-left .widgettitle {
+	margin-top: 0;
+}
+
 
 .site-footer {
 	color: #B3B3B3;
@@ -1833,7 +1912,7 @@ a.moretag {color:#000;}
 .sublayer_single {
 	margin: 20px 20px 10px 20px;
 	border-top: 2px solid;
-	min-height:118px;
+	min-height:80px; /*dylan: 118px;*/
 }
 
 .image_sublayer {
@@ -1937,6 +2016,10 @@ aside ul li{
 	margin-top: 8px;
 }
 
+.news_principal .tag_marcador a{
+	margin-bottom: 20px;
+}
+
 .tag_marcador a, .tag_marcador span {
 	font-size: 12px;
 	float: left;
@@ -2022,6 +2105,7 @@ aside ul li{
 	background: #f8f8f8;
 	padding: 20px 20px;
 	overflow:hidden;
+    min-height: 300px;
 }
 
 .marcador_subtitle_container {
@@ -2150,8 +2234,14 @@ aside ul li{
 	opacity: 1.0;
 }
 
+#go-to-login, #go-to-register{
+padding: 10px;
+	background-color: white;
+}
+
+
 .popup_register a:hover {
-	opacity: 0.5;
+	text-decoration: underline;
 }
 
 .popup_container h1{
