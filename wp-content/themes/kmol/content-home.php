@@ -432,10 +432,10 @@ js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement
 				$country = get_post_meta($post->ID,'event_country',true);
 				if(isset($value) && $value != '')
 				{
-					echo '<li class="event-detail-home">';
+					//echo '<li class="event-detail-home">';
 						echo '<span class="event-value">'.$value.'</span>';
 						echo '<span class="event-value">, '.$country.'</span>';
-					echo '</li>';
+					//echo '</li>';
 				}
 			?>
 			
