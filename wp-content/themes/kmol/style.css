@@ -2608,3 +2608,16 @@ a.logo {
 
 a{ cursor:pointer;}
 
+.event-title {
+    padding-top: 20px;
+}
+
+.event-title a:before {
+    content: url(images/event.png);
+    padding-right: 5px;
+}
+
+.event-title a {
+    vertical-align: top;
+}
+
