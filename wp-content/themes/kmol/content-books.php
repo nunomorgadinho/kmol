@@ -193,10 +193,11 @@
 						'gdsr_order' => 'desc'
 				);
 				/* query posts array */
-				$query_first = new WP_Query( $args  );
+				//$query_first = new WP_Query( $args  );
+				$rec_posts = get_posts('numberposts=-1&category='.$category.'&orderby=RAND()');
 			
-				$i =1;
-				if($query_first->have_posts()): while ($query_first->have_posts()) : $query_first->the_post();
+				$i=0;
+				foreach( $rec_posts as $post ) {
 				
 				$rec = get_post_meta($post->ID, "recommended", false);
 			
@@ -204,7 +205,7 @@
 					$comments = get_comment_count($post->ID);
 			?>
 			
-                    <div class="marcador_container_recommend <?php if ($i % 2 != 0) echo "last";?>">
+                    <div class="marcador_container_recommend">
                         <div class="book_small_marcador">
                         		<?php if(has_post_thumbnail()) {?> 
 					 				<div class="marcador_img"><?php the_post_thumbnail('thumbnail');?></div>
@@ -226,9 +227,10 @@
                      
                
                 <?php
-				}
-                	$i++; 
-                	endwhile; endif;?>
+					if (++$i == 2) break; 
+					} // end if
+				} // end for
+                	?>
                  </div> <!-- book_row recomend -->
                  
              <!--    <div class="more_single">
