@@ -60,9 +60,9 @@
 		                    <div class="book_moretag">
 							<?php
 								if(get_post_meta($post->ID,'bookauthor',true))
-									echo '<span class="black">'; echo '</span>'.get_post_meta($post->ID,'bookauthor',true);
+									echo '<span class="black">'; echo '</span>'.get_post_meta($post->ID,'bookauthor',true); echo ". ";
 								if(get_post_meta($post->ID,'bookref',true))
-									echo '<span class="black">';  echo '</span>'.get_post_meta($post->ID,'bookref',true);
+									echo '<span class="black">';  echo '</span>'.get_post_meta($post->ID,'bookref',true); echo ", ";
 								if(get_post_meta($post->ID,'bookyear',true))
 									echo '<span class="black">'; echo '</span>'.get_post_meta($post->ID,'bookyear',true);
 								
