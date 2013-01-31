@@ -122,12 +122,12 @@
                                 <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
                             		<div class="book_moretag">
 									<?php
-										if(get_post_meta($post->ID,'bookyear',true))
-											echo '<span class="black">';	_e('Ano: ','kmol'); echo '</span>'.get_post_meta($post->ID,'bookyear',true);
 										if(get_post_meta($post->ID,'bookauthor',true))
-											echo '<span class="black">'; _e(' Autor: ','kmol'); echo '</span>'.get_post_meta($post->ID,'bookauthor',true);
+											echo '<span class="black">'; echo '</span>'.get_post_meta($post->ID,'bookauthor',true); echo ". ";
 										if(get_post_meta($post->ID,'bookref',true))
-											echo '<span class="black">'; _e(' Referência: ','kmol'); echo '</span>'.get_post_meta($post->ID,'bookref',true);
+											echo '<span class="black">';  echo '</span>'.get_post_meta($post->ID,'bookref',true); echo ", ";
+										if(get_post_meta($post->ID,'bookyear',true))
+											echo '<span class="black">'; echo '</span>'.get_post_meta($post->ID,'bookyear',true);
 									?>
 									</div><!-- .book_moretag-->
                             	
