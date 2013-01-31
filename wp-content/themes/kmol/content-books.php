@@ -227,11 +227,11 @@
                 	endwhile; endif;?>
                  </div> <!-- book_row recomend -->
                  
-                 <div class="more_single">
+             <!--    <div class="more_single">
                 	<span class="alignright right_mark">
 	                	<a href="<?php echo get_bloginfo('siteurl')?>/category/<?php echo $category->category_nicename; ?>"><?php _e('Outras Recomendações','kmol');?></a>	   
 	                </span>
-                </div>
+                </div> -->
 
                  <span class="clear"></span>
                 
