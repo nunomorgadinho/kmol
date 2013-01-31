@@ -195,6 +195,7 @@
 				if($query_first->have_posts()): while ($query_first->have_posts()) : $query_first->the_post();
 				
 				$rec = get_post_meta($post->ID, "recommended", false);
+				echo "<!-- recommended = ".$rec[0]." -->";
 				if ($rec[0]) { 
 					$comments = get_comment_count($post->ID);
 			?>
