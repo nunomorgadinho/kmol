@@ -180,7 +180,7 @@
 				$cat =  get_option('books');
 				$category = get_category($cat);
 				$args = array(
-						'posts_per_page' => -1,
+						'posts_per_page' => $per_page,
 						'cat' => $cat,
 						'post_status' => 'publish',
 						'gdsr_sort' => 'rating',
