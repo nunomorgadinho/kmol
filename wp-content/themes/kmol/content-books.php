@@ -180,9 +180,9 @@
 				$cat =  get_option('books');
 				$category = get_category($cat);
 				$paged = get_query_var('paged');
-				$per_page = 5;
+				$per_page = 2;
 				if($paged>0)
-					$per_page = 60;
+					$per_page = 2;
 				$args = array(
 						'posts_per_page' => $paged,
 						'cat' => $cat,
