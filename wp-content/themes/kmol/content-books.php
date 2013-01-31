@@ -194,7 +194,7 @@
 				);
 				/* query posts array */
 				//$query_first = new WP_Query( $args  );
-				$rec_posts = get_posts('numberposts=-1&category='.$category.'&orderby=RAND()');
+				$rec_posts = get_posts('numberposts=-1&category='.$cat.'&orderby=RAND()');
 			
 				$i=0;
 				foreach( $rec_posts as $post ) {
