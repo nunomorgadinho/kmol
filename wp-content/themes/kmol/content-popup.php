@@ -12,7 +12,7 @@
 		<h2><?php _e('utilizadores registados','kmol');?></h2>
 	</div>
 
-	<span class="close_popup"><a href="#"><img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/close.png"></a></span>
+	<div class="close_popup"><a href="#"><img class="marcador_img" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/close.png"></a></div>
 
 	<!-- Register Stuff -->
 	<div id="popup_register" class="popup_box_register register_form">
