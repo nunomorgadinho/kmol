@@ -194,8 +194,8 @@
 				$i =1;
 				if($query_first->have_posts()): while ($query_first->have_posts()) : $query_first->the_post();
 				
-				$rec = get_post_meta($post->ID, "recommended", false);
-				if ($rec[0]) { 
+			//	$rec = get_post_meta($post->ID, "recommended", false);
+			//	if ($rec[0]) { 
 					$comments = get_comment_count($post->ID);
 			?>
 			
@@ -221,7 +221,7 @@
                      
                
                 <?php
-				}
+			//	}
                 	$i++; 
                 	endwhile; endif;?>
                  </div> <!-- book_row recomend -->
