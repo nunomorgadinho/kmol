@@ -1709,6 +1709,8 @@ padding-right: 5px;
 .widget_wysija_cont p{margin:0;}
 .widget_wysija_cont {
 	clear: both;
+    background: #e6e6e6;
+    width: 250px;
 }
 
 /*.subscribe_footer, .widget_wysija_cont {
@@ -1734,9 +1736,9 @@ padding-right: 5px;
 
 .subscribe_home .widget_wysija_cont input[type="text"]{
 	background-color:#E6E6E6;
-	padding: 10px 10px;
+	padding: 8px 10px 9px 10px;
 	width: 55%;
-	
+	height: 20px;
 }
 #subscribe_footer_box, .widget_wysija_cont input[type="text"]{
 	color: #999;
@@ -2172,6 +2174,7 @@ aside ul li{
 	position: absolute;
 	z-index: 10002;
 	color: white;
+    top: 75px;
 }
 
 .popup_container {
@@ -2201,6 +2204,7 @@ aside ul li{
 	line-height: 200%;
 	-webkit-box-shadow: 2px 2px 6px 0px #2B2B2B;
 	box-shadow: 2px 2px 6px 0px #2B2B2B;
+    border-bottom: 2px solid #a9cf55;
 }
 
 .popup_register {
@@ -2624,5 +2628,9 @@ a{ cursor:pointer;}
 
 .event-title a {
     vertical-align: top;
+}
+
+#registerform {
+    height: 320px !important;
 }
 
