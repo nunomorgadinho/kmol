@@ -177,7 +177,7 @@
              <?php 
 				//get first post
 			
-				$cat =  get_option('recomend');
+				$cat =  get_option('books');
 				$category = get_category($cat);
 				$args = array(
 						'posts_per_page' => 2,
@@ -194,7 +194,9 @@
 				$i =1;
 				if($query_first->have_posts()): while ($query_first->have_posts()) : $query_first->the_post();
 				
-				$comments = get_comment_count($post->ID);
+				$rec = get_post_meta($post->ID, "recommended", false);
+				if ($rec[0]) { 
+					$comments = get_comment_count($post->ID);
 			?>
 			
                     <div class="marcador_container_recommend <?php if ($i % 2 != 0) echo "last";?>">
@@ -219,6 +221,7 @@
                      
                
                 <?php
+				}
                 	$i++; 
                 	endwhile; endif;?>
                  </div> <!-- book_row recomend -->
