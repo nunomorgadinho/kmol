@@ -377,8 +377,6 @@ function count_newsletter_followers(){
 	return $count_newsletter;
 }
 
-
-
 function my_post_limit($limit) {
 	global $paged, $myOffset;
 	if (empty($paged)) {
