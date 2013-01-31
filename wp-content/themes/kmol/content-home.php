@@ -190,7 +190,7 @@ $temp = $post;
 
 <!-- Separador com números de redes sociais -->
 		<?php 
-			$users = count(get_users(array('role'         => 'subscriber' )));
+			$users = count(get_users());
 			$nfacebook = count_facebook_followers();
 			$nnewsletter = count_newsletter_followers();
 		?>
@@ -204,7 +204,7 @@ $temp = $post;
                         <a target="_blank" class="first_container">
                           <input id="twitter" class="knob countersingle numbers_margin twitter " data-displayInput="true" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly="true" title="<?php echo $users;?>" value="<?php echo $users;?>" data-maxvalue="<?php echo $users;?>">
                         </a>
-                        	<center><span><h1><?php echo $users;?></h1><h2><?php _e('utilizadores','kmol');?></h2></span></center>
+                        	<center><span><h1><?php echo $users;?></h1><h2><?php _e('perfis','kmol');?></h2></span></center>
                         </div>
                         <div class="counters_container" title="<?php _e('Clique para fazer Like');?>">
                         <a target="_blank" href="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FportalKMOL&send=false&layout=standard&width=450&show_faces=false&font&colorscheme=light&action=like&height=35&appId=259428177513896">
@@ -214,7 +214,7 @@ $temp = $post;
                         </div>
                         <div class="counters_container">
                           <input id="rss" class="knob countersingle rss" data-fgColor="#6c9ebb" data-thickness=".3" data-readOnly="true" value="<?php echo $nnewsletter;?>" data-maxvalue="<?php echo $nnewsletter;?>">
-                 		       <center><span><h1><?php echo $nnewsletter;?></h1><h2><?php _e('assinantes','kmol');?></h2></span></center>
+                 		       <center><span><h1><?php echo $nnewsletter;?></h1><h2><?php _e('subscritores','kmol');?></h2></span></center>
                   	  </div>
                   </div>
                     <div class="subscribe_home">
