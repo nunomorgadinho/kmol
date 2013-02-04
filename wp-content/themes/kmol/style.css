@@ -849,7 +849,9 @@ a:active {
 .entry-thumb{
 	max-width: 190px;
 	position: relative;
-	float: left;}
+	float: left;
+    padding-right: 20px;
+}
 
 .page-links {
 	clear: both;
@@ -1431,9 +1433,9 @@ background: transparent;
 	color: #1a1a1a;
 }
 
-.entry-title{max-width: 440px;
-	position: relative;
-	float: left;
+.entry-title{/*max-width: 440px;*/
+	/*position: relative;
+	float: left;*/
 	left: 0.5em;
     cursor: pointer;
 }
@@ -1456,9 +1458,7 @@ background: transparent;
 	color: #999;
 }
 
-.news_title span{
-	margin-left: 10px;
-}
+
 
 .news_meta, .news_meta a{
 	text-transform: uppercase;

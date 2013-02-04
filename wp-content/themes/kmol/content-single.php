@@ -24,9 +24,7 @@
 			if(has_post_thumbnail($post->ID))
                	 the_post_thumbnail('medium');?>
 	</div>
-		<h1 class="entry-title news_title"><?php  the_title(); ?></h1>
-		
-		<div class="entry-meta news_meta">
+		<div class="entry-title news_title"><?php  the_title(); ?><span class="entry-meta news_meta">
 			<?php
 			
 				if(has_category($cat) && !empty($cat)){
@@ -42,7 +40,9 @@
 					kmol_posted_on(); 
 				}
 			?>
-		</div><!-- .entry-meta -->
+		</span><!-- .entry-meta --></div>
+		
+		
 			<span class="clear"></span>
 
 			<div class="tag_marcador alignleft"><?php /* translators: used between list items, there is a space after the comma */
