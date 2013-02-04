@@ -412,7 +412,7 @@ dfn, cite, em, i {
 }
 
 i {
-    font-family: 'RobotoItalic';
+    font-family: 'RobotoLightItalic';
 }
 
 cite, dfn, em {
@@ -1434,7 +1434,9 @@ background: transparent;
 .entry-title{max-width: 440px;
 	position: relative;
 	float: left;
-	left: 0.5em;}
+	left: 0.5em;
+    cursor: pointer;
+}
 
 .news_title:hover {
 	color: #999;
@@ -1460,14 +1462,18 @@ background: transparent;
 
 .news_meta, .news_meta a{
 	text-transform: uppercase;
-	font-size: 9px;
+	font-size: 9px !important;
 	margin-bottom: 0;
 	letter-spacing: normal;
 }
 
-.blog_page .news_meta{
+.blog_page{
 	position:relative;
 	float:left;
+}
+
+.news_meta {
+    position: relative;
 }
 
 #container_blog {
