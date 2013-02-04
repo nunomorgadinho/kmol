@@ -26,11 +26,11 @@
 	</div>
 		<h1 class="entry-title news_title"><?php  the_title(); ?></h1>
 		
-		
-
 		<div class="entry-meta news_meta">
 			<?php
-				if(has_category($cat)){
+			
+				if(has_category($cat) && !empty($cat)){
+					
 					if(get_post_meta($post->ID,'bookauthor',true))
 						echo '<span class="black">'; echo '</span>'.c2c_get_custom('bookauthor', '', '', '', ', ', ' e '); echo ". ";
 					if(get_post_meta($post->ID,'bookref',true))
