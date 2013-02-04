@@ -31,12 +31,12 @@
 		<div class="entry-meta news_meta">
 			<?php
 				if(has_category($cat)){
-					if(get_post_meta($post->ID,'bookyear',true))
-						_e('Ano ','kmol'); echo get_post_meta($post->ID,'bookyear',true);
 					if(get_post_meta($post->ID,'bookauthor',true))
-						_e(' Autor ','kmol'); echo get_post_meta($post->ID,'bookauthor',true);
+						echo '<span class="black">'; echo '</span>'.c2c_get_custom('bookauthor', '', '', '', ', ', ' e '); echo ". ";
 					if(get_post_meta($post->ID,'bookref',true))
-						_e(' Referência ','kmol'); echo get_post_meta($post->ID,'bookref',true);
+						echo '<span class="black">';  echo '</span>'.get_post_meta($post->ID,'bookref',true); echo ", ";
+					if(get_post_meta($post->ID,'bookyear',true))
+						echo '<span class="black">'; echo '</span>'.get_post_meta($post->ID,'bookyear',true);
 				}
 				else{
 					kmol_posted_on(); 

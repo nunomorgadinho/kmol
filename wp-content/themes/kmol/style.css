@@ -2252,10 +2252,6 @@ aside ul li{
 	opacity: 1.0;
 }
 
-#go-to-login, #go-to-register{
-padding: 10px;
-	background-color: white;
-}
 
 
 .popup_register a:hover {
@@ -2498,6 +2494,15 @@ table.register_table tr{
 
 .login_form #LoginWithAjax_Links_Register{display:none;}
 
+.login-register{
+	
+	position:relative;
+	float:right;
+}
+.login-register a{
+	color:#fff;
+}
+
 /* Search */
 
 .search_single {
@@ -2643,7 +2648,18 @@ a{ cursor:pointer;}
     vertical-align: top;
 }
 
-#registerform {
-    height: 320px !important;
+#LoginWithAjax_Register form{
+	
+	overflow: auto;
+	height: 300px;
+}
+
+#LoginWithAjax_SubmitButton .submit{
+	position:relative;
+	float:right;
+}
+
+#LoginWithAjax_Links_Remember{
+	color:#fff;	
 }
 

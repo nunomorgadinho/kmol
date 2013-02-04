@@ -59,12 +59,13 @@
 
 		                    <div class="book_moretag">
 							<?php
-								if(get_post_meta($post->ID,'bookyear',true))
-									echo '<span class="black">';	_e('Ano: ','kmol'); echo '</span>'.get_post_meta($post->ID,'bookyear',true);
 								if(get_post_meta($post->ID,'bookauthor',true))
-									echo '<span class="black">'; _e(' Autor: ','kmol'); echo '</span>'.get_post_meta($post->ID,'bookauthor',true);
+									echo '<span class="black">'; echo '</span>'.c2c_get_custom('bookauthor', '', '', '', ', ', ' e '); echo ". ";
 								if(get_post_meta($post->ID,'bookref',true))
-									echo '<span class="black">'; _e(' Referência: ','kmol'); echo '</span>'.get_post_meta($post->ID,'bookref',true);
+									echo '<span class="black">';  echo '</span>'.get_post_meta($post->ID,'bookref',true); echo ", ";
+								if(get_post_meta($post->ID,'bookyear',true))
+									echo '<span class="black">'; echo '</span>'.get_post_meta($post->ID,'bookyear',true);
+								
 							?>
 							</div><!-- .book_moretag-->
 		                    
@@ -121,12 +122,12 @@
                                 <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
                             		<div class="book_moretag">
 									<?php
-										if(get_post_meta($post->ID,'bookyear',true))
-											echo '<span class="black">';	_e('Ano: ','kmol'); echo '</span>'.get_post_meta($post->ID,'bookyear',true);
 										if(get_post_meta($post->ID,'bookauthor',true))
-											echo '<span class="black">'; _e(' Autor: ','kmol'); echo '</span>'.get_post_meta($post->ID,'bookauthor',true);
+											echo '<span class="black">'; echo '</span>'.c2c_get_custom('bookauthor', '', '', '', ', ', ' e '); echo ". ";
 										if(get_post_meta($post->ID,'bookref',true))
-											echo '<span class="black">'; _e(' Referência: ','kmol'); echo '</span>'.get_post_meta($post->ID,'bookref',true);
+											echo '<span class="black">';  echo '</span>'.get_post_meta($post->ID,'bookref',true); echo ", ";
+										if(get_post_meta($post->ID,'bookyear',true))
+											echo '<span class="black">'; echo '</span>'.get_post_meta($post->ID,'bookyear',true);
 									?>
 									</div><!-- .book_moretag-->
                             	
@@ -176,10 +177,14 @@
              <?php 
 				//get first post
 			
-				$cat =  get_option('recomend');
+				$cat =  get_option('books');
 				$category = get_category($cat);
+				$paged = get_query_var('paged');
+				$per_page = 2;
+				if($paged>0)
+					$per_page = 2;
 				$args = array(
-						'posts_per_page' => 2,
+						'posts_per_page' => $paged,
 						'cat' => $cat,
 						'post_status' => 'publish',
 						'gdsr_sort' => 'rating',
@@ -188,15 +193,19 @@
 						'gdsr_order' => 'desc'
 				);
 				/* query posts array */
-				$query_first = new WP_Query( $args  );
+				//$query_first = new WP_Query( $args  );
+				$rec_posts = get_posts('numberposts=-1&category='.$cat.'&orderby=RAND()');
 			
-				$i =1;
-				if($query_first->have_posts()): while ($query_first->have_posts()) : $query_first->the_post();
+				$i=0;
+				foreach( $rec_posts as $post ) {
 				
-				$comments = get_comment_count($post->ID);
+				$rec = get_post_meta($post->ID, "recommended", false);
+			
+				if ($rec[0]) { 
+					$comments = get_comment_count($post->ID);
 			?>
 			
-                    <div class="marcador_container_recommend <?php if ($i % 2 != 0) echo "last";?>">
+                    <div class="marcador_container_recommend <?php if ($i % 2 != 0) echo "last";?> ">
                         <div class="book_small_marcador">
                         		<?php if(has_post_thumbnail()) {?> 
 					 				<div class="marcador_img"><?php the_post_thumbnail('thumbnail');?></div>
@@ -218,15 +227,17 @@
                      
                
                 <?php
-                	$i++; 
-                	endwhile; endif;?>
+					if (++$i == 2) break; 
+					} // end if
+				} // end for
+                	?>
                  </div> <!-- book_row recomend -->
                  
-                 <div class="more_single">
+             <!--    <div class="more_single">
                 	<span class="alignright right_mark">
 	                	<a href="<?php echo get_bloginfo('siteurl')?>/category/<?php echo $category->category_nicename; ?>"><?php _e('Outras Recomendações','kmol');?></a>	   
 	                </span>
-                </div>
+                </div> -->
 
                  <span class="clear"></span>
                 

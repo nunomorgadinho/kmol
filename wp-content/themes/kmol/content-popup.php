@@ -31,6 +31,10 @@
 		
 				<table width="99%" cellspacing="0" cellpadding="0" class="register_table">
 					<tbody>
+					
+						<tr><td colspan="2"><div class="login-register"><a id="go-to-login" class="button" href="#"><?php _e('Já estou registado. Quero fazer Login','kmol');?></a> </div></td></tr>
+					
+					
 						<tr id="RegisterWithAjax_Username">
 							<td class="username_label">
 								<label for="username_input"><?php _e('Username') ?></label>
@@ -49,27 +53,32 @@
 							</td>
 						</tr>
 						
-						<tr><td colspan="2"></td></tr>
-					
+						
+						
 						<tr id="RegisterWithAjax_email">
 							<td colspan="2">
 								<input name="checkbox-1" id="checkbox-1" type="checkbox" checked="checked"></input>
 								<label class="label_secondary" for="checkbox-1"><?php _e('Clique para receber por email a newsletter mensal do KMOL','kmol');?></label>
 							</td>
 						</tr>
-		
+						
 						<tr id="LoginWithAjax_Submit">
+							
+						
+							
 							<td id="LoginWithAjax_SubmitButton" colspan="2">
 							<?php do_action('register_form'); ?>
 								<div id="reg_passmail"><?php _e('A password will be e-mailed to you.') ?></div>
 								<div class="submit"><input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="<?php esc_attr_e('Register'); ?>" tabindex="100" /></div>
 								<input type="hidden" name="lwa" value="1" />
 							</td>
+							
+							
 						</tr>
 					</tbody>
 				</table>
 		</form>
-		<div class="login-register"><a id="go-to-login" class="button" href="#"><?php _e('Já estou registado. Quero fazer Login','kmol');?></a> </div>
+		
 		</div> <!-- #LoginWithAjax_Register -->
 		
 		
