@@ -10,10 +10,10 @@
 	
 	<!-- <div class="book-image">   -->
 	<?php  
-	/*	$cat=  get_option('books');
-		if(has_category($cat) && has_post_thumbnail())
-               	 	the_post_thumbnail('medium');
-     */?>
+		$cat=  get_option('books');
+	/*	if(has_category($cat) && has_post_thumbnail())
+               	 	the_post_thumbnail('medium');*/
+     ?>
 	<!--  </div> -->
 	
 	
@@ -26,11 +26,11 @@
 	</div>
 		<div class="entry-title news_title"><?php  the_title(); ?><span class="entry-meta news_meta">
 			<?php
-			
+				
 				if(has_category($cat) && !empty($cat)){
 					
 					if(get_post_meta($post->ID,'bookauthor',true))
-						echo '<span class="black">'; echo '</span>'.c2c_get_custom('bookauthor', '', '', '', ', ', ' e '); echo ". ";
+						echo '<br/><span class="black">'; echo '</span>'.c2c_get_custom('bookauthor', '', '', '', ', ', ' e '); echo ". ";
 					if(get_post_meta($post->ID,'bookref',true))
 						echo '<span class="black">';  echo '</span>'.get_post_meta($post->ID,'bookref',true); echo ", ";
 					if(get_post_meta($post->ID,'bookyear',true))
@@ -41,7 +41,6 @@
 				}
 			?>
 		</span><!-- .entry-meta --></div>
-		
 		
 			<span class="clear"></span>
 
