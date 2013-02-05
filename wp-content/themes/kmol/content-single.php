@@ -36,7 +36,7 @@
 					if(get_post_meta($post->ID,'bookyear',true))
 						echo '<span class="black">'; echo '</span>'.get_post_meta($post->ID,'bookyear',true);
 					echo "<br/>";
-					kmol_posted_on();
+					kmol_review_posted_on();
 				}
 				else{
 					kmol_posted_on(); 
