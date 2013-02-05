@@ -14,10 +14,13 @@ function sort_merged_comments($a, $b) {
 }
 
 function merge_comments($comments, $post_ID) {
+	global $sitepress;
+	remove_filter( 'comments_clauses', array( $sitepress, 'comments_clauses' ) );
 	// get all the languages for which this post exists
 	$languages = icl_get_languages('skip_missing=1');
-	$type = is_page($post_ID) ? 'page' : 'post';
-	foreach($languages as $l) {
+	$post = get_post( $post_ID );
+	$type = $post->post_type;
+	foreach($languages as $code => $l) {
 		// in $comments are already the comments from the current language
 		if(!$l['active']) {
 			$otherID = icl_object_id($post_ID, $type, false, $l['language_code']);
@@ -29,6 +32,9 @@ function merge_comments($comments, $post_ID) {
 		// if we merged some comments in we need to reestablish an order
 		usort($comments, 'sort_merged_comments');
 	}
+	//
+	add_filter( 'comments_clauses', array( $sitepress, 'comments_clauses' ) );
+
 	return $comments;
 }
 
