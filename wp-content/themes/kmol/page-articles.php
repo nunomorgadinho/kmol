@@ -16,7 +16,9 @@ get_header(); ?>
 
 		<div id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
+			
 				<div class="container_12">
+				
 				<div class="grid_9 alpha">
 					<?php while ( have_posts() ) : the_post(); global $cat; $cat = get_option('articles'); ?>
 	
@@ -31,23 +33,23 @@ get_header(); ?>
 			        ?>
 				    		<img src="<?php echo $img_url;?>" width="700" height="100"/>
 					<?php } else {echo "Banner 4//";}?>
-			    </div>
+			    	</div>
 
 
-			</div>
+				</div> <!-- .grid_9 -->
 					
 				<div class="grid_3 omega">
 					<?php get_sidebar(); ?>
 		
-				<div class="banner3">
-			    	<?php 
-			        	$img_url = get_option('banner3'); echo $img_url;
-			            if(isset($img_url) && $img_url!=''){
-			        ?>
-				    		<img src="<?php echo $img_url;?>" width="220" height="100"/>
-					<?php } else {echo "Banner 3//";}?>
-			    </div> <!-- banner 3 -->
-		    </div>
+					<div class="banner3">
+				    	<?php 
+				        	$img_url = get_option('banner3'); echo $img_url;
+				            if(isset($img_url) && $img_url!=''){
+				        ?>
+					    		<img src="<?php echo $img_url;?>" width="220" height="100"/>
+						<?php } else {echo "Banner 3//";}?>
+				    </div> <!-- banner 3 -->
+		   		</div> <!-- .grid_3 -->
 			
 			
 			    <?php get_template_part( 'content', 'markers' ); ?>
