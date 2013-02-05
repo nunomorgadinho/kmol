@@ -169,69 +169,72 @@
                 <span class="clear"></span>
 
                <!-- WE RECOMMEND -->
-            <div class="recommend_title">
-                <?php _e('Algumas Recomendações KMOL','kmol');?>
-            </div>
-
-            <div class="book_row">
-             <?php 
-				//get first post
-			
-				$cat =  get_option('books');
-				$category = get_category($cat);
-				$paged = get_query_var('paged');
-				$per_page = 2;
-				if($paged>0)
-					$per_page = 2;
-				$args = array(
-						'posts_per_page' => $paged,
-						'cat' => $cat,
-						'post_status' => 'publish',
-						'gdsr_sort' => 'rating',
-						'nopaging' => 0,
-						'orderby' => 'rand',
-						'gdsr_order' => 'desc'
-				);
-				/* query posts array */
-				//$query_first = new WP_Query( $args  );
-				$rec_posts = get_posts('numberposts=-1&category='.$cat.'&orderby=RAND()');
-			
-				$i=0;
-				foreach( $rec_posts as $post ) {
-				
-				$rec = get_post_meta($post->ID, "recommended", false);
-			
-				if ($rec[0]) { 
-					$comments = get_comment_count($post->ID);
-			?>
-			
-                    <div class="marcador_container_recommend <?php if ($i % 2 != 0) echo "last";?> ">
-                        <div class="book_small_marcador">
-                        		<?php if(has_post_thumbnail()) {?> 
-					 				<div class="marcador_img"><?php the_post_thumbnail('thumbnail');?></div>
-					 			<?php }?>
-                                <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
-                                <div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_index', 'new_excerpt_more');?></div>
-                            <span class="clear"></span>
-                                <div class="tag_marcador">
-                              	 <?php 
-		                 	 			$tag_list = get_the_tag_list( '', ' ' );
-		                 				 printf($tag_list);
-		                    	?>
-                                </div>
-                            <span class="clear"></span>
-                            <h1 class="alignright comments"><a href="<?php the_permalink();?>"><?php echo $comments['approved'];  _e(' Comentários','kmol');?></a></h1>
-                        </div>
-                    </div>
-                    
-                     
                
-                <?php
-					if (++$i == 2) break; 
-					} // end if
-				} // end for
-                	?>
-                 </div> <!-- book_row recomend -->
+            <?php 
+            //get first post
+            
+            $cat =  get_option('books');
+            $category = get_category($cat);
+            $paged = get_query_var('paged');
+            $per_page = 2;
+            if($paged>0)
+            	$per_page = 2;
+            $args = array(
+            		'posts_per_page' => $paged,
+            		'cat' => $cat,
+            		'post_status' => 'publish',
+            		'gdsr_sort' => 'rating',
+            		'nopaging' => 0,
+            		'orderby' => 'rand',
+            		'gdsr_order' => 'desc'
+            );
+            /* query posts array */
+            //$query_first = new WP_Query( $args  );
+            $rec_posts = get_posts('numberposts=-1&category='.$cat.'&orderby=RAND()');
+               
+            
+            if(!empty($rec_posts)) {
+	            ?>
+	            <div class="recommend_title">
+	                <?php _e('Algumas Recomendações KMOL','kmol');?>
+	            </div>
+	
+	            <div class="book_row">
+	             <?php 
+					$i=0;
+					foreach( $rec_posts as $post ) {
+					
+					$rec = get_post_meta($post->ID, "recommended", false);
+				
+					if ($rec[0]) { 
+						$comments = get_comment_count($post->ID);
+				?>
+				
+	                   <div class="marcador_container_recommend <?php if ($i % 2 != 0) echo "last";?> ">
+	                        <div class="book_small_marcador">
+	                        		<?php if(has_post_thumbnail()) {?> 
+						 				<div class="marcador_img"><?php the_post_thumbnail('thumbnail');?></div>
+						 			<?php }?>
+	                                <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+	                                <div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_index', 'new_excerpt_more');?></div>
+	                            <span class="clear"></span>
+	                                <div class="tag_marcador">
+	                              	 <?php 
+			                 	 			$tag_list = get_the_tag_list( '', ' ' );
+			                 				 printf($tag_list);
+			                    	?>
+	                                </div>
+	                            <span class="clear"></span>
+	                            <h1 class="alignright comments"><a href="<?php the_permalink();?>"><?php echo $comments['approved'];  _e(' Comentários','kmol');?></a></h1>
+	                        </div>
+	                    </div>
+	                 <?php
+						if (++$i == 2) break; 
+						} // end if
+					} // end for
+	                	?>
+	                 </div> <!-- book_row recomend -->
+                 <?php } // end recommend not empty check?> 
                  
              <!--    <div class="more_single">
                 	<span class="alignright right_mark">
