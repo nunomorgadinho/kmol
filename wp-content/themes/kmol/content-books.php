@@ -59,11 +59,18 @@
 
 		                    <div class="book_moretag">
 							<?php
-								if(get_post_meta($post->ID,'bookauthor',true))
+							
+							$bookauthor = get_post_meta($post->ID,'bookauthor',true);
+							$bookref = get_post_meta($post->ID,'bookref',true);
+							$bookyear = get_post_meta($post->ID,'bookyear',true);
+							
+							
+							
+								if(isset($bookauthor) && $bookauthor !='')
 									echo '<span class="black">'; echo '</span>'.c2c_get_custom('bookauthor', '', '', '', ', ', ' e '); echo ". ";
-								if(get_post_meta($post->ID,'bookref',true))
+								if(isset($bookref) && $bookref != '')
 									echo '<span class="black">';  echo '</span>'.get_post_meta($post->ID,'bookref',true); echo ", ";
-								if(get_post_meta($post->ID,'bookyear',true))
+								if(isset($bookyear) && $bookyear !='')
 									echo '<span class="black">'; echo '</span>'.get_post_meta($post->ID,'bookyear',true);
 								
 							?>
