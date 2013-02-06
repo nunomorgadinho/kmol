@@ -965,11 +965,20 @@ if ( !class_exists('WordpressPopularPosts') ) {
 			}
 			
 			
-			$query = "SELECT p.ID AS 'id', p.post_title AS 'title', p.post_date AS 'date', p.post_author AS 'uid' {$fields} FROM {$wpdb->posts} p {$join} WHERE p.post_status = 'publish' AND p.post_password = '' {$where} GROUP BY p.ID {$having} ORDER BY {$orderby} DESC LIMIT " . $instance['limit'] . ";";
+			$query = "SELECT p.ID AS 'id', p.post_title AS 'title', p.post_date AS 'date', p.post_author AS 'uid' {$fields} 
+			FROM {$wpdb->posts} p {$join} 
+			WHERE p.post_status = 'publish' AND p.post_password = '' AND {$range} {$force_pv} {$nopages} {$exclude} {$where} 
+			GROUP BY p.ID {$having} ORDER BY {$orderby} DESC LIMIT " . $instance['limit'] . ";";
 			
 			
-			// "SELECT $wpdb->posts.ID, $wpdb->posts.post_title $fields  FROM $wpdb->posts $join WHERE $wpdb->posts.post_status = 'publish' AND $wpdb->posts.post_password = '' AND $range $force_pv $nopages $exclude GROUP BY $wpdb->posts.ID ORDER BY $sortby DESC LIMIT " . $instance['limit'] . "");
-			
+			/*
+			 "SELECT $wpdb->posts.ID, $wpdb->posts.post_title $fields  
+				FROM $wpdb->posts $join 
+				WHERE $wpdb->posts.post_status = 'publish'
+				 AND $wpdb->posts.post_password = '' 
+				 AND $range $force_pv $nopages $exclude 
+				 GROUP BY $wpdb->posts.ID ORDER BY $sortby DESC LIMIT " . $instance['limit'] . "");
+			*/
 			
 				
 			//echo $query;
