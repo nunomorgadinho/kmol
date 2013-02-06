@@ -19,10 +19,10 @@ get_header(); ?>
 		$author =  get_query_var('author_name');
 		echo "author_name = ".$author;
 		
-		$uid=  get_user_by('slug', $author); 
-		echo "uid = ".$uid;
+		$user=  get_user_by('slug', $author); 
+		echo "uid = ".$user->ID;
 		
-		$user_id =  $uid->ID;
+		$user_id =  $user->ID;
 				
 		global $wpdb;
 					
