@@ -77,7 +77,7 @@
 				$value = get_cimyFieldValue(get_the_author_meta('ID'), 'PHOTO-URL');
 				
 				if(!is_array($value))
-					echo '<img src="'.$value.'"/>';
+					echo '<img height="120" width="110" src="'.$value.'"/>';
 			}
 			?>
 			<div class="author_title"><?php echo get_the_author_meta('first_name').' '.get_the_author_meta('last_name');?></div>
