@@ -121,8 +121,12 @@ $temp = $post;
 				
                     if(!empty($popular))
                     {
-                    	$i=1;
+                    	$i=1; 
                     	foreach ($popular as $ppopular){
+                    		
+                    		if($i>3)
+                    			continue;
+                    		
                     		$post = get_post($ppopular['id']);
                     		setup_postdata($post); 
                     		if($i==1)
