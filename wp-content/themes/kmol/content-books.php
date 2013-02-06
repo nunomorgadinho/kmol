@@ -129,12 +129,17 @@
                                 <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
                             		<div class="book_moretag">
 									<?php
-										if(get_post_meta($post->ID,'bookauthor',true))
+									
+									$bookauthor = get_post_meta($post->ID,'bookauthor',true);
+									$bookref = get_post_meta($post->ID,'bookref',true);
+									$bookyear = get_post_meta($post->ID,'bookyear',true);
+									
+										if($bookauthor)
 											echo '<span class="black">'; echo '</span>'.c2c_get_custom('bookauthor', '', '', '', ', ', ' e '); echo ". ";
-										if(get_post_meta($post->ID,'bookref',true))
-											echo '<span class="black">';  echo '</span>'.get_post_meta($post->ID,'bookref',true); echo ", ";
-										if(get_post_meta($post->ID,'bookyear',true))
-											echo '<span class="black">'; echo '</span>'.get_post_meta($post->ID,'bookyear',true);
+										if($bookref)
+											echo '<span class="black">';  echo '</span>'.$bookref; echo ", ";
+										if($bookyear)
+											echo '<span class="black">'; echo '</span>'.$bookyear;
 									?>
 									</div><!-- .book_moretag-->
                             	
