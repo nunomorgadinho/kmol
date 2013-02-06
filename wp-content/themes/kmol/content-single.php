@@ -77,7 +77,7 @@
 				$value = get_cimyFieldValue(get_the_author_meta('ID'), 'PHOTO-URL');
 				
 				if(!is_array($value))
-					echo '<img height="120" width="110" src="'.$value.'"/>';
+					echo '<img src="'.$value.'"/>';
 			}
 			?>
 			<div class="author_title"><?php echo get_the_author_meta('first_name').' '.get_the_author_meta('last_name');?></div>
@@ -85,7 +85,7 @@
 				<?php echo get_the_author_meta('description');?>
 				
 				<div id="author-link">
-					<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'user_login' ) ) ); ?>" rel="author">
+					<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ) ); ?>" rel="author">
 						<?php printf( __( 'Ver todos os artigos de %s <span class="meta-nav">&rarr;</span>', 'kmol' ), get_the_author_meta('first_name').' '.get_the_author_meta('last_name') ); ?>
 					</a>
 				</div><!-- #author-link	-->
