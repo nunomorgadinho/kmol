@@ -190,7 +190,7 @@ $temp = $post;
 
 <!-- Separador com números de redes sociais -->
 		<?php 
-			$users = count(get_users('blog_id=1&role=subscriber'));
+			$users = count(get_users(array('role'=>'subscriber')));
 			$nfacebook = count_facebook_followers();
 			$nnewsletter = count_newsletter_followers();
 		?>
