@@ -197,9 +197,9 @@
             );
             /* query posts array */
             //$query_first = new WP_Query( $args  );
-            $rec_posts = get_posts('numberposts=-1&category='.$cat.'&orderby=RAND()');
+            $rec_posts = get_posts('numberposts=-1&category='.$cat.'&meta_key="recommended"&orderby=RAND()');
                
-          
+            
             if(!empty($rec_posts)) {
 	            ?>
 	            <div class="recommend_title">
