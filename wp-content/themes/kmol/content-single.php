@@ -75,6 +75,8 @@
 			<?php 
 			if(function_exists('get_cimyFieldValue')){
 				$value = get_cimyFieldValue(get_the_author_meta('ID'), 'PHOTO-URL');
+				print_r($value);
+				
 				echo '<img src="'.get_bloginfo('siteurl').$value.'"/>';
 			}
 			?>
