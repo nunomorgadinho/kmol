@@ -118,11 +118,63 @@ $temp = $post;
                     $popular = array();
                     if(isset($pp))
  	                   $popular = $pp->get_popular_posts(array('range' => 'all','order_by' => 'comments','post_type' => 'post', 'limit'=>3),true);
-				echo "tenho estes ".count($popular);
+				
                     if(!empty($popular))
                     {
                     	$i=1;
-                    	foreach ($popular as $ppopular){}//enf foreach
+                    	foreach ($popular as $ppopular){
+                    		$post = get_post($ppopular['id']);
+                    		setup_postdata($post); 
+                    		if($i==1)
+                    		{
+                    			//latest post
+                    			?>
+                    			<div class="news_principal">
+                                 <div class="news_title"><a href="<?php the_permalink();?>"><?php the_title();?></a>
+                                    <span class="news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( "ID" ) );?>"><?php _e('Por ','kmol'); echo get_the_author_meta('display_name');?></a>, <?php kmol_posted_on();?></span>
+                                 </div>
+				                 <span class="tag_marcador">
+					 	  			<?php $cats = wp_get_post_categories($post->ID);
+					 	  					foreach ($cats as $cat)
+					 	  					{
+					 	  						$c = get_category($cat);
+					 	  						echo '<a href="'.get_category_link( $cat ).'">'.$c->name."</a>";
+					 	  					}
+					 	  			?>
+	 	  						 </span>	
+                                 <span class="clear"></span>
+                    			<?php
+                    			if(has_post_thumbnail()){
+                    			?>
+                    				<div class="image_principal">
+                    				<?php the_post_thumbnail('medium');?>
+                    				</div>
+                    			<?php } ?>
+                    			<p class="news_excerpt"><?php wpe_excerpt('wpe_excerptlength_index', 'wpe_excerptmore');?> </p>
+                    			</div> <!-- .news_principal -->
+                    		
+                    			<?php
+                    		}	
+                    		else{
+                    			// second and third post
+                    			if($i==2) {?><div class="grid_8 alpha"><?php }?>
+                    				<div class="sublayer grid_4 alpha">
+                    					<h1 class="sublayer_title"><a href="<?php the_permalink();?>"><?php echo the_title();?></a></h1>
+                    					<span class="tag_marcador">
+							 	  			<?php $cats = wp_get_post_categories($post->ID);
+							 	  					foreach ($cats as $cat)
+							 	  					{
+							 	  						$c = get_category($cat);
+							 	  						echo '<a href="'.get_category_link( $cat ).'">'.$c->name."</a>";
+							 	  					}
+							 	  			?>
+	 	  							 	</span>	<span class="clear"></span>
+                    					<div class="sublayer_meta news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( $post->post_author ) );?>"><?php _e('Por '); echo get_the_author_meta('display_name',$post->post_author);?></a>, <?php kmol_posted_on();?></div>
+                    				
+                    				</div>
+                    		<?php }
+                    		$i++;
+                    	}//enf foreach
                     	?>
                     	<?php if($i>1){?>	</div> <?php }?> <!-- grid_8 -->
                     	<?php 
