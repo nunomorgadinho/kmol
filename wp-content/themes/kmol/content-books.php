@@ -64,15 +64,15 @@
 							$bookref = get_post_meta($post->ID,'bookref',true);
 							$bookyear = get_post_meta($post->ID,'bookyear',true);
 							
-							if(isset($bookauthor) && !empty($bookauthor))
+							if(isset($bookauthor)){
 								echo '<span class="black">'; echo '</span>'.c2c_get_custom('bookauthor', '', '', '', ', ', ' e '); echo ". ";
-								
-							if(isset($bookref) && !empty($bookref))
+							}
+							if(isset($bookref)){
 								echo '<span class="black">';  echo '</span>'.$bookref; echo ", ";
-							
-							if(isset($bookyear) && !empty($bookyear))
+							}
+							if(isset($bookyear)){
 								echo '<span class="black">'; echo '</span>'.$bookyear;
-								
+							}
 							?>
 							</div><!-- .book_moretag-->
 		                    
@@ -197,7 +197,7 @@
             );
             /* query posts array */
             //$query_first = new WP_Query( $args  );
-            $rec_posts = get_posts('numberposts=-1&category='.$cat.'&meta_key="recommended"&orderby=RAND()');
+            $rec_posts = get_posts('numberposts=-1&category='.$cat.'&orderby=RAND()');
                
             
             if(!empty($rec_posts)) {
