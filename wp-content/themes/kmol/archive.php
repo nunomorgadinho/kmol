@@ -16,12 +16,12 @@ get_header(); ?>
 	$author_has_comments = false;
 	if(is_author())
 	{
-		echo get_the_author();
 		$author =  get_query_var('author_name');
-		
-		
+		echo "author_name = ".$author;
 		
 		$uid=  get_user_by('login', $author); 
+		echo "uid = ".$uid;
+		
 		$user_id =  $uid->ID;
 				
 		global $wpdb;
