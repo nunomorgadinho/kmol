@@ -959,7 +959,7 @@ if ( !class_exists('WordpressPopularPosts') ) {
 			
 			
 			// WPML Support
-			if (!true) {
+			if (true) {
 				$join .= ' RIGHT JOIN wp_icl_translations ON wp_posts.ID = wp_icl_translations.element_id';
 				$range .= ' AND wp_icl_translations.language_code = \'' . ICL_LANGUAGE_CODE . '\' AND wp_icl_translations.element_type = \'post_post\'';
 			}
