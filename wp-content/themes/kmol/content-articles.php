@@ -7,7 +7,7 @@
  */
 ?>
 
-	<div class="grid_9 alpha">
+<!-- 	<div class="grid_9 alpha">  -->
 		<div class="default_page">
 			<!-- TODO unavailable by now -->
 			<!-- 	<select class="filter alignright"  name="filter">
@@ -19,8 +19,6 @@
 
 			<?php 
 			//get remaining post
-		
-			
 			global $cat;
 			$paged = get_query_var('paged'); 
 			$per_page = 7;
@@ -42,7 +40,7 @@
 			$i=1; 
 			if($query->have_posts()): while ($query->have_posts()) : $query->the_post(); ?>
 
-				<?php if($i==1 && $paged==0) {?>
+			<?php if($i==1 && $paged==0) {?>
 					
 					
 					<div class="news_title title_single"><a href="<?php the_permalink();?>"><?php the_title();?></a></div>
@@ -96,8 +94,9 @@
 			endif;
 		 
 		?>
-		   </div>  <!-- grid_8 alpha -->    
-
+		<?php if($query->have_posts()):?>
+			   </div>  <!-- grid_8 alpha -->    
+		<?php endif;?>
 		    <!-- Previous and Next articles -->
 			<div class="grid_8 alpha more_single">
 			<span class="left_mark">
@@ -111,7 +110,9 @@
 
 			
 		</div><!-- default_page -->
-	</div> <!-- grid_9 -->
+		
+		
+<!-- 	</div> -->  <!-- grid_9 -->
 
 	
 

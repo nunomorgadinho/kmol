@@ -191,6 +191,9 @@ $temp = $post;
 <!-- Separador com números de redes sociais -->
 		<?php 
 			$users = count(get_users());
+			
+			
+			
 			$nfacebook = count_facebook_followers();
 			$nnewsletter = count_newsletter_followers();
 		?>
@@ -443,7 +446,7 @@ js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement
 			</div>
 		<?php  endwhile; endif;?>
         		</ul>
-				<a class="alignright" href="<?php echo $page->guid;?>">ver todos os eventos&rarr;</a>	
+				<a class="alignright" href="<?php echo $page->guid;?>"><?php _e('ver todos os eventos&rarr;','kmol');?></a>	
 				</div>
 			
 				</aside>	
