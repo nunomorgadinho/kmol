@@ -190,7 +190,7 @@ $temp = $post;
 
 <!-- Separador com números de redes sociais -->
 		<?php 
-			$users = count(get_users(array('who'=>'subscribers')));
+			$users = count(get_users(array('who'=>'authors')));
 			
 			
 			
