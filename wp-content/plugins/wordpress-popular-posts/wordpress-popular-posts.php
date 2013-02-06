@@ -957,7 +957,22 @@ if ( !class_exists('WordpressPopularPosts') ) {
 				}
 			}
 			
+			
+			// WPML Support
+			if (true) {
+				$join .= ' RIGHT JOIN wp_icl_translations ON wp_posts.ID = wp_icl_translations.element_id';
+				$range .= ' AND wp_icl_translations.language_code = \'' . ICL_LANGUAGE_CODE . '\' AND wp_icl_translations.element_type = \'post_post\'';
+			}
+			
 			$query = "SELECT p.ID AS 'id', p.post_title AS 'title', p.post_date AS 'date', p.post_author AS 'uid' {$fields} FROM {$wpdb->posts} p {$join} WHERE p.post_status = 'publish' AND p.post_password = '' {$where} GROUP BY p.ID {$having} ORDER BY {$orderby} DESC LIMIT " . $instance['limit'] . ";";
+			
+			
+			// "SELECT $wpdb->posts.ID, $wpdb->posts.post_title $fields                                                       FROM $wpdb->posts $join WHERE $wpdb->posts.post_status = 'publish' AND $wpdb->posts.post_password = '' AND $range $force_pv $nopages $exclude GROUP BY $wpdb->posts.ID ORDER BY $sortby DESC LIMIT " . $instance['limit'] . "");
+			
+			
+			
+			
+			
 			
 			//echo $query;
 			//return $content;
