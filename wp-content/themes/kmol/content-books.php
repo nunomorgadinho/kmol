@@ -64,13 +64,13 @@
 							$bookref = get_post_meta($post->ID,'bookref',true);
 							$bookyear = get_post_meta($post->ID,'bookyear',true);
 							
-							if(isset($bookauthor)){
+							if($bookauthor){
 								echo '<span class="black">'; echo '</span>'.c2c_get_custom('bookauthor', '', '', '', ', ', ' e '); echo ". ";
 							}
-							if(isset($bookref)){
+							if($bookref){
 								echo '<span class="black">';  echo '</span>'.$bookref; echo ", ";
 							}
-							if(isset($bookyear)){
+							if($bookyear){
 								echo '<span class="black">'; echo '</span>'.$bookyear;
 							}
 							?>
