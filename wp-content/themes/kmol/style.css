@@ -309,9 +309,9 @@ input {
     font-family: 'TeXGyreBonumRegular';
     src: url('fonts/texgyrebonum-regular-webfont.eot');
     src: url('fonts/texgyrebonum-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/texgyrebonum-regular-webfont.svg#TeXGyreBonumRegular') format('svg'),
          url('fonts/texgyrebonum-regular-webfont.woff') format('woff'),
-         url('fonts/texgyrebonum-regular-webfont.ttf') format('truetype');
+         url('fonts/texgyrebonum-regular-webfont.ttf') format('truetype'),
+         url('fonts/texgyrebonum-regular-webfont.svg#TeXGyreBonumRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -321,9 +321,9 @@ input {
     font-family: 'TeXGyreBonumItalic';
     src: url('fonts/texgyrebonum-italic-webfont.eot');
     src: url('fonts/texgyrebonum-italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/texgyrebonum-italic-webfont.svg#TeXGyreBonumItalic') format('svg'),
          url('fonts/texgyrebonum-italic-webfont.woff') format('woff'),
-         url('fonts/texgyrebonum-italic-webfont.ttf') format('truetype');
+         url('fonts/texgyrebonum-italic-webfont.ttf') format('truetype'),
+         url('fonts/texgyrebonum-italic-webfont.svg#TeXGyreBonumItalic') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -333,9 +333,9 @@ input {
     font-family: 'TeXGyreBonumBold';
     src: url('fonts/texgyrebonum-bold-webfont.eot');
     src: url('fonts/texgyrebonum-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/texgyrebonum-bold-webfont.svg#TeXGyreBonumBold') format('svg'),
          url('fonts/texgyrebonum-bold-webfont.woff') format('woff'),
-         url('fonts/texgyrebonum-bold-webfont.ttf') format('truetype');
+         url('fonts/texgyrebonum-bold-webfont.ttf') format('truetype'),
+         url('fonts/texgyrebonum-bold-webfont.svg#TeXGyreBonumBold') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -345,9 +345,9 @@ input {
     font-family: 'TeXGyreBonumBoldItalic';
     src: url('fonts/texgyrebonum-bolditalic-webfont.eot');
     src: url('fonts/texgyrebonum-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/texgyrebonum-bolditalic-webfont.svg#TeXGyreBonumBoldItalic') format('svg'),
          url('fonts/texgyrebonum-bolditalic-webfont.woff') format('woff'),
-         url('fonts/texgyrebonum-bolditalic-webfont.ttf') format('truetype');
+         url('fonts/texgyrebonum-bolditalic-webfont.ttf') format('truetype'),
+         url('fonts/texgyrebonum-bolditalic-webfont.svg#TeXGyreBonumBoldItalic') format('svg');
     font-weight: normal;
     font-style: normal;
 
