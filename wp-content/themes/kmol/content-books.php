@@ -202,7 +202,7 @@
             );
             /* query posts array */
             //$query_first = new WP_Query( $args  );
-            $rec_posts = get_posts('numberposts=-1&category='.$cat.'&orderby=RAND()&meta_key="recommended"&meta_value=1');
+            $rec_posts = get_posts('numberposts=-1&category='.$cat.'&orderby=RAND()');
                
             
             if(!empty($rec_posts)) {
