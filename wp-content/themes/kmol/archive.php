@@ -17,11 +17,7 @@ get_header(); ?>
 	if(is_author())
 	{
 		$author =  get_query_var('author_name');
-		echo "author_name = ".$author;
-		
-		$user=  get_user_by('slug', $author); 
-		echo "uid = ".$user->ID;
-		
+		$user=  get_user_by('slug', $author); 		
 		$user_id =  $user->ID;
 				
 		global $wpdb;
