@@ -122,6 +122,7 @@ $temp = $post;
                     if(!empty($popular))
                     {
                     	$i=1; 
+                    	echo "COUNT POPULAR = ".count($popular);
                     	foreach ($popular as $ppopular){
                     		
                     		if($i>3)
