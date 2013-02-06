@@ -134,12 +134,15 @@
 									$bookref = get_post_meta($post->ID,'bookref',true);
 									$bookyear = get_post_meta($post->ID,'bookyear',true);
 									
-										if($bookauthor)
+										if($bookauthor){
 											echo '<span class="black">'; echo '</span>'.c2c_get_custom('bookauthor', '', '', '', ', ', ' e '); echo ". ";
-										if($bookref)
+										}
+										if($bookref){
 											echo '<span class="black">';  echo '</span>'.$bookref; echo ", ";
-										if($bookyear)
+										}
+										if($bookyear){
 											echo '<span class="black">'; echo '</span>'.$bookyear;
+										}
 									?>
 									</div><!-- .book_moretag-->
                             	
@@ -228,8 +231,26 @@
 						 				<div class="marcador_img"><?php the_post_thumbnail('thumbnail');?></div>
 						 			<?php }?>
 	                                <h2 class="marcador_subtitle"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+	                              	<div class="book_moretag">
+									<?php
+									
+									$bookauthor = get_post_meta($post->ID,'bookauthor',true);
+									$bookref = get_post_meta($post->ID,'bookref',true);
+									$bookyear = get_post_meta($post->ID,'bookyear',true);
+									
+										if($bookauthor){
+											echo '<span class="black">'; echo '</span>'.c2c_get_custom('bookauthor', '', '', '', ', ', ' e '); echo ". ";
+										}
+										if($bookref){
+											echo '<span class="black">';  echo '</span>'.$bookref; echo ", ";
+										}
+										if($bookyear){
+											echo '<span class="black">'; echo '</span>'.$bookyear;
+										}
+									?>
+									</div><!-- .book_moretag-->
 	                                <div class="marcador_description"><?php wpe_excerpt('wpe_excerptlength_index', 'new_excerpt_more');?></div>
-	                            <span class="clear"></span>
+	                          		  <span class="clear"></span>
 	                                <div class="tag_marcador">
 	                              	 <?php 
 			                 	 			$tag_list = get_the_tag_list( '', ' ' );
