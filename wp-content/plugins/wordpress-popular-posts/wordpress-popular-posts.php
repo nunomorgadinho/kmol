@@ -970,7 +970,7 @@ if ( !class_exists('WordpressPopularPosts') ) {
 			WHERE p.post_status = 'publish' AND p.post_password = '' {$range} {$force_pv} {$nopages} {$exclude} {$where} 
 			GROUP BY p.ID {$having} ORDER BY {$orderby} DESC LIMIT " . $instance['limit'] . ";";
 			
-			echo "QUERY = ".$query;			
+			//echo "QUERY = ".$query;			
 			/*
 			 "SELECT $wpdb->posts.ID, $wpdb->posts.post_title $fields  
 				FROM $wpdb->posts $join 
