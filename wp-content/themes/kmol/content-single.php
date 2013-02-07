@@ -8,12 +8,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	
-	<!-- <div class="book-image">   -->
-	<?php  
-		$cat=  get_option('books');
-	/*	if(has_category($cat) && has_post_thumbnail())
-               	 	the_post_thumbnail('medium');*/
-     ?>
+
 	<!--  </div> -->
 	
 	
@@ -21,7 +16,12 @@
 	
 	<div class="entry-thumb">
 		<?php  global $post; 
-			if(has_post_thumbnail($post->ID))
+		
+			$cat_books=  get_option('books');
+			$cat_cases=  get_option('cases');
+			$cat_interviews=  get_option('interviews');
+			
+			if(has_post_thumbnail($post->ID) && (has_category($cat_books) || has_category($cat_cases) || has_category($cat_interviews) ))
                	 the_post_thumbnail('medium');?>
 	</div>
 		<div class="entry-title news_title"><?php  the_title(); ?><span class="entry-meta news_meta">
