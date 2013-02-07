@@ -28,9 +28,15 @@ get_header(); ?>
 			    	<?php 
 			        	$img_url = get_option('banner4'); echo $img_url;
 			            if(isset($img_url)  && $img_url!=''){
+			            	$banner_url = get_option('banner4_url');
+			            	if($banner_url)
+			            		echo '<a href="'.$banner_url.'" target="_blank">';
 			        ?>
 				    		<img src="<?php echo $img_url;?>" width="700" height="100"/>
-					<?php } else {echo "Banner 4//";}?>
+					<?php 
+			            	if($banner_url)
+			            		echo '</a>';
+			            } else {echo "Banner 4//";}?>
 			    </div>
 
 
@@ -43,9 +49,15 @@ get_header(); ?>
 			    	<?php 
 			        	$img_url = get_option('banner3'); echo $img_url;
 			            if(isset($img_url) && $img_url!=''){
+			            	$banner_url = get_option('banner3_url');
+			            	if($banner_url)
+			            		echo '<a href="'.$banner_url.'" target="_blank">';
 			        ?>
 				    		<img src="<?php echo $img_url;?>" width="220" height="100"/>
-					<?php } else {echo "Banner 3//";}?>
+					<?php 
+			            	if($banner_url)
+			            		echo '</a>';
+			            } else {echo "Banner 3//";}?>
 			    </div> <!-- banner 3 -->
 		    </div>
 			

@@ -33,9 +33,13 @@ function register_kmol_options() {
 		update_option('events', $_POST['events']);
 		
 		update_option('banner1', $_POST['banner1']);
+		update_option('banner1_url', $_POST['banner1_url']);
 		update_option('banner2', $_POST['banner2']);
+		update_option('banner2_url', $_POST['banner2_url']);
 		update_option('banner3', $_POST['banner3']);
+		update_option('banner3_url', $_POST['banner3_url']);
 		update_option('banner4', $_POST['banner4']);
+		update_option('banner4_url', $_POST['banner4_url']);
 		
 		update_option('twitter', $_POST['twitter']);
 		update_option('facebook', $_POST['facebook']);
@@ -56,6 +60,10 @@ function register_kmol_options() {
 	register_setting('banners-home', 'banner2');
 	register_setting('banners-home', 'banner3');
 	register_setting('banners-home', 'banner4');
+	register_setting( 'banners-home', 'banner1_url' );
+	register_setting('banners-home', 'banner2_url');
+	register_setting('banners-home', 'banner3_url');
+	register_setting('banners-home', 'banner4_url');
 	
 	register_setting('social-links','twitter');
 	register_setting('social-links', 'facebook');
@@ -131,6 +139,15 @@ function kmol_options_page() {
 					</label>
 				</td>
 			</tr>
+			<tr valign="top">
+				<th scope="row"><?php _e('Banner 300x251 (home) URL','kmol');?></th>
+				<td>
+					<label for="banner1_url">
+						<input id="banner1_url" type="text" size="36" name="banner1_url" value="<?php echo get_option('banner1_url');?>" placeholder="http://" />
+						<br /><?php _e('Adiciona um URL para o qual este banner deve linkar.');?>
+					</label>
+				</td>
+			</tr>
 			
 			<tr valign="top">
 				<th scope="row"><?php _e('Banner 620x100 (home)','kmol');?></th>
@@ -142,17 +159,37 @@ function kmol_options_page() {
 					</label>
 				</td>
 			</tr>
+			<tr valign="top">
+				<th scope="row"><?php _e('Banner 620x100 (home) URL','kmol');?></th>
+				<td>
+					<label for="banner2_url">
+						<input id="banner2_url" type="text" size="36" name="banner2_url" value="<?php echo get_option('banner2_url');?>" placeholder="http://"/>
+						<br /><?php _e('Adiciona um URL para o qual este banner deve linkar.');?>
+					</label>
+				</td>
+			</tr>
+			
 			
 			<tr valign="top">
 				<th scope="row"><?php _e('Banner 220x100','kmol');?></th>
 				<td>
-					<label for="banner2">
+					<label for="banner3">
 						<input id="banner3" type="text" size="36" name="banner3" value="<?php echo get_option('banner3');?>" />
 						<input id="upload_image_button3" type="button" value="Upload Imagem" />
 						<br /><?php _e('Adiciona um URL ou faz upload de uma imagem para banner 220x100.');?>
 					</label>
 				</td>
 			</tr>
+			<tr valign="top">
+				<th scope="row"><?php _e('Banner 220x100 (home) URL','kmol');?></th>
+				<td>
+					<label for="banner3_url">
+						<input id="banner3_url" type="text" size="36" name="banner3_url" value="<?php echo get_option('banner3_url');?>" placeholder="http://"/>
+						<br /><?php _e('Adiciona um URL para o qual este banner deve linkar.');?>
+					</label>
+				</td>
+			</tr>
+			
 			
 			<tr valign="top">
 				<th scope="row"><?php _e('Banner 700x100','kmol');?></th>
@@ -164,6 +201,16 @@ function kmol_options_page() {
 					</label>
 				</td>
 			</tr>
+			<tr valign="top">
+				<th scope="row"><?php _e('Banner 700x100 (home) URL','kmol');?></th>
+				<td>
+					<label for="banner4_url">
+						<input id="banner4_url" type="text" size="36" name="banner4_url" value="<?php echo get_option('banner4_url');?>" placeholder="http://"/>
+						<br /><?php _e('Adiciona um URL para o qual este banner deve linkar.');?>
+					</label>
+				</td>
+			</tr>
+			
 		</table>
 		
 		

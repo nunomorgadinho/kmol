@@ -334,9 +334,16 @@ $temp = $post;
                     <?php 
                     	$img_url = get_option('banner1');
                     	if(isset($img_url)  && $img_url!=''){
+                    		
+                    		$banner_url = get_option('banner1_url');
+                    		if($banner_url)
+                    			echo '<a href="'.$banner_url.'" target="_blank">';
                     ?>
 	                    <img src="<?php echo $img_url;?>" width="300" height="251"/>
-	                <?php } else {echo "Banner 1//";}?>
+	                <?php 
+                    		if($banner_url)
+                    			echo "</a>";	
+                    	} else {echo "Banner 1//";}?>
                 </div>
                 
                 
@@ -374,9 +381,15 @@ $temp = $post;
                   <?php 
                     	$img_url = get_option('banner2');
                     	if(isset($img_url) && $img_url!=''){
+                    		$banner_url = get_option('banner2_url');
+                    		if($banner_url)
+                    			echo '<a href="'.$banner_url.'" target="_blank">';
                     ?>
 	                    <img src="<?php echo $img_url;?>" width="620" height="100"/>
-	                <?php } else {echo "Banner 2//";}?>
+	                <?php 
+                    		if($banner_url)
+                    			echo '</a>';
+                    	} else {echo "Banner 2//";}?>
             </div>
 
 
