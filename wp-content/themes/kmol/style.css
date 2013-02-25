@@ -2044,7 +2044,7 @@ aside ul li{
 }
 
 .news_principal .tag_marcador a{
-	margin-bottom: 20px;
+	/*margin-bottom: 20px; aaires*/
 }
 
 .tag_marcador a, .tag_marcador span {
@@ -2053,7 +2053,7 @@ aside ul li{
 	background:  #a9cf55;
 	padding: 0 3px;
 	margin-right: 2px;
-	margin-bottom: 5px;
+/*	margin-bottom: 5px; aaires*/
 	color: white;
 	text-transform: capitalize;
 }

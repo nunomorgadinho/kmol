@@ -55,9 +55,8 @@ $temp = $post;
 	 	   	//latest post
 	 	   	?>
 	 	  	 <div class="news_principal">
-	 	  		 <div class="news_title"><a href="<?php the_permalink();?>"><?php the_title();?></a>
-	 	  		 	<span class="news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( "ID" ) );?>"><?php _e('Por ','kmol'); echo get_the_author_meta('display_name');?></a>, <?php kmol_posted_on();?></span>
-	 	  		 </div>
+	 	  		 <div class="news_title"><a href="<?php the_permalink();?>"><?php the_title();?></a></div>
+	 	  		 <span class="news_meta"><a href="<?php echo get_author_posts_url( get_the_author_meta( "ID" ) );?>"><?php _e('Por ','kmol'); echo get_the_author_meta('display_name');?></a>, <?php kmol_posted_on();?></span>
 	 	  		 <span class="tag_marcador">
 	 	  			<?php $cats = wp_get_post_categories($post->ID);
 	 	  					foreach ($cats as $cat)
