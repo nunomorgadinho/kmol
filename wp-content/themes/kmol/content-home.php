@@ -233,7 +233,6 @@ $temp = $post;
                     		array (
                     				0 => '1',
                     		),
-                    		'autoregister' => 'not_auto_register',
                     		'labelswithin' => 'labels_within',
                     		'customfields' =>
                     		array (
@@ -244,7 +243,7 @@ $temp = $post;
                     				),
                     		),
                     		'submit' => __('Subscrever!','kmol'),
-                    		'success' => __('Veja na sua caixa de correio como confirmar a subscrição.','kmol'),
+                    		'success' => __('Obrigado pelo seu interesse','kmol'),
                     		'widget_id' => 'wysija-2-php',
                     );
                     $widgetNL= new WYSIJA_NL_Widget(1); 

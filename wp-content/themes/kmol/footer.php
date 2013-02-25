@@ -35,7 +35,7 @@
                     				),
                     		),
                     		'submit' => 'Newsletter',
-                    		'success' => 'Veja na sua caixa de correio como confirmar a subscrição.',
+                    		'success' => __('Obrigado pelo seu interesse','kmol'),
                     		'widget_id' => 'wysija-3-php',
                     );
                     $widgetNL=new WYSIJA_NL_Widget(1);

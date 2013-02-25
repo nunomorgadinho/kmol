@@ -19,7 +19,17 @@ get_header(); ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'content', 'books' ); ?>
+					<?php 
+					$recommended = false;
+					
+					if($_GET['recommended']){ 
+						get_template_part( 'content', 'book-recommended' ); 
+					}
+					else{
+						get_template_part( 'content', 'books' );
+					}
+					
+					?>
 					
 				<?php endwhile; // end of the loop. ?>
 
