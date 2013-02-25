@@ -24,7 +24,7 @@
 			if(has_post_thumbnail($post->ID) && (has_category($cat_books) || has_category($cat_cases) || has_category($cat_interviews) ))
                	 the_post_thumbnail('medium');?>
 	</div>
-		<div class="entry-title news_title"><?php  the_title(); ?><span class="entry-meta news_meta">
+		<div class="entry-title news_title"></div><?php  //the_title(); ?><span class="entry-meta news_meta">
 			<?php
 				
 				if(has_category($cat) && !empty($cat)){
@@ -42,7 +42,7 @@
 					kmol_posted_on(); 
 				}
 			?>
-		</span><!-- .entry-meta --></div>
+		</span><!-- .entry-meta -->
 		
 			<span class="clear"></span>
 
